@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Active Record Migrations — Ruby on Rails Guides</title>
+<link rel="stylesheet" type="text/css" href="Active%20Record%20Migrations%20%E2%80%94%20Ruby%20on%20Rails%20Guides_files/style.css">
+<link rel="stylesheet" type="text/css" href="Active%20Record%20Migrations%20%E2%80%94%20Ruby%20on%20Rails%20Guides_files/print.css" media="print">
+
+<link rel="stylesheet" type="text/css" href="Active%20Record%20Migrations%20%E2%80%94%20Ruby%20on%20Rails%20Guides_files/shCore.css">
+<link rel="stylesheet" type="text/css" href="Active%20Record%20Migrations%20%E2%80%94%20Ruby%20on%20Rails%20Guides_files/shThemeRailsGuides.css">
+
+<link rel="stylesheet" type="text/css" href="Active%20Record%20Migrations%20%E2%80%94%20Ruby%20on%20Rails%20Guides_files/fixes.css">
+
+<link href="http://guides.rubyonrails.org/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+</head>
+<body class="guide">
+  <div id="topNav">
+    <div class="wrapper">
+      <strong class="more-info-label">More at <a href="http://rubyonrails.org/">rubyonrails.org:</a> </strong>
+      <span class="red-button more-info-button">
+        More Ruby on Rails
+      </span>
+      <ul class="more-info-links s-hidden">
+        <li class="more-info"><a href="http://rubyonrails.org/">Overview</a></li>
+        <li class="more-info"><a href="http://rubyonrails.org/download">Download</a></li>
+        <li class="more-info"><a href="http://rubyonrails.org/deploy">Deploy</a></li>
+        <li class="more-info"><a href="https://github.com/rails/rails">Code</a></li>
+        <li class="more-info"><a href="http://rubyonrails.org/screencasts">Screencasts</a></li>
+        <li class="more-info"><a href="http://rubyonrails.org/documentation">Documentation</a></li>
+        <li class="more-info"><a href="http://rubyonrails.org/community">Community</a></li>
+        <li class="more-info"><a href="http://weblog.rubyonrails.org/">Blog</a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="header">
+    <div class="wrapper clearfix">
+      <h1><a href="http://guides.rubyonrails.org/index.html" title="Return to home page">Guides.rubyonrails.org</a></h1>
+      <ul class="nav">
+        <li><a class="nav-item" href="http://guides.rubyonrails.org/index.html">Home</a></li>
+        <li class="guides-index guides-index-large">
+          <a href="http://guides.rubyonrails.org/index.html" id="guidesMenu" class="guides-index-item nav-item">Guides Index</a>
+          <div id="guides" class="clearfix" style="display: none;">
+            <hr>
+              <dl class="L">
+                <dt>Start Here</dt>
+                <dd><a href="http://guides.rubyonrails.org/getting_started.html">Getting Started with Rails</a></dd>
+                <dt>Models</dt>
+                <dd><a href="http://guides.rubyonrails.org/active_record_basics.html">Active Record Basics</a></dd>
+                <dd><a href="http://guides.rubyonrails.org/active_record_migrations.html">Active Record Migrations</a></dd>
+                <dd><a href="http://guides.rubyonrails.org/active_record_validations.html">Active Record Validations</a></dd>
+                <dd><a href="http://guides.rubyonrails.org/active_record_callbacks.html">Active Record Callbacks</a></dd>
+                <dd><a href="http://guides.rubyonrails.org/association_basics.html">Active Record Associations</a></dd>
+                <dd><a href="http://guides.rubyonrails.org/active_record_querying.html">Active Record Query Interface</a></dd>
+                <dt>Views</dt>
+                <dd><a href="http://guides.rubyonrails.org/layouts_and_rendering.html">Layouts and Rendering in Rails</a></dd>
+                <dd><a href="http://guides.rubyonrails.org/form_helpers.html">Action View Form Helpers</a></dd>
+                <dt>Controllers</dt>
+                <dd><a href="http://guides.rubyonrails.org/action_controller_overview.html">Action Controller Overview</a></dd>
+                <dd><a href="http://guides.rubyonrails.org/routing.html">Rails Routing from the Outside In</a></dd>
+              </dl>
+              <dl class="R">
+                <dt>Digging Deeper</dt>
+                <dd><a href="http://guides.rubyonrails.org/active_support_core_extensions.html">Active Support Core Extensions</a></dd>
+                <dd><a href="http://guides.rubyonrails.org/i18n.html">Rails Internationalization API</a></dd>
+                <dd><a href="http://guides.rubyonrails.org/action_mailer_basics.html">Action Mailer Basics</a></dd>
+                <dd><a href="http://guides.rubyonrails.org/active_job_basics.html">Active Job Basics</a></dd>
+                <dd><a href="http://guides.rubyonrails.org/security.html">Securing Rails Applications</a></dd>
+                <dd><a href="http://guides.rubyonrails.org/debugging_rails_applications.html">Debugging Rails Applications</a></dd>
+                <dd><a href="http://guides.rubyonrails.org/configuring.html">Configuring Rails Applications</a></dd>
+                <dd><a href="http://guides.rubyonrails.org/command_line.html">Rails Command Line Tools and Rake Tasks</a></dd>
+                <dd><a href="http://guides.rubyonrails.org/asset_pipeline.html">Asset Pipeline</a></dd>
+                <dd><a href="http://guides.rubyonrails.org/working_with_javascript_in_rails.html">Working with JavaScript in Rails</a></dd>
+                <dd><a href="http://guides.rubyonrails.org/autoloading_and_reloading_constants.html">Autoloading and Reloading Constants</a></dd>
+                <dt>Extending Rails</dt>
+                <dd><a href="http://guides.rubyonrails.org/rails_on_rack.html">Rails on Rack</a></dd>
+                <dd><a href="http://guides.rubyonrails.org/generators.html">Creating and Customizing Rails Generators</a></dd>
+                <dt>Contributing to Ruby on Rails</dt>
+                <dd><a href="http://guides.rubyonrails.org/contributing_to_ruby_on_rails.html">Contributing to Ruby on Rails</a></dd>
+                <dd><a href="http://guides.rubyonrails.org/api_documentation_guidelines.html">API Documentation Guidelines</a></dd>
+                <dd><a href="http://guides.rubyonrails.org/ruby_on_rails_guides_guidelines.html">Ruby on Rails Guides Guidelines</a></dd>
+                <dt>Maintenance Policy</dt>
+                <dd><a href="http://guides.rubyonrails.org/maintenance_policy.html">Maintenance Policy</a></dd>
+                <dt>Release Notes</dt>
+                <dd><a href="http://guides.rubyonrails.org/upgrading_ruby_on_rails.html">Upgrading Ruby on Rails</a></dd>
+                <dd><a href="http://guides.rubyonrails.org/4_2_release_notes.html">Ruby on Rails 4.2 Release Notes</a></dd>
+                <dd><a href="http://guides.rubyonrails.org/4_1_release_notes.html">Ruby on Rails 4.1 Release Notes</a></dd>
+                <dd><a href="http://guides.rubyonrails.org/4_0_release_notes.html">Ruby on Rails 4.0 Release Notes</a></dd>
+                <dd><a href="http://guides.rubyonrails.org/3_2_release_notes.html">Ruby on Rails 3.2 Release Notes</a></dd>
+                <dd><a href="http://guides.rubyonrails.org/3_1_release_notes.html">Ruby on Rails 3.1 Release Notes</a></dd>
+                <dd><a href="http://guides.rubyonrails.org/3_0_release_notes.html">Ruby on Rails 3.0 Release Notes</a></dd>
+                <dd><a href="http://guides.rubyonrails.org/2_3_release_notes.html">Ruby on Rails 2.3 Release Notes</a></dd>
+                <dd><a href="http://guides.rubyonrails.org/2_2_release_notes.html">Ruby on Rails 2.2 Release Notes</a></dd>
+              </dl>
+          </div>
+        </li>
+        <li><a class="nav-item" href="http://guides.rubyonrails.org/contributing_to_ruby_on_rails.html">Contribute</a></li>
+        <li><a class="nav-item" href="http://guides.rubyonrails.org/credits.html">Credits</a></li>
+        <li class="guides-index guides-index-small">
+          <select class="guides-index-item nav-item">
+            <option value="index.html">Guides Index</option>
+              <optgroup label="Start Here">
+                  <option value="getting_started.html">Getting Started with Rails</option>
+              </optgroup>
+              <optgroup label="Models">
+                  <option value="active_record_basics.html">Active Record Basics</option>
+                  <option selected="selected" value="active_record_migrations.html">Active Record Migrations</option>
+                  <option value="active_record_validations.html">Active Record Validations</option>
+                  <option value="active_record_callbacks.html">Active Record Callbacks</option>
+                  <option value="association_basics.html">Active Record Associations</option>
+                  <option value="active_record_querying.html">Active Record Query Interface</option>
+              </optgroup>
+              <optgroup label="Views">
+                  <option value="layouts_and_rendering.html">Layouts and Rendering in Rails</option>
+                  <option value="form_helpers.html">Action View Form Helpers</option>
+              </optgroup>
+              <optgroup label="Controllers">
+                  <option value="action_controller_overview.html">Action Controller Overview</option>
+                  <option value="routing.html">Rails Routing from the Outside In</option>
+              </optgroup>
+              <optgroup label="Digging Deeper">
+                  <option value="active_support_core_extensions.html">Active Support Core Extensions</option>
+                  <option value="i18n.html">Rails Internationalization API</option>
+                  <option value="action_mailer_basics.html">Action Mailer Basics</option>
+                  <option value="active_job_basics.html">Active Job Basics</option>
+                  <option value="security.html">Securing Rails Applications</option>
+                  <option value="debugging_rails_applications.html">Debugging Rails Applications</option>
+                  <option value="configuring.html">Configuring Rails Applications</option>
+                  <option value="command_line.html">Rails Command Line Tools and Rake Tasks</option>
+                  <option value="asset_pipeline.html">Asset Pipeline</option>
+                  <option value="working_with_javascript_in_rails.html">Working with JavaScript in Rails</option>
+                  <option value="autoloading_and_reloading_constants.html">Autoloading and Reloading Constants</option>
+              </optgroup>
+              <optgroup label="Extending Rails">
+                  <option value="rails_on_rack.html">Rails on Rack</option>
+                  <option value="generators.html">Creating and Customizing Rails Generators</option>
+              </optgroup>
+              <optgroup label="Contributing to Ruby on Rails">
+                  <option value="contributing_to_ruby_on_rails.html">Contributing to Ruby on Rails</option>
+                  <option value="api_documentation_guidelines.html">API Documentation Guidelines</option>
+                  <option value="ruby_on_rails_guides_guidelines.html">Ruby on Rails Guides Guidelines</option>
+              </optgroup>
+              <optgroup label="Maintenance Policy">
+                  <option value="maintenance_policy.html">Maintenance Policy</option>
+              </optgroup>
+              <optgroup label="Release Notes">
+                  <option value="upgrading_ruby_on_rails.html">Upgrading Ruby on Rails</option>
+                  <option value="4_2_release_notes.html">Ruby on Rails 4.2 Release Notes</option>
+                  <option value="4_1_release_notes.html">Ruby on Rails 4.1 Release Notes</option>
+                  <option value="4_0_release_notes.html">Ruby on Rails 4.0 Release Notes</option>
+                  <option value="3_2_release_notes.html">Ruby on Rails 3.2 Release Notes</option>
+                  <option value="3_1_release_notes.html">Ruby on Rails 3.1 Release Notes</option>
+                  <option value="3_0_release_notes.html">Ruby on Rails 3.0 Release Notes</option>
+                  <option value="2_3_release_notes.html">Ruby on Rails 2.3 Release Notes</option>
+                  <option value="2_2_release_notes.html">Ruby on Rails 2.2 Release Notes</option>
+              </optgroup>
+          </select>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <hr class="hide">
+
+  <div id="feature">
+    <div class="wrapper">
+      <h2>Active Record Migrations</h2><p>Migrations are a feature of Active Record that allows you to evolve your
+database schema over time. Rather than write schema modifications in pure SQL,
+migrations allow you to use an easy Ruby DSL to describe changes to your
+tables.</p><p>After reading this guide, you will know:</p>
+<ul>
+<li>The generators you can use to create them.</li>
+<li>The methods Active Record provides to manipulate your database.</li>
+<li>The Rake tasks that manipulate migrations and your schema.</li>
+<li>How migrations relate to <code>schema.rb</code>.</li>
+</ul>
+
+
+                <div id="subCol">
+            <h3 class="chapter"><img src="Active%20Record%20Migrations%20%E2%80%94%20Ruby%20on%20Rails%20Guides_files/chapters_icon.gif" alt="">Chapters</h3>
+            <ol class="chapters">
+<li><a href="#migration-overview">Migration Overview</a></li>
+<li>
+<a href="#creating-a-migration">Creating a Migration</a>
+
+<ul>
+<li><a href="#creating-a-standalone-migration">Creating a Standalone Migration</a></li>
+<li><a href="#model-generators">Model Generators</a></li>
+<li><a href="#passing-modifiers">Passing Modifiers</a></li>
+</ul>
+</li>
+<li>
+<a href="#writing-a-migration">Writing a Migration</a>
+
+<ul>
+<li><a href="#creating-a-table">Creating a Table</a></li>
+<li><a href="#creating-a-join-table">Creating a Join Table</a></li>
+<li><a href="#changing-tables">Changing Tables</a></li>
+<li><a href="#changing-columns">Changing Columns</a></li>
+<li><a href="#column-modifiers">Column Modifiers</a></li>
+<li><a href="#foreign-keys">Foreign Keys</a></li>
+<li><a href="#when-helpers-aren-t-enough">When Helpers aren't Enough</a></li>
+<li><a href="#using-the-change-method">Using the <code>change</code> Method</a></li>
+<li><a href="#using-reversible">Using <code>reversible</code></a></li>
+<li><a href="#using-the-up-down-methods">Using the <code>up</code>/<code>down</code> Methods</a></li>
+<li><a href="#reverting-previous-migrations">Reverting Previous Migrations</a></li>
+</ul>
+</li>
+<li>
+<a href="#running-migrations">Running Migrations</a>
+
+<ul>
+<li><a href="#rolling-back">Rolling Back</a></li>
+<li><a href="#setup-the-database">Setup the Database</a></li>
+<li><a href="#resetting-the-database">Resetting the Database</a></li>
+<li><a href="#running-specific-migrations">Running Specific Migrations</a></li>
+<li><a href="#running-migrations-in-different-environments">Running Migrations in Different Environments</a></li>
+<li><a href="#changing-the-output-of-running-migrations">Changing the Output of Running Migrations</a></li>
+</ul>
+</li>
+<li><a href="#changing-existing-migrations">Changing Existing Migrations</a></li>
+<li>
+<a href="#schema-dumping-and-you">Schema Dumping and You</a>
+
+<ul>
+<li><a href="#what-are-schema-files-for-questionmark">What are Schema Files for?</a></li>
+<li><a href="#types-of-schema-dumps">Types of Schema Dumps</a></li>
+<li><a href="#schema-dumps-and-source-control">Schema Dumps and Source Control</a></li>
+</ul>
+</li>
+<li><a href="#active-record-and-referential-integrity">Active Record and Referential Integrity</a></li>
+<li><a href="#migrations-and-seed-data">Migrations and Seed Data</a></li>
+</ol>
+
+          </div>
+
+    </div>
+  </div>
+
+  <div id="container">
+    <div class="wrapper">
+      <div id="mainCol">
+        <h3 id="migration-overview">1 Migration Overview</h3><p>Migrations are a convenient way to
+<a href="http://en.wikipedia.org/wiki/Schema_migration">alter your database schema over time</a>
+in a consistent and easy way. They use a Ruby DSL so that you don't have to
+write SQL by hand, allowing your schema and changes to be database independent.</p><p>You can think of each migration as being a new 'version' of the database. A
+schema starts off with nothing in it, and each migration modifies it to add or
+remove tables, columns, or entries. Active Record knows how to update your
+schema along this timeline, bringing it from whatever point it is in the
+history to the latest version. Active Record will also update your
+<code>db/schema.rb</code> file to match the up-to-date structure of your database.</p><p>Here's an example of a migration:</p><div class="code_container">
+<div><div id="highlighter_718869" class="syntaxhighlighter nogutter  ruby"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="ruby keyword">class</code> <code class="ruby plain">CreateProducts &lt; ActiveRecord::Migration</code></div><div class="line number2 index1 alt1"><code class="ruby spaces">&nbsp;&nbsp;</code><code class="ruby keyword">def</code> <code class="ruby plain">change</code></div><div class="line number3 index2 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">create_table </code><code class="ruby color2">:products</code> <code class="ruby keyword">do</code> <code class="ruby plain">|t|</code></div><div class="line number4 index3 alt1"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">t.string </code><code class="ruby color2">:name</code></div><div class="line number5 index4 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">t.text </code><code class="ruby color2">:description</code></div><div class="line number6 index5 alt1">&nbsp;</div><div class="line number7 index6 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">t.timestamps null: </code><code class="ruby keyword">false</code></div><div class="line number8 index7 alt1"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby keyword">end</code></div><div class="line number9 index8 alt2"><code class="ruby spaces">&nbsp;&nbsp;</code><code class="ruby keyword">end</code></div><div class="line number10 index9 alt1"><code class="ruby keyword">end</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>This migration adds a table called <code>products</code> with a string column called
+<code>name</code> and a text column called <code>description</code>. A primary key column called <code>id</code>
+will also be added implicitly, as it's the default primary key for all Active
+Record models. The <code>timestamps</code> macro adds two columns, <code>created_at</code> and
+<code>updated_at</code>. These special columns are automatically managed by Active Record
+if they exist.</p><p>Note that we define the change that we want to happen moving forward in time.
+Before this migration is run, there will be no table. After, the table will
+exist. Active Record knows how to reverse this migration as well: if we roll
+this migration back, it will remove the table.</p><p>On databases that support transactions with statements that change the schema,
+migrations are wrapped in a transaction. If the database does not support this
+then when a migration fails the parts of it that succeeded will not be rolled
+back. You will have to rollback the changes that were made by hand.</p><div class="note"><p>There are certain queries that can't run inside a transaction. If your
+adapter supports DDL transactions you can use <code>disable_ddl_transaction!</code> to
+disable them for a single migration.</p></div><p>If you wish for a migration to do something that Active Record doesn't know how
+to reverse, you can use <code>reversible</code>:</p><div class="code_container">
+<div><div id="highlighter_197611" class="syntaxhighlighter nogutter  ruby"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="ruby keyword">class</code> <code class="ruby plain">ChangeProductsPrice &lt; ActiveRecord::Migration</code></div><div class="line number2 index1 alt1"><code class="ruby spaces">&nbsp;&nbsp;</code><code class="ruby keyword">def</code> <code class="ruby plain">change</code></div><div class="line number3 index2 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">reversible </code><code class="ruby keyword">do</code> <code class="ruby plain">|dir|</code></div><div class="line number4 index3 alt1"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">change_table </code><code class="ruby color2">:products</code> <code class="ruby keyword">do</code> <code class="ruby plain">|t|</code></div><div class="line number5 index4 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">dir.up&nbsp;&nbsp; { t.change </code><code class="ruby color2">:price</code><code class="ruby plain">, </code><code class="ruby color2">:string</code> <code class="ruby plain">}</code></div><div class="line number6 index5 alt1"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">dir.down { t.change </code><code class="ruby color2">:price</code><code class="ruby plain">, </code><code class="ruby color2">:integer</code> <code class="ruby plain">}</code></div><div class="line number7 index6 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby keyword">end</code></div><div class="line number8 index7 alt1"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby keyword">end</code></div><div class="line number9 index8 alt2"><code class="ruby spaces">&nbsp;&nbsp;</code><code class="ruby keyword">end</code></div><div class="line number10 index9 alt1"><code class="ruby keyword">end</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>Alternatively, you can use <code>up</code> and <code>down</code> instead of <code>change</code>:</p><div class="code_container">
+<div><div id="highlighter_354678" class="syntaxhighlighter nogutter  ruby"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="ruby keyword">class</code> <code class="ruby plain">ChangeProductsPrice &lt; ActiveRecord::Migration</code></div><div class="line number2 index1 alt1"><code class="ruby spaces">&nbsp;&nbsp;</code><code class="ruby keyword">def</code> <code class="ruby plain">up</code></div><div class="line number3 index2 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">change_table </code><code class="ruby color2">:products</code> <code class="ruby keyword">do</code> <code class="ruby plain">|t|</code></div><div class="line number4 index3 alt1"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">t.change </code><code class="ruby color2">:price</code><code class="ruby plain">, </code><code class="ruby color2">:string</code></div><div class="line number5 index4 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby keyword">end</code></div><div class="line number6 index5 alt1"><code class="ruby spaces">&nbsp;&nbsp;</code><code class="ruby keyword">end</code></div><div class="line number7 index6 alt2">&nbsp;</div><div class="line number8 index7 alt1"><code class="ruby spaces">&nbsp;&nbsp;</code><code class="ruby keyword">def</code> <code class="ruby plain">down</code></div><div class="line number9 index8 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">change_table </code><code class="ruby color2">:products</code> <code class="ruby keyword">do</code> <code class="ruby plain">|t|</code></div><div class="line number10 index9 alt1"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">t.change </code><code class="ruby color2">:price</code><code class="ruby plain">, </code><code class="ruby color2">:integer</code></div><div class="line number11 index10 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby keyword">end</code></div><div class="line number12 index11 alt1"><code class="ruby spaces">&nbsp;&nbsp;</code><code class="ruby keyword">end</code></div><div class="line number13 index12 alt2"><code class="ruby keyword">end</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<h3 id="creating-a-migration">2 Creating a Migration</h3><h4 id="creating-a-standalone-migration">2.1 Creating a Standalone Migration</h4><p>Migrations are stored as files in the <code>db/migrate</code> directory, one for each
+migration class. The name of the file is of the form
+<code>YYYYMMDDHHMMSS_create_products.rb</code>, that is to say a UTC timestamp
+identifying the migration followed by an underscore followed by the name
+of the migration. The name of the migration class (CamelCased version)
+should match the latter part of the file name. For example
+<code>20080906120000_create_products.rb</code> should define class <code>CreateProducts</code> and
+<code>20080906120001_add_details_to_products.rb</code> should define
+<code>AddDetailsToProducts</code>. Rails uses this timestamp to determine which migration
+should be run and in what order, so if you're copying a migration from another
+application or generate a file yourself, be aware of its position in the order.</p><p>Of course, calculating timestamps is no fun, so Active Record provides a
+generator to handle making it for you:</p><div class="code_container">
+<div><div id="highlighter_630724" class="syntaxhighlighter nogutter  plain"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain plain">$ bin/rails generate migration AddPartNumberToProducts</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>This will create an empty but appropriately named migration:</p><div class="code_container">
+<div><div id="highlighter_794221" class="syntaxhighlighter nogutter  ruby"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="ruby keyword">class</code> <code class="ruby plain">AddPartNumberToProducts &lt; ActiveRecord::Migration</code></div><div class="line number2 index1 alt1"><code class="ruby spaces">&nbsp;&nbsp;</code><code class="ruby keyword">def</code> <code class="ruby plain">change</code></div><div class="line number3 index2 alt2"><code class="ruby spaces">&nbsp;&nbsp;</code><code class="ruby keyword">end</code></div><div class="line number4 index3 alt1"><code class="ruby keyword">end</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>If the migration name is of the form "AddXXXToYYY" or "RemoveXXXFromYYY" and is
+followed by a list of column names and types then a migration containing the
+appropriate <code>add_column</code> and <code>remove_column</code> statements will be created.</p><div class="code_container">
+<div><div id="highlighter_456030" class="syntaxhighlighter nogutter  plain"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain plain">$ bin/rails generate migration AddPartNumberToProducts part_number:string</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>will generate</p><div class="code_container">
+<div><div id="highlighter_920510" class="syntaxhighlighter nogutter  ruby"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="ruby keyword">class</code> <code class="ruby plain">AddPartNumberToProducts &lt; ActiveRecord::Migration</code></div><div class="line number2 index1 alt1"><code class="ruby spaces">&nbsp;&nbsp;</code><code class="ruby keyword">def</code> <code class="ruby plain">change</code></div><div class="line number3 index2 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">add_column </code><code class="ruby color2">:products</code><code class="ruby plain">, </code><code class="ruby color2">:part_number</code><code class="ruby plain">, </code><code class="ruby color2">:string</code></div><div class="line number4 index3 alt1"><code class="ruby spaces">&nbsp;&nbsp;</code><code class="ruby keyword">end</code></div><div class="line number5 index4 alt2"><code class="ruby keyword">end</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>If you'd like to add an index on the new column, you can do that as well:</p><div class="code_container">
+<div><div id="highlighter_390568" class="syntaxhighlighter nogutter  plain"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain plain">$ bin/rails generate migration AddPartNumberToProducts part_number:string:index</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>will generate</p><div class="code_container">
+<div><div id="highlighter_841587" class="syntaxhighlighter nogutter  ruby"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="ruby keyword">class</code> <code class="ruby plain">AddPartNumberToProducts &lt; ActiveRecord::Migration</code></div><div class="line number2 index1 alt1"><code class="ruby spaces">&nbsp;&nbsp;</code><code class="ruby keyword">def</code> <code class="ruby plain">change</code></div><div class="line number3 index2 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">add_column </code><code class="ruby color2">:products</code><code class="ruby plain">, </code><code class="ruby color2">:part_number</code><code class="ruby plain">, </code><code class="ruby color2">:string</code></div><div class="line number4 index3 alt1"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">add_index </code><code class="ruby color2">:products</code><code class="ruby plain">, </code><code class="ruby color2">:part_number</code></div><div class="line number5 index4 alt2"><code class="ruby spaces">&nbsp;&nbsp;</code><code class="ruby keyword">end</code></div><div class="line number6 index5 alt1"><code class="ruby keyword">end</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>Similarly, you can generate a migration to remove a column from the command line:</p><div class="code_container">
+<div><div id="highlighter_180332" class="syntaxhighlighter nogutter  plain"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain plain">$ bin/rails generate migration RemovePartNumberFromProducts part_number:string</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>generates</p><div class="code_container">
+<div><div id="highlighter_732074" class="syntaxhighlighter nogutter  ruby"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="ruby keyword">class</code> <code class="ruby plain">RemovePartNumberFromProducts &lt; ActiveRecord::Migration</code></div><div class="line number2 index1 alt1"><code class="ruby spaces">&nbsp;&nbsp;</code><code class="ruby keyword">def</code> <code class="ruby plain">change</code></div><div class="line number3 index2 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">remove_column </code><code class="ruby color2">:products</code><code class="ruby plain">, </code><code class="ruby color2">:part_number</code><code class="ruby plain">, </code><code class="ruby color2">:string</code></div><div class="line number4 index3 alt1"><code class="ruby spaces">&nbsp;&nbsp;</code><code class="ruby keyword">end</code></div><div class="line number5 index4 alt2"><code class="ruby keyword">end</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>You are not limited to one magically generated column. For example:</p><div class="code_container">
+<div><div id="highlighter_243126" class="syntaxhighlighter nogutter  plain"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain plain">$ bin/rails generate migration AddDetailsToProducts part_number:string price:decimal</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>generates</p><div class="code_container">
+<div><div id="highlighter_649882" class="syntaxhighlighter nogutter  ruby"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="ruby keyword">class</code> <code class="ruby plain">AddDetailsToProducts &lt; ActiveRecord::Migration</code></div><div class="line number2 index1 alt1"><code class="ruby spaces">&nbsp;&nbsp;</code><code class="ruby keyword">def</code> <code class="ruby plain">change</code></div><div class="line number3 index2 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">add_column </code><code class="ruby color2">:products</code><code class="ruby plain">, </code><code class="ruby color2">:part_number</code><code class="ruby plain">, </code><code class="ruby color2">:string</code></div><div class="line number4 index3 alt1"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">add_column </code><code class="ruby color2">:products</code><code class="ruby plain">, </code><code class="ruby color2">:price</code><code class="ruby plain">, </code><code class="ruby color2">:decimal</code></div><div class="line number5 index4 alt2"><code class="ruby spaces">&nbsp;&nbsp;</code><code class="ruby keyword">end</code></div><div class="line number6 index5 alt1"><code class="ruby keyword">end</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>If the migration name is of the form "CreateXXX" and is
+followed by a list of column names and types then a migration creating the table
+XXX with the columns listed will be generated. For example:</p><div class="code_container">
+<div><div id="highlighter_352754" class="syntaxhighlighter nogutter  plain"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain plain">$ bin/rails generate migration CreateProducts name:string part_number:string</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>generates</p><div class="code_container">
+<div><div id="highlighter_448808" class="syntaxhighlighter nogutter  ruby"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="ruby keyword">class</code> <code class="ruby plain">CreateProducts &lt; ActiveRecord::Migration</code></div><div class="line number2 index1 alt1"><code class="ruby spaces">&nbsp;&nbsp;</code><code class="ruby keyword">def</code> <code class="ruby plain">change</code></div><div class="line number3 index2 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">create_table </code><code class="ruby color2">:products</code> <code class="ruby keyword">do</code> <code class="ruby plain">|t|</code></div><div class="line number4 index3 alt1"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">t.string </code><code class="ruby color2">:name</code></div><div class="line number5 index4 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">t.string </code><code class="ruby color2">:part_number</code></div><div class="line number6 index5 alt1"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby keyword">end</code></div><div class="line number7 index6 alt2"><code class="ruby spaces">&nbsp;&nbsp;</code><code class="ruby keyword">end</code></div><div class="line number8 index7 alt1"><code class="ruby keyword">end</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>As always, what has been generated for you is just a starting point. You can add
+or remove from it as you see fit by editing the
+<code>db/migrate/YYYYMMDDHHMMSS_add_details_to_products.rb</code> file.</p><p>Also, the generator accepts column type as <code>references</code>(also available as
+<code>belongs_to</code>). For instance:</p><div class="code_container">
+<div><div id="highlighter_540511" class="syntaxhighlighter nogutter  plain"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain plain">$ bin/rails generate migration AddUserRefToProducts user:references</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>generates</p><div class="code_container">
+<div><div id="highlighter_296163" class="syntaxhighlighter nogutter  ruby"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="ruby keyword">class</code> <code class="ruby plain">AddUserRefToProducts &lt; ActiveRecord::Migration</code></div><div class="line number2 index1 alt1"><code class="ruby spaces">&nbsp;&nbsp;</code><code class="ruby keyword">def</code> <code class="ruby plain">change</code></div><div class="line number3 index2 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">add_reference </code><code class="ruby color2">:products</code><code class="ruby plain">, </code><code class="ruby color2">:user</code><code class="ruby plain">, index: </code><code class="ruby keyword">true</code></div><div class="line number4 index3 alt1"><code class="ruby spaces">&nbsp;&nbsp;</code><code class="ruby keyword">end</code></div><div class="line number5 index4 alt2"><code class="ruby keyword">end</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>This migration will create a <code>user_id</code> column and appropriate index.</p><p>There is also a generator which will produce join tables if <code>JoinTable</code> is part of the name:</p><div class="code_container">
+<div><div id="highlighter_682057" class="syntaxhighlighter nogutter  plain"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain plain">$ bin/rails g migration CreateJoinTableCustomerProduct customer product</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>will produce the following migration:</p><div class="code_container">
+<div><div id="highlighter_677327" class="syntaxhighlighter nogutter  ruby"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="ruby keyword">class</code> <code class="ruby plain">CreateJoinTableCustomerProduct &lt; ActiveRecord::Migration</code></div><div class="line number2 index1 alt1"><code class="ruby spaces">&nbsp;&nbsp;</code><code class="ruby keyword">def</code> <code class="ruby plain">change</code></div><div class="line number3 index2 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">create_join_table </code><code class="ruby color2">:customers</code><code class="ruby plain">, </code><code class="ruby color2">:products</code> <code class="ruby keyword">do</code> <code class="ruby plain">|t|</code></div><div class="line number4 index3 alt1"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby comments"># t.index [:customer_id, :product_id]</code></div><div class="line number5 index4 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby comments"># t.index [:product_id, :customer_id]</code></div><div class="line number6 index5 alt1"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby keyword">end</code></div><div class="line number7 index6 alt2"><code class="ruby spaces">&nbsp;&nbsp;</code><code class="ruby keyword">end</code></div><div class="line number8 index7 alt1"><code class="ruby keyword">end</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<h4 id="model-generators">2.2 Model Generators</h4><p>The model and scaffold generators will create migrations appropriate for adding
+a new model. This migration will already contain instructions for creating the
+relevant table. If you tell Rails what columns you want, then statements for
+adding these columns will also be created. For example, running:</p><div class="code_container">
+<div><div id="highlighter_401192" class="syntaxhighlighter nogutter  plain"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain plain">$ bin/rails generate model Product name:string description:text</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>will create a migration that looks like this</p><div class="code_container">
+<div><div id="highlighter_419844" class="syntaxhighlighter nogutter  ruby"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="ruby keyword">class</code> <code class="ruby plain">CreateProducts &lt; ActiveRecord::Migration</code></div><div class="line number2 index1 alt1"><code class="ruby spaces">&nbsp;&nbsp;</code><code class="ruby keyword">def</code> <code class="ruby plain">change</code></div><div class="line number3 index2 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">create_table </code><code class="ruby color2">:products</code> <code class="ruby keyword">do</code> <code class="ruby plain">|t|</code></div><div class="line number4 index3 alt1"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">t.string </code><code class="ruby color2">:name</code></div><div class="line number5 index4 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">t.text </code><code class="ruby color2">:description</code></div><div class="line number6 index5 alt1">&nbsp;</div><div class="line number7 index6 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">t.timestamps null: </code><code class="ruby keyword">false</code></div><div class="line number8 index7 alt1"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby keyword">end</code></div><div class="line number9 index8 alt2"><code class="ruby spaces">&nbsp;&nbsp;</code><code class="ruby keyword">end</code></div><div class="line number10 index9 alt1"><code class="ruby keyword">end</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>You can append as many column name/type pairs as you want.</p><h4 id="passing-modifiers">2.3 Passing Modifiers</h4><p>Some commonly used <a href="#column-modifiers">type modifiers</a> can be passed directly on
+the command line. They are enclosed by curly braces and follow the field type:</p><p>For instance, running:</p><div class="code_container">
+<div><div id="highlighter_321186" class="syntaxhighlighter nogutter  plain"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain plain">$ bin/rails generate migration AddDetailsToProducts 'price:decimal{5,2}' supplier:references{polymorphic}</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>will produce a migration that looks like this</p><div class="code_container">
+<div><div id="highlighter_945764" class="syntaxhighlighter nogutter  ruby"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="ruby keyword">class</code> <code class="ruby plain">AddDetailsToProducts &lt; ActiveRecord::Migration</code></div><div class="line number2 index1 alt1"><code class="ruby spaces">&nbsp;&nbsp;</code><code class="ruby keyword">def</code> <code class="ruby plain">change</code></div><div class="line number3 index2 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">add_column </code><code class="ruby color2">:products</code><code class="ruby plain">, </code><code class="ruby color2">:price</code><code class="ruby plain">, </code><code class="ruby color2">:decimal</code><code class="ruby plain">, precision: </code><code class="ruby constants">5</code><code class="ruby plain">, scale: </code><code class="ruby constants">2</code></div><div class="line number4 index3 alt1"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">add_reference </code><code class="ruby color2">:products</code><code class="ruby plain">, </code><code class="ruby color2">:supplier</code><code class="ruby plain">, polymorphic: </code><code class="ruby keyword">true</code><code class="ruby plain">, index: </code><code class="ruby keyword">true</code></div><div class="line number5 index4 alt2"><code class="ruby spaces">&nbsp;&nbsp;</code><code class="ruby keyword">end</code></div><div class="line number6 index5 alt1"><code class="ruby keyword">end</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<div class="info"><p>Have a look at the generators help output for further details.</p></div><h3 id="writing-a-migration">3 Writing a Migration</h3><p>Once you have created your migration using one of the generators it's time to
+get to work!</p><h4 id="creating-a-table">3.1 Creating a Table</h4><p>The <code>create_table</code> method is one of the most fundamental, but most of the time,
+will be generated for you from using a model or scaffold generator. A typical
+use would be</p><div class="code_container">
+<div><div id="highlighter_271519" class="syntaxhighlighter nogutter  ruby"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="ruby plain">create_table </code><code class="ruby color2">:products</code> <code class="ruby keyword">do</code> <code class="ruby plain">|t|</code></div><div class="line number2 index1 alt1"><code class="ruby spaces">&nbsp;&nbsp;</code><code class="ruby plain">t.string </code><code class="ruby color2">:name</code></div><div class="line number3 index2 alt2"><code class="ruby keyword">end</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>which creates a <code>products</code> table with a column called <code>name</code> (and as discussed
+below, an implicit <code>id</code> column).</p><p>By default, <code>create_table</code> will create a primary key called <code>id</code>. You can change
+the name of the primary key with the <code>:primary_key</code> option (don't forget to
+update the corresponding model) or, if you don't want a primary key at all, you
+can pass the option <code>id: false</code>. If you need to pass database specific options
+you can place an SQL fragment in the <code>:options</code> option. For example:</p><div class="code_container">
+<div><div id="highlighter_112293" class="syntaxhighlighter nogutter  ruby"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="ruby plain">create_table </code><code class="ruby color2">:products</code><code class="ruby plain">, options: </code><code class="ruby string">"ENGINE=BLACKHOLE"</code> <code class="ruby keyword">do</code> <code class="ruby plain">|t|</code></div><div class="line number2 index1 alt1"><code class="ruby spaces">&nbsp;&nbsp;</code><code class="ruby plain">t.string </code><code class="ruby color2">:name</code><code class="ruby plain">, null: </code><code class="ruby keyword">false</code></div><div class="line number3 index2 alt2"><code class="ruby keyword">end</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>will append <code>ENGINE=BLACKHOLE</code> to the SQL statement used to create the table
+(when using MySQL, the default is <code>ENGINE=InnoDB</code>).</p><h4 id="creating-a-join-table">3.2 Creating a Join Table</h4><p>Migration method <code>create_join_table</code> creates a HABTM join table. A typical use
+would be:</p><div class="code_container">
+<div><div id="highlighter_583541" class="syntaxhighlighter nogutter  ruby"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="ruby plain">create_join_table </code><code class="ruby color2">:products</code><code class="ruby plain">, </code><code class="ruby color2">:categories</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>which creates a <code>categories_products</code> table with two columns called
+<code>category_id</code> and <code>product_id</code>. These columns have the option <code>:null</code> set to
+<code>false</code> by default. This can be overridden by specifying the <code>:column_options</code>
+option.</p><div class="code_container">
+<div><div id="highlighter_30998" class="syntaxhighlighter nogutter  ruby"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="ruby plain">create_join_table </code><code class="ruby color2">:products</code><code class="ruby plain">, </code><code class="ruby color2">:categories</code><code class="ruby plain">, column_options: {null: </code><code class="ruby keyword">true</code><code class="ruby plain">}</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>will create the <code>product_id</code> and <code>category_id</code> with the <code>:null</code> option as
+<code>true</code>.</p><p>You can pass the option <code>:table_name</code> when you want to customize the table
+name. For example:</p><div class="code_container">
+<div><div id="highlighter_931508" class="syntaxhighlighter nogutter  ruby"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="ruby plain">create_join_table </code><code class="ruby color2">:products</code><code class="ruby plain">, </code><code class="ruby color2">:categories</code><code class="ruby plain">, table_name: </code><code class="ruby color2">:categorization</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>will create a <code>categorization</code> table.</p><p><code>create_join_table</code> also accepts a block, which you can use to add indices
+(which are not created by default) or additional columns:</p><div class="code_container">
+<div><div id="highlighter_771089" class="syntaxhighlighter nogutter  ruby"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="ruby plain">create_join_table </code><code class="ruby color2">:products</code><code class="ruby plain">, </code><code class="ruby color2">:categories</code> <code class="ruby keyword">do</code> <code class="ruby plain">|t|</code></div><div class="line number2 index1 alt1"><code class="ruby spaces">&nbsp;&nbsp;</code><code class="ruby plain">t.index </code><code class="ruby color2">:product_id</code></div><div class="line number3 index2 alt2"><code class="ruby spaces">&nbsp;&nbsp;</code><code class="ruby plain">t.index </code><code class="ruby color2">:category_id</code></div><div class="line number4 index3 alt1"><code class="ruby keyword">end</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<h4 id="changing-tables">3.3 Changing Tables</h4><p>A close cousin of <code>create_table</code> is <code>change_table</code>, used for changing existing
+tables. It is used in a similar fashion to <code>create_table</code> but the object
+yielded to the block knows more tricks. For example:</p><div class="code_container">
+<div><div id="highlighter_472260" class="syntaxhighlighter nogutter  ruby"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="ruby plain">change_table </code><code class="ruby color2">:products</code> <code class="ruby keyword">do</code> <code class="ruby plain">|t|</code></div><div class="line number2 index1 alt1"><code class="ruby spaces">&nbsp;&nbsp;</code><code class="ruby plain">t.remove </code><code class="ruby color2">:description</code><code class="ruby plain">, </code><code class="ruby color2">:name</code></div><div class="line number3 index2 alt2"><code class="ruby spaces">&nbsp;&nbsp;</code><code class="ruby plain">t.string </code><code class="ruby color2">:part_number</code></div><div class="line number4 index3 alt1"><code class="ruby spaces">&nbsp;&nbsp;</code><code class="ruby plain">t.index </code><code class="ruby color2">:part_number</code></div><div class="line number5 index4 alt2"><code class="ruby spaces">&nbsp;&nbsp;</code><code class="ruby plain">t.rename </code><code class="ruby color2">:upccode</code><code class="ruby plain">, </code><code class="ruby color2">:upc_code</code></div><div class="line number6 index5 alt1"><code class="ruby keyword">end</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>removes the <code>description</code> and <code>name</code> columns, creates a <code>part_number</code> string
+column and adds an index on it. Finally it renames the <code>upccode</code> column.</p><h4 id="changing-columns">3.4 Changing Columns</h4><p>Like the <code>remove_column</code> and <code>add_column</code> Rails provides the <code>change_column</code>
+migration method.</p><div class="code_container">
+<div><div id="highlighter_912367" class="syntaxhighlighter nogutter  ruby"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="ruby plain">change_column </code><code class="ruby color2">:products</code><code class="ruby plain">, </code><code class="ruby color2">:part_number</code><code class="ruby plain">, </code><code class="ruby color2">:text</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>This changes the column <code>part_number</code> on products table to be a <code>:text</code> field.</p><p>Besides <code>change_column</code>, the <code>change_column_null</code> and <code>change_column_default</code>
+methods are used specifically to change the null and default values of a
+column.</p><div class="code_container">
+<div><div id="highlighter_62469" class="syntaxhighlighter nogutter  ruby"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="ruby plain">change_column_null </code><code class="ruby color2">:products</code><code class="ruby plain">, </code><code class="ruby color2">:name</code><code class="ruby plain">, </code><code class="ruby keyword">false</code></div><div class="line number2 index1 alt1"><code class="ruby plain">change_column_default </code><code class="ruby color2">:products</code><code class="ruby plain">, </code><code class="ruby color2">:approved</code><code class="ruby plain">, </code><code class="ruby keyword">false</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>This sets <code>:name</code> field on products to a <code>NOT NULL</code> column and the default
+value of the <code>:approved</code> field to false.</p><div class="info"><p>Unlike <code>change_column</code> (and <code>change_column_default</code>), <code>change_column_null</code>
+is reversible.</p></div><h4 id="column-modifiers">3.5 Column Modifiers</h4><p>Column modifiers can be applied when creating or changing a column:</p>
+<ul>
+<li>
+<code>limit</code>        Sets the maximum size of the <code>string/text/binary/integer</code> fields.</li>
+<li>
+<code>precision</code>    Defines the precision for the <code>decimal</code> fields, representing the
+total number of digits in the number.</li>
+<li>
+<code>scale</code>        Defines the scale for the <code>decimal</code> fields, representing the
+number of digits after the decimal point.</li>
+<li>
+<code>polymorphic</code>  Adds a <code>type</code> column for <code>belongs_to</code> associations.</li>
+<li>
+<code>null</code>         Allows or disallows <code>NULL</code> values in the column.</li>
+<li>
+<code>default</code>      Allows to set a default value on the column. Note that if you
+are using a dynamic value (such as a date), the default will only be calculated
+the first time (i.e. on the date the migration is applied).</li>
+<li>
+<code>index</code>        Adds an index for the column.</li>
+<li>
+<code>required</code>     Adds <code>required: true</code> for <code>belongs_to</code> associations and
+<code>null: false</code> to the column in the migration.</li>
+</ul>
+<p>Some adapters may support additional options; see the adapter specific API docs
+for further information.</p><h4 id="foreign-keys">3.6 Foreign Keys</h4><p>While it's not required you might want to add foreign key constraints to
+<a href="#active-record-and-referential-integrity">guarantee referential integrity</a>.</p><div class="code_container">
+<div><div id="highlighter_280905" class="syntaxhighlighter nogutter  ruby"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="ruby plain">add_foreign_key </code><code class="ruby color2">:articles</code><code class="ruby plain">, </code><code class="ruby color2">:authors</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>This adds a new foreign key to the <code>author_id</code> column of the <code>articles</code>
+table. The key references the <code>id</code> column of the <code>authors</code> table. If the
+column names can not be derived from the table names, you can use the
+<code>:column</code> and <code>:primary_key</code> options.</p><p>Rails will generate a name for every foreign key starting with
+<code>fk_rails_</code> followed by 10 random characters.
+There is a <code>:name</code> option to specify a different name if needed.</p><div class="note"><p>Active Record only supports single column foreign keys. <code>execute</code> and
+<code>structure.sql</code> are required to use composite foreign keys.</p></div><p>Removing a foreign key is easy as well:</p><div class="code_container">
+<div><div id="highlighter_669850" class="syntaxhighlighter nogutter  ruby"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="ruby comments"># let Active Record figure out the column name</code></div><div class="line number2 index1 alt1"><code class="ruby plain">remove_foreign_key </code><code class="ruby color2">:accounts</code><code class="ruby plain">, </code><code class="ruby color2">:branches</code></div><div class="line number3 index2 alt2">&nbsp;</div><div class="line number4 index3 alt1"><code class="ruby comments"># remove foreign key for a specific column</code></div><div class="line number5 index4 alt2"><code class="ruby plain">remove_foreign_key </code><code class="ruby color2">:accounts</code><code class="ruby plain">, column: </code><code class="ruby color2">:owner_id</code></div><div class="line number6 index5 alt1">&nbsp;</div><div class="line number7 index6 alt2"><code class="ruby comments"># remove foreign key by name</code></div><div class="line number8 index7 alt1"><code class="ruby plain">remove_foreign_key </code><code class="ruby color2">:accounts</code><code class="ruby plain">, name: </code><code class="ruby color2">:special_fk_name</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<h4 id="when-helpers-aren-t-enough">3.7 When Helpers aren't Enough</h4><p>If the helpers provided by Active Record aren't enough you can use the <code>execute</code>
+method to execute arbitrary SQL:</p><div class="code_container">
+<div><div id="highlighter_591256" class="syntaxhighlighter nogutter  ruby"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="ruby plain">Product.connection.execute(</code><code class="ruby string">'UPDATE `products` SET `price`=`free` WHERE 1'</code><code class="ruby plain">)</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>For more details and examples of individual methods, check the API documentation.
+In particular the documentation for
+<a href="http://api.rubyonrails.org/classes/ActiveRecord/ConnectionAdapters/SchemaStatements.html"><code>ActiveRecord::ConnectionAdapters::SchemaStatements</code></a>
+(which provides the methods available in the <code>change</code>, <code>up</code> and <code>down</code> methods),
+<a href="http://api.rubyonrails.org/classes/ActiveRecord/ConnectionAdapters/TableDefinition.html"><code>ActiveRecord::ConnectionAdapters::TableDefinition</code></a>
+(which provides the methods available on the object yielded by <code>create_table</code>)
+and
+<a href="http://api.rubyonrails.org/classes/ActiveRecord/ConnectionAdapters/Table.html"><code>ActiveRecord::ConnectionAdapters::Table</code></a>
+(which provides the methods available on the object yielded by <code>change_table</code>).</p><h4 id="using-the-change-method">3.8 Using the <code>change</code> Method</h4><p>The <code>change</code> method is the primary way of writing migrations. It works for the
+majority of cases, where Active Record knows how to reverse the migration
+automatically. Currently, the <code>change</code> method supports only these migration
+definitions:</p>
+<ul>
+<li><code>add_column</code></li>
+<li><code>add_index</code></li>
+<li><code>add_reference</code></li>
+<li><code>add_timestamps</code></li>
+<li><code>add_foreign_key</code></li>
+<li><code>create_table</code></li>
+<li><code>create_join_table</code></li>
+<li>
+<code>drop_table</code> (must supply a block)</li>
+<li>
+<code>drop_join_table</code> (must supply a block)</li>
+<li><code>remove_timestamps</code></li>
+<li><code>rename_column</code></li>
+<li><code>rename_index</code></li>
+<li><code>remove_reference</code></li>
+<li><code>rename_table</code></li>
+</ul>
+<p><code>change_table</code> is also reversible, as long as the block does not call <code>change</code>,
+<code>change_default</code> or <code>remove</code>.</p><p>If you're going to need to use any other methods, you should use <code>reversible</code>
+or write the <code>up</code> and <code>down</code> methods instead of using the <code>change</code> method.</p><h4 id="using-reversible">3.9 Using <code>reversible</code>
+</h4><p>Complex migrations may require processing that Active Record doesn't know how
+to reverse. You can use <code>reversible</code> to specify what to do when running a
+migration what else to do when reverting it. For example:</p><div class="code_container">
+<div><div id="highlighter_405209" class="syntaxhighlighter nogutter  ruby"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="ruby keyword">class</code> <code class="ruby plain">ExampleMigration &lt; ActiveRecord::Migration</code></div><div class="line number2 index1 alt1"><code class="ruby spaces">&nbsp;&nbsp;</code><code class="ruby keyword">def</code> <code class="ruby plain">change</code></div><div class="line number3 index2 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">create_table </code><code class="ruby color2">:distributors</code> <code class="ruby keyword">do</code> <code class="ruby plain">|t|</code></div><div class="line number4 index3 alt1"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">t.string </code><code class="ruby color2">:zipcode</code></div><div class="line number5 index4 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby keyword">end</code></div><div class="line number6 index5 alt1">&nbsp;</div><div class="line number7 index6 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">reversible </code><code class="ruby keyword">do</code> <code class="ruby plain">|dir|</code></div><div class="line number8 index7 alt1"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">dir.up </code><code class="ruby keyword">do</code></div><div class="line number9 index8 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby comments"># add a CHECK constraint</code></div><div class="line number10 index9 alt1"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">execute &lt;&lt;-</code><code class="ruby constants">SQL</code></div><div class="line number11 index10 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby constants">ALTER</code> <code class="ruby constants">TABLE</code> <code class="ruby plain">distributors</code></div><div class="line number12 index11 alt1"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby constants">ADD</code> <code class="ruby constants">CONSTRAINT</code> <code class="ruby plain">zipchk</code></div><div class="line number13 index12 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby constants">CHECK</code> <code class="ruby plain">(char_length(zipcode) = </code><code class="ruby constants">5</code><code class="ruby plain">) </code><code class="ruby constants">NO</code> <code class="ruby constants">INHERIT</code><code class="ruby plain">;</code></div><div class="line number14 index13 alt1"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby constants">SQL</code></div><div class="line number15 index14 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby keyword">end</code></div><div class="line number16 index15 alt1"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">dir.down </code><code class="ruby keyword">do</code></div><div class="line number17 index16 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">execute &lt;&lt;-</code><code class="ruby constants">SQL</code></div><div class="line number18 index17 alt1"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby constants">ALTER</code> <code class="ruby constants">TABLE</code> <code class="ruby plain">distributors</code></div><div class="line number19 index18 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby constants">DROP</code> <code class="ruby constants">CONSTRAINT</code> <code class="ruby plain">zipchk</code></div><div class="line number20 index19 alt1"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby constants">SQL</code></div><div class="line number21 index20 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby keyword">end</code></div><div class="line number22 index21 alt1"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby keyword">end</code></div><div class="line number23 index22 alt2">&nbsp;</div><div class="line number24 index23 alt1"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">add_column </code><code class="ruby color2">:users</code><code class="ruby plain">, </code><code class="ruby color2">:home_page_url</code><code class="ruby plain">, </code><code class="ruby color2">:string</code></div><div class="line number25 index24 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">rename_column </code><code class="ruby color2">:users</code><code class="ruby plain">, </code><code class="ruby color2">:email</code><code class="ruby plain">, </code><code class="ruby color2">:email_address</code></div><div class="line number26 index25 alt1"><code class="ruby spaces">&nbsp;&nbsp;</code><code class="ruby keyword">end</code></div><div class="line number27 index26 alt2"><code class="ruby keyword">end</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>Using <code>reversible</code> will ensure that the instructions are executed in the
+right order too. If the previous example migration is reverted,
+the <code>down</code> block will be run after the <code>home_page_url</code> column is removed and
+right before the table <code>distributors</code> is dropped.</p><p>Sometimes your migration will do something which is just plain irreversible; for
+example, it might destroy some data. In such cases, you can raise
+<code>ActiveRecord::IrreversibleMigration</code> in your <code>down</code> block. If someone tries
+to revert your migration, an error message will be displayed saying that it
+can't be done.</p><h4 id="using-the-up-down-methods">3.10 Using the <code>up</code>/<code>down</code> Methods</h4><p>You can also use the old style of migration using <code>up</code> and <code>down</code> methods
+instead of the <code>change</code> method.
+The <code>up</code> method should describe the transformation you'd like to make to your
+schema, and the <code>down</code> method of your migration should revert the
+transformations done by the <code>up</code> method. In other words, the database schema
+should be unchanged if you do an <code>up</code> followed by a <code>down</code>. For example, if you
+create a table in the <code>up</code> method, you should drop it in the <code>down</code> method. It
+is wise to reverse the transformations in precisely the reverse order they were
+made in the <code>up</code> method. The example in the <code>reversible</code> section is equivalent to:</p><div class="code_container">
+<div><div id="highlighter_51929" class="syntaxhighlighter nogutter  ruby"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="ruby keyword">class</code> <code class="ruby plain">ExampleMigration &lt; ActiveRecord::Migration</code></div><div class="line number2 index1 alt1"><code class="ruby spaces">&nbsp;&nbsp;</code><code class="ruby keyword">def</code> <code class="ruby plain">up</code></div><div class="line number3 index2 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">create_table </code><code class="ruby color2">:distributors</code> <code class="ruby keyword">do</code> <code class="ruby plain">|t|</code></div><div class="line number4 index3 alt1"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">t.string </code><code class="ruby color2">:zipcode</code></div><div class="line number5 index4 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby keyword">end</code></div><div class="line number6 index5 alt1">&nbsp;</div><div class="line number7 index6 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby comments"># add a CHECK constraint</code></div><div class="line number8 index7 alt1"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">execute &lt;&lt;-</code><code class="ruby constants">SQL</code></div><div class="line number9 index8 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby constants">ALTER</code> <code class="ruby constants">TABLE</code> <code class="ruby plain">distributors</code></div><div class="line number10 index9 alt1"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby constants">ADD</code> <code class="ruby constants">CONSTRAINT</code> <code class="ruby plain">zipchk</code></div><div class="line number11 index10 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby constants">CHECK</code> <code class="ruby plain">(char_length(zipcode) = </code><code class="ruby constants">5</code><code class="ruby plain">);</code></div><div class="line number12 index11 alt1"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby constants">SQL</code></div><div class="line number13 index12 alt2">&nbsp;</div><div class="line number14 index13 alt1"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">add_column </code><code class="ruby color2">:users</code><code class="ruby plain">, </code><code class="ruby color2">:home_page_url</code><code class="ruby plain">, </code><code class="ruby color2">:string</code></div><div class="line number15 index14 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">rename_column </code><code class="ruby color2">:users</code><code class="ruby plain">, </code><code class="ruby color2">:email</code><code class="ruby plain">, </code><code class="ruby color2">:email_address</code></div><div class="line number16 index15 alt1"><code class="ruby spaces">&nbsp;&nbsp;</code><code class="ruby keyword">end</code></div><div class="line number17 index16 alt2">&nbsp;</div><div class="line number18 index17 alt1"><code class="ruby spaces">&nbsp;&nbsp;</code><code class="ruby keyword">def</code> <code class="ruby plain">down</code></div><div class="line number19 index18 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">rename_column </code><code class="ruby color2">:users</code><code class="ruby plain">, </code><code class="ruby color2">:email_address</code><code class="ruby plain">, </code><code class="ruby color2">:email</code></div><div class="line number20 index19 alt1"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">remove_column </code><code class="ruby color2">:users</code><code class="ruby plain">, </code><code class="ruby color2">:home_page_url</code></div><div class="line number21 index20 alt2">&nbsp;</div><div class="line number22 index21 alt1"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">execute &lt;&lt;-</code><code class="ruby constants">SQL</code></div><div class="line number23 index22 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby constants">ALTER</code> <code class="ruby constants">TABLE</code> <code class="ruby plain">distributors</code></div><div class="line number24 index23 alt1"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby constants">DROP</code> <code class="ruby constants">CONSTRAINT</code> <code class="ruby plain">zipchk</code></div><div class="line number25 index24 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby constants">SQL</code></div><div class="line number26 index25 alt1">&nbsp;</div><div class="line number27 index26 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">drop_table </code><code class="ruby color2">:distributors</code></div><div class="line number28 index27 alt1"><code class="ruby spaces">&nbsp;&nbsp;</code><code class="ruby keyword">end</code></div><div class="line number29 index28 alt2"><code class="ruby keyword">end</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>If your migration is irreversible, you should raise
+<code>ActiveRecord::IrreversibleMigration</code> from your <code>down</code> method. If someone tries
+to revert your migration, an error message will be displayed saying that it
+can't be done.</p><h4 id="reverting-previous-migrations">3.11 Reverting Previous Migrations</h4><p>You can use Active Record's ability to rollback migrations using the <code>revert</code> method:</p><div class="code_container">
+<div><div id="highlighter_874816" class="syntaxhighlighter nogutter  ruby"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="ruby plain">require_relative </code><code class="ruby string">'2012121212_example_migration'</code></div><div class="line number2 index1 alt1">&nbsp;</div><div class="line number3 index2 alt2"><code class="ruby keyword">class</code> <code class="ruby plain">FixupExampleMigration &lt; ActiveRecord::Migration</code></div><div class="line number4 index3 alt1"><code class="ruby spaces">&nbsp;&nbsp;</code><code class="ruby keyword">def</code> <code class="ruby plain">change</code></div><div class="line number5 index4 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">revert ExampleMigration</code></div><div class="line number6 index5 alt1">&nbsp;</div><div class="line number7 index6 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">create_table(</code><code class="ruby color2">:apples</code><code class="ruby plain">) </code><code class="ruby keyword">do</code> <code class="ruby plain">|t|</code></div><div class="line number8 index7 alt1"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">t.string </code><code class="ruby color2">:variety</code></div><div class="line number9 index8 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby keyword">end</code></div><div class="line number10 index9 alt1"><code class="ruby spaces">&nbsp;&nbsp;</code><code class="ruby keyword">end</code></div><div class="line number11 index10 alt2"><code class="ruby keyword">end</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>The <code>revert</code> method also accepts a block of instructions to reverse.
+This could be useful to revert selected parts of previous migrations.
+For example, let's imagine that <code>ExampleMigration</code> is committed and it
+is later decided it would be best to use Active Record validations,
+in place of the <code>CHECK</code> constraint, to verify the zipcode.</p><div class="code_container">
+<div><div id="highlighter_638066" class="syntaxhighlighter nogutter  ruby"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="ruby keyword">class</code> <code class="ruby plain">DontUseConstraintForZipcodeValidationMigration &lt; ActiveRecord::Migration</code></div><div class="line number2 index1 alt1"><code class="ruby spaces">&nbsp;&nbsp;</code><code class="ruby keyword">def</code> <code class="ruby plain">change</code></div><div class="line number3 index2 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">revert </code><code class="ruby keyword">do</code></div><div class="line number4 index3 alt1"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby comments"># copy-pasted code from ExampleMigration</code></div><div class="line number5 index4 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">reversible </code><code class="ruby keyword">do</code> <code class="ruby plain">|dir|</code></div><div class="line number6 index5 alt1"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">dir.up </code><code class="ruby keyword">do</code></div><div class="line number7 index6 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby comments"># add a CHECK constraint</code></div><div class="line number8 index7 alt1"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">execute &lt;&lt;-</code><code class="ruby constants">SQL</code></div><div class="line number9 index8 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby constants">ALTER</code> <code class="ruby constants">TABLE</code> <code class="ruby plain">distributors</code></div><div class="line number10 index9 alt1"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby constants">ADD</code> <code class="ruby constants">CONSTRAINT</code> <code class="ruby plain">zipchk</code></div><div class="line number11 index10 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby constants">CHECK</code> <code class="ruby plain">(char_length(zipcode) = </code><code class="ruby constants">5</code><code class="ruby plain">);</code></div><div class="line number12 index11 alt1"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby constants">SQL</code></div><div class="line number13 index12 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby keyword">end</code></div><div class="line number14 index13 alt1"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">dir.down </code><code class="ruby keyword">do</code></div><div class="line number15 index14 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">execute &lt;&lt;-</code><code class="ruby constants">SQL</code></div><div class="line number16 index15 alt1"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby constants">ALTER</code> <code class="ruby constants">TABLE</code> <code class="ruby plain">distributors</code></div><div class="line number17 index16 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby constants">DROP</code> <code class="ruby constants">CONSTRAINT</code> <code class="ruby plain">zipchk</code></div><div class="line number18 index17 alt1"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby constants">SQL</code></div><div class="line number19 index18 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby keyword">end</code></div><div class="line number20 index19 alt1"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby keyword">end</code></div><div class="line number21 index20 alt2">&nbsp;</div><div class="line number22 index21 alt1"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby comments"># The rest of the migration was ok</code></div><div class="line number23 index22 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby keyword">end</code></div><div class="line number24 index23 alt1"><code class="ruby spaces">&nbsp;&nbsp;</code><code class="ruby keyword">end</code></div><div class="line number25 index24 alt2"><code class="ruby keyword">end</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>The same migration could also have been written without using <code>revert</code>
+but this would have involved a few more steps: reversing the order
+of <code>create_table</code> and <code>reversible</code>, replacing <code>create_table</code>
+by <code>drop_table</code>, and finally replacing <code>up</code> by <code>down</code> and vice-versa.
+This is all taken care of by <code>revert</code>.</p><h3 id="running-migrations">4 Running Migrations</h3><p>Rails provides a set of Rake tasks to run certain sets of migrations.</p><p>The very first migration related Rake task you will use will probably be
+<code>rake db:migrate</code>. In its most basic form it just runs the <code>change</code> or <code>up</code>
+method for all the migrations that have not yet been run. If there are
+no such migrations, it exits. It will run these migrations in order based
+on the date of the migration.</p><p>Note that running the <code>db:migrate</code> task also invokes the <code>db:schema:dump</code> task, which
+will update your <code>db/schema.rb</code> file to match the structure of your database.</p><p>If you specify a target version, Active Record will run the required migrations
+(change, up, down) until it has reached the specified version. The version
+is the numerical prefix on the migration's filename. For example, to migrate
+to version 20080906120000 run:</p><div class="code_container">
+<div><div id="highlighter_354900" class="syntaxhighlighter nogutter  plain"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain plain">$ bin/rake db:migrate VERSION=20080906120000</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>If version 20080906120000 is greater than the current version (i.e., it is
+migrating upwards), this will run the <code>change</code> (or <code>up</code>) method
+on all migrations up to and
+including 20080906120000, and will not execute any later migrations. If
+migrating downwards, this will run the <code>down</code> method on all the migrations
+down to, but not including, 20080906120000.</p><h4 id="rolling-back">4.1 Rolling Back</h4><p>A common task is to rollback the last migration. For example, if you made a
+mistake in it and wish to correct it. Rather than tracking down the version
+number associated with the previous migration you can run:</p><div class="code_container">
+<div><div id="highlighter_771941" class="syntaxhighlighter nogutter  plain"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain plain">$ bin/rake db:rollback</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>This will rollback the latest migration, either by reverting the <code>change</code>
+method or by running the <code>down</code> method. If you need to undo
+several migrations you can provide a <code>STEP</code> parameter:</p><div class="code_container">
+<div><div id="highlighter_17412" class="syntaxhighlighter nogutter  plain"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain plain">$ bin/rake db:rollback STEP=3</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>will revert the last 3 migrations.</p><p>The <code>db:migrate:redo</code> task is a shortcut for doing a rollback and then migrating
+back up again. As with the <code>db:rollback</code> task, you can use the <code>STEP</code> parameter
+if you need to go more than one version back, for example:</p><div class="code_container">
+<div><div id="highlighter_606343" class="syntaxhighlighter nogutter  plain"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain plain">$ bin/rake db:migrate:redo STEP=3</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>Neither of these Rake tasks do anything you could not do with <code>db:migrate</code>. They
+are simply more convenient, since you do not need to explicitly specify the
+version to migrate to.</p><h4 id="setup-the-database">4.2 Setup the Database</h4><p>The <code>rake db:setup</code> task will create the database, load the schema and initialize
+it with the seed data.</p><h4 id="resetting-the-database">4.3 Resetting the Database</h4><p>The <code>rake db:reset</code> task will drop the database and set it up again. This is
+functionally equivalent to <code>rake db:drop db:setup</code>.</p><div class="note"><p>This is not the same as running all the migrations. It will only use the
+contents of the current <code>schema.rb</code> file. If a migration can't be rolled back,
+<code>rake db:reset</code> may not help you. To find out more about dumping the schema see
+<a href="#schema-dumping-and-you">Schema Dumping and You</a> section.</p></div><h4 id="running-specific-migrations">4.4 Running Specific Migrations</h4><p>If you need to run a specific migration up or down, the <code>db:migrate:up</code> and
+<code>db:migrate:down</code> tasks will do that. Just specify the appropriate version and
+the corresponding migration will have its <code>change</code>, <code>up</code> or <code>down</code> method
+invoked, for example:</p><div class="code_container">
+<div><div id="highlighter_562334" class="syntaxhighlighter nogutter  plain"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain plain">$ bin/rake db:migrate:up VERSION=20080906120000</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>will run the 20080906120000 migration by running the <code>change</code> method (or the
+<code>up</code> method). This task will
+first check whether the migration is already performed and will do nothing if
+Active Record believes that it has already been run.</p><h4 id="running-migrations-in-different-environments">4.5 Running Migrations in Different Environments</h4><p>By default running <code>rake db:migrate</code> will run in the <code>development</code> environment.
+To run migrations against another environment you can specify it using the
+<code>RAILS_ENV</code> environment variable while running the command. For example to run
+migrations against the <code>test</code> environment you could run:</p><div class="code_container">
+<div><div id="highlighter_209594" class="syntaxhighlighter nogutter  plain"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain plain">$ bin/rake db:migrate RAILS_ENV=test</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<h4 id="changing-the-output-of-running-migrations">4.6 Changing the Output of Running Migrations</h4><p>By default migrations tell you exactly what they're doing and how long it took.
+A migration creating a table and adding an index might produce output like this</p><div class="code_container">
+<div><div id="highlighter_938409" class="syntaxhighlighter nogutter  plain"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain plain">==&nbsp; CreateProducts: migrating =================================================</code></div><div class="line number2 index1 alt1"><code class="plain plain">-- create_table(:products)</code></div><div class="line number3 index2 alt2"><code class="plain spaces">&nbsp;&nbsp;&nbsp;</code><code class="plain plain">-&gt; 0.0028s</code></div><div class="line number4 index3 alt1"><code class="plain plain">==&nbsp; CreateProducts: migrated (0.0028s) ========================================</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>Several methods are provided in migrations that allow you to control all this:</p>
+<table class="responsive">
+<thead>
+<tr>
+<th>Method</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>suppress_messages</td>
+<td>Takes a block as an argument and suppresses any output generated by the block.</td>
+</tr>
+<tr>
+<td>say</td>
+<td>Takes a message argument and outputs it as is. A second boolean argument can be passed to specify whether to indent or not.</td>
+</tr>
+<tr>
+<td>say_with_time</td>
+<td>Outputs text along with how long it took to run its block. If the 
+block returns an integer it assumes it is the number of rows affected.</td>
+</tr>
+</tbody>
+</table>
+<p>For example, this migration:</p><div class="code_container">
+<div><div id="highlighter_388456" class="syntaxhighlighter nogutter  ruby"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="ruby keyword">class</code> <code class="ruby plain">CreateProducts &lt; ActiveRecord::Migration</code></div><div class="line number2 index1 alt1"><code class="ruby spaces">&nbsp;&nbsp;</code><code class="ruby keyword">def</code> <code class="ruby plain">change</code></div><div class="line number3 index2 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">suppress_messages </code><code class="ruby keyword">do</code></div><div class="line number4 index3 alt1"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">create_table </code><code class="ruby color2">:products</code> <code class="ruby keyword">do</code> <code class="ruby plain">|t|</code></div><div class="line number5 index4 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">t.string </code><code class="ruby color2">:name</code></div><div class="line number6 index5 alt1"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">t.text </code><code class="ruby color2">:description</code></div><div class="line number7 index6 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">t.timestamps null: </code><code class="ruby keyword">false</code></div><div class="line number8 index7 alt1"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby keyword">end</code></div><div class="line number9 index8 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby keyword">end</code></div><div class="line number10 index9 alt1">&nbsp;</div><div class="line number11 index10 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">say </code><code class="ruby string">"Created a table"</code></div><div class="line number12 index11 alt1">&nbsp;</div><div class="line number13 index12 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">suppress_messages {add_index </code><code class="ruby color2">:products</code><code class="ruby plain">, </code><code class="ruby color2">:name</code><code class="ruby plain">}</code></div><div class="line number14 index13 alt1"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">say </code><code class="ruby string">"and an index!"</code><code class="ruby plain">, </code><code class="ruby keyword">true</code></div><div class="line number15 index14 alt2">&nbsp;</div><div class="line number16 index15 alt1"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">say_with_time </code><code class="ruby string">'Waiting for a while'</code> <code class="ruby keyword">do</code></div><div class="line number17 index16 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">sleep </code><code class="ruby constants">10</code></div><div class="line number18 index17 alt1"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby constants">250</code></div><div class="line number19 index18 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby keyword">end</code></div><div class="line number20 index19 alt1"><code class="ruby spaces">&nbsp;&nbsp;</code><code class="ruby keyword">end</code></div><div class="line number21 index20 alt2"><code class="ruby keyword">end</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>generates the following output</p><div class="code_container">
+<div><div id="highlighter_741207" class="syntaxhighlighter nogutter  plain"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain plain">==&nbsp; CreateProducts: migrating =================================================</code></div><div class="line number2 index1 alt1"><code class="plain plain">-- Created a table</code></div><div class="line number3 index2 alt2"><code class="plain spaces">&nbsp;&nbsp;&nbsp;</code><code class="plain plain">-&gt; and an index!</code></div><div class="line number4 index3 alt1"><code class="plain plain">-- Waiting for a while</code></div><div class="line number5 index4 alt2"><code class="plain spaces">&nbsp;&nbsp;&nbsp;</code><code class="plain plain">-&gt; 10.0013s</code></div><div class="line number6 index5 alt1"><code class="plain spaces">&nbsp;&nbsp;&nbsp;</code><code class="plain plain">-&gt; 250 rows</code></div><div class="line number7 index6 alt2"><code class="plain plain">==&nbsp; CreateProducts: migrated (10.0054s) =======================================</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>If you want Active Record to not output anything, then running <code>rake db:migrate
+VERBOSE=false</code> will suppress all output.</p><h3 id="changing-existing-migrations">5 Changing Existing Migrations</h3><p>Occasionally you will make a mistake when writing a migration. If you have
+already run the migration then you cannot just edit the migration and run the
+migration again: Rails thinks it has already run the migration and so will do
+nothing when you run <code>rake db:migrate</code>. You must rollback the migration (for
+example with <code>rake db:rollback</code>), edit your migration and then run
+<code>rake db:migrate</code> to run the corrected version.</p><p>In general, editing existing migrations is not a good idea. You will be
+creating extra work for yourself and your co-workers and cause major headaches
+if the existing version of the migration has already been run on production
+machines. Instead, you should write a new migration that performs the changes
+you require. Editing a freshly generated migration that has not yet been
+committed to source control (or, more generally, which has not been propagated
+beyond your development machine) is relatively harmless.</p><p>The <code>revert</code> method can be helpful when writing a new migration to undo
+previous migrations in whole or in part
+(see <a href="#reverting-previous-migrations">Reverting Previous Migrations</a> above).</p><h3 id="schema-dumping-and-you">6 Schema Dumping and You</h3><h4 id="what-are-schema-files-for-questionmark">6.1 What are Schema Files for?</h4><p>Migrations, mighty as they may be, are not the authoritative source for your
+database schema. That role falls to either <code>db/schema.rb</code> or an SQL file which
+Active Record generates by examining the database. They are not designed to be
+edited, they just represent the current state of the database.</p><p>There is no need (and it is error prone) to deploy a new instance of an app by
+replaying the entire migration history. It is much simpler and faster to just
+load into the database a description of the current schema.</p><p>For example, this is how the test database is created: the current development
+database is dumped (either to <code>db/schema.rb</code> or <code>db/structure.sql</code>) and then
+loaded into the test database.</p><p>Schema files are also useful if you want a quick look at what attributes an
+Active Record object has. This information is not in the model's code and is
+frequently spread across several migrations, but the information is nicely
+summed up in the schema file. The
+<a href="https://github.com/ctran/annotate_models">annotate_models</a> gem automatically
+adds and updates comments at the top of each model summarizing the schema if
+you desire that functionality.</p><h4 id="types-of-schema-dumps">6.2 Types of Schema Dumps</h4><p>There are two ways to dump the schema. This is set in <code>config/application.rb</code>
+by the <code>config.active_record.schema_format</code> setting, which may be either <code>:sql</code>
+or <code>:ruby</code>.</p><p>If <code>:ruby</code> is selected then the schema is stored in <code>db/schema.rb</code>. If you look
+at this file you'll find that it looks an awful lot like one very big
+migration:</p><div class="code_container">
+<div><div id="highlighter_44145" class="syntaxhighlighter nogutter  ruby"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="ruby plain">ActiveRecord::Schema.define(version: </code><code class="ruby constants">20080906171750</code><code class="ruby plain">) </code><code class="ruby keyword">do</code></div><div class="line number2 index1 alt1"><code class="ruby spaces">&nbsp;&nbsp;</code><code class="ruby plain">create_table </code><code class="ruby string">"authors"</code><code class="ruby plain">, force: </code><code class="ruby keyword">true</code> <code class="ruby keyword">do</code> <code class="ruby plain">|t|</code></div><div class="line number3 index2 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">t.string&nbsp;&nbsp; </code><code class="ruby string">"name"</code></div><div class="line number4 index3 alt1"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">t.datetime </code><code class="ruby string">"created_at"</code></div><div class="line number5 index4 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">t.datetime </code><code class="ruby string">"updated_at"</code></div><div class="line number6 index5 alt1"><code class="ruby spaces">&nbsp;&nbsp;</code><code class="ruby keyword">end</code></div><div class="line number7 index6 alt2">&nbsp;</div><div class="line number8 index7 alt1"><code class="ruby spaces">&nbsp;&nbsp;</code><code class="ruby plain">create_table </code><code class="ruby string">"products"</code><code class="ruby plain">, force: </code><code class="ruby keyword">true</code> <code class="ruby keyword">do</code> <code class="ruby plain">|t|</code></div><div class="line number9 index8 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">t.string&nbsp;&nbsp; </code><code class="ruby string">"name"</code></div><div class="line number10 index9 alt1"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">t.text </code><code class="ruby string">"description"</code></div><div class="line number11 index10 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">t.datetime </code><code class="ruby string">"created_at"</code></div><div class="line number12 index11 alt1"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">t.datetime </code><code class="ruby string">"updated_at"</code></div><div class="line number13 index12 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">t.string </code><code class="ruby string">"part_number"</code></div><div class="line number14 index13 alt1"><code class="ruby spaces">&nbsp;&nbsp;</code><code class="ruby keyword">end</code></div><div class="line number15 index14 alt2"><code class="ruby keyword">end</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>In many ways this is exactly what it is. This file is created by inspecting the
+database and expressing its structure using <code>create_table</code>, <code>add_index</code>, and so
+on. Because this is database-independent, it could be loaded into any database
+that Active Record supports. This could be very useful if you were to
+distribute an application that is able to run against multiple databases.</p><p>There is however a trade-off: <code>db/schema.rb</code> cannot express database specific
+items such as triggers, or stored procedures. While in a migration you can
+execute custom SQL statements, the schema dumper cannot reconstitute those
+statements from the database. If you are using features like this, then you
+should set the schema format to <code>:sql</code>.</p><p>Instead of using Active Record's schema dumper, the database's structure will
+be dumped using a tool specific to the database (via the <code>db:structure:dump</code>
+Rake task) into <code>db/structure.sql</code>. For example, for PostgreSQL, the <code>pg_dump</code>
+utility is used. For MySQL, this file will contain the output of
+<code>SHOW CREATE TABLE</code> for the various tables.</p><p>Loading these schemas is simply a question of executing the SQL statements they
+contain. By definition, this will create a perfect copy of the database's
+structure. Using the <code>:sql</code> schema format will, however, prevent loading the
+schema into a RDBMS other than the one used to create it.</p><h4 id="schema-dumps-and-source-control">6.3 Schema Dumps and Source Control</h4><p>Because schema dumps are the authoritative source for your database schema, it
+is strongly recommended that you check them into source control.</p><p><code>db/schema.rb</code> contains the current version number of the database. This
+ensures conflicts are going to happen in the case of a merge where both
+branches touched the schema. When that happens, solve conflicts manually,
+keeping the highest version number of the two.</p><h3 id="active-record-and-referential-integrity">7 Active Record and Referential Integrity</h3><p>The Active Record way claims that intelligence belongs in your models, not in
+the database. As such, features such as triggers or constraints,
+which push some of that intelligence back into the database, are not heavily
+used.</p><p>Validations such as <code>validates :foreign_key, uniqueness: true</code> are one way in
+which models can enforce data integrity. The <code>:dependent</code> option on
+associations allows models to automatically destroy child objects when the
+parent is destroyed. Like anything which operates at the application level,
+these cannot guarantee referential integrity and so some people augment them
+with <a href="#foreign-keys">foreign key constraints</a> in the database.</p><p>Although Active Record does not provide all the tools for working directly with
+such features, the <code>execute</code> method can be used to execute arbitrary SQL.</p><h3 id="migrations-and-seed-data">8 Migrations and Seed Data</h3><p>Some people use migrations to add data to the database:</p><div class="code_container">
+<div><div id="highlighter_572782" class="syntaxhighlighter nogutter  ruby"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="ruby keyword">class</code> <code class="ruby plain">AddInitialProducts &lt; ActiveRecord::Migration</code></div><div class="line number2 index1 alt1"><code class="ruby spaces">&nbsp;&nbsp;</code><code class="ruby keyword">def</code> <code class="ruby plain">up</code></div><div class="line number3 index2 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby constants">5</code><code class="ruby plain">.times </code><code class="ruby keyword">do</code> <code class="ruby plain">|i|</code></div><div class="line number4 index3 alt1"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">Product.create(name: </code><code class="ruby string">"Product ##{i}"</code><code class="ruby plain">, description: </code><code class="ruby string">"A product."</code><code class="ruby plain">)</code></div><div class="line number5 index4 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby keyword">end</code></div><div class="line number6 index5 alt1"><code class="ruby spaces">&nbsp;&nbsp;</code><code class="ruby keyword">end</code></div><div class="line number7 index6 alt2">&nbsp;</div><div class="line number8 index7 alt1"><code class="ruby spaces">&nbsp;&nbsp;</code><code class="ruby keyword">def</code> <code class="ruby plain">down</code></div><div class="line number9 index8 alt2"><code class="ruby spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="ruby plain">Product.delete_all</code></div><div class="line number10 index9 alt1"><code class="ruby spaces">&nbsp;&nbsp;</code><code class="ruby keyword">end</code></div><div class="line number11 index10 alt2"><code class="ruby keyword">end</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>However, Rails has a 'seeds' feature that should be used for seeding a database
+with initial data. It's a really simple feature: just fill up <code>db/seeds.rb</code>
+with some Ruby code, and run <code>rake db:seed</code>:</p><div class="code_container">
+<div><div id="highlighter_177995" class="syntaxhighlighter nogutter  ruby"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="ruby constants">5</code><code class="ruby plain">.times </code><code class="ruby keyword">do</code> <code class="ruby plain">|i|</code></div><div class="line number2 index1 alt1"><code class="ruby spaces">&nbsp;&nbsp;</code><code class="ruby plain">Product.create(name: </code><code class="ruby string">"Product ##{i}"</code><code class="ruby plain">, description: </code><code class="ruby string">"A product."</code><code class="ruby plain">)</code></div><div class="line number3 index2 alt2"><code class="ruby keyword">end</code></div></div></td></tr></tbody></table></div></div>
+</div>
+<p>This is generally a much cleaner way to set up the database of a blank
+application.</p>
+
+        <h3>Feedback</h3>
+        <p>
+          You're encouraged to help improve the quality of this guide.
+        </p>
+        <p>
+          Please contribute if you see any typos or factual errors.
+          To get started, you can read our <a href="http://edgeguides.rubyonrails.org/contributing_to_ruby_on_rails.html#contributing-to-the-rails-documentation">documentation contributions</a> section.
+        </p>
+        <p>
+          You may also find incomplete content, or stuff that is not up to date.
+          Please do add any missing documentation for master. Make sure to check
+          <a href="http://edgeguides.rubyonrails.org/">Edge Guides</a> first to verify
+          if the issues are already fixed or not on the master branch.
+          Check the <a href="http://guides.rubyonrails.org/ruby_on_rails_guides_guidelines.html">Ruby on Rails Guides Guidelines</a>
+          for style and conventions.
+        </p>
+        <p>
+          If for whatever reason you spot something to fix but cannot patch it yourself, please
+          <a href="https://github.com/rails/rails/issues">open an issue</a>.
+        </p>
+        <p>And last but not least, any kind of discussion regarding Ruby on Rails
+          documentation is very welcome in the <a href="http://groups.google.com/group/rubyonrails-docs">rubyonrails-docs mailing list</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="hide">
+  <div id="footer">
+    <div class="wrapper">
+      <p>This work is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International</a> License</p>
+<p>"Rails", "Ruby on Rails", and the Rails logo are trademarks of David Heinemeier Hansson. All rights reserved.</p>
+
+    </div>
+  </div>
+
+  <script type="text/javascript" src="Active%20Record%20Migrations%20%E2%80%94%20Ruby%20on%20Rails%20Guides_files/jquery.js"></script>
+  <script type="text/javascript" src="Active%20Record%20Migrations%20%E2%80%94%20Ruby%20on%20Rails%20Guides_files/responsive-tables.js"></script>
+  <script type="text/javascript" src="Active%20Record%20Migrations%20%E2%80%94%20Ruby%20on%20Rails%20Guides_files/guides.js"></script>
+  <script type="text/javascript" src="Active%20Record%20Migrations%20%E2%80%94%20Ruby%20on%20Rails%20Guides_files/shCore.js"></script>
+  <script type="text/javascript" src="Active%20Record%20Migrations%20%E2%80%94%20Ruby%20on%20Rails%20Guides_files/shBrushRuby.js"></script>
+  <script type="text/javascript" src="Active%20Record%20Migrations%20%E2%80%94%20Ruby%20on%20Rails%20Guides_files/shBrushXml.js"></script>
+  <script type="text/javascript" src="Active%20Record%20Migrations%20%E2%80%94%20Ruby%20on%20Rails%20Guides_files/shBrushSql.js"></script>
+  <script type="text/javascript" src="Active%20Record%20Migrations%20%E2%80%94%20Ruby%20on%20Rails%20Guides_files/shBrushPlain.js"></script>
+  <script type="text/javascript">
+    SyntaxHighlighter.all();
+    $(guidesIndex.bind);
+  </script>
+
+
+</body></html>

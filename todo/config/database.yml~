@@ -1,0 +1,7 @@
+development:
+  adapter: mysql
+  encoding: utf8
+  database: todo_development.mysql
+  pool: 5
+  username: root
+  password:1234

@@ -1,0 +1,2024 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html lang="en" dir="ltr" class="ie8"><![endif]-->
+<!--[if IE 9]><html lang="en" dir="ltr" class="ie9"><![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="js no-touch localstorage sessionstorage contenteditable use-opacity-transitions" dir="ltr" lang="en"><!--<![endif]--><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Disqus Comments</title>
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    
+    
+    <style>
+        html {
+            overflow: hidden;
+        }
+
+        
+    </style>
+
+<link href="a_data/lounge.css" rel="stylesheet"><script src="a_data/config.js" data-requiremodule="remote/config" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="a_data/common.js" data-requiremodule="common.bundle" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="a_data/lounge_002.js" data-requiremodule="lounge.bundle" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><script src="a_data/ga.js" data-requiremodule="ga" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script><style id="css_1462188600821"></style><!-- base href="http://disqus.com/embed/comments/?base=default&version=af1a2e2611136ef6c314afec2806cef3&f=rubyfleebie&t_i=46%20http%3A%2F%2Fwww.rubyfleebie.com%2Fan-introduction-to-modules-part-1%2F&t_u=http%3A%2F%2Fwww.rubyfleebie.com%2Fan-introduction-to-modules-part-1%2F&t_e=An%20introduction%20to%20modules%20%3A%20Part%201&t_d=An%20introduction%20to%20modules%20%3A%20Part%201&t_t=An%20introduction%20to%20modules%20%3A%20Part%201&s_o=default&l=" --><link href="a_data/discovery.css" rel="stylesheet"><script src="a_data/discovery.js" data-requiremodule="discovery/main" data-requirecontext="_" async="" charset="utf-8" type="text/javascript"></script></head>
+<body>
+    
+
+    
+    <!--[if lt IE 10]><p style="color: #fff; background-color: #f05f70; padding: 10px; margin-top: 20px;">
+        You're using a browser that Disqus plans to stop supporting soon. For more information, visit our list of 
+        <a href="https://help.disqus.com/customer/portal/articles/466228-which-browsers-does-disqus-work-with-" style="color: #fff; text-decoration: underline;">supported browsers</a>
+        and consider upgrading.
+    </p><![endif]-->
+    <div id="error" style="display:none; text-align: center">
+        <p>We were unable to load Disqus. If you are a moderator please see our <a href="https://docs.disqus.com/help/83/"> troubleshooting guide</a>. </p>
+    </div>
+
+    
+    <script type="text/json" id="disqus-forumData">{"session":{"canModerate":false,"audienceSyncVerified":false,"mustVerify":false,"canReply":true,"mustVerifyEmail":false},"features":{},"forum":{"category":null,"description":"","founder":"167404","twitterName":"rubyfleebie","url":"http://www.rubyfleebie.com","raw_description":"","guidelines":null,"favicon":{"permalink":"http://disqus.com/api/forums/favicons/rubyfleebie.jpg","cache":"//a.disquscdn.com/uploads/forums/36/2276/favicon.png"},"raw_guidelines":null,"language":"en","daysThreadAlive":0,"avatar":{"small":{"permalink":"http://disqus.com/api/forums/avatars/rubyfleebie.jpg?size=32","cache":"//a.disquscdn.com/1461795174/images/noavatar32.png"},"large":{"permalink":"http://disqus.com/api/forums/avatars/rubyfleebie.jpg?size=92","cache":"//a.disquscdn.com/1461795174/images/noavatar92.png"}},"channel":null,"daysAlive":0,"pk":"362276","signedUrl":"http://disq.us/?url=http%3A%2F%2Fwww.rubyfleebie.com&key=bmJQc8gyu8YOuXdZoeEMCg","settings":{"supportLevel":0,"adsDRNativeEnabled":false,"disable3rdPartyTrackers":false,"adsVideoEnabled":false,"adsProductVideoEnabled":false,"adsPositionTopEnabled":false,"ssoRequired":false,"linkAffiliationEnabled":false,"adsProductLinksThumbnailsEnabled":false,"adsProductStoriesEnabled":false,"organicDiscoveryEnabled":true,"allowMedia":true,"discoveryMax":false,"discoveryLocked":false,"moderatorText":null,"adsEnabled":false,"allowAnonPost":true,"hasCustomAvatar":false,"adultContent":false,"promotedDiscoveryEnabled":false,"allowAnonVotes":false,"mustVerify":true,"colorScheme":"auto","adsSettingsLocked":false,"mustVerifyEmail":true,"audienceSyncEnabled":false,"typeface":"auto","adsPositionBottomEnabled":false,"mediaembedEnabled":true,"adsProductLinksEnabled":false,"discoveryThumbnailsEnabled":false,"isVIP":false},"id":"rubyfleebie","createdAt":"2010-05-14T10:15:19.677332","name":"Ruby Fleebie"}}</script>
+
+    
+    <script type="text/json" id="disqus-threadData">{"cursor":{"hasPrev":false,"prev":null,"total":16,"hasNext":false,"next":"1:0:0"},"code":0,"response":{"lastModified":1449506328,"posts":[{"forum":"rubyfleebie","parent":null,"isApproved":true,"author":{"name":"Jan Caals","url":"http://www.startahead.be/","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1461795174/images/noavatar32.png","cache":"//a.disquscdn.com/1461795174/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1461795174/images/noavatar92.png","cache":"//a.disquscdn.com/1461795174/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1461795174/images/noavatar92.png","cache":"//a.disquscdn.com/1461795174/images/noavatar92.png"},"signedUrl":"http://disq.us/?url=http%3A%2F%2Fwww.startahead.be%2F&key=qHX4ZlgEqrpfODifr9Syjg","isAnonymous":true},"media":[],"isDeleted":false,"isFlagged":false,"dislikes":0,"raw_message":"Just a comment in general.  I really like your articles.  You manage to explain some of the more obscure facets of Ruby in a very understandable way.  Thanks and keep up the good work!","createdAt":"2007-08-30T08:21:50","id":"50352156","thread":"95583990","depth":0,"numReports":0,"isDeletedByAuthor":false,"likes":0,"isEdited":false,"message":"\u003cp>Just a comment in general.  I really like your articles.  You manage to explain some of the more obscure facets of Ruby in a very understandable way.  Thanks and keep up the good work!\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"forum":"rubyfleebie","parent":null,"isApproved":true,"author":{"name":"Frank","url":"http://www.rubyfleebie.com/","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1461795174/images/noavatar32.png","cache":"//a.disquscdn.com/1461795174/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1461795174/images/noavatar92.png","cache":"//a.disquscdn.com/1461795174/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1461795174/images/noavatar92.png","cache":"//a.disquscdn.com/1461795174/images/noavatar92.png"},"signedUrl":"http://disq.us/?url=http%3A%2F%2Fwww.rubyfleebie.com%2F&key=wbWwxPEVr9uIXpU5jNoqAA","isAnonymous":true},"media":[],"isDeleted":false,"isFlagged":false,"dislikes":0,"raw_message":"@Jan Caals, Thanks a lot for your comment. This is the kind of comment that gives me confidence and a nice little boost :) Thanks again and I'm glad you like the articles!","createdAt":"2007-09-01T11:14:26","id":"50352158","thread":"95583990","depth":0,"numReports":0,"isDeletedByAuthor":false,"likes":0,"isEdited":false,"message":"\u003cp>@Jan Caals, Thanks a lot for your comment. This is the kind of comment that gives me confidence and a nice little boost :) Thanks again and I'm glad you like the articles!\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"forum":"rubyfleebie","parent":null,"isApproved":true,"author":{"name":"Oren","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1461795174/images/noavatar32.png","cache":"//a.disquscdn.com/1461795174/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1461795174/images/noavatar92.png","cache":"//a.disquscdn.com/1461795174/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1461795174/images/noavatar92.png","cache":"//a.disquscdn.com/1461795174/images/noavatar92.png"},"signedUrl":"","isAnonymous":true},"media":[],"isDeleted":false,"isFlagged":false,"dislikes":0,"raw_message":"great post. \r\nI agree with Jan - your writing style is what is missing in a lot of book and tutorials.\r\n\r\nI am waiting for the second part!","createdAt":"2007-09-02T04:23:21","id":"50352159","thread":"95583990","depth":0,"numReports":0,"isDeletedByAuthor":false,"likes":0,"isEdited":false,"message":"\u003cp>great post. \u003cbr>I agree with Jan - your writing style is what is missing in a lot of book and tutorials.\u003c/p>\u003cp>I am waiting for the second part!\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"forum":"rubyfleebie","parent":null,"isApproved":true,"author":{"name":"Frank","url":"http://www.rubyfleebie.com/","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1461795174/images/noavatar32.png","cache":"//a.disquscdn.com/1461795174/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1461795174/images/noavatar92.png","cache":"//a.disquscdn.com/1461795174/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1461795174/images/noavatar92.png","cache":"//a.disquscdn.com/1461795174/images/noavatar92.png"},"signedUrl":"http://disq.us/?url=http%3A%2F%2Fwww.rubyfleebie.com%2F&key=wbWwxPEVr9uIXpU5jNoqAA","isAnonymous":true},"media":[],"isDeleted":false,"isFlagged":false,"dislikes":0,"raw_message":"Thanks for the kind words Oren. Again, it's really appreciated","createdAt":"2007-09-03T17:41:41","id":"50352162","thread":"95583990","depth":0,"numReports":0,"isDeletedByAuthor":false,"likes":0,"isEdited":false,"message":"\u003cp>Thanks for the kind words Oren. Again, it's really appreciated\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"forum":"rubyfleebie","parent":null,"isApproved":true,"author":{"name":"Sam Figueroa","url":"http://apirate.iwasmeantto.be/","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1461795174/images/noavatar32.png","cache":"//a.disquscdn.com/1461795174/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1461795174/images/noavatar92.png","cache":"//a.disquscdn.com/1461795174/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1461795174/images/noavatar92.png","cache":"//a.disquscdn.com/1461795174/images/noavatar92.png"},"signedUrl":"http://disq.us/?url=http%3A%2F%2Fapirate.iwasmeantto.be%2F&key=OFJWzPCa13xyeQksJq_jiw","isAnonymous":true},"media":[],"isDeleted":false,"isFlagged":false,"dislikes":0,"raw_message":"This really got me up to speed again on modules. I only looked at them half heartedly in the past. This and the follow-up got me going. Thanks for the great article.","createdAt":"2007-10-29T16:35:52","id":"50352163","thread":"95583990","depth":0,"numReports":0,"isDeletedByAuthor":false,"likes":0,"isEdited":false,"message":"\u003cp>This really got me up to speed again on modules. I only looked at them half heartedly in the past. This and the follow-up got me going. Thanks for the great article.\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"forum":"rubyfleebie","parent":null,"isApproved":true,"author":{"name":"Ivan","url":"http://www.donnelford.cn/","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1461795174/images/noavatar32.png","cache":"//a.disquscdn.com/1461795174/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1461795174/images/noavatar92.png","cache":"//a.disquscdn.com/1461795174/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1461795174/images/noavatar92.png","cache":"//a.disquscdn.com/1461795174/images/noavatar92.png"},"signedUrl":"http://disq.us/?url=http%3A%2F%2Fwww.donnelford.cn%2F&key=ZvbFpLOsgFFOLxXn7Rxdqg","isAnonymous":true},"media":[],"isDeleted":false,"isFlagged":false,"dislikes":0,"raw_message":"Nice","createdAt":"2007-11-21T16:02:12","id":"50352164","thread":"95583990","depth":0,"numReports":0,"isDeletedByAuthor":false,"likes":0,"isEdited":false,"message":"\u003cp>Nice\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"forum":"rubyfleebie","parent":null,"isApproved":true,"author":{"name":"Iannis","url":"http://allan-ford.strohlchevrolet.cn/","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1461795174/images/noavatar32.png","cache":"//a.disquscdn.com/1461795174/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1461795174/images/noavatar92.png","cache":"//a.disquscdn.com/1461795174/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1461795174/images/noavatar92.png","cache":"//a.disquscdn.com/1461795174/images/noavatar92.png"},"signedUrl":"http://disq.us/?url=http%3A%2F%2Fallan-ford.strohlchevrolet.cn%2F&key=K47I4-0MBhT7QFOiDZ0QPw","isAnonymous":true},"media":[],"isDeleted":false,"isFlagged":false,"dislikes":0,"raw_message":"Nice","createdAt":"2008-01-09T16:08:06","id":"50352167","thread":"95583990","depth":0,"numReports":0,"isDeletedByAuthor":false,"likes":0,"isEdited":false,"message":"\u003cp>Nice\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"forum":"rubyfleebie","parent":null,"isApproved":true,"author":{"name":"dev","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1461795174/images/noavatar32.png","cache":"//a.disquscdn.com/1461795174/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1461795174/images/noavatar92.png","cache":"//a.disquscdn.com/1461795174/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1461795174/images/noavatar92.png","cache":"//a.disquscdn.com/1461795174/images/noavatar92.png"},"signedUrl":"","isAnonymous":true},"media":[],"isDeleted":false,"isFlagged":false,"dislikes":0,"raw_message":"Hi, did u know how to include this module into other ruby file?\r\n\r\nlet say i have a .rb file name module_example and inside this file has a module call Module_Ex\r\nand at other .rb file name module_example_call, when i include the module_example.rb and include it module by coding \r\n\r\nrequire 'module_example'\r\ninclude 'Module_Ex'\r\n\r\nwhen i ran, it say no such file to load?\r\nany idea","createdAt":"2009-11-27T07:37:15","id":"50352169","thread":"95583990","depth":0,"numReports":0,"isDeletedByAuthor":false,"likes":0,"isEdited":false,"message":"\u003cp>Hi, did u know how to include this module into other ruby file?\u003c/p>\u003cp>let say i have a .rb file name module_example and inside this file has a module call Module_Ex\u003cbr>and at other .rb file name module_example_call, when i include the module_example.rb and include it module by coding\u003c/p>\u003cp>require 'module_example'\u003cbr>include 'Module_Ex'\u003c/p>\u003cp>when i ran, it say no such file to load?\u003cbr>any idea\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"forum":"rubyfleebie","parent":null,"isApproved":true,"author":{"name":"Frank","url":"http://www.rubyfleebie.com/","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1461795174/images/noavatar32.png","cache":"//a.disquscdn.com/1461795174/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1461795174/images/noavatar92.png","cache":"//a.disquscdn.com/1461795174/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1461795174/images/noavatar92.png","cache":"//a.disquscdn.com/1461795174/images/noavatar92.png"},"signedUrl":"http://disq.us/?url=http%3A%2F%2Fwww.rubyfleebie.com%2F&key=wbWwxPEVr9uIXpU5jNoqAA","isAnonymous":true},"media":[],"isDeleted":false,"isFlagged":false,"dislikes":0,"raw_message":"Hello dev,\r\n\r\nThe problem is with your \"include\" call. You must specify the name of the module without the quotes. Try this : include Module_Ex\r\n\r\nHope this helps!","createdAt":"2009-11-27T15:34:42","id":"50352170","thread":"95583990","depth":0,"numReports":0,"isDeletedByAuthor":false,"likes":0,"isEdited":false,"message":"\u003cp>Hello dev,\u003c/p>\u003cp>The problem is with your \"include\" call. You must specify the name of the module without the quotes. Try this : include Module_Ex\u003c/p>\u003cp>Hope this helps!\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"forum":"rubyfleebie","parent":null,"isApproved":true,"author":{"name":"Adhi","url":"http://adhirajrankhambe.wordpress.com/","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1461795174/images/noavatar32.png","cache":"//a.disquscdn.com/1461795174/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1461795174/images/noavatar92.png","cache":"//a.disquscdn.com/1461795174/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1461795174/images/noavatar92.png","cache":"//a.disquscdn.com/1461795174/images/noavatar92.png"},"signedUrl":"http://disq.us/?url=http%3A%2F%2Fadhirajrankhambe.wordpress.com%2F&key=A6mwNn8aYc-bfc12MdQWJw","isAnonymous":true},"media":[],"isDeleted":false,"isFlagged":false,"dislikes":0,"raw_message":"Guys do take a look at http://adhirajrankhambe.wordpress.com/2009/01/04/a-word-about-modules-in-ruby/","createdAt":"2010-02-17T08:48:55","id":"50352171","thread":"95583990","depth":0,"numReports":0,"isDeletedByAuthor":false,"likes":0,"isEdited":false,"message":"\u003cp>Guys do take a look at \u003ca href=\"http://adhirajrankhambe.wordpress.com/2009/01/04/a-word-about-modules-in-ruby/\" rel=\"nofollow\">http://adhirajrankhambe.wordpr...\u003c/a>\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"forum":"rubyfleebie","parent":null,"isApproved":true,"author":{"name":"jimbocortes","url":"http://jimbocortes.posterous.com/","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1461795174/images/noavatar32.png","cache":"//a.disquscdn.com/1461795174/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1461795174/images/noavatar92.png","cache":"//a.disquscdn.com/1461795174/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1461795174/images/noavatar92.png","cache":"//a.disquscdn.com/1461795174/images/noavatar92.png"},"signedUrl":"http://disq.us/?url=http%3A%2F%2Fjimbocortes.posterous.com%2F&key=KneyN86Ls70LsaGag7hMiw","isAnonymous":true},"media":[],"isDeleted":false,"isFlagged":false,"dislikes":0,"raw_message":"Great article explaining ruby modules. Keep it up.","createdAt":"2011-01-30T17:22:31","id":"2397980616","thread":"95583990","depth":0,"numReports":0,"isDeletedByAuthor":false,"likes":0,"isEdited":false,"message":"\u003cp>Great article explaining ruby modules. Keep it up.\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"forum":"rubyfleebie","parent":null,"isApproved":true,"author":{"name":"Aleksandar","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1461795174/images/noavatar32.png","cache":"//a.disquscdn.com/1461795174/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1461795174/images/noavatar92.png","cache":"//a.disquscdn.com/1461795174/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1461795174/images/noavatar92.png","cache":"//a.disquscdn.com/1461795174/images/noavatar92.png"},"signedUrl":"","isAnonymous":true},"media":[],"isDeleted":false,"isFlagged":false,"dislikes":0,"raw_message":"Very good explanation. I am C programmer and it is nice to learn new things about Ruby especially when it is explained so nicely.","createdAt":"2012-09-20T11:16:42","id":"2397980617","thread":"95583990","depth":0,"numReports":0,"isDeletedByAuthor":false,"likes":0,"isEdited":false,"message":"\u003cp>Very good explanation. I am C programmer and it is nice to learn new things about Ruby especially when it is explained so nicely.\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"forum":"rubyfleebie","parent":null,"isApproved":true,"author":{"name":"Frank","url":"http://www.rubyfleebie.com/","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1461795174/images/noavatar32.png","cache":"//a.disquscdn.com/1461795174/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1461795174/images/noavatar92.png","cache":"//a.disquscdn.com/1461795174/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1461795174/images/noavatar92.png","cache":"//a.disquscdn.com/1461795174/images/noavatar92.png"},"signedUrl":"http://disq.us/?url=http%3A%2F%2Fwww.rubyfleebie.com%2F&key=wbWwxPEVr9uIXpU5jNoqAA","isAnonymous":true},"media":[],"isDeleted":false,"isFlagged":false,"dislikes":0,"raw_message":"Thanks Aleksandar and everyone else for your good words!","createdAt":"2012-09-20T15:05:21","id":"2397980619","thread":"95583990","depth":0,"numReports":0,"isDeletedByAuthor":false,"likes":0,"isEdited":false,"message":"\u003cp>Thanks Aleksandar and everyone else for your good words!\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"forum":"rubyfleebie","parent":null,"isApproved":true,"author":{"name":"Christian Rojas","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1461795174/images/noavatar32.png","cache":"//a.disquscdn.com/1461795174/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1461795174/images/noavatar92.png","cache":"//a.disquscdn.com/1461795174/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1461795174/images/noavatar92.png","cache":"//a.disquscdn.com/1461795174/images/noavatar92.png"},"signedUrl":"","isAnonymous":true},"media":[],"isDeleted":false,"isFlagged":false,"dislikes":0,"raw_message":"Thanks, good example!","createdAt":"2013-09-02T16:16:04","id":"2397980620","thread":"95583990","depth":0,"numReports":0,"isDeletedByAuthor":false,"likes":0,"isEdited":false,"message":"\u003cp>Thanks, good example!\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"forum":"rubyfleebie","parent":null,"isApproved":true,"author":{"name":"wholesale cheap Knicks jerseys","url":"http://bestofbritishonline.com/prodimages/AMBR001_L.htm","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1461795174/images/noavatar32.png","cache":"//a.disquscdn.com/1461795174/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1461795174/images/noavatar92.png","cache":"//a.disquscdn.com/1461795174/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1461795174/images/noavatar92.png","cache":"//a.disquscdn.com/1461795174/images/noavatar92.png"},"signedUrl":"http://disq.us/?url=http%3A%2F%2Fbestofbritishonline.com%2Fprodimages%2FAMBR001_L.htm&key=5A7BXcBkGM6tIXFQkHzE2A","isAnonymous":true},"media":[],"isDeleted":false,"isFlagged":false,"dislikes":0,"raw_message":"Cavaliers with lowest price and easy returns service.","createdAt":"2014-07-05T22:02:24","id":"2397980621","thread":"95583990","depth":0,"numReports":0,"isDeletedByAuthor":false,"likes":0,"isEdited":false,"message":"\u003cp>Cavaliers with lowest price and easy returns service.\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"forum":"rubyfleebie","parent":null,"isApproved":true,"author":{"name":"nilas","url":"http://nilas.me/","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/1461795174/images/noavatar32.png","cache":"//a.disquscdn.com/1461795174/images/noavatar32.png"},"large":{"permalink":"//a.disquscdn.com/1461795174/images/noavatar92.png","cache":"//a.disquscdn.com/1461795174/images/noavatar92.png"},"permalink":"//a.disquscdn.com/1461795174/images/noavatar92.png","cache":"//a.disquscdn.com/1461795174/images/noavatar92.png"},"signedUrl":"http://disq.us/?url=http%3A%2F%2Fnilas.me%2F&key=bS9ZmYU2fqWUOIu8mS0jaQ","isAnonymous":true},"media":[],"isDeleted":false,"isFlagged":false,"dislikes":0,"raw_message":"Excellent explaination, thanks :)","createdAt":"2015-03-24T23:35:22","id":"2397980622","thread":"95583990","depth":0,"numReports":0,"isDeletedByAuthor":false,"likes":0,"isEdited":false,"message":"\u003cp>Excellent explaination, thanks :)\u003c/p>","isSpam":false,"isHighlighted":false,"points":0}],"thread":{"feed":"https://rubyfleebie.disqus.com/an_introduction_to_modules_part_1/latest.rss","identifiers":["46 http://www.rubyfleebie.com/an-introduction-to-modules-part-1/"],"dislikes":0,"likes":1,"message":"\u003cp>Almost every languages have variables, constants, classes and objects\u2026 but who knew about modules before Ruby was invented? A ruby module is not that easy to define because it can serve two different purposes. If we introduce the word Mixin in our definition, we\u2019re di\u003c/p>","id":"95583990","isDeleted":false,"category":"371242","author":"167404","userScore":0,"userSubscription":false,"isSpam":false,"signedLink":"http://disq.us/?url=http%3A%2F%2Fwww.rubyfleebie.com%2Fan-introduction-to-modules-part-1%2F&key=HjS7tROhm_31OTpr4Kmkkg","createdAt":"2010-05-14T10:22:40","hasStreaming":false,"raw_message":"Almost every languages have variables, constants, classes and objects&#8230; but who knew about modules before Ruby was invented? A ruby module is not that easy to define because it can serve two different purposes. If we introduce the word Mixin in our definition, we&#8217;re di","isClosed":false,"link":"http://www.rubyfleebie.com/an-introduction-to-modules-part-1/","slug":"an_introduction_to_modules_part_1","forum":"rubyfleebie","clean_title":"An introduction to modules : Part 1","posts":16,"moderators":[167404],"title":"An introduction to modules : Part 1","highlightedPost":null}},"order":"asc"}</script>
+
+    
+
+    <div id="fixed-content"></div>
+
+
+    
+        
+        <!--[if lte IE 8]>
+<script src="//a.disquscdn.com/1461795174/build/vendor/ie8.js"></script>
+<![endif]-->
+<!--[if IE 9]>
+<script src="//a.disquscdn.com/1461795174/build/vendor/ie9.js"></script>
+<![endif]-->
+
+        
+<script type="text/json" id="disqus-urls">{
+    "root":"//disqus.com",
+    "next":"//a.disquscdn.com/next/current/embed"
+}</script>
+
+        <script src="a_data/lounge.js" id="bootstrap-script" data-app="lounge" async=""></script>
+    
+
+
+<div id="layout" data-tracking-area="layout">
+
+<div id="onboard" data-tracking-area="onboard"></div>
+
+<div style="display: none;" id="highlighted-post" data-tracking-area="highlighted" class="highlighted-post"></div>
+
+<div id="global-alert"></div>
+
+<header id="main-nav" data-tracking-area="main-nav">
+<nav class="nav nav-primary">
+<ul>
+<li class="tab-conversation active" data-role="post-count"><a class="publisher-nav-color">
+<span class="comment-count">
+16 comments
+</span>
+
+<span class="comment-count-placeholder">
+Comments
+</span>
+</a>
+</li>
+<li class="tab-community">
+<a href="https://disqus.com/home/forums/rubyfleebie/" class="publisher-nav-color" data-action="community-sidebar" data-forum="rubyfleebie" id="community-tab">
+<span class="community-name">
+<strong>Ruby Fleebie</strong>
+
+</span>
+
+<strong class="community-name-placeholder">Community</strong>
+</a>
+</li>
+<li class="dropdown user-menu" data-role="logout"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
+<span class="dropdown-toggle-wrapper">
+
+<span>
+Login
+</span>
+
+</span> <span class="caret"></span>
+</a>
+<ul class="dropdown-menu">
+
+
+<li>
+<a href="#" data-action="auth:disqus">Disqus</a>
+</li>
+<li>
+<a href="#" data-action="auth:facebook">Facebook</a>
+</li>
+<li>
+<a href="#" data-action="auth:twitter">Twitter</a>
+</li>
+<li>
+<a href="#" data-action="auth:google">Google</a>
+</li>
+
+
+
+</ul>
+</li>
+<li class="notification-menu unread" data-role="notification-menu"><a href="https://disqus.com/home/inbox/" class="notification-container" data-action="home" data-home-path="home/inbox/">
+<span class="notification-icon icon-comment" aria-hidden=""></span>
+<span class="notification-count" data-role="notification-count">1</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+
+<section id="conversation" data-role="main" data-tracking-area="main">
+<div class="nav nav-secondary" data-tracking-area="secondary-nav">
+<ul>
+<li id="recommend-button" class="recommend dropdown">
+<div class="thread-likes"><a href="#" data-action="recommend" title="Recommend this discussion" class="dropdown-toggle ">
+<span class="icon-heart"></span>
+<span class="label label-default">Recommend</span>
+<span class="label label-recommended">Recommended</span>
+<span class="label label-count">1</span>
+</a>
+<ul class="dropdown-menu coachmark">
+<li>
+<h2>Discussion Recommended!</h2>
+<p>Recommending means this is a discussion worth sharing. It gets shared
+ to your followers' Disqus feeds, and gives the creator kudos!</p>
+<a href="http://disqus.com/home/?utm_source=disqus_embed&amp;utm_content=recommend_btn" class="btn btn-primary" target="_blank">
+ Find More Discussions 
+</a>
+</li>
+</ul>
+</div></li>
+<li id="thread-share-menu" class="dropdown share-menu hidden-sm"><a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Share">
+<span class="icon-export"></span>
+<span class="label">Share</span>
+</a>
+<ul class="share-menu dropdown-menu">
+<li class="share">Share this discussion on
+<ul>
+<li class="twitter">
+<a data-action="share:twitter" href="#">Twitter</a>
+</li>
+<li class="facebook">
+<a data-action="share:facebook" href="#">Facebook</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li data-role="post-sort" class="dropdown sorting pull-right">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+
+
+Sort by Oldest
+<span class="caret"></span>
+</a>
+<ul class="dropdown-menu pull-right">
+<li>
+<a href="#" data-action="sort" data-sort="popular">Best<i aria-hidden="true" class="icon-checkmark"></i></a>
+</li>
+
+<li>
+<a href="#" data-action="sort" data-sort="desc">Newest<i aria-hidden="true" class="icon-checkmark"></i></a>
+</li>
+
+<li class="selected">
+<a href="#" data-action="sort" data-sort="asc">Oldest<i aria-hidden="true" class="icon-checkmark"></i></a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+<div id="posts">
+<div id="form"><form class="reply">
+<div class="postbox">
+<div role="alert"></div>
+<div class="avatar">
+<span class="user">
+<img data-role="user-avatar" src="a_data/noavatar92.png" alt="Avatar">
+</span>
+</div>
+
+<div class="textarea-wrapper" data-role="textarea" dir="auto"><div><span class="placeholder">Join the discussion…</span><div aria-label="Join the discussion…" style="overflow: auto; max-height: 350px;" data-role="editable" aria-multiline="true" role="textbox" tabindex="0" class="textarea" contenteditable="true"><p><br></p></div><div style="display: none;"><ul class="suggestions">
+<li class="header">
+<h5>in this conversation</h5>
+</li>
+</ul>
+</div></div>
+<div data-role="drag-drop-placeholder" class="media-drag-hover" style="display: none">
+<div class="drag-text">
+⬇ Drag and drop your images here to upload them.
+</div>
+</div>
+<div class="media-preview empty" data-role="media-preview"><ul data-role="media-legacy-list"></ul>
+<ul data-role="media-progress-list"></ul>
+<ul data-role="media-rich-list"></ul>
+<div class="media-expanded empty" data-role="media-preview-expanded">
+<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-role="media-preview-expanded-image" alt="Media preview placeholder">
+</div>
+</div>
+<div class="edit-alert" role="postbox-alert"></div>
+<div class="post-actions">
+<ul class="wysiwyg">
+<li data-role="media-uploader"><a href="#" tabindex="-1" data-action="attach" class="attach" title="Upload Images"><span>Attach</span></a>
+<input data-role="media-upload" tabindex="-1" accept="image/*" type="file">
+</li>
+</ul>
+</div>
+</div>
+
+<div data-role="login-form"><div><section class="auth-section logged-out">
+<div class="connect">
+<h6>Log in with</h6>
+<ul data-role="login-menu" class="services login-buttons">
+
+
+<li class="auth-disqus">
+<button type="button" data-action="auth:disqus" title="Disqus"><i class="icon-disqus"></i></button>
+</li>
+<li class="auth-facebook">
+<button type="button" data-action="auth:facebook" title="Facebook"><i class="icon-facebook-circle"></i></button>
+</li>
+<li class="auth-twitter">
+<button type="button" data-action="auth:twitter" title="Twitter"><i class="icon-twitter-circle"></i></button>
+</li>
+<li class="auth-google">
+<button type="button" data-action="auth:google" title="Google"><i class="icon-google-plus-circle"></i></button>
+</li>
+</ul>
+</div>
+<div class="guest">
+<h6 class="guest-form-title">
+<span class="register-text"> or sign up with Disqus </span>
+<span class="guest-text"> or pick a name </span>
+</h6>
+
+<div class="what-is-disqus help-icon">
+<div id="rules" class="tooltip show">
+<h3>Disqus is a discussion network</h3>
+<ul>
+<li><span>Disqus never moderates or censors. The rules on this community are its own.</span></li>
+<li><span>Your email is safe with us. It's only used for moderation and optional notifications.</span></li>
+<li><span>Don't be a jerk or do anything illegal. Everything is easier that way.</span></li>
+</ul>
+<p class="clearfix"><a href="https://docs.disqus.com/kb/terms-and-policies/" class="btn btn-small" target="_blank">Read full terms and conditions</a></p>
+</div>
+</div>
+
+<p class="input-wrapper">
+<input dir="auto" placeholder="Name" name="display_name" id="view63_display_name" maxlength="30" type="text">
+</p>
+
+<div class="guest-details " data-role="guest-details">
+<p class="input-wrapper">
+<input dir="auto" placeholder="Email" name="email" id="view63_email" type="email">
+</p>
+
+<p class="input-wrapper">
+<input dir="auto" class="register-text" placeholder="Password" name="password" id="view63_password" type="password">
+</p>
+
+<div class="acceptance-wrapper register-text">
+By signing up, you agree to the Disqus <a target="_blank" href="https://help.disqus.com/customer/portal/articles/1753105-basic-rules-for-disqus-powered-profiles-and-discussions">Basic Rules</a>, <a target="_blank" href="https://help.disqus.com/customer/portal/articles/466260-terms-of-service">Terms of Service</a>, and <a target="_blank" href="https://help.disqus.com/customer/portal/articles/466259-privacy-policy">Privacy Policy</a>.
+</div>
+<div class="acceptance-wrapper guest-text">
+By posting, you agree to the Disqus <a target="_blank" href="https://help.disqus.com/customer/portal/articles/1753105-basic-rules-for-disqus-powered-profiles-and-discussions">Basic Rules</a>, <a target="_blank" href="https://help.disqus.com/customer/portal/articles/466260-terms-of-service">Terms of Service</a>, and <a target="_blank" href="https://help.disqus.com/customer/portal/articles/466259-privacy-policy">Privacy Policy</a>.
+</div>
+
+<div class="guest-checkbox">
+<label>
+<input name="author-guest" type="checkbox">
+I'd rather post as a guest
+</label>
+</div>
+
+<div class="proceed" data-role="submit-btn-container">
+<button type="submit" class="btn submit" aria-label="Post"><span class="icon-proceed"></span><div class="spinner"></div></button>
+<button type="submit" class="btn next" aria-label="Next"><span class="icon-proceed"></span><div class="spinner"></div></button>
+</div>
+</div>
+</div>
+</section>
+
+</div></div>
+</div>
+</form></div>
+
+<button class="alert realtime" style="display: none" data-role="realtime-notification">
+</button>
+
+<div id="no-posts" style="display:none"></div>
+
+<ul id="post-list" class="post-list"><li id="post-50352156" class="post"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="a_data/noavatar92_002.png" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author">Jan Caals</span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="http://www.rubyfleebie.com/an-introduction-to-modules-part-1/#comment-50352156" data-role="relative-time" class="time-ago" title="Thursday, August 30, 2007 1:51 PM">9 years ago</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>Just a comment in general.  I really like your articles.  You manage 
+to explain some of the more obscure facets of Ruby in a very 
+understandable way.  Thanks and keep up the good work!</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.rubyfleebie.com/an-introduction-to-modules-part-1/#comment-50352156">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:50352156">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li><li id="post-50352158" class="post"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="a_data/noavatar92_002.png" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author">Frank</span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="http://www.rubyfleebie.com/an-introduction-to-modules-part-1/#comment-50352158" data-role="relative-time" class="time-ago" title="Saturday, September 1, 2007 4:44 PM">9 years ago</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>@Jan Caals, Thanks a lot for your comment. This is the kind of 
+comment that gives me confidence and a nice little boost :) Thanks again
+ and I'm glad you like the articles!</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.rubyfleebie.com/an-introduction-to-modules-part-1/#comment-50352158">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:50352158">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li><li id="post-50352159" class="post"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="a_data/noavatar92_002.png" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author">Oren</span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="http://www.rubyfleebie.com/an-introduction-to-modules-part-1/#comment-50352159" data-role="relative-time" class="time-ago" title="Sunday, September 2, 2007 9:53 AM">9 years ago</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>great post. <br>I agree with Jan - your writing style is what is missing in a lot of book and tutorials.</p><p>I am waiting for the second part!</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.rubyfleebie.com/an-introduction-to-modules-part-1/#comment-50352159">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:50352159">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li><li id="post-50352162" class="post"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="a_data/noavatar92_002.png" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author">Frank</span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="http://www.rubyfleebie.com/an-introduction-to-modules-part-1/#comment-50352162" data-role="relative-time" class="time-ago" title="Monday, September 3, 2007 11:11 PM">9 years ago</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>Thanks for the kind words Oren. Again, it's really appreciated</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.rubyfleebie.com/an-introduction-to-modules-part-1/#comment-50352162">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:50352162">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li><li id="post-50352163" class="post"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="a_data/noavatar92_002.png" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author">Sam Figueroa</span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="http://www.rubyfleebie.com/an-introduction-to-modules-part-1/#comment-50352163" data-role="relative-time" class="time-ago" title="Monday, October 29, 2007 10:05 PM">9 years ago</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>This really got me up to speed again on modules. I only looked at 
+them half heartedly in the past. This and the follow-up got me going. 
+Thanks for the great article.</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.rubyfleebie.com/an-introduction-to-modules-part-1/#comment-50352163">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:50352163">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li><li id="post-50352164" class="post"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="a_data/noavatar92_002.png" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author">Ivan</span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="http://www.rubyfleebie.com/an-introduction-to-modules-part-1/#comment-50352164" data-role="relative-time" class="time-ago" title="Wednesday, November 21, 2007 9:32 PM">8 years ago</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>Nice</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.rubyfleebie.com/an-introduction-to-modules-part-1/#comment-50352164">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:50352164">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li><li id="post-50352167" class="post"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="a_data/noavatar92_002.png" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author">Iannis</span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="http://www.rubyfleebie.com/an-introduction-to-modules-part-1/#comment-50352167" data-role="relative-time" class="time-ago" title="Wednesday, January 9, 2008 9:38 PM">8 years ago</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>Nice</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.rubyfleebie.com/an-introduction-to-modules-part-1/#comment-50352167">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:50352167">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li><li id="post-50352169" class="post"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="a_data/noavatar92_002.png" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author">dev</span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="http://www.rubyfleebie.com/an-introduction-to-modules-part-1/#comment-50352169" data-role="relative-time" class="time-ago" title="Friday, November 27, 2009 1:07 PM">6 years ago</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>Hi, did u know how to include this module into other ruby file?</p><p>let say i have a .rb file name module_example and inside this file has a module call Module_Ex<br>and at other .rb file name module_example_call, when i include the module_example.rb and include it module by coding</p><p>require 'module_example'<br>include 'Module_Ex'</p><p>when i ran, it say no such file to load?<br>any idea</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.rubyfleebie.com/an-introduction-to-modules-part-1/#comment-50352169">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:50352169">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li><li id="post-50352170" class="post"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="a_data/noavatar92_002.png" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author">Frank</span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="http://www.rubyfleebie.com/an-introduction-to-modules-part-1/#comment-50352170" data-role="relative-time" class="time-ago" title="Friday, November 27, 2009 9:04 PM">6 years ago</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>Hello dev,</p><p>The problem is with your "include" call. You must 
+specify the name of the module without the quotes. Try this : include 
+Module_Ex</p><p>Hope this helps!</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.rubyfleebie.com/an-introduction-to-modules-part-1/#comment-50352170">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:50352170">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li><li id="post-50352171" class="post"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="a_data/noavatar92_002.png" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author">Adhi</span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="http://www.rubyfleebie.com/an-introduction-to-modules-part-1/#comment-50352171" data-role="relative-time" class="time-ago" title="Wednesday, February 17, 2010 2:18 PM">6 years ago</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>Guys do take a look at <a href="http://adhirajrankhambe.wordpress.com/2009/01/04/a-word-about-modules-in-ruby/" rel="nofollow">http://adhirajrankhambe.wordpr...</a></p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.rubyfleebie.com/an-introduction-to-modules-part-1/#comment-50352171">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:50352171">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li><li id="post-2397980616" class="post"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="a_data/noavatar92_002.png" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author">jimbocortes</span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="http://www.rubyfleebie.com/an-introduction-to-modules-part-1/#comment-2397980616" data-role="relative-time" class="time-ago" title="Sunday, January 30, 2011 10:52 PM">5 years ago</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>Great article explaining ruby modules. Keep it up.</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.rubyfleebie.com/an-introduction-to-modules-part-1/#comment-2397980616">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:2397980616">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li><li id="post-2397980617" class="post"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="a_data/noavatar92_002.png" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author">Aleksandar</span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="http://www.rubyfleebie.com/an-introduction-to-modules-part-1/#comment-2397980617" data-role="relative-time" class="time-ago" title="Thursday, September 20, 2012 4:46 PM">4 years ago</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>Very good explanation. I am C programmer and it is nice to learn new 
+things about Ruby especially when it is explained so nicely.</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.rubyfleebie.com/an-introduction-to-modules-part-1/#comment-2397980617">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:2397980617">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li><li id="post-2397980619" class="post"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="a_data/noavatar92_002.png" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author">Frank</span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="http://www.rubyfleebie.com/an-introduction-to-modules-part-1/#comment-2397980619" data-role="relative-time" class="time-ago" title="Thursday, September 20, 2012 8:35 PM">4 years ago</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>Thanks Aleksandar and everyone else for your good words!</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.rubyfleebie.com/an-introduction-to-modules-part-1/#comment-2397980619">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:2397980619">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li><li id="post-2397980620" class="post"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="a_data/noavatar92_002.png" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author">Christian Rojas</span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="http://www.rubyfleebie.com/an-introduction-to-modules-part-1/#comment-2397980620" data-role="relative-time" class="time-ago" title="Monday, September 2, 2013 9:46 PM">3 years ago</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>Thanks, good example!</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.rubyfleebie.com/an-introduction-to-modules-part-1/#comment-2397980620">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:2397980620">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li><li id="post-2397980621" class="post"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="a_data/noavatar92_002.png" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author">wholesale cheap Knicks jerseys</span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="http://www.rubyfleebie.com/an-introduction-to-modules-part-1/#comment-2397980621" data-role="relative-time" class="time-ago" title="Sunday, July 6, 2014 3:32 AM">2 years ago</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>Cavaliers with lowest price and easy returns service.</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.rubyfleebie.com/an-introduction-to-modules-part-1/#comment-2397980621">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:2397980621">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li><li id="post-2397980622" class="post"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="a_data/noavatar92_002.png" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author">nilas</span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="http://www.rubyfleebie.com/an-introduction-to-modules-part-1/#comment-2397980622" data-role="relative-time" class="time-ago" title="Wednesday, March 25, 2015 5:05 AM">a year ago</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>Excellent explaination, thanks :)</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://www.rubyfleebie.com/an-introduction-to-modules-part-1/#comment-2397980622">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:2397980622">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li></ul>
+
+<div class="load-more" data-role="more" style="display:none">
+<a href="#" data-action="more-posts" class="btn">Load more comments</a>
+</div>
+</div>
+
+</section>
+
+<div id="placement-bottom" data-tracking-area="discovery-south"><div style="height: auto; visibility: visible;" class="post-list"><div style="display: block; width: 100%;"><div id="discovery-main-c317" class="discovery-main">
+
+<section id="col-organic-c335" class="col-organic">
+<header class="discovery-col-header">
+<h2>Also on <strong>Ruby Fleebie</strong>
+</h2>
+</header>
+<ul class="discovery-posts" data-role="discovery-posts"><li class="discovery-post post-0" id="discovery-link-organic-4372948644">
+<a href="http://disq.us/url?url=http%3A%2F%2Fwww.rubyfleebie.com%2Finteracting-with-mongodb-using-rails-3-and-mongomapper%2F%3AIyMcxMSs8M7zRdnBusH-zhtLYTQ&amp;imp=20g51u92npaje2&amp;prev_imp&amp;forum_id=362276&amp;forum=rubyfleebie&amp;thread_id=95583990&amp;thread=4372948644&amp;zone=thread&amp;area=bottom&amp;object_type=thread&amp;object_id=4372948644" class="publisher-anchor-color">
+
+<header class="discovery-post-header">
+<h3 title="Interacting with MongoDB using Rails 3 and MongoMapper">
+<span data-role="discovery-thread-title" class="title line-truncate" data-line-truncate="2">
+Interacting with MongoDB using Rails 3 and MongoMapper
+</span>
+</h3>
+
+<ul class="meta">
+<li class="comments">
+4 comments
+</li>
+<li class="time">5 months ago</li>
+</ul>
+</header>
+
+</a><a href="http://disq.us/url?url=http%3A%2F%2Fwww.rubyfleebie.com%2Finteracting-with-mongodb-using-rails-3-and-mongomapper%2F%3AIyMcxMSs8M7zRdnBusH-zhtLYTQ&amp;imp=20g51u92npaje2&amp;prev_imp&amp;forum_id=362276&amp;forum=rubyfleebie&amp;thread_id=95583990&amp;thread=4372948644&amp;zone=thread&amp;area=bottom&amp;object_type=thread&amp;object_id=4372948644" class="top-comment" data-role="discovery-top-comment">
+<img src="a_data/noavatar92_002.png" alt="Avatar" data-role="discovery-avatar">
+<p><span class="user" data-role="discovery-top-comment-author">apy</span> — <span data-role="discovery-top-comment-snippet" class="line-truncate" data-line-truncate="3"> hey all,  I am having a problem with rails3 integration with mongodb, using ruby 1.8.7 inside. i have put …</span></p>
+</a>
+
+</li>
+<li class="discovery-post post-1" id="discovery-link-organic-4383651208">
+<a href="http://disq.us/url?url=http%3A%2F%2Fwww.rubyfleebie.com%2Fhow-to-backup-your-postgres-database-on-spideroak-using-dokku%2F%3A0jqj6FUtZPG-M0XEFxt1TIK-Ja4&amp;imp=20g51u92npaje2&amp;prev_imp&amp;forum_id=362276&amp;forum=rubyfleebie&amp;thread_id=95583990&amp;thread=4383651208&amp;zone=thread&amp;area=bottom&amp;object_type=thread&amp;object_id=4383651208" class="publisher-anchor-color">
+
+<header class="discovery-post-header">
+<h3 title="How to backup your postgres database on SpiderOak using Dokku">
+<span data-role="discovery-thread-title" class="title line-truncate" data-line-truncate="2">
+How to backup your postgres database on SpiderOak using Dokku
+</span>
+</h3>
+
+<ul class="meta">
+<li class="comments">
+6 comments
+</li>
+<li class="time">5 months ago</li>
+</ul>
+</header>
+
+</a><a href="http://disq.us/url?url=http%3A%2F%2Fwww.rubyfleebie.com%2Fhow-to-backup-your-postgres-database-on-spideroak-using-dokku%2F%3A0jqj6FUtZPG-M0XEFxt1TIK-Ja4&amp;imp=20g51u92npaje2&amp;prev_imp&amp;forum_id=362276&amp;forum=rubyfleebie&amp;thread_id=95583990&amp;thread=4383651208&amp;zone=thread&amp;area=bottom&amp;object_type=thread&amp;object_id=4383651208" class="top-comment" data-role="discovery-top-comment">
+<img src="a_data/avatar92.jpg" alt="Avatar" data-role="discovery-avatar">
+<p><span class="user" data-role="discovery-top-comment-author">Frank</span> — <span data-role="discovery-top-comment-snippet" class="line-truncate" data-line-truncate="3">Interesting, Juan! I'll certainly try it to see how it goes. Thanks</span></p>
+</a>
+
+</li>
+<li class="discovery-post post-2" id="discovery-link-organic-4372941475">
+<a href="http://disq.us/url?url=http%3A%2F%2Fwww.rubyfleebie.com%2Fhow-to-use-dokku-on-digitalocean-and-deploy-rails-applications-like-a-pro%2F%3A-oUCeNiPy04hXm7lf9T78Vs8uPQ&amp;imp=20g51u92npaje2&amp;prev_imp&amp;forum_id=362276&amp;forum=rubyfleebie&amp;thread_id=95583990&amp;thread=4372941475&amp;zone=thread&amp;area=bottom&amp;object_type=thread&amp;object_id=4372941475" class="publisher-anchor-color">
+
+<header class="discovery-post-header">
+<h3 title="Deploy your Rails applications like a pro with Dokku and DigialOcean">
+<span data-role="discovery-thread-title" class="title line-truncate" data-line-truncate="2">
+Deploy your Rails applications like a pro with Dokku and DigialOcean
+</span>
+</h3>
+
+<ul class="meta">
+<li class="comments">
+15 comments
+</li>
+<li class="time">5 months ago</li>
+</ul>
+</header>
+
+</a><a href="http://disq.us/url?url=http%3A%2F%2Fwww.rubyfleebie.com%2Fhow-to-use-dokku-on-digitalocean-and-deploy-rails-applications-like-a-pro%2F%3A-oUCeNiPy04hXm7lf9T78Vs8uPQ&amp;imp=20g51u92npaje2&amp;prev_imp&amp;forum_id=362276&amp;forum=rubyfleebie&amp;thread_id=95583990&amp;thread=4372941475&amp;zone=thread&amp;area=bottom&amp;object_type=thread&amp;object_id=4372941475" class="top-comment" data-role="discovery-top-comment">
+<img alt="Avatar" data-role="discovery-avatar">
+<p><span class="user" data-role="discovery-top-comment-author">Frank</span> — <span data-role="discovery-top-comment-snippet" class="line-truncate" data-line-truncate="3"> Thanks Ariff, I think I will update the post and add a section about setting environment variables …</span></p>
+</a>
+
+</li>
+<li class="discovery-post post-3" id="discovery-link-organic-4372945832">
+<a href="http://disq.us/url?url=http%3A%2F%2Fwww.rubyfleebie.com%2Fgenerate-round-robin-sport-schedules-with-rrschedule%2F%3AUWrXSXuavuNi5DPD8E7pXB51pgc&amp;imp=20g51u92npaje2&amp;prev_imp&amp;forum_id=362276&amp;forum=rubyfleebie&amp;thread_id=95583990&amp;thread=4372945832&amp;zone=thread&amp;area=bottom&amp;object_type=thread&amp;object_id=4372945832" class="publisher-anchor-color">
+
+<header class="discovery-post-header">
+<h3 title="Generate round-robin sport schedules with RRSchedule">
+<span data-role="discovery-thread-title" class="title line-truncate" data-line-truncate="2">
+Generate round-robin sport schedules with RRSchedule
+</span>
+</h3>
+
+<ul class="meta">
+<li class="comments">
+7 comments
+</li>
+<li class="time">5 months ago</li>
+</ul>
+</header>
+
+</a><a href="http://disq.us/url?url=http%3A%2F%2Fwww.rubyfleebie.com%2Fgenerate-round-robin-sport-schedules-with-rrschedule%2F%3AUWrXSXuavuNi5DPD8E7pXB51pgc&amp;imp=20g51u92npaje2&amp;prev_imp&amp;forum_id=362276&amp;forum=rubyfleebie&amp;thread_id=95583990&amp;thread=4372945832&amp;zone=thread&amp;area=bottom&amp;object_type=thread&amp;object_id=4372945832" class="top-comment" data-role="discovery-top-comment">
+<img alt="Avatar" data-role="discovery-avatar">
+<p><span class="user" data-role="discovery-top-comment-author">Alonzo</span> — <span data-role="discovery-top-comment-snippet" class="line-truncate" data-line-truncate="3"> Do you mind if I quote a couple of your posts as long as I provide credit and sources back to  …</span></p>
+</a>
+
+</li>
+</ul>
+</section>
+
+</div>
+</div></div></div>
+
+<div id="footer" data-tracking-area="footer">
+<ul class="disqus-footer">
+<li class="logo disqus-footer__item"><a href="https://disqus.com/" rel="nofollow" title="Powered by Disqus">Powered by Disqus</a></li>
+<li id="thread-subscribe-button" class="email disqus-footer__item"> 
+<div class="default">
+<a href="#" rel="nofollow" data-action="subscribe" title="Subscribe and get email updates from this discussion"><i aria-hidden="true" class="icon icon-mail"></i><span class="clip">Subscribe</span> <i aria-hidden="true" class="icon icon-checkmark"></i></a>
+</div>
+<div class="form">
+<div class="input-wrapper"><input id="thread-subscribe-email" placeholder="yourname@email.com" type="email"></div>
+</div>
+</li>
+<li class="install disqus-footer__item">
+<a href="https://publishers.disqus.com/engage?utm_source=rubyfleebie&amp;utm_medium=Disqus-Footer" rel="nofollow" target="_blank">
+<i aria-hidden="true" class="icon icon-disqus"></i>
+<span class="clip hidden-sm">Add Disqus to your site</span>
+<span class="clip visible-sm hidden-xs">Add Disqus</span>
+<span class="clip visible-xs">Add</span>
+</a>
+</li>
+<li class="privacy disqus-footer__item">
+<a href="https://help.disqus.com/customer/portal/articles/1657951?utm_source=disqus&amp;utm_medium=embed-footer&amp;utm_content=privacy-btn" rel="nofollow" target="_blank">
+<i aria-hidden="true" class="icon icon-lock"></i>
+<span class="clip">Privacy</span>
+</a>
+</li>
+</ul>
+</div>
+</div></body></html>

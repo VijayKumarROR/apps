@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<compiz_session id="10ae6179e69d8e4ff3145908070553832100000020050033">
+  <window id="10ae6179e69d8e4ff3145908077433881400000020050036" title="bookofruby.pdf" class="Evince" name="evince" command="evince">
+    <geometry x="65" y="24" width="600" height="600"/>
+    <minimized/>
+    <maximized vert="yes" horz="yes"/>
+    <workspace index="0"/>
+  </window>
+</compiz_session>

@@ -1,0 +1,20 @@
+<h1>Editing mymovie</h1>
+
+<% form_for(@mymovie) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :Title %><br />
+    <%= f.text_field :Title %>
+  </p>
+  <p>
+    <%= f.label :Rating %><br />
+    <%= f.text_field :Rating %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @mymovie %> |
+<%= link_to 'Back', mymovies_path %>

@@ -1,0 +1,7 @@
+/*
+Name: widgets.js
+URL: http://qsf.is.quoracdn.net/-widgets.js701c8dddcca0c603.js
+Generated: 1457567611074794
+Files: /widgets.js
+*/
+require.whenReady("settings",function(){(function(){function e(e,t){var o=RegExp("[?&]"+t+"=([^&]*)").exec(e);return o&&o[1]}var t=window.qrae=window.qrae||{hostDomain:window.__quora_host__||"http://www.quora.com",buttonIFramePath:"/widgets/follow_button_iframe",widgetWidth:265,widgetShortLabelWidth:200,widgetButtonHeight:20,createFollowButtonIFrameFromName:function(e,o,r,a){var n=document.createElement("iframe");n.allowTransparency="true";n.frameBorder="0";n.scrolling="no";var i=[window.qrae.hostDomain,t.buttonIFramePath,"?name=",e,"&source_url=",encodeURIComponent(window.location.href),"&dark=",o];if(a){i=i.concat(["&embed_code=",a])}n.src=i.join("");n.style.border="none";if(r){n.style.width=t.widgetShortLabelWidth+"px"}else{n.style.width=t.widgetWidth+"px"}n.style.height=t.widgetButtonHeight+"px";n.id=e;return n}};for(var o=document.getElementsByTagName("script"),r=o.length-1;r>=0;r--){var a=o.item(r),n=a.parentNode;if(n&&n.className.match("quora-follow-button")){var i=n.getAttribute("data-name");var d=false;if(window.getComputedStyle){var l=parseInt(window.getComputedStyle(n.parentNode,null).getPropertyValue("width"),10);if(l<265){d=true}}var w=e(a.src,"embed_code");var m=t.createFollowButtonIFrameFromName(i,!!n.className.match(/\sdark$/),d,w);n.parentNode.insertBefore(m,n);n.parentNode.removeChild(n)}}})()});

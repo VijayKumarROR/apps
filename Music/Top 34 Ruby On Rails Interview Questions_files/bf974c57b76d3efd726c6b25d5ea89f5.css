@@ -1,0 +1,166 @@
+#content .wgs_wrapper table, #widget .wgs_wrapper table, .wgs_wrapper
+table{border:none;margin:auto;width:100%;border-collapse:initial}#content .wgs_wrapper tr td, #widget .wgs_wrapper tr td, .wgs_wrapper tr
+td{border:none;padding:0}.wgs_wrapper body, .wgs_wrapper input, .wgs_wrapper
+textarea{line-height:initial}.wgs_wrapper html, .wgs_wrapper body, .wgs_wrapper div, .wgs_wrapper span, .wgs_wrapper applet, .wgs_wrapper object, .wgs_wrapper iframe, .wgs_wrapper h1, .wgs_wrapper h2, .wgs_wrapper h3, .wgs_wrapper h4, .wgs_wrapper h5, .wgs_wrapper h6, .wgs_wrapper p, .wgs_wrapper blockquote, .wgs_wrapper pre, .wgs_wrapper a, .wgs_wrapper abbr, .wgs_wrapper acronym, .wgs_wrapper address, .wgs_wrapper big, .wgs_wrapper cite, .wgs_wrapper code, .wgs_wrapper del, .wgs_wrapper dfn, .wgs_wrapper em, .wgs_wrapper font, .wgs_wrapper ins, .wgs_wrapper kbd, .wgs_wrapper q, .wgs_wrapper s, .wgs_wrapper samp, .wgs_wrapper small, .wgs_wrapper strike, .wgs_wrapper strong, .wgs_wrapper sub, .wgs_wrapper sup, .wgs_wrapper tt, .wgs_wrapper var, .wgs_wrapper dl, .wgs_wrapper dt, .wgs_wrapper dd, .wgs_wrapper ol, .wgs_wrapper ul, .wgs_wrapper li, .wgs_wrapper fieldset, .wgs_wrapper form, .wgs_wrapper label, .wgs_wrapper legend, .wgs_wrapper table, .wgs_wrapper caption, .wgs_wrapper tbody, .wgs_wrapper tfoot, .wgs_wrapper thead, .wgs_wrapper tr, .wgs_wrapper th, .wgs_wrapper
+td{word-wrap:normal}#wgs_wrapper_id{margin-bottom:10px}.gsc-input{margin-left:3px !important;box-shadow:inherit !important}.gsc-search-box-tools .gsc-search-box .gsc-input{padding-right:0}.gsc-search-button input.gsc-search-button-v2,input.gsc-search-button-v2{padding:6px
+10px}.gsc-control-cse{background-color:transparent !important;border:none !important;padding:0px
+!important}.mtq_quiz_area
+div{max-width:none !important}.mtq_css_letter_button{width:40px;height:40px;display:block;border-radius:40px;-moz-border-radius:40px;-webkit-border-radius:40px;-khtml-border-radius:40px;font-size:30px;line-height:40px;text-decoration:none;text-align:center;font-family:Arial,Helvetica,sans-serif}.mtqscrollable{position:relative;overflow:hidden}.mtqscrollable
+.items{width:20000em;position:absolute;clear:both}.items
+div{float:left}.mtqscrollable
+.active{position:relative;cursor:default}.mtq_quiz_area
+table{border:none}.mtq_quiz_area th, .mtq_quiz_area td, .mtq_quiz_area tr
+td{border:none;padding:0;vertical-align:middle}.mtq_css_button{display:block;cursor:pointer;font-weight:600;font-size:125%;text-align:center;width:8em;margin-left:auto;margin-right:auto;-o-border-radius:2em;-moz-border-radius:2em;-webkit-border-radius:2em;border-radius:2em;padding: .5em}.mtq_css_button:hover{cursor:pointer}.mtq_results_button{width:8em}.mtq_list_item{cursor:pointer;padding-bottom:1em !important;padding-top:1em !important;font-size:200%}.mtq_show_list{}.mtq_list_item_complete{font-weight:400;color:#FFF}.mtq_list_item-wrong,.mtq_list_item.mtq_list_item_complete.mtq_list_item-wrong{background:#B5281E!important;color:#FFF}.mtq_list_item-correct,.mtq_list_item.mtq_list_item_complete.mtq_list_item-correct{background:#063!important;color:#FFF}.mtq_list_item-partial,.mtq_list_item.mtq_list_item_complete.mtq_list_item-partial{background:#09F!important;color:#FFF}.mtq_listrow{width:100%}.mtq_return_list{margin-top:1em;margin-bottom:1em}.mtq_question_list_container{width:95% !important;font-weight:600;margin-left:auto;margin-right:auto;border-collapse:collapse;left:0}.mtq_question_list_container
+td{text-align:center;width:20%}.mtq_question_list_container
+tr{padding-top:2em}.mtq_question_text{padding-right:2em;width:90%}.mtq_question_list_container tr
+td{border:thin solid !important;border-collapse:collapse}.mtq_shaded_item_msg{display:block;width:25em;text-align:center;font-weight:600;border:thin solid;-o-border-radius:2em;-moz-border-radius:2em;-webkit-border-radius:2em;border-radius:2em;margin: .5em auto}.mtq_quiz_status{text-align:center}.mtq_quiz_area{text-align:left}.mtq_hint{display:none;margin-left:3em;margin-top:1em;border:thin solid;-o-border-radius:1em;-moz-border-radius:1em;-webkit-border-radius:1em;border-radius:1em;padding: .5em;width:70% !important;float:right !important}.mtq_hint_label{font-size:125%}.mtq_answer_text{float:left;display:block}.mtq_instructions{display:none;margin-bottom:1em}.mtq_javawarning{text-align:center;font-weight:600}.mtq_quiztitle{text-align:center;display:block}.mtq_results_request{display:block;text-align:center;margin-top: .5em}.mtq_question_heading_table{width:100% !important;border-collapse:collapse;margin: .5em 0;padding:0
+0 .1em !important}.mtq_answer_table{width:85% !important;padding-right:1em;margin-top:1em;text-align:left;border-collapse:collapse;cursor:auto}.mtq_answer_table
+td{padding-top: .5em !important;padding-bottom: .5em !important}.mtq_oce_first{border-right:1em solid transparent;border-left:1em solid transparent;vertical-align:middle;text-align:center}.mtq_answer_td{margin-left: .25em}.mtq_letter_button_td{width:30px}.mtq_explanation{display:none;margin-left:3em;width:80%;margin-top:1em;margin-bottom:3em;border:thin solid;-o-border-radius:1em;-moz-border-radius:1em;-webkit-border-radius:1em;border-radius:1em;padding: .5em}.mtq_explanation-label{display:block;padding-bottom: .25em;font-weight:600}.mtq_action_button{display:block;margin-top: .5em;margin-bottom: .5em;font-size:200%}.mtq_css_next_button,.mtq_css_back_button{width:46px;height:30px;display:block;font-size:80px!important;text-align:center}.mtq_listrow tbody, .mtq_listrow tr, .mtq_listrow
+td{width:100%}.mtq_listrow_button:hover{background-position:0 7px;cursor:pointer}.mtq_listrow_button-td{width:80px !important;display:block}.mtq_quiz_results_bubble{display:none;-o-border-radius:1em;-moz-border-radius:1em;-webkit-border-radius:1em;border-radius:1em;margin-top:1em;margin-bottom:1em;border:none;padding: .5em}.mtq_quiz_results_highlight{margin-top:1em;font-size:75%;font-weight:600;text-align:center}.mtq_wrong_stamp{border:thin solid}.mtq_correct_stamp{border:thin solid}.mtq_partial_stamp{color:#FFF;background:#09F;border-color:#09F;border:thin solid}.mtq_question_label{font-weight:600;float:left}.mtq_stamp{float:left;margin-left: .5em;margin-bottom: .25em;text-align:center;padding-left: .5em;padding-right: .5em;-o-border-radius:2em;-moz-border-radius:2em;-webkit-border-radius:2em;border-radius:2em;font-weight:600;text-transform:uppercase}.mtq_correct_marker{display:block;width:40px;height:40px;background:url(http://cdn.career.guru99.com/wp-content/plugins/mtouch-quiz/images/correct.png) no-repeat 0 0}.mtq_wrong_marker{display:block;width:40px;height:40px;background:url(http://cdn.career.guru99.com/wp-content/plugins/mtouch-quiz/images/wrong.png) no-repeat 0 0}.mtq_selected_row{font-weight:600}.mtq_marker,#mtq_quiz_results,.mtq_preload,.mtq_navigator{display:none}#content .mtq, #content .mtq_auto, #content .mtq_quiz_name, #content .mtq_score, #content .mtq_total, #content .mtq_percentage, #content .mtq_wrong_answers, #content .mtq_time_allowed, #content .mtq_time_used, #container .mtq, #container .mtq_auto, #container .mtq_quiz_name, #container .mtq_score, #container .mtq_total, #container .mtq_percentage, #container .mtq_wrong_answers, #container .mtq_time_allowed, #container .mtq_time_used,.mtq_auto{display:none}.mtq_thanks{display:block;width:80px;height:80px;float:left;background:url(http://cdn.career.guru99.com/wp-content/plugins/mtouch-quiz/images/thanks.png) no-repeat 0 0px}.mtq_cone{display:block;width:64px;height:64px;float:left;background:url(http://cdn.career.guru99.com/wp-content/plugins/mtouch-quiz/images/cone.png) no-repeat 0 0px}.mtq_setup{display:block;width:64px;height:64px;float:left;background:url(http://cdn.career.guru99.com/wp-content/plugins/mtouch-quiz/images/setup.png) no-repeat 0 0px}.mtq_timer_icon{display:block;width:32px;height:32px;float:left;background:url(http://cdn.career.guru99.com/wp-content/plugins/mtouch-quiz/images/timer.png) no-repeat 0 0px}.mtq_email{display:block;width:32px;height:32px;float:left;background:url(http://cdn.career.guru99.com/wp-content/plugins/mtouch-quiz/images/email.png) no-repeat 0 0px}.mtq_premium_feature{border:thin solid;border-color:#03C !important}.mtq_timer{text-align:right}.mtq_failed_button{cursor:pointer;font-weight:600;font-size:125%;color:#B5281E;background:#fff;border:thin solid;border-color:#B5281E;text-align:center;width:75%;margin-left:auto;margin-right:auto;border:thin solid;-o-border-radius:2em;-moz-border-radius:2em;-webkit-border-radius:2em;border-radius:2em;border-color:#B5281E;padding: .5em}.mtq_clickable{cursor:pointer}.mtq_explanation{background:#ADE0C1;color:#030;border-color:#030}.mtq_wrong_stamp{color:#FFF;background:#B5281E;border-color:#B5281E}.mtq_correct_stamp{color:#FFF;background:#063;border-color:#063}.mtq_selected_row{background:#CCC;color:#000}.mtq_css_letter_selected{color:#fff !important;background:#333 !important}.mtq_css_letter_selected:hover{background:#666 !important}.mtq_color_green .mtq_css_button, .mtq_color_green
+.mtq_css_letter_button{color:#fff;background:#00930E}.mtq_color_green .mtq_quiz_results_bubble, .mtq_color_green .mtq_list_item_complete, .mtq_color_green .mtq_shaded_item_msg, .mtq_color_green .mtq_hint, .mtq_color_green .mtq_hint_label, .mtq_color_green
+.mtq_hint_text{color:#004A07;background:#BFE4C3!important;border-color:#00930E !important}.mtq_color_green .mtq_css_button:hover, .mtq_color_green .mtq_css_letter_button:hover{color:#fff;background:#40AE4B}.mtq_color_green .mtq_question_list_container tr
+td{background:#FFF;color:#004A07;border-color:#004A07 !important}.mtq_color_green
+.mtq_question_heading_table{border-bottom:.1em solid #00930E !important}.mtq_color_green
+.mtq_oce_first{background:#BFE4C3}.mtq_color_green .mtq_answer_table tr:hover
+td{color:#000;background:#E6F5E7}.mtq_color_green .mtq_css_next_button, .mtq_color_green
+.mtq_css_back_button{color:#004A07}.mtq_color_red .mtq_css_button, .mtq_color_red
+.mtq_css_letter_button{color:#fff;background:#D81830}.mtq_color_red .mtq_quiz_results_bubble, .mtq_color_red .mtq_list_item_complete, .mtq_color_red .mtq_shaded_item_msg, .mtq_color_red .mtq_hint, .mtq_color_red .mtq_hint_label, .mtq_color_red
+.mtq_hint_text{color:#6C0C18;background:#F5C5CB!important;border-color:#D81830 !important}.mtq_color_red .mtq_css_button:hover, .mtq_color_red .mtq_css_letter_button:hover{color:#fff;background:#E25264}.mtq_color_red .mtq_question_list_container tr
+td{background:#FFF;color:#6C0C18;border-color:#6C0C18 !important}.mtq_color_red
+.mtq_question_heading_table{border-bottom:.1em solid #D81830 !important}.mtq_color_red
+.mtq_oce_first{background:#F5C5CB}.mtq_color_red .mtq_answer_table tr:hover
+td{color:#000;background:#FCE8EB}.mtq_color_red .mtq_css_next_button, .mtq_color_red
+.mtq_css_back_button{color:#6C0C18}.mtq_color_orange .mtq_css_button, .mtq_color_orange
+.mtq_css_letter_button{color:#fff;background:#F60}.mtq_color_orange .mtq_quiz_results_bubble, .mtq_color_orange .mtq_list_item_complete, .mtq_color_orange .mtq_shaded_item_msg, .mtq_color_orange .mtq_hint, .mtq_color_orange .mtq_hint_label, .mtq_color_orange
+.mtq_hint_text{color:#D95700;background:#FFD9BF!important;border-color:#F60 !important}.mtq_color_orange .mtq_css_button:hover, .mtq_color_orange .mtq_css_letter_button:hover{color:#fff;background:#FF8D40}.mtq_color_orange .mtq_question_list_container tr
+td{background:#FFF;color:#D95700;border-color:#D95700 !important}.mtq_color_orange
+.mtq_question_heading_table{border-bottom:.1em solid #F60 !important}.mtq_color_orange
+.mtq_oce_first{background:#FFD9BF}.mtq_color_orange .mtq_answer_table tr:hover
+td{color:#000;background:#FFF0E6}.mtq_color_orange .mtq_css_next_button, .mtq_color_orange
+.mtq_css_back_button{color:#D95700}.mtq_color_yellow .mtq_css_button, .mtq_color_yellow
+.mtq_css_letter_button{color:#fff;background:#FFD700}.mtq_color_yellow .mtq_quiz_results_bubble, .mtq_color_yellow .mtq_list_item_complete, .mtq_color_yellow .mtq_shaded_item_msg, .mtq_color_yellow .mtq_hint, .mtq_color_yellow .mtq_hint_label, .mtq_color_yellow
+.mtq_hint_text{color:#D9D900;background:#FFFFBF!important;border-color:#FFD700 !important}.mtq_color_yellow .mtq_css_button:hover, .mtq_color_yellow .mtq_css_letter_button:hover{color:#fff;background:#FFFF7E}.mtq_color_yellow .mtq_question_list_container tr
+td{background:#FFF;color:#D9D900;border-color:#D9D900 !important}.mtq_color_yellow
+.mtq_question_heading_table{border-bottom:.1em solid #FFD700 !important}.mtq_color_yellow
+.mtq_oce_first{background:#FFFFBF}.mtq_color_yellow .mtq_answer_table tr:hover
+td{color:#000;background:#FFFFE6}.mtq_color_yellow .mtq_css_next_button, .mtq_color_yellow
+.mtq_css_back_button{color:#D9D900}.mtq_color_blue .mtq_css_button, .mtq_color_blue
+.mtq_css_letter_button{color:#fff;background:#06F}.mtq_color_blue .mtq_quiz_results_bubble, .mtq_color_blue .mtq_list_item_complete, .mtq_color_blue .mtq_shaded_item_msg, .mtq_color_blue .mtq_hint, .mtq_color_blue .mtq_hint_label, .mtq_color_blue
+.mtq_hint_text{color:#339;background:#d0dafd!important;border-color:#06F !important}.mtq_color_blue .mtq_css_button:hover, .mtq_color_blue .mtq_css_letter_button:hover{color:#fff;background:#09F}.mtq_color_blue .mtq_question_list_container tr
+td{background:#FFF;color:#339;border-color:#339 !important}.mtq_color_blue
+.mtq_question_heading_table{border-bottom:.1em solid #06F !important}.mtq_color_blue
+.mtq_oce_first{background:#d0dafd}.mtq_color_blue .mtq_answer_table tr:hover
+td{color:#000;background:#eff2ff}.mtq_color_blue .mtq_css_next_button, .mtq_color_blue
+.mtq_css_back_button{color:#339}.mtq_color_indigo .mtq_css_button, .mtq_color_indigo
+.mtq_css_letter_button{color:#fff;background:#2E0854}.mtq_color_indigo .mtq_quiz_results_bubble, .mtq_color_indigo .mtq_list_item_complete, .mtq_color_indigo .mtq_shaded_item_msg, .mtq_color_indigo .mtq_hint, .mtq_color_indigo .mtq_hint_label, .mtq_color_indigo
+.mtq_hint_text{color:#270747;background:#CBC1D4!important;border-color:#2E0854 !important}.mtq_color_indigo .mtq_css_button:hover, .mtq_color_indigo .mtq_css_letter_button:hover{color:#fff;background:#63467F}.mtq_color_indigo .mtq_question_list_container tr
+td{background:#FFF;color:#270747;border-color:#270747 !important}.mtq_color_indigo
+.mtq_question_heading_table{border-bottom:.1em solid #2E0854 !important}.mtq_color_indigo
+.mtq_oce_first{background:#CBC1D4}.mtq_color_indigo .mtq_answer_table tr:hover
+td{color:#000;background:#EBE7EE}.mtq_color_indigo .mtq_css_next_button, .mtq_color_indigo
+.mtq_css_back_button{color:#270747}.mtq_color_violet .mtq_css_button, .mtq_color_violet
+.mtq_css_letter_button{color:#fff;background:#7B637B}.mtq_color_violet .mtq_quiz_results_bubble, .mtq_color_violet .mtq_list_item_complete, .mtq_color_violet .mtq_shaded_item_msg, .mtq_color_violet .mtq_hint, .mtq_color_violet .mtq_hint_label, .mtq_color_violet
+.mtq_hint_text{color:#4F2F4F;background:#D3CBD3!important;border-color:#7B637B !important}.mtq_color_violet .mtq_css_button:hover, .mtq_color_violet .mtq_css_letter_button:hover{color:#fff;background:#A898A8}.mtq_color_violet .mtq_question_list_container tr
+td{background:#FFF;color:#4F2F4F;border-color:#4F2F4F !important}.mtq_color_violet
+.mtq_question_heading_table{border-bottom:.1em solid #7B637B !important}.mtq_color_violet
+.mtq_oce_first{background:#D3CBD3}.mtq_color_violet .mtq_answer_table tr:hover
+td{color:#000;background:#EEEBEE}.mtq_color_violet .mtq_css_next_button, .mtq_color_violet
+.mtq_css_back_button{color:#4F2F4F}.mtq_color_fuchsia .mtq_css_button, .mtq_color_fuchsia
+.mtq_css_letter_button{color:#fff;background:#FF40FF}.mtq_color_fuchsia .mtq_quiz_results_bubble, .mtq_color_fuchsia .mtq_list_item_complete, .mtq_color_fuchsia .mtq_shaded_item_msg, .mtq_color_fuchsia .mtq_hint, .mtq_color_fuchsia .mtq_hint_label, .mtq_color_fuchsia
+.mtq_hint_text{color:#D900D9;background:#FFBFFF!important;border-color:#FF40FF !important}.mtq_color_fuchsia .mtq_css_button:hover, .mtq_color_fuchsia .mtq_css_letter_button:hover{color:#fff;background:#FF80FF}.mtq_color_fuchsia .mtq_question_list_container tr
+td{background:#FFF;color:#D900D9;border-color:#D900D9 !important}.mtq_color_fuchsia
+.mtq_question_heading_table{border-bottom:.1em solid #FF40FF !important}.mtq_color_fuchsia
+.mtq_oce_first{background:#FFBFFF}.mtq_color_fuchsia .mtq_answer_table tr:hover
+td{color:#000;background:#FFE6FF}.mtq_color_fuchsia .mtq_css_next_button, .mtq_color_fuchsia
+.mtq_css_back_button{color:#D900D9}.mtq_color_khaki .mtq_css_button, .mtq_color_khaki
+.mtq_css_letter_button{color:#fff;background:#9F9F5F}.mtq_color_khaki .mtq_quiz_results_bubble, .mtq_color_khaki .mtq_list_item_complete, .mtq_color_khaki .mtq_shaded_item_msg, .mtq_color_khaki .mtq_hint, .mtq_color_khaki .mtq_hint_label, .mtq_color_khaki
+.mtq_hint_text{color:#5C3317;background:#ECECE0!important;border-color:#9F9F5F !important}.mtq_color_khaki .mtq_css_button:hover, .mtq_color_khaki .mtq_css_letter_button:hover{color:#fff;background:#E2E2CF}.mtq_color_khaki .mtq_question_list_container tr
+td{background:#FFF;color:#5C3317;border-color:#5C3317 !important}.mtq_color_khaki
+.mtq_question_heading_table{border-bottom:.1em solid #9F9F5F !important}.mtq_color_khaki
+.mtq_oce_first{background:#ECECE0}.mtq_color_khaki .mtq_answer_table tr:hover
+td{color:#000;background:#F5F5EF}.mtq_color_khaki .mtq_css_next_button, .mtq_color_khaki
+.mtq_css_back_button{color:#5C3317}.mtq_color_burgundy .mtq_css_button, .mtq_color_burgundy
+.mtq_css_letter_button{color:#fff;background:#9E0508}.mtq_color_burgundy .mtq_quiz_results_bubble, .mtq_color_burgundy .mtq_list_item_complete, .mtq_color_burgundy .mtq_shaded_item_msg, .mtq_color_burgundy .mtq_hint, .mtq_color_burgundy .mtq_hint_label, .mtq_color_burgundy
+.mtq_hint_text{color:#4F0304;background:#CF8384!important;border-color:#9E0508 !important}.mtq_color_burgundy .mtq_css_button:hover, .mtq_color_burgundy .mtq_css_letter_button:hover{color:#fff;background:#B74446}.mtq_color_burgundy .mtq_question_list_container tr
+td{background:#FFF;color:#4F0304;border-color:#4F0304 !important}.mtq_color_burgundy
+.mtq_question_heading_table{border-bottom:.1em solid #9E0508 !important}.mtq_color_burgundy
+.mtq_oce_first{background:#CF8384}.mtq_color_burgundy .mtq_answer_table tr:hover
+td{color:#000;background:#E7C0C1}.mtq_color_burgundy .mtq_css_next_button, .mtq_color_burgundy
+.mtq_css_back_button{color:#4F0304}.mtq_color_black .mtq_css_button, .mtq_color_black
+.mtq_css_letter_button{color:#fff;background:#000}.mtq_color_black .mtq_quiz_results_bubble, .mtq_color_black .mtq_list_item_complete, .mtq_color_black .mtq_shaded_item_msg, .mtq_color_black .mtq_hint, .mtq_color_black .mtq_hint_label, .mtq_color_black
+.mtq_hint_text{color:#000;background:#BFBFBF!important;border-color:#000 !important}.mtq_color_black .mtq_css_button:hover, .mtq_color_black .mtq_css_letter_button:hover{color:#fff;background:#808080}.mtq_color_black .mtq_question_list_container tr
+td{background:#FFF;color:#000;border-color:#000 !important}.mtq_color_black
+.mtq_question_heading_table{border-bottom:.1em solid #000 !important}.mtq_color_black
+.mtq_oce_first{background:#BFBFBF}.mtq_color_black .mtq_answer_table tr:hover
+td{color:#000;background:#E6E6E6}.mtq_color_black .mtq_css_next_button, .mtq_color_black
+.mtq_css_back_button{color:#000}.mtq_color_lightblue .mtq_css_button, .mtq_color_lightblue
+.mtq_css_letter_button{color:#fff;background:#ADD8E6}.mtq_color_lightblue .mtq_quiz_results_bubble, .mtq_color_lightblue .mtq_list_item_complete, .mtq_color_lightblue .mtq_shaded_item_msg, .mtq_color_lightblue .mtq_hint, .mtq_color_lightblue .mtq_hint_label, .mtq_color_lightblue
+.mtq_hint_text{color:#0147FA;background:#D7ECF3!important;border-color:#ADD8E6 !important}.mtq_color_lightblue .mtq_css_button:hover, .mtq_color_lightblue .mtq_css_letter_button:hover{color:#fff;background:#C2E2ED}.mtq_color_lightblue .mtq_question_list_container tr
+td{background:#FFF;color:#0147FA;border-color:#0147FA !important}.mtq_color_lightblue
+.mtq_question_heading_table{border-bottom:.1em solid #ADD8E6 !important}.mtq_color_lightblue
+.mtq_oce_first{background:#D7ECF3}.mtq_color_lightblue .mtq_answer_table tr:hover
+td{color:#000;background:#EAF5F9}.mtq_color_lightblue .mtq_css_next_button, .mtq_color_lightblue
+.mtq_css_back_button{color:#0147FA}.mtq_color_teal .mtq_css_button, .mtq_color_teal
+.mtq_css_letter_button{color:#fff;background:#008080}.mtq_color_teal .mtq_quiz_results_bubble, .mtq_color_teal .mtq_list_item_complete, .mtq_color_teal .mtq_shaded_item_msg, .mtq_color_teal .mtq_hint, .mtq_color_teal .mtq_hint_label, .mtq_color_teal
+.mtq_hint_text{color:#004040;background:#80C0C0!important;border-color:#008080 !important}.mtq_color_teal .mtq_css_button:hover, .mtq_color_teal .mtq_css_letter_button:hover{color:#fff;background:#40A0A0}.mtq_color_teal .mtq_question_list_container tr
+td{background:#FFF;color:#004040;border-color:#004040 !important}.mtq_color_teal
+.mtq_question_heading_table{border-bottom:.1em solid #008080 !important}.mtq_color_teal
+.mtq_oce_first{background:#80C0C0}.mtq_color_teal .mtq_answer_table tr:hover
+td{color:#000;background:#BFDFDF}.mtq_color_teal .mtq_css_next_button, .mtq_color_teal
+.mtq_css_back_button{color:#004040}.mtq_color_lightgreen .mtq_css_button, .mtq_color_lightgreen
+.mtq_css_letter_button{color:#fff;background:#90EE90}.mtq_color_lightgreen .mtq_quiz_results_bubble, .mtq_color_lightgreen .mtq_list_item_complete, .mtq_color_lightgreen .mtq_shaded_item_msg, .mtq_color_lightgreen .mtq_hint, .mtq_color_lightgreen .mtq_hint_label, .mtq_color_lightgreen
+.mtq_hint_text{color:#002600;background:#C8F7C8!important;border-color:#90EE90 !important}.mtq_color_lightgreen .mtq_css_button:hover, .mtq_color_lightgreen .mtq_css_letter_button:hover{color:#fff;background:#ACF3AC}.mtq_color_lightgreen .mtq_question_list_container tr
+td{background:#FFF;color:#002600;border-color:#002600 !important}.mtq_color_lightgreen
+.mtq_question_heading_table{border-bottom:.1em solid #90EE90 !important}.mtq_color_lightgreen
+.mtq_oce_first{background:#C8F7C8}.mtq_color_lightgreen .mtq_answer_table tr:hover
+td{color:#000;background:#E3FBE3}.mtq_color_lightgreen .mtq_css_next_button, .mtq_color_lightgreen
+.mtq_css_back_button{color:#002600}.mtq_color_lightpink .mtq_css_button, .mtq_color_lightpink
+.mtq_css_letter_button{color:#fff;background:#FFB6C1}.mtq_color_lightpink .mtq_quiz_results_bubble, .mtq_color_lightpink .mtq_list_item_complete, .mtq_color_lightpink .mtq_shaded_item_msg, .mtq_color_lightpink .mtq_hint, .mtq_color_lightpink .mtq_hint_label, .mtq_color_lightpink
+.mtq_hint_text{color:#BF8991;background:#FFDBE1!important;border-color:#FFB6C1 !important}.mtq_color_lightpink .mtq_css_button:hover, .mtq_color_lightpink .mtq_css_letter_button:hover{color:#fff;background:#FFC9D1}.mtq_color_lightpink .mtq_question_list_container tr
+td{background:#FFF;color:#BF8991;border-color:#BF8991 !important}.mtq_color_lightpink
+.mtq_question_heading_table{border-bottom:.1em solid #FFB6C1 !important}.mtq_color_lightpink
+.mtq_oce_first{background:#FFDBE1}.mtq_color_lightpink .mtq_answer_table tr:hover
+td{color:#000;background:#FFEDEF}.mtq_color_lightpink .mtq_css_next_button, .mtq_color_lightpink
+.mtq_css_back_button{color:#BF8991}.mtq_color_darkgreen .mtq_css_button, .mtq_color_darkgreen
+.mtq_css_letter_button{color:#fff;background:#030}.mtq_color_darkgreen .mtq_quiz_results_bubble, .mtq_color_darkgreen .mtq_list_item_complete, .mtq_color_darkgreen .mtq_shaded_item_msg, .mtq_color_darkgreen .mtq_hint, .mtq_color_darkgreen .mtq_hint_label, .mtq_color_darkgreen
+.mtq_hint_text{color:#002600;background:#809A80!important;border-color:#030 !important}.mtq_color_darkgreen .mtq_css_button:hover, .mtq_color_darkgreen .mtq_css_letter_button:hover{color:#fff;background:#406640}.mtq_color_darkgreen .mtq_question_list_container tr
+td{background:#FFF;color:#002600;border-color:#002600 !important}.mtq_color_darkgreen
+.mtq_question_heading_table{border-bottom:.1em solid #030 !important}.mtq_color_darkgreen
+.mtq_oce_first{background:#809A80}.mtq_color_darkgreen .mtq_answer_table tr:hover
+td{color:#000;background:#BFCCBF}.mtq_color_darkgreen .mtq_css_next_button, .mtq_color_darkgreen
+.mtq_css_back_button{color:#002600}.mtq_color_brown .mtq_css_button, .mtq_color_brown
+.mtq_css_letter_button{color:#fff;background:#87421F}.mtq_color_brown .mtq_quiz_results_bubble, .mtq_color_brown .mtq_list_item_complete, .mtq_color_brown .mtq_shaded_item_msg, .mtq_color_brown .mtq_hint, .mtq_color_brown .mtq_hint_label, .mtq_color_brown
+.mtq_hint_text{color:#442110;background:#C4A190!important;border-color:#87421F !important}.mtq_color_brown .mtq_css_button:hover, .mtq_color_brown .mtq_css_letter_button:hover{color:#fff;background:#A57257}.mtq_color_brown .mtq_question_list_container tr
+td{background:#FFF;color:#442110;border-color:#442110 !important}.mtq_color_brown
+.mtq_question_heading_table{border-bottom:.1em solid #87421F !important}.mtq_color_brown
+.mtq_oce_first{background:#C4A190}.mtq_color_brown .mtq_answer_table tr:hover
+td{color:#000;background:#E1D0C7}.mtq_color_brown .mtq_css_next_button, .mtq_color_brown
+.mtq_css_back_button{color:#442110}.mtq_color_purple .mtq_css_button, .mtq_color_purple
+.mtq_css_letter_button{color:#fff;background:#800080}.mtq_color_purple .mtq_quiz_results_bubble, .mtq_color_purple .mtq_list_item_complete, .mtq_color_purple .mtq_shaded_item_msg, .mtq_color_purple .mtq_hint, .mtq_color_purple .mtq_hint_label, .mtq_color_purple
+.mtq_hint_text{color:#400040;background:#C080C0!important;border-color:#800080 !important}.mtq_color_purple .mtq_css_button:hover, .mtq_color_purple .mtq_css_letter_button:hover{color:#fff;background:#A040A0}.mtq_color_purple .mtq_question_list_container tr
+td{background:#FFF;color:#400040;border-color:#400040 !important}.mtq_color_purple
+.mtq_question_heading_table{border-bottom:.1em solid #800080 !important}.mtq_color_purple
+.mtq_oce_first{background:#C080C0}.mtq_color_purple .mtq_answer_table tr:hover
+td{color:#000;background:#DFBFDF}.mtq_color_purple .mtq_css_next_button, .mtq_color_purple
+.mtq_css_back_button{color:#400040}.mtq_color_navy .mtq_css_button, .mtq_color_navy
+.mtq_css_letter_button{color:#fff;background:#23238E}.mtq_color_navy .mtq_quiz_results_bubble, .mtq_color_navy .mtq_list_item_complete, .mtq_color_navy .mtq_shaded_item_msg, .mtq_color_navy .mtq_hint, .mtq_color_navy .mtq_hint_label, .mtq_color_navy
+.mtq_hint_text{color:#121247;background:#9292C7!important;border-color:#23238E !important}.mtq_color_navy .mtq_css_button:hover, .mtq_color_navy .mtq_css_letter_button:hover{color:#fff;background:#5A5AAB}.mtq_color_navy .mtq_question_list_container tr
+td{background:#FFF;color:#121247;border-color:#121247 !important}.mtq_color_navy
+.mtq_question_heading_table{border-bottom:.1em solid #23238E !important}.mtq_color_navy
+.mtq_oce_first{background:#9292C7}.mtq_color_navy .mtq_answer_table tr:hover
+td{color:#000;background:#C8C8E3}.mtq_color_navy .mtq_css_next_button, .mtq_color_navy
+.mtq_css_back_button{color:#121247}.mtq_color_darkpink .mtq_css_button, .mtq_color_darkpink
+.mtq_css_letter_button{color:#fff;background:#CD1076}.mtq_color_darkpink .mtq_quiz_results_bubble, .mtq_color_darkpink .mtq_list_item_complete, .mtq_color_darkpink .mtq_shaded_item_msg, .mtq_color_darkpink .mtq_hint, .mtq_color_darkpink .mtq_hint_label, .mtq_color_darkpink
+.mtq_hint_text{color:#67083B;background:#E788BB!important;border-color:#CD1076 !important}.mtq_color_darkpink .mtq_css_button:hover, .mtq_color_darkpink .mtq_css_letter_button:hover{color:#fff;background:#DA4C99}.mtq_color_darkpink .mtq_question_list_container tr
+td{background:#FFF;color:#67083B;border-color:#67083B !important}.mtq_color_darkpink
+.mtq_question_heading_table{border-bottom:.1em solid #CD1076 !important}.mtq_color_darkpink
+.mtq_oce_first{background:#E788BB}.mtq_color_darkpink .mtq_answer_table tr:hover
+td{color:#000;background:#F2C3DD}.mtq_color_darkpink .mtq_css_next_button, .mtq_color_darkpink
+.mtq_css_back_button{color:#67083B}.mtq_color_lavender .mtq_css_button, .mtq_color_lavender
+.mtq_css_letter_button{color:#fff;background:#C9C}.mtq_color_lavender .mtq_quiz_results_bubble, .mtq_color_lavender .mtq_list_item_complete, .mtq_color_lavender .mtq_shaded_item_msg, .mtq_color_lavender .mtq_hint, .mtq_color_lavender .mtq_hint_label, .mtq_color_lavender
+.mtq_hint_text{color:#664D66;background:#E6CDE6!important;border-color:#C9C !important}.mtq_color_lavender .mtq_css_button:hover, .mtq_color_lavender .mtq_css_letter_button:hover{color:#fff;background:#D9B3D9}.mtq_color_lavender .mtq_question_list_container tr
+td{background:#FFF;color:#664D66;border-color:#664D66 !important}.mtq_color_lavender
+.mtq_question_heading_table{border-bottom:.1em solid #C9C !important}.mtq_color_lavender
+.mtq_oce_first{background:#E6CDE6}.mtq_color_lavender .mtq_answer_table tr:hover
+td{color:#000;background:#F2E5F2}.mtq_color_lavender .mtq_css_next_button, .mtq_color_lavender
+.mtq_css_back_button{color:#664D66}

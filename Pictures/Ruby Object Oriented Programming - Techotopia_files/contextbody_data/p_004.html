@@ -1,0 +1,12 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252"><script type="text/javascript" src="p_data_004/hmac-sha1.js"></script>
+<script type="text/javascript" language="JavaScript">
+    //http://code.google.com/p/crypto-js/#SHA-1
+    //http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/hmac-sha1.js
+    var payload = "nwid=10001105643&eid=18072662555217733972";
+    var esig = CryptoJS.HmacSHA1(payload, "ovAlY75Yr13q16VJ6JfHCxXfnXIH.gK_OwoW.ZIKK6g-");
+    var pixelUrl = "http://ads.yahoo.com/cms/v1?" + payload + "&sigv=1&esig=2~" + esig;
+    var finalPixelUrl = "http://ads.yahoo.com/pixel?id=2547130&t=2&piggyback=" + escape(pixelUrl);
+    TFPix2108899203 = new Image();
+    TFPix2108899203.src = finalPixelUrl;
+</script></head><body></body></html>

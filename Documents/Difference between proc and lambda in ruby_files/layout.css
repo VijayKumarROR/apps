@@ -1,0 +1,309 @@
+/* Compassites Layout CSS Document */
+
+/* Header CSS starts here*/
+header
+{
+	margin: 0;	
+}
+
+#logo
+{
+	float:left;
+	padding: 20px 0 45px;
+}
+
+#logo a
+{
+	display: block;
+    height: 47px;
+    width: 243px;
+	text-indent: -9999px;
+	background: url("../img/logo.png") no-repeat 0 0 transparent; //update 0.01
+}
+#post-it {
+    background: url("../img/postit.png") no-repeat scroll 0 0 transparent;
+    float: left;
+    width: 181px;
+    height: 102px;
+    margin-top: 25px;
+    margin-left: -5px;
+    margin-bottom: 5px;
+}
+#vignetteShell
+{
+	clear: both;
+    margin-bottom : 55px;
+	display : none;
+}
+
+#pageid-home #vignetteShell
+{
+	display : block;
+}
+
+/* Header CSS ends here*/
+
+section
+{
+	clear: both;
+}
+
+.content_wrapper
+{
+	width: 960px;
+	margin: 0 auto;
+}
+
+/* Footer CSS starts here*/
+
+footer
+{
+	clear:both;
+	color:#565656;
+
+	text-align:center;
+	margin: 22px 0 0 0;
+	padding:0 0 10px;
+	min-width:998px;
+	background: url("../img/footer_texture_bg.png") repeat 0 0 #636a6e;
+}
+
+footer nav
+{
+	display: none;
+}
+
+.soclial_network_bar
+{
+	height: 40px;
+	
+	background: #e1e4f3;
+	background: -webkit-linear-gradient(top, #c7c7c7 0%, #dcdcdc 15%, #e4e4e4 100%);
+	background: -moz-linear-gradient(center top, #c7c7c7 0%, #dcdcdc 15%, #e4e4e4 100%);
+	background: linear-gradient(center top, #c7c7c7 0%, #dcdcdc 15%, #e4e4e4 100%);
+	
+	box-shadow: 0 3px 3px #444;
+}
+
+.soclial_network_bar ul
+{
+	list-style: none;
+	float: left;
+	padding: 10px 0 0 0;
+}
+
+.soclial_network_bar li
+{
+	float: left;
+	margin: 0 10px 0 0;
+}
+
+.soclial_network_bar a
+{
+	display: block;
+	height: 23px;
+	text-indent: -9999px;
+	
+	background-image: url("../img/icons_social_network.png");
+	background-repeat: no-repeat;
+	background-color: transparent;
+}
+
+.facebook
+{
+	width: 13px;
+	background-position: 0 0;
+}
+
+.facebook:hover
+{
+	background-position: 0 -23px;
+}
+
+.twitter
+{
+	width: 30px;
+	background-position: -13px 0;
+}
+
+.twitter:hover
+{
+	background-position: -13px -23px;
+}
+
+.in
+{
+	width: 25px;
+	background-position: -43px 0;
+}
+
+.in:hover
+{
+	background-position: -43px -23px;
+}
+
+.youtube
+{
+	width: 20px;
+	background-position: -68px 0;
+}
+
+.youtube:hover
+{
+	background-position: -68px -23px;
+}
+.pinterest {
+    background-position: -90px 0px;
+    width: 23px;
+}
+.pinterest:hover {
+    background-position: -90px -24px;
+    width: 23px;
+}
+.slideshare {
+    background-position: -116px 0px;
+    width: 23px;
+}
+.slideshare:hover {
+    background-position: -116px -24px;
+    width: 23px;
+}
+.flickr {
+    background-position: -142px 0px;
+    width: 33px;
+}
+.flickr:hover {
+    background-position: -142px -24px;
+    width: 33px;
+}
+.wordpress {
+    background-position: -178px 0;
+    width: 22px;
+}
+.wordpress:hover {
+    background-position: -178px -24px;
+    width: 22px;
+}
+
+.blogspot {
+    background-position: -203px 0;
+    width: 22px;
+}
+.blogspot:hover {
+    background-position: -203px -24px;
+    width: 22px;
+}
+
+.tumblr {
+    background-position: -228px 0;
+    width: 21px;
+}
+.tumblr:hover {
+    background-position: -228px -24px;
+    width: 21px;
+}
+
+.rssfeed {
+    background-position: -201px 0;
+    width: 23px;
+}
+.rssfeed:hover {
+    background-position: -201px -24px;
+    width: 23px;
+}
+.soclial_network_bar p
+{
+	padding:  13px 0 0 0;
+}
+
+.soclial_network_bar p span
+{
+	color: #0d99dc;
+}
+
+ul.footer_links
+{
+	margin:0px;
+	padding: 25px 0 25px;
+	list-style:none;
+}
+
+ul.footer_links li
+{
+	display:inline;
+	color: #c8c8c8;
+	text-shadow: 0 1px 0 #000;
+}
+
+ul.footer_links a
+{
+	padding: 0 10px;
+
+	color:#fff;
+	text-decoration:none;
+	
+}
+
+ul.footer_links a:hover
+{
+	color:#c8c8c8;
+	text-decoration:underline;
+	text-shadow: none;
+}
+
+
+#headerNav{
+	float:right;
+        width:530px;
+}
+
+ul.header_top
+{
+	margin:0px;
+	padding: 25px 0 15px;
+	list-style:none;
+        float:right;
+}
+
+ul.header_top li
+{
+	display:inline;
+	color: #c8c8c8;
+}
+
+ul.header_top a
+{
+	padding: 0 10px;
+
+	color:#666666;
+	text-decoration:none;
+	
+}
+
+ul.header_top a:hover
+{
+	color:#c8c8c8;
+	text-decoration:underline;
+	text-shadow: none;
+}
+
+footer .copyright
+{
+	color: #000;
+	text-shadow: 0 1px 0 rgba(227, 227, 227, 0.2);
+}
+
+/* Footer CSS ends here*/
+
+#admin {
+	background: rgb(231,228,200);
+}
+
+.contact-us {
+    background: #ccc none repeat scroll 0 0;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 300;
+    height: auto;
+    padding: 7px;
+}

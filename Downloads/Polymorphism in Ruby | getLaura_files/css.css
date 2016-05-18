@@ -1,0 +1,24 @@
+@font-face {
+  font-family: 'Arvo';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Arvo'), url(http://fonts.gstatic.com/s/arvo/v9/WJ6D195CfbTRlIs49IbkFw.woff) format('woff');
+}
+@font-face {
+  font-family: 'Arvo';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Arvo Bold'), local('Arvo-Bold'), url(http://fonts.gstatic.com/s/arvo/v9/0Aa8aBJcGN1n1zDNhqNrnQ.woff) format('woff');
+}
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Raleway'), local('Raleway-Regular'), url(http://fonts.gstatic.com/s/raleway/v10/IczWvq5y_Cwwv_rBjOtT0w.woff) format('woff');
+}
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Raleway SemiBold'), local('Raleway-SemiBold'), url(http://fonts.gstatic.com/s/raleway/v10/xkvoNo9fC8O2RDydKj12bxsxEYwM7FgeyaSgU71cLG0.woff) format('woff');
+}

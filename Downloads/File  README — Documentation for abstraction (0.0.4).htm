@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  File: README
+  
+    &mdash; Documentation for abstraction (0.0.4)
+  
+</title>
+
+  <link rel="stylesheet" href="/css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="/css/common.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="/css/custom.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  pathId = "README"
+  relpath = '/';
+  docsPrefix = 'gems/abstraction/0.0.4';
+  listPrefix = 'list/gems/abstraction/0.0.4';
+  searchPrefix = 'search/gems/abstraction/0.0.4';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="/js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="/js/app.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="/js/autocomplete.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="/js/rubydoc_custom.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="/list/gems/abstraction/0.0.4/class"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <form class="search" method="get" action="/search/gems/abstraction/0.0.4">
+  <input name="q" type="search" placeholder="Search" id="search_box" size="30" value="" />
+</form>
+<script type="text/javascript" charset="utf-8">
+  $(function() {
+    $('#search_box').autocomplete($('#search_box').parent().attr('action'), {
+      width: 200,
+      formatItem: function(item) {
+        var values = item[0].split(",");
+        return values[0] + (values[1] == '' ? "" : " <small>(" + values[1] + ")</small>");
+      }
+    }).result(function(event, item) {
+      var values = item[0].split(",")
+      $('#search_box').val(values[1]);
+      location.href = values[3];
+      return false;
+    });
+  });
+</script>
+
+<div id="menu">
+  
+    <a href="/gems" target="_top">Libraries</a> &raquo;
+    <span class="title">abstraction <small>(0.0.4)</small></span>
+  
+  
+    &raquo; 
+    <a href="/gems/abstraction/0.0.4/index">Index</a> &raquo; 
+    <span class='title'>File: README</span>
+  
+</div>
+
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="/list/gems/abstraction/0.0.4/class">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <iframe id="search_frame" src="/list/gems/abstraction/0.0.4/class"></iframe>
+
+      <div id="content"><div id='filecontents'><h1>Abstract Classes.  In Ruby.</h1>
+
+<p>Let's say you've got a class called <code>Car</code>.  There are two subclasses of <code>Car</code>: <code>Convertible</code> and <code>Sedan</code>.  And it turns out that all cars are either convertibles or sedans.  (Who knew?)  So really, there's no reason that a car object wouldn't be an instance of <code>Convertible</code> or <code>Sedan</code>, and in fact an object that's a direct instance of <code>Car</code> itself won't even work correctly.</p>
+
+<pre class="code ruby"><code class="ruby"><span class='rubyid_class class kw'>class</span> <span class='rubyid_Car constant id'>Car</span>
+  <span class='rubyid_def def kw'>def</span> <span class='rubyid_go_forward identifier id'>go_forward</span>
+    <span class='comment val'># ...</span>
+  <span class='rubyid_end end kw'>end</span>
+<span class='rubyid_end end kw'>end</span>
+
+<span class='rubyid_class class kw'>class</span> <span class='rubyid_Convertible constant id'>Convertible</span> <span class='lt op'>&lt;</span> <span class='rubyid_Car constant id'>Car</span>
+  <span class='rubyid_def def kw'>def</span> <span class='rubyid_door_count identifier id'>door_count</span>
+    <span class='integer val'>2</span>
+  <span class='rubyid_end end kw'>end</span>
+<span class='rubyid_end end kw'>end</span>
+
+<span class='rubyid_class class kw'>class</span> <span class='rubyid_Sedan constant id'>Sedan</span> <span class='lt op'>&lt;</span> <span class='rubyid_Car constant id'>Car</span>
+  <span class='rubyid_def def kw'>def</span> <span class='rubyid_door_count identifier id'>door_count</span>
+    <span class='integer val'>4</span>
+  <span class='rubyid_end end kw'>end</span>
+<span class='rubyid_end end kw'>end</span>
+</code></pre>
+
+<p>How would you write <code>Car#doors</code>?  You wouldn't, because unlike moving forward, that behavior isn't shared across all cars.  <code>Car</code> is an abstract class: a class that should never be instantiated directly.</p>
+
+<p>But what's stopping us?  Nothing.  And that's a problem.  So let's fix it:</p>
+
+<pre class="code ruby"><code class="ruby">$ <span class='rubyid_sudo identifier id'>sudo</span> <span class='rubyid_gem identifier id'>gem</span> <span class='rubyid_install identifier id'>install</span> <span class='rubyid_abstraction identifier id'>abstraction</span>
+</code></pre>
+
+<p>Then:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='rubyid_require identifier id'>require</span> <span class='string val'>&#39;abstraction&#39;</span>
+
+<span class='rubyid_class class kw'>class</span> <span class='rubyid_Car constant id'>Car</span>
+  <span class='rubyid_abstract identifier id'>abstract</span>
+
+  <span class='rubyid_def def kw'>def</span> <span class='rubyid_go_forward identifier id'>go_forward</span>
+    <span class='comment val'># ...</span>
+  <span class='rubyid_end end kw'>end</span>
+<span class='rubyid_end end kw'>end</span>
+
+<span class='rubyid_Car constant id'>Car</span><span class='dot token'>.</span><span class='rubyid_new identifier id'>new</span>
+<span class='comment val'>#&gt; AbstractClassError: Car is an abstract class and cannot be instantiated</span>
+</code></pre>
+
+<p>But:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='rubyid_Convertible constant id'>Convertible</span><span class='dot token'>.</span><span class='rubyid_new identifier id'>new</span>  <span class='comment val'># =&gt; #&lt;Convertible:0x8fdf4&gt;</span>
+</code></pre>
+
+<p>Awesome.</p>
+
+<h2>Awesome?  Why so awesome?</h2>
+
+<p>Ok, let's take it back a step.  You've got a <code>Car</code> class with no subclasses.  They haven't been necessary, and you don't want to add complexity you don't need.  Good for you.</p>
+
+<pre class="code ruby"><code class="ruby"><span class='rubyid_class class kw'>class</span> <span class='rubyid_Car constant id'>Car</span>
+  <span class='rubyid_def def kw'>def</span> <span class='rubyid_go_forward identifier id'>go_forward</span>
+    <span class='comment val'># ...</span>
+  <span class='rubyid_end end kw'>end</span>
+<span class='rubyid_end end kw'>end</span>
+</code></pre>
+
+<p>Cars go forward, and that's about it.  Except, now some parts of the code want to know how many doors a car has.  Remember, that depends on the kind of car it is, so we'll need <code>Car</code> to know about its type.  And since convertibles are pretty rare in your code, you have cars be sedans by default.</p>
+
+<pre class="code ruby"><code class="ruby"><span class='rubyid_class class kw'>class</span> <span class='rubyid_Car constant id'>Car</span>
+  <span class='rubyid_attr_reader identifier id'>attr_reader</span> <span class='symbol val'>:type</span>
+
+  <span class='rubyid_def def kw'>def</span> <span class='rubyid_initialize identifier id'>initialize</span><span class='lparen token'>(</span><span class='rubyid_type identifier id'>type</span><span class='assign token'>=</span><span class='symbol val'>:sedan</span><span class='rparen token'>)</span>
+    <span class='rubyid_@type ivar id'>@type</span> <span class='assign token'>=</span> <span class='rubyid_type identifier id'>type</span>
+  <span class='rubyid_end end kw'>end</span>
+
+  <span class='rubyid_def def kw'>def</span> <span class='rubyid_door_count identifier id'>door_count</span>
+    <span class='rubyid_case case kw'>case</span> <span class='rubyid_type identifier id'>type</span>
+    <span class='rubyid_when when kw'>when</span> <span class='symbol val'>:convertible</span>
+      <span class='integer val'>2</span>
+    <span class='rubyid_when when kw'>when</span> <span class='symbol val'>:sedan</span>
+      <span class='integer val'>4</span>
+    <span class='rubyid_end end kw'>end</span>
+  <span class='rubyid_end end kw'>end</span>
+
+  <span class='rubyid_def def kw'>def</span> <span class='rubyid_go_forward identifier id'>go_forward</span>
+    <span class='comment val'># ...</span>
+  <span class='rubyid_end end kw'>end</span>
+<span class='rubyid_end end kw'>end</span>
+</code></pre>
+
+<p>Pretty soon you realize its time to refactor this puppy.  You want a refactoring called <a href="http://www.refactoring.com/catalog/replaceTypeCodeWithSubclasses.html" title="Refactoring: Replace Type Code with Subclasses">Replace Type Code with Subclasses</a>.  What you end up with is the set of classes we saw at the beginning:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='rubyid_class class kw'>class</span> <span class='rubyid_Car constant id'>Car</span>
+  <span class='rubyid_def def kw'>def</span> <span class='rubyid_go_forward identifier id'>go_forward</span>
+    <span class='comment val'># ...</span>
+  <span class='rubyid_end end kw'>end</span>
+<span class='rubyid_end end kw'>end</span>
+
+<span class='rubyid_class class kw'>class</span> <span class='rubyid_Convertible constant id'>Convertible</span> <span class='lt op'>&lt;</span> <span class='rubyid_Car constant id'>Car</span>
+  <span class='rubyid_def def kw'>def</span> <span class='rubyid_door_count identifier id'>door_count</span>
+    <span class='integer val'>2</span>
+  <span class='rubyid_end end kw'>end</span>
+<span class='rubyid_end end kw'>end</span>
+
+<span class='rubyid_class class kw'>class</span> <span class='rubyid_Sedan constant id'>Sedan</span> <span class='lt op'>&lt;</span> <span class='rubyid_Car constant id'>Car</span>
+  <span class='rubyid_def def kw'>def</span> <span class='rubyid_door_count identifier id'>door_count</span>
+    <span class='integer val'>4</span>
+  <span class='rubyid_end end kw'>end</span>
+<span class='rubyid_end end kw'>end</span>
+</code></pre>
+
+<p><strong>The problem</strong> is that all of your tests are passing, but none of your code is using the subclasses yet.  You could probably grep or ack through your source to find all of the times you use <code>Car.new</code>; in fact, you should.  But you should still be <em>testing</em> that you've done it right.  Also, if <code>Car</code> is backed by an ORM, <em>it</em> might be creating <code>Car</code> objects for you.</p>
+
+<p>But as we've seen, Abstraction clears that all up.  Just make the class abstract...</p>
+
+<pre class="code ruby"><code class="ruby"><span class='rubyid_class class kw'>class</span> <span class='rubyid_Car constant id'>Car</span>
+  <span class='rubyid_abstract identifier id'>abstract</span>
+
+  <span class='rubyid_def def kw'>def</span> <span class='rubyid_go_forward identifier id'>go_forward</span>
+    <span class='comment val'># ...</span>
+  <span class='rubyid_end end kw'>end</span>
+<span class='rubyid_end end kw'>end</span>
+</code></pre>
+
+<p>...and watch your tests fail.  When they pass again, you've completed the refactoring.</p>
+
+<h1>Abstract Methods</h1>
+
+<p><em>(Warning: this section is a bit of a tease.)</em></p>
+
+<p>Traditionally, abstract classes are found in strongly typed languages, where the compiler makes sure they're never created by type checking.  In the Ruby world, the test suite is essentially our type checker.  No complier can statically prove that an abstract Ruby class will never be instantiated, but we can exercise the test suite and see if it ever happens.</p>
+
+<p>Abstract classes usually have a way to notate abstract methods.  These are methods which are declared in the superclass, but don't have an implementation there.  A concrete subclass has to implement all of the abstract methods.  Again, this is checked by the type checker.</p>
+
+<p>We have an example of an abstract method above, it's just not denoted in any way: <code>#door_count</code>.  Similar to the case of abstract classes, we can't prove statically that abstract methods are implemented in the concrete subclasses.  We have to run the tests and see if they're defined when they're called.</p>
+
+<p><strong>But</strong>: if they're called and there's no implementation, we'll get a <code>NoMethodError</code> anyway.  The declaration of an abstract method in the superclass is really only useful to the type checker, to tell it that, for instance, any <code>Car</code> object has a <code>#door_count</code> method.  We don't have a type checker.  So we don't need to declare abstract methods.</p>
+
+<h2>But wouldn't it be useful?</h2>
+
+<p>It would be, if it were meaningful.  The problem is: what does it mean to implement a method?  In Ruby you really can't know whether a method is implemented until you send it the message and see if it raises a <code>NoMethodError</code>.  There's no way to determine whether a class &quot;implements&quot; all of its superclasses abstract methods without making assumptions like that the class doesn't use <code>method_missing</code> or that instances of the class won't get their own singleton implementations.  And the nail in the coffin: there's no time when a Ruby class is done being implemented, so there's no time to check.</p>
+
+<p>On the other hand, maybe there's a way to make it useful.  If there is, it certainly belongs here, so drop me a line or just fork away.</p>
+
+<h1>Credits</h1>
+
+<p>Written by Peter Jaros at drop.io.<br>
+Copyright 2009 drop.io, Inc.</p>
+</div></div>
+
+      <div id="footer">
+  Generated on Sat Jan 30 04:47:21 2016 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.6 (ruby-2.1.4).
+</div>
+
+
+  <script src="http://static.getclicky.com/js" type="text/javascript"></script>
+  <script type="text/javascript">clicky.init(246206);</script>
+  <noscript><p><img alt="Clicky" width="1" height="1" src="http://static.getclicky.com/246206ns.gif" /></p></noscript>
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-7172246-5', 'auto');
+  ga('send', 'pageview');
+  </script>
+
+
+    </div>
+  </body>
+</html>

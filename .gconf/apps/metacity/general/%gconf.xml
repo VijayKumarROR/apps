@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="theme" mtime="1454853453" type="string">
+		<stringvalue>Radiance</stringvalue>
+	</entry>
+	<entry name="visual_bell_type" mtime="1454858742" type="string">
+		<stringvalue>frame_flash</stringvalue>
+	</entry>
+	<entry name="auto_raise_delay" mtime="1454858742" type="int" value="1000"/>
+	<entry name="auto_raise" mtime="1454858742" type="bool" value="true"/>
+</gconf>

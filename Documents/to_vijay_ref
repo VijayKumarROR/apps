@@ -1,0 +1,23 @@
+Ruby topics
+  arrays
+  hashes
+  strings
+  class 
+  module
+  mixin 
+  what is joins(in rails)
+  what is include(in rails) 
+  polymorphic  association 
+  callback
+  ActiveModel
+  lambda
+  proc
+  blocks
+  form_for
+  form_tag
+  restfull auth in rails 
+  action-pack(handing the web request and split the work into a controller part and a view part)
+  Helper method in view
+
+Rails
+polymorphic-associations

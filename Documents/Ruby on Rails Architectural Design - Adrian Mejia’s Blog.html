@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!-->
+<html class="js video no-maskImage placeholder" lang="en"><!--<![endif]--><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script src="Ruby%20on%20Rails%20Architectural%20Design%20-%20Adrian%20Mejia%E2%80%99s%20Blog_files/ca-pub-9725767907287651.js"></script><script async="" src="Ruby%20on%20Rails%20Architectural%20Design%20-%20Adrian%20Mejia%E2%80%99s%20Blog_files/cbgapi.loaded_1"></script><script async="" src="Ruby%20on%20Rails%20Architectural%20Design%20-%20Adrian%20Mejia%E2%80%99s%20Blog_files/cbgapi.loaded_0"></script>
+  <meta charset="utf-8">
+  <title>Ruby on Rails Architectural Design - Adrian Mejia’s Blog</title>
+  <meta name="author" content="Adrian Mejia">
+
+  
+  <meta name="description" content="Abstract. – Ruby on Rails is a web development framework for database back-ended applications. This framework is becoming very popular in the agile …">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
+
+  
+  <link rel="canonical" href="http://adrianmejia.com/blog/2011/08/11/ruby-on-rails-architectural-design">
+  <link href="http://adrianmejia.com/favicon.png" rel="icon">
+  <link href="Ruby%20on%20Rails%20Architectural%20Design%20-%20Adrian%20Mejia%E2%80%99s%20Blog_files/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="http://adrianmejia.com/atom.xml" rel="alternate" title="Adrian Mejia's Blog" type="application/atom+xml">
+  <script src="Ruby%20on%20Rails%20Architectural%20Design%20-%20Adrian%20Mejia%E2%80%99s%20Blog_files/jXHR.js" type="text/javascript"></script><script gapi_processed="true" src="Ruby%20on%20Rails%20Architectural%20Design%20-%20Adrian%20Mejia%E2%80%99s%20Blog_files/plusone.js" async="" type="text/javascript"></script><script src="Ruby%20on%20Rails%20Architectural%20Design%20-%20Adrian%20Mejia%E2%80%99s%20Blog_files/all.js" async="" id="facebook-jssdk"></script><script src="Ruby%20on%20Rails%20Architectural%20Design%20-%20Adrian%20Mejia%E2%80%99s%20Blog_files/ga.js" async="" type="text/javascript"></script><script src="Ruby%20on%20Rails%20Architectural%20Design%20-%20Adrian%20Mejia%E2%80%99s%20Blog_files/modernizr-2.js"></script>
+  <script src="Ruby%20on%20Rails%20Architectural%20Design%20-%20Adrian%20Mejia%E2%80%99s%20Blog_files/jquery_003.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="Ruby%20on%20Rails%20Architectural%20Design%20-%20Adrian%20Mejia%E2%80%99s%20Blog_files/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="Ruby%20on%20Rails%20Architectural%20Design%20-%20Adrian%20Mejia%E2%80%99s%20Blog_files/css_002.css" rel="stylesheet" type="text/css">
+<link href="Ruby%20on%20Rails%20Architectural%20Design%20-%20Adrian%20Mejia%E2%80%99s%20Blog_files/css.css" rel="stylesheet" type="text/css">
+
+<link href="Ruby%20on%20Rails%20Architectural%20Design%20-%20Adrian%20Mejia%E2%80%99s%20Blog_files/tables.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+<script src="Ruby%20on%20Rails%20Architectural%20Design%20-%20Adrian%20Mejia%E2%80%99s%20Blog_files/jquery.js" type="text/javascript"></script>
+<script src="Ruby%20on%20Rails%20Architectural%20Design%20-%20Adrian%20Mejia%E2%80%99s%20Blog_files/jquery_002.js" type="text/javascript"></script>
+<script src="Ruby%20on%20Rails%20Architectural%20Design%20-%20Adrian%20Mejia%E2%80%99s%20Blog_files/generate-toc.js" type="text/javascript"></script>
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-24183929-4']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+<script src="Ruby%20on%20Rails%20Architectural%20Design%20-%20Adrian%20Mejia%E2%80%99s%20Blog_files/embed.js" async="" type="text/javascript"></script><script src="Ruby%20on%20Rails%20Architectural%20Design%20-%20Adrian%20Mejia%E2%80%99s%20Blog_files/widgets.js" async="" type="text/javascript"></script><script src="Ruby%20on%20Rails%20Architectural%20Design%20-%20Adrian%20Mejia%E2%80%99s%20Blog_files/button.js" async="" charset="utf-8" type="text/javascript"></script><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(http://static.xx.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(http://static.xx.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(http://static.xx.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(http://static.xx.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(http://static.xx.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(http://static.xx.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f6f7f8;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(http://static.xx.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(http://static.xx.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(http://static.xx.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(http://static.xx.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3a5795;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(http://static.xx.fbcdn.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(http://static.xx.fbcdn.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{width:auto;height:auto;min-height:initial;min-width:initial;background:none}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{color:#fff;display:block;padding-top:20px;clear:both;font-size:18px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;bottom:0;left:0;right:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #2f477a;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(http://static.xx.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f8;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(http://static.xx.fbcdn.net/rsrc.php/v2/yD/r/t-wz8gw1xG1.png);background-repeat:no-repeat;background-position:50% 50%;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(http://static.xx.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}</style></head>
+
+<body>
+  <header role="banner"><hgroup>
+  <h1><a href="http://adrianmejia.com/">Adrian Mejia’s Blog</a></h1>
+  
+    <h2>var life = [‘work_smart’, ‘have_fun’, ‘make_history’];</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="http://adrianmejia.com/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input name="q" value="site:adrianmejia.com" type="hidden">
+    <input class="search" name="q" results="0" placeholder="Search" type="text">
+  </fieldset>
+</form>
+  
+<fieldset class="mobile-nav"><select><option selected="selected" value="">Navigate…</option><option value="http://adrianmejia.com/">» Blog</option><option value="http://adrianmejia.com/blog/archives">» Archives</option><option value="http://adrianmejia.com/atom.xml">» RSS</option></select></fieldset><ul class="main-navigation">
+  <li><a href="http://adrianmejia.com/">Blog</a></li>
+  <li><a href="http://adrianmejia.com/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Ruby on Rails Architectural Design</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class="entry-date" datetime="2011-08-11T00:00:00-04:00"><span class="date"><span class="date-month">Aug</span> <span class="date-day">11</span><span class="date-suffix">th</span>, <span class="date-year">2011</span></span> <span class="time">12:00 am</span></time>
+        
+           | <a href="#disqus_thread" data-disqus-identifier="http://adrianmejia.com">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><strong>Abstract</strong>. – Ruby on Rails
+ is a web development framework for database back-ended applications. 
+This framework is becoming very popular in the agile development due to 
+its productivity and agility features. Ruby on Rails have built-in 
+solutions to many common problems that developer face during web 
+development. Furthermore, this framework favors convention over 
+configuration, which makes the web development more agile. Additionally,
+ these conventions make the web applications more maintainable as well, 
+because the developers adopt the Rails convention and sensitive 
+defaults.</p>
+
+<!--More-->
+
+
+<h2>Introduction</h2>
+
+<p>Ruby on Rails (RoR) is open source web framework written in the Ruby 
+programming language, and all the applications in Rails are written in 
+Ruby. Ruby on Rails is focused on productivity and enforces agile web 
+development.</p>
+
+<p>Rails framework leverages the features of the Ruby language. 
+Yukishiro Matzumoto designed this language in 1995 influence by Perl, 
+Eiffel, Python, Smalltalk and others. It’s a dynamically typed, fully 
+object-oriented, general-purpose scripting language. Ruby was designed 
+to have an elegant syntax and made as human readable as possible, for 
+instance it does not need colons and parenthesis around parameters. Some
+ parts of the code are read like English declarations.</p>
+
+<p>The Ruby on Rails framework was designed for database-backed web 
+applications. It was created as a response to heavy web frameworks such 
+as J2EE and the .NET framework. In order to make the development process
+ faster, Ruby on Rails uses conventions and assumptions that are 
+considered best ways to accomplish tasks, and it’s designed to encourage
+ those. This convention eliminates configuration code and increases 
+productivity. Many of the common tasks for web development are built-in 
+in the framework to work out-of-the-box. This includes email management,
+ object-database mappers, file structures, code generation, how the 
+elements are named and organized and so on. All of these conventions 
+allow developers to write less code and develop agile applications. 
+Additionally, the enhance maintainability and understandability around 
+the Ruby on Rails developers’ community.</p>
+
+<p>Ruby on Rails architecture has the following features:</p>
+
+<ul>
+<li>Model-View-Controller architecture.</li>
+<li>Representational State Transfer (REST) for web services.</li>
+<li>Supports the major databases (MySQL, Oracle, MS SQL Server, PostgreSQL, IBM DB2, and more).</li>
+<li>Open-source server side scripting language.</li>
+<li>Convention over configuration</li>
+<li>Scripts generators to automate tasks.</li>
+<li>Use of YAML machine, which is a human-readable data serialization format.</li>
+</ul>
+
+
+<p>The above-described features are distributed in the following Rails’ 
+components and the Fig. 2 shows the interaction between some of these 
+components:</p>
+
+<ul>
+<li>Action Mailer</li>
+<li>Action Pack
+
+<ul>
+<li>Action Controller</li>
+<li>Action Dispatcher</li>
+<li>Action View</li>
+</ul>
+</li>
+<li>Active Model</li>
+<li>Active Record</li>
+<li>Active Resource</li>
+<li>Active Support</li>
+<li>Railties</li>
+</ul>
+
+
+<p><img src="Ruby%20on%20Rails%20Architectural%20Design%20-%20Adrian%20Mejia%E2%80%99s%20Blog_files/rails_arch.png" title="Overall Rails framework architecture" height="483" width="640">
+Figure 2. Reference model depicting the overall framework architecture [<a href="https://picasaweb.google.com/Dikiwinky/Ruby#5116531304417868130">source</a>]</p>
+
+<h3>1.1 Model-View-Controller Pattern</h3>
+
+<p>Ruby on Rails uses the Model-View-Controller (MVC) architectural 
+pattern in order to improve the maintainability of the application. The 
+Model centralizes the business logic, the View manages the display 
+logic, while the Controller deals with the application flow. The MVC 
+allows a clean separation of concerns, in the way that it keeps the 
+business logic separated from HTML views. Additionally, it improves 
+decoupling and testing.</p>
+
+<h4>1.1.1 Model</h4>
+
+<p>The Model layer carries the business logic of the application and the
+ rules to manipulate the data. In Ruby on Rails, the models are used to 
+manage the interaction with their corresponding elements in the 
+database. The Models represent the information in the database and do 
+the appropriate validations.</p>
+
+<h4>1.1.2 View</h4>
+
+<p>The view is the front-end of the application, representing the user 
+interface. In Ruby on Rails, views are HTML files with embedded Ruby 
+code. The embedded Ruby code in the HTMLs is fairly simple (loops and 
+conditionals). It is only used to display data to the user in the form 
+of views. Views are used to provide the data to the browsers that 
+requested the web pages. Views can server content in several formats, 
+such as HTML, PDF, XML, RSS and more.</p>
+
+<h4>1.1.3 Controller</h4>
+
+<p>Controllers interact with models and views. The incoming requests 
+from the browsers are processed by the controllers, which process the 
+data from the models and pass it to the views for presentation.</p>
+
+<h3>1.2 Rails Modules</h3>
+
+<h4>1.2.1  Action Mailer</h4>
+
+<p>This module is responsible for providing e-mail services. It 
+processes incoming mails and creates new ones. This module can handle 
+simple text or complex rich-format emails. Also it has common tasks 
+built-in, such as, sending out forgotten passwords, welcome messages, 
+and fulfilling any other written-communication’s need. Action Mailer is 
+wrapped around the Action Controller. It provides ways to make email 
+with templates in the same way that Action View uses it to render web 
+pages.</p>
+
+<h4>1.2.2  Action Pack</h4>
+
+<p>The Action Pack module provides the controller and view layers of the
+ MVC patterns. These modules capture the user requests made by the 
+browser and map these requests to actions. These actions are defined in 
+the controllers layer and later the actions render a view that is 
+displayed in the browser. Action Pack is divided in 3 sub-modules, which
+ are: Action Dispatch, Action Controller, and Action View.</p>
+
+<ul>
+<li><p><em>Action Dispatch</em>: handles routing of web browser request.
+ It parses the web request and does advanced processing around HTTP, 
+such as handling cookies, sessions, request methods, and so forth.</p></li>
+<li><p><em>Action Controller</em>: after the action dispatch has 
+processed the request it makes the routing to its corresponding 
+controller. This module provides a base controller from which all the 
+other controllers can inherit. Action Controller contains actions to 
+controls model and view. This module makes data available as needed, 
+controls views rendering and redirection. Additionally, it manages the 
+user sessions, application flow, caching features, helper modules and 
+implement filters for the pre, during and post processing hooks.</p></li>
+<li><p><em>Action View</em>: it is call by the Action Controller. It 
+renders the presentation of the web page requested. Action View provides
+ master layouts, templates lookups and view helpers that assist the 
+generation of the HTML, feeds and other presentation formats. There are 
+three templates schemas in Rails, which are rhtml, rxml, and rjs. The 
+rhtml format generates HTML views to the users with ERB (embedded ruby 
+code in HTML). The rxml is used to construct XML documents using Ruby, 
+and rjs allow creating dynamic JavaScript code in Ruby useful to 
+implement AJAX functionality.</p></li>
+</ul>
+
+
+<h4>1.2.3 Active Model</h4>
+
+<p>Define the interface between the Action Pack and the Active Record 
+modules. Also, Action Record interfaces can be used outside of Rails 
+framework to provide Object-relational mapping (ORM) functionalities.</p>
+
+<h4>1.2.4 Active Record</h4>
+
+<p>Active record is an architectural pattern used to manage data in 
+relational databases through objects. In Ruby on Rails the Active Record
+ module provides object-relational mapping to classes. This module 
+builds the Model layer that connects the database tables with its 
+representation in ruby classes. Rails provide tools to implement the 
+CRUD functionality with zero-configuration. CRUD allows creating, 
+reading, updating and deleting records from the database through ruby 
+objects. An object represents each row in a database tables. 
+Additionally, it also provides advance search capabilities and the 
+ability to create relationships or associations between models. Active 
+Records relies heavily on conventions on how the classes should be 
+named, the tables in the database, the foreign keys and primary keys. 
+However, the database mapping can be accomplished using configuration, 
+but it is highly encouraged to follow the rails convention, such as 
+active record modules.</p>
+
+<p>This modules is used to create model classes, which contains the 
+business logic, handle validations and relationships, automatically maps
+ to a table and encapsulates data access, provides getters and setters, 
+callbacks and also supports several databases.</p>
+
+<h4>1.2.5 Active Resource</h4>
+
+<p>Active Resource module is used for managing the connection between 
+RESTful web services and business objects. It follows the same principle
+ of Active Record that is to reduce the amount of code needed to map 
+resources. Active Resources maps model classes to remote REST resources 
+in the same way that Active Record maps model classes to database 
+tables. Active Resource leverages the HTTP protocol and adds code 
+conventions to make it easy to infer complex structures and relations. 
+Active Record also provides proxy capabilities between an Active 
+Resource (client) and a RESTful service. This is accomplished 
+implementing an object-relational mapping for REST web services. When a 
+request to a remote resource is made, a REST XML is generated and 
+transmitted, and then the result is parsed into a ruby object.</p>
+
+<h4>1.2.6 RESTful Architecture</h4>
+
+<p>REST stands for Representational State Transfer. REST is an 
+alternative to web services, such as SOAP and WSDL. It relies in the 
+HTTP protocol for all the CRUD operations: create, read, update and 
+delete. RESTful web services are appropriated when the web services are 
+completely stateless, limited bandwidth (it’s very useful for mobile 
+devices since it doesn’t the the overhead of other protocols like SOAP),
+ when the data is not generated dynamically so it could be cached to 
+improve performance and when there is a mutual understanding between the
+ service producer and the consumer.</p>
+
+<h4>1.2.7 Active Support</h4>
+
+<p>It is a collection of utility classes and standard Ruby libraries 
+extensions that are useful for the development on Ruby on Rails. It 
+includes a rich support for multi-bytes strings, internationalization, 
+time zones and testing.</p>
+
+<h4>1.2.8 Railties</h4>
+
+<p>Railties is the Rails’ core code that builds new applications. It is 
+responsible for “glue”-ing all the above-describe modules all together. 
+Additionally, it handles all the bootstrapping process, the command line
+ interface and provides the Rails’ code generators. Rake is one of the 
+command lines used to perform database tasks, deployment, documentation,
+ testing and cleanups. Rails also supply a built-in testing framework 
+that generates test stubs automatically when code is generated, provides
+ unit testing, functional testing for views and controls, test fixtures 
+and supply test data using YAML.</p>
+
+<h2>2 Architectural Solution</h2>
+
+<p>The selected views to analyze this architecture are Module Views and 
+Component and Connector (C&amp;C) Views. The Module View will contain 
+UML diagrams which represent a static view of all the components, while 
+the Component &amp; Connector View will show the UML diagram that 
+presents a run-time view of a system’s architecture: what components 
+exist at run-time and how do these components communicate with one 
+another.</p>
+
+<h3>2.1 Connect and Component View</h3>
+
+<p>The Component-and-Connector View is a dynamic view of the system and 
+presents the components, interfaces, connectors and systems. In the 
+interfaces representation we choose to present the Interfaces as UML 
+interfaces. This provides a compact representation of the interfaces and
+ avoids crowding the diagram. The connector types will be represented as
+ associations and connector instances as links to be the consistent with
+ the UML notation that we are using the for the interfaces 
+representation. In the same way the systems will be presented as UML 
+subsystems. Fig. 3</p>
+
+<p><img src="Ruby%20on%20Rails%20Architectural%20Design%20-%20Adrian%20Mejia%E2%80%99s%20Blog_files/dynamic_view.png" title="Ruby on Rails Dynamic View" height="485" width="696"></p>
+
+<p>Figure 3. Dynamic View: Ruby on Rails Connector and Component View</p>
+
+<p>2.2 Modules View</p>
+
+<p>The Module View shows the code or implementation as modules and 
+presents the interfaces and their relations between each other. The 
+Module View contains the following: modules, interfaces, aggregations, 
+generalizations and dependencies. These views are an appropriate way to 
+show a static view of the architecture. Fig. 4</p>
+
+<p><img src="Ruby%20on%20Rails%20Architectural%20Design%20-%20Adrian%20Mejia%E2%80%99s%20Blog_files/ror_static_view.png" title="Ruby on Rails static view diagram" height="561" width="873"></p>
+
+<p>Figure 4. Static View: Ruby on Rails Module View</p>
+
+<p>The Module View shows the code or implementation as modules and 
+presents the interfaces and their relations between each other. The 
+Module View contains the following: modules, interfaces, aggregations, 
+generalizations and relationships. This view is appropriate way to show 
+static view of the architecture.</p>
+
+<h2>3 Pitfalls of the Ruby on Rails Architecture</h2>
+
+<p>Since Rails is built on the Ruby language it inherits the goodness 
+and weakness of that language. Ruby is a dynamic scripting language with
+ an elegant syntax and fully object-oriented. Because it is an 
+interpreted language it is slower than other languages that are compiled
+ like Java or C++. In most cases, this difference in speed is not a 
+problem but when the web application needs to scale to millions of 
+concurrent users this performance starts to degrade. The Ruby language 
+is not suited for high concurrency applications, because it is not 
+optimized for speed computing. It was designed to be elegant, simply and
+ for rapid development. Ruby doesn’t have good thread support yet and, 
+like many other scripting languages, Ruby has trouble dealing with 
+long-lived processes. But other languages, like Java, are really good at
+ that because they have been optimized for year to handle threads 
+efficiently. Another weakness is the Ruby’s garbage collector is not as 
+good as Java’s in that each process requires much more memory. In terms 
+of deployment, a web application on Ruby on Rails could be harder to 
+deploy than sites that are using more common technologies, such as PHP. 
+That’s because not all the hosting providers support Rails, but in time 
+the support of Rails is increasing.</p>
+
+<p>There are some kinds applications in which Ruby on Rails is not suitable for by default (there are workarounds):</p>
+
+<ul>
+<li>Static web sites (use page caching).</li>
+<li>Content Management Systems (use page and queries caching).</li>
+<li>Sites that depend on large amount of existing code or legacy code .</li>
+<li>Sites with legacy databases (overwrite conventions).</li>
+<li>Multi-site servers, situations that require dozens or hundreds of websites residing in a single server.</li>
+<li>Very large-scale web applications (millions of concurrent users) 
+that need to deliver high-performance (use load balancer, HAProxy, 
+Ngnix/Apache, Unicorn, Memcache/Redis).</li>
+<li>The Rails architecture sacrifices some flexibility in configuration 
+to increase productivity based on conventions that are considered best 
+practices. This could make experienced developers in other languages 
+feel tied to things in “the Rails way”. On the other hand, Ruby 
+sacrifices speed and resource management to favor elegant syntax, 
+productivity and maintainability. However, most of the small and 
+mid-size enterprise web applications do little computing and factors 
+such as latency, bandwidth and database performance are not very 
+crucial. These factors start to matter in high-traffic websites with 
+millions of concurrent users.</li>
+</ul>
+
+
+<h3>3.1 Twitter case study</h3>
+
+<p>A study case of high-traffic web application using Rails is Twitter. 
+They started using Ruby on Rails but they reached a point that the 
+scaling of their platform was not cost-effective. This was mainly 
+because Ruby on Rails has poor multi-threading support. As in 2011, they
+ have more than 1 billion tweets per week and 200 million users. In 2011
+ they reported [1], that are moving their back-end applications from 
+Ruby on Rails to Java, which perform 3x faster searches and handle high 
+concurrency better.</p>
+
+<p>As the Twitter Engineering team stated: <em>“As part of the effort, 
+we launched a new real-time search engine, changing our back-end from 
+MySQL to a real-time version of Lucene. Last week, we launched a 
+replacement for our Ruby-on-Rails front-end: a Java server we call 
+Blender. We are pleased to announce that this change has produced a 3x 
+drop in search latencies and will enable us to rapidly iterate on search
+ features in the coming months.” … And later… “In April 2011, we 
+launched a replacement, called Blender, which improved our search 
+latencies by 3x, gave us 10x throughput, and allowed us to remove Ruby 
+on Rails from the search infrastructure. Today, we are indexing an 
+average of 2,200 TPS while serving 18,000 QPS (1.6B queries per day!). 
+More importantly, Blender completed the infrastructure necessary to make
+ the most significant user-facing change to Twitter search since the 
+acquisition of Summize.”</em></p>
+
+<h3>3.2 Yellopages.com case study</h3>
+
+<p>Yellowpages.com on the other hand moved from Java to Ruby on Rails 
+framework. The rationale behind this decision is that they pursued to 
+increase their maintainability, absolute control of URLs, no sessions, 
+and be more agile.  They have 170 million page views per month and 2.5 
+million searches per day.</p>
+
+<p><a href="http://www.brianburridge.com/2008/06/08/yellowpagescom-on-rails/comment-page-1/#comment-15463" target="_blank">Brian Burridge</a> summarizes the process in the following way <em>“YellowPages.com’s
+ move from Java to Rails. They serve up to 23 million visitors a month. 
+The conversion resulted in 20,000 lines of Ruby code instead of 125,000 
+lines of Java code, and most importantly eased the difficulty they had 
+in maintaining it. Once complete, and optimized their site is now faster
+ than before. They also completed the rewrite in three months with four 
+developers.”</em></p>
+
+<h2>4 Summary</h2>
+
+<p>Ruby on Rails has received widespread support throughout the software
+ development industry, more specifically the open-source community. This
+ support reflects, to a certain extent, that the framework was able to 
+provide a fairly robust architecture somewhat consistent with the goals 
+that the architect envisioned.</p>
+
+<p>The framework successfully exhibits must of its intended quality 
+attributes. The responsibility of maintaining some of these qualities 
+are deferred to third party components, as is the case of the 
+performance quality, which is deferred to whichever web-server is 
+configured at development or deployment time. The biggest strength of 
+the framework is the way it leverages the Convention over Configuration 
+and Don’t Repeat Yourself principles. This principle enables intuitive 
+approaches when dealing with certain tactics to achieve some of the 
+quality attributes. For instance, modifiability becomes less hassle due 
+to the isolation or centralization of certain changes since the 
+framework relies on default places where certain functionality should be
+ located.</p>
+
+<p>On the other hand, Rails inherits some of the weaknesses of the 
+language used to build it. More specifically, poor concurrency support 
+hinders the scalability potential of an application built using Ruby on 
+Rails. Furthermore, memory management is not as efficient as other 
+languages available. For instance, Java exhibits a much better garbage 
+collector behavior when compared with Ruby on Rails.</p>
+
+<p>Overall, it would be safe to say that the framework architecture 
+meets most of its intended goals, but not without its caveats. The level
+ and speed of adoption in industry and the open-source community could 
+be used as validation of the potential the framework has, but at the 
+same time we see limitations emerging when using the framework. Some of 
+these limitations are part of the driven force behind the ongoing 
+evolution of Ruby on Rails.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Adrian Mejia</span></span>
+
+      
+
+
+
+
+<time class="entry-date" datetime="2011-08-11T00:00:00-04:00"><span class="date"><span class="date-month">Aug</span> <span class="date-day">11</span><span class="date-suffix">th</span>, <span class="date-year">2011</span></span> <span class="time">12:00 am</span></time>
+      
+
+<span class="categories">
+  
+    <a class="category" href="http://adrianmejia.com/blog/categories/agile-frameworks/">agile frameworks</a>, <a class="category" href="http://adrianmejia.com/blog/categories/ruby-on-rails/">ruby on rails</a>, <a class="category" href="http://adrianmejia.com/blog/categories/software-architecture/">software architecture</a>, <a class="category" href="http://adrianmejia.com/blog/categories/twitter/">twitter</a>, <a class="category" href="http://adrianmejia.com/blog/categories/web-development/">web development</a>, <a class="category" href="http://adrianmejia.com/blog/categories/web-frameworks/">web frameworks</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <iframe data-url="http://adrianmejia.com/blog/2011/08/11/ruby-on-rails-architectural-design/" src="Ruby%20on%20Rails%20Architectural%20Design%20-%20Adrian%20Mejia%E2%80%99s%20Blog_files/tweet_button.html" title="Twitter Tweet Button" style="position: static; visibility: visible; width: 60px; height: 20px;" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" allowtransparency="true" scrolling="no" id="twitter-widget-0" frameborder="0"></iframe>
+  
+  
+  <div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: none repeat scroll 0% 0% transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 90px; height: 20px;"><iframe title="+1" data-gapiattached="true" src="Ruby%20on%20Rails%20Architectural%20Design%20-%20Adrian%20Mejia%E2%80%99s%20Blog_files/fastbutton.html" name="I0_1459941490006" id="I0_1459941490006" vspace="0" tabindex="0" style="position: static; top: 0px; width: 90px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" scrolling="no" marginwidth="0" marginheight="0" hspace="0" frameborder="0" width="100%"></iframe></div>
+  
+  
+    <div fb-iframe-plugin-query="app_id=212934732101925&amp;container_width=749&amp;href=http%3A%2F%2Fadrianmejia.com%2Fblog%2F2011%2F08%2F11%2Fruby-on-rails-architectural-design%2F&amp;locale=en_US&amp;sdk=joey&amp;send=true&amp;show_faces=false&amp;width=450" fb-xfbml-state="rendered" class="fb-like fb_iframe_widget" data-send="true" data-width="450" data-show-faces="false"><span style="vertical-align: bottom; width: 450px; height: 20px;"><iframe class="" src="Ruby%20on%20Rails%20Architectural%20Design%20-%20Adrian%20Mejia%E2%80%99s%20Blog_files/like.html" style="border: medium none; visibility: visible; width: 450px; height: 20px;" title="fb:like Facebook Social Plugin" scrolling="no" allowfullscreen="true" allowtransparency="true" name="ffaf8a0cfca5c6" frameborder="0" height="1000px" width="450px"></iframe></span></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="http://adrianmejia.com/blog/2011/08/08/microsoft-zune-failure-analysis/" title="Previous Post: Microsoft Zune Failure Analysis">« Microsoft Zune Failure Analysis</a>
+      
+      
+        <a class="basic-alignment right" href="http://adrianmejia.com/blog/2011/08/15/git-auto-commit-with-crontab/" title="Next Post: Git auto-commit with Crontab">Git auto-commit with Crontab »</a>
+      
+    </p>
+    <p>
+      <!-- Begin MailChimp Signup Form -->
+<link href="Ruby%20on%20Rails%20Architectural%20Design%20-%20Adrian%20Mejia%E2%80%99s%20Blog_files/slim-081711.css" rel="stylesheet" type="text/css">
+
+</p><section>
+  <h1>Subscribe</h1>
+  <!-- Begin MailChimp Signup Form -->
+  <div id="mc_embed_signup">
+    <form action="//adrianmejia.us2.list-manage.com/subscribe/post?u=2294bb28c5931a6f2338d2474&amp;id=52678e825b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
+      <div class="mc-field-group">
+  <label for="mce-EMAIL">
+    Enter your email to receive updates!
+  </label>
+  <input name="EMAIL" class="required email" id="mce-EMAIL" placeholder="you@email.com" type="email">
+      </div>
+      <div id="mce-responses" class="clear">
+  <div class="response" id="mce-error-response" style="display:none"></div>
+  <div class="response" id="mce-success-response" style="display:none"></div>
+      </div>
+      <div class="clear">
+  <input value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" type="submit">
+      </div>
+    </form>
+  </div>
+  <!--End mc_embed_signup-->
+</section>
+
+      <script async="" src="Ruby%20on%20Rails%20Architectural%20Design%20-%20Adrian%20Mejia%E2%80%99s%20Blog_files/adsbygoogle.js"></script>
+<!-- responsive -->
+<ins data-adsbygoogle-status="done" class="adsbygoogle" style="display: block; height: 90px;" data-ad-client="ca-pub-9725767907287651" data-ad-slot="1599220129" data-ad-format="auto"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:749px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:749px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;" frameborder="0" height="90" width="749"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+    <p></p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><iframe verticalscrolling="no" horizontalscrolling="no" src="Ruby%20on%20Rails%20Architectural%20Design%20-%20Adrian%20Mejia%E2%80%99s%20Blog_files/a.html" style="width: 1px ! important; min-width: 100% ! important; border: medium none ! important; overflow: hidden ! important; height: 1827px ! important;" title="Disqus" tabindex="0" scrolling="no" allowtransparency="true" name="dsq-app2" id="dsq-app2" frameborder="0" width="100%"></iframe></div>
+  </section>
+
+</div>
+
+<aside class="sidebar thirds">
+  
+    <script async="" src="Ruby%20on%20Rails%20Architectural%20Design%20-%20Adrian%20Mejia%E2%80%99s%20Blog_files/adsbygoogle.js"></script>
+<!-- medium rectangle 300x250 -->
+<ins data-adsbygoogle-status="done" class="adsbygoogle" style="display: inline-block; width: 300px; height: 250px;" data-ad-client="ca-pub-9725767907287651" data-ad-slot="6894900521"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><ins id="aswift_1_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;" frameborder="0" height="250" width="300"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<section class="first odd">
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="http://adrianmejia.com/blog/2016/03/23/how-to-scale-a-nodejs-app-based-on-number-of-users/">How to Scale a Nodejs App Based on Number of Users</a>
+      </li>
+    
+      <li class="post">
+        <a href="http://adrianmejia.com/blog/2016/01/09/how-to-build-scalable-apps/">How to Build Scalable Apps in 2016?</a>
+      </li>
+    
+      <li class="post">
+        <a href="http://adrianmejia.com/blog/2014/10/07/grunt-js-tutorial-from-beginner-to-ninja/">Grunt JS Tutorial From Beginner to Ninja</a>
+      </li>
+    
+      <li class="post">
+        <a href="http://adrianmejia.com/blog/2014/10/03/mean-stack-tutorial-mongodb-expressjs-angularjs-nodejs/">MEAN Stack Tutorial MongoDB ExpressJS AngularJS NodeJS (Part III)</a>
+      </li>
+    
+      <li class="post">
+        <a href="http://adrianmejia.com/blog/2014/10/01/creating-a-restful-api-tutorial-with-nodejs-and-mongodb/">Creating RESTful APIs With NodeJS and MongoDB Tutorial (Part II)</a>
+      </li>
+    
+  </ul>
+</section>
+<!-- Begin MailChimp Signup Form -->
+<link href="Ruby%20on%20Rails%20Architectural%20Design%20-%20Adrian%20Mejia%E2%80%99s%20Blog_files/slim-081711.css" rel="stylesheet" type="text/css">
+
+<section class="even">
+  <h1>Subscribe</h1>
+  <!-- Begin MailChimp Signup Form -->
+  <div id="mc_embed_signup">
+    <form action="//adrianmejia.us2.list-manage.com/subscribe/post?u=2294bb28c5931a6f2338d2474&amp;id=52678e825b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
+      <div class="mc-field-group">
+  <label for="mce-EMAIL">
+    Enter your email to receive updates!
+  </label>
+  <input name="EMAIL" class="required email" id="mce-EMAIL" placeholder="you@email.com" type="email">
+      </div>
+      <div id="mce-responses" class="clear">
+  <div class="response" id="mce-error-response" style="display:none"></div>
+  <div class="response" id="mce-success-response" style="display:none"></div>
+      </div>
+      <div class="clear">
+  <input value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" type="submit">
+      </div>
+    </form>
+  </div>
+  <!--End mc_embed_signup-->
+</section>
+
+<section class="googleplus odd">
+  <h1>
+    <a href="http://feeds.feedburner.com/AdrianMejiasBlog">
+      <img src="Ruby%20on%20Rails%20Architectural%20Design%20-%20Adrian%20Mejia%E2%80%99s%20Blog_files/rss3.png" height="32" width="32">
+      RSS
+    </a>
+  </h1>
+</section>
+
+
+<section class="googleplus first even">
+  <h1>
+    <a href="http://www.linkedin.com/in/adrianmejia">
+      <img src="Ruby%20on%20Rails%20Architectural%20Design%20-%20Adrian%20Mejia%E2%80%99s%20Blog_files/linkedin.png" height="32" width="32">
+      adrianmejia
+    </a>
+  </h1>
+</section>
+
+
+<section class="googleplus odd">
+  <h1>
+    <a href="https://github.com/amejiarosario">
+      <img src="Ruby%20on%20Rails%20Architectural%20Design%20-%20Adrian%20Mejia%E2%80%99s%20Blog_files/github.png" height="32" width="32">
+      @amejiarosario
+    </a>
+  </h1>
+</section>
+
+
+<section class="googleplus even">
+  <h1>
+    <a href="https://twitter.com/amejiarosario">
+      <img src="Ruby%20on%20Rails%20Architectural%20Design%20-%20Adrian%20Mejia%E2%80%99s%20Blog_files/twitter.png" height="32" width="32">
+      @amejiarosario
+    </a>
+  </h1>
+</section>
+
+
+<section class="googleplus first odd">
+  <h1>
+    <a href="https://plus.google.com/105957252272382685246?rel=author">
+      <img src="Ruby%20on%20Rails%20Architectural%20Design%20-%20Adrian%20Mejia%E2%80%99s%20Blog_files/gprofile_button-32.png" height="32" width="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+<section class="even">
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos"><li><a href="https://github.com/amejiarosario/amejiarosario.github.io">amejiarosario.github.io</a><p></p></li><li><a href="https://github.com/amejiarosario/meanshop">meanshop</a><p>Building an e-commerce application with the MEAN stack</p></li><li><a href="https://github.com/amejiarosario/impressjs-presentations">impressjs-presentations</a><p></p></li><li><a href="https://github.com/amejiarosario/deprecated-meanshop">deprecated-meanshop</a><p>Building an e-commerce application with the MEAN stack</p></li><li><a href="https://github.com/amejiarosario/blogx">blogx</a><p></p></li></ul>
+  
+  <a href="https://github.com/amejiarosario">@amejiarosario</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'amejiarosario',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="Ruby%20on%20Rails%20Architectural%20Design%20-%20Adrian%20Mejia%E2%80%99s%20Blog_files/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+  
+</aside>
+
+
+    <span class="toggle-sidebar"></span></div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright © 2016 - Adrian Mejia
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'adrianmejia';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://adrianmejia.com/blog/2011/08/11/ruby-on-rails-architectural-design/';
+        var disqus_url = 'http://adrianmejia.com/blog/2011/08/11/ruby-on-rails-architectural-design/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div class=" fb_reset" id="fb-root"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe src="Ruby%20on%20Rails%20Architectural%20Design%20-%20Adrian%20Mejia%E2%80%99s%20Blog_files/xd_arbiter.html" style="border: medium none;" tabindex="-1" title="Facebook Cross Domain Communication Frame" aria-hidden="true" id="fb_xdm_frame_http" scrolling="no" allowfullscreen="true" allowtransparency="true" name="fb_xdm_frame_http" frameborder="0"></iframe><iframe src="Ruby%20on%20Rails%20Architectural%20Design%20-%20Adrian%20Mejia%E2%80%99s%20Blog_files/xd_arbiter_002.html" style="border: medium none;" tabindex="-1" title="Facebook Cross Domain Communication Frame" aria-hidden="true" id="fb_xdm_frame_https" scrolling="no" allowfullscreen="true" allowtransparency="true" name="fb_xdm_frame_https" frameborder="0"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe src="Ruby%20on%20Rails%20Architectural%20Design%20-%20Adrian%20Mejia%E2%80%99s%20Blog_files/ping.html" style="display: none;" scrolling="no" allowfullscreen="true" allowtransparency="true" name="f2b8b9943979d38" frameborder="0"></iframe></div></div></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+<iframe tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;" src="Ruby%20on%20Rails%20Architectural%20Design%20-%20Adrian%20Mejia%E2%80%99s%20Blog_files/postmessageRelay.html" id="oauth2relay381699009" name="oauth2relay381699009"></iframe><iframe style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border: medium none;" allowfullscreen="true" allowtransparency="true" scrolling="no" id="rufous-sandbox" frameborder="0"></iframe></body></html>

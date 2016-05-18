@@ -1,0 +1,22 @@
+<h1 style="color:black">Editing movie</h1>
+
+<% form_for(@movie) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+ <p style="color:black"> Rating<br />
+<%= f.radio_button  :rating, 1 %> <%= f.label :rating_1, "1" %>
+<%= f.radio_button  :rating, 2 %> <%= f.label :rating_2, "2" %>
+<%= f.radio_button  :rating, 3 %> <%= f.label :rating_3, "3" %>
+<%= f.radio_button  :rating, 4 %> <%= f.label :rating_4, "4" %>
+<%= f.radio_button  :rating, 5 %> <%= f.label :rating_5, "5" %>
+  </p><p style="color:black">
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @movie %> |
+<%= link_to 'Back', movies_path %>

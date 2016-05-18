@@ -1,0 +1,1523 @@
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (127.3ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (133.6ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateMovies (20160517154849)
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "rating" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20160517154849')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("movies")[0m
+
+
+Processing Rails::InfoController#properties (for 127.0.0.1 at 2016-05-17 21:23:09) [GET]
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Completed in 156ms (View: 20, DB: 1) | 200 OK [http://localhost/rails/info/properties]
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2016-05-17 21:23:16) [GET]
+  [4;36;1mMovie Load (0.3ms)[0m   [0;1mSELECT * FROM "movies" [0m
+Rendering template within layouts/movies
+Rendering movies/index
+Completed in 76ms (View: 72, DB: 0) | 200 OK [http://localhost/Movies]
+
+
+Processing MoviesController#new (for 127.0.0.1 at 2016-05-17 21:23:20) [GET]
+Rendering template within layouts/movies
+Rendering movies/new
+Completed in 108ms (View: 105, DB: 0) | 200 OK [http://localhost/movies/new]
+
+
+Processing MoviesController#create (for 127.0.0.1 at 2016-05-17 21:23:32) [POST]
+  Parameters: {"movie"=>{"title"=>"God", "rating"=>"8"}, "commit"=>"Create", "authenticity_token"=>"kQiNzXf7hkKS3pODY2EEokZhzjRx5SOADcZe6+rBKBY="}
+  [4;35;1mMovie Create (41.4ms)[0m   [0mINSERT INTO "movies" ("title", "created_at", "rating", "updated_at") VALUES('God', '2016-05-17 15:53:32', 8, '2016-05-17 15:53:32')[0m
+Redirected to http://localhost:3000/movies/1
+Completed in 201ms (DB: 41) | 302 Found [http://localhost/movies]
+
+
+Processing MoviesController#show (for 127.0.0.1 at 2016-05-17 21:23:32) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mMovie Load (0.1ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."id" = 1) [0m
+Rendering template within layouts/movies
+Rendering movies/show
+Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/movies/1]
+
+
+Processing MoviesController#edit (for 127.0.0.1 at 2016-05-17 21:23:51) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mMovie Load (0.1ms)[0m   [0mSELECT * FROM "movies" WHERE ("movies"."id" = 1) [0m
+Rendering template within layouts/movies
+Rendering movies/edit
+Completed in 12ms (View: 9, DB: 0) | 200 OK [http://localhost/movies/1/edit]
+
+
+Processing MoviesController#update (for 127.0.0.1 at 2016-05-17 21:23:56) [PUT]
+  Parameters: {"movie"=>{"title"=>"God", "rating"=>"10"}, "commit"=>"Update", "id"=>"1", "authenticity_token"=>"kQiNzXf7hkKS3pODY2EEokZhzjRx5SOADcZe6+rBKBY="}
+  [4;36;1mMovie Load (0.1ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."id" = 1) [0m
+  [4;35;1mMovie Update (0.2ms)[0m   [0mUPDATE "movies" SET "rating" = 10, "updated_at" = '2016-05-17 15:53:57' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/movies/1
+Completed in 220ms (DB: 0) | 302 Found [http://localhost/movies/1]
+
+
+Processing MoviesController#show (for 127.0.0.1 at 2016-05-17 21:23:57) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mMovie Load (0.1ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."id" = 1) [0m
+Rendering template within layouts/movies
+Rendering movies/show
+Completed in 57ms (View: 2, DB: 0) | 200 OK [http://localhost/movies/1]
+
+
+Processing MoviesController#show (for 127.0.0.1 at 2016-05-17 21:24:57) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mMovie Load (0.1ms)[0m   [0mSELECT * FROM "movies" WHERE ("movies"."id" = 1) [0m
+Rendering template within layouts/movies
+Rendering movies/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/movies/1]
+
+
+Processing MoviesController#edit (for 127.0.0.1 at 2016-05-17 21:25:00) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mMovie Load (0.1ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."id" = 1) [0m
+Rendering template within layouts/movies
+Rendering movies/edit
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://localhost/movies/1/edit]
+
+
+Processing MoviesController#update (for 127.0.0.1 at 2016-05-17 21:25:02) [PUT]
+  Parameters: {"movie"=>{"title"=>"God", "rating"=>"10"}, "commit"=>"Update", "id"=>"1", "authenticity_token"=>"kQiNzXf7hkKS3pODY2EEokZhzjRx5SOADcZe6+rBKBY="}
+  [4;35;1mMovie Load (0.1ms)[0m   [0mSELECT * FROM "movies" WHERE ("movies"."id" = 1) [0m
+Rendering template within layouts/movies
+Rendering movies/edit
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/movies/1]
+
+
+Processing MoviesController#update (for 127.0.0.1 at 2016-05-17 21:25:10) [PUT]
+  Parameters: {"movie"=>{"title"=>"God", "rating"=>"100"}, "commit"=>"Update", "id"=>"1", "authenticity_token"=>"kQiNzXf7hkKS3pODY2EEokZhzjRx5SOADcZe6+rBKBY="}
+  [4;36;1mMovie Load (0.1ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."id" = 1) [0m
+Rendering template within layouts/movies
+Rendering movies/edit
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/movies/1]
+
+
+Processing MoviesController#update (for 127.0.0.1 at 2016-05-17 21:25:17) [PUT]
+  Parameters: {"movie"=>{"title"=>"God", "rating"=>"0"}, "commit"=>"Update", "id"=>"1", "authenticity_token"=>"kQiNzXf7hkKS3pODY2EEokZhzjRx5SOADcZe6+rBKBY="}
+  [4;35;1mMovie Load (0.1ms)[0m   [0mSELECT * FROM "movies" WHERE ("movies"."id" = 1) [0m
+Rendering template within layouts/movies
+Rendering movies/edit
+Completed in 15ms (View: 6, DB: 0) | 200 OK [http://localhost/movies/1]
+
+
+Processing MoviesController#update (for 127.0.0.1 at 2016-05-17 21:25:24) [PUT]
+  Parameters: {"movie"=>{"title"=>"God", "rating"=>"4"}, "commit"=>"Update", "id"=>"1", "authenticity_token"=>"kQiNzXf7hkKS3pODY2EEokZhzjRx5SOADcZe6+rBKBY="}
+  [4;36;1mMovie Load (0.1ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."id" = 1) [0m
+  [4;35;1mMovie Update (0.2ms)[0m   [0mUPDATE "movies" SET "rating" = 4, "updated_at" = '2016-05-17 15:55:24' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/movies/1
+Completed in 190ms (DB: 0) | 302 Found [http://localhost/movies/1]
+
+
+Processing MoviesController#show (for 127.0.0.1 at 2016-05-17 21:25:24) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mMovie Load (0.1ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."id" = 1) [0m
+Rendering template within layouts/movies
+Rendering movies/show
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/movies/1]
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2016-05-17 21:35:49) [GET]
+  [4;35;1mMovie Load (0.7ms)[0m   [0mSELECT * FROM "movies" [0m
+Rendering template within layouts/application
+Rendering movies/index
+Completed in 14ms (View: 9, DB: 1) | 200 OK [http://localhost/movies]
+
+
+Processing MoviesController#new (for 127.0.0.1 at 2016-05-17 21:35:57) [GET]
+Rendering template within layouts/application
+Rendering movies/new
+Completed in 13ms (View: 8, DB: 0) | 200 OK [http://localhost/movies/new]
+
+
+Processing MoviesController#new (for 127.0.0.1 at 2016-05-17 21:37:44) [GET]
+Rendering template within layouts/application
+Rendering movies/new
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/movies/new]
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2016-05-17 21:37:51) [GET]
+  [4;36;1mMovie Load (0.3ms)[0m   [0;1mSELECT * FROM "movies" [0m
+Rendering template within layouts/application
+Rendering movies/index
+Completed in 74ms (View: 70, DB: 0) | 200 OK [http://localhost/movies/]
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2016-05-17 21:38:14) [GET]
+  [4;35;1mMovie Load (0.4ms)[0m   [0mSELECT * FROM "movies" [0m
+Rendering template within layouts/application
+Rendering movies/index
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/movies/]
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2016-05-17 21:38:17) [GET]
+  [4;36;1mMovie Load (0.3ms)[0m   [0;1mSELECT * FROM "movies" [0m
+Rendering template within layouts/application
+Rendering movies/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/movies]
+
+
+Processing MoviesController#new (for 127.0.0.1 at 2016-05-17 21:38:20) [GET]
+Rendering template within layouts/application
+Rendering movies/new
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://localhost/movies/new]
+
+
+Processing MoviesController#create (for 127.0.0.1 at 2016-05-17 21:38:28) [POST]
+  Parameters: {"movie"=>{"title"=>"theri", "rating"=>"2"}, "commit"=>"Create", "authenticity_token"=>"kQiNzXf7hkKS3pODY2EEokZhzjRx5SOADcZe6+rBKBY="}
+  [4;35;1mMovie Create (0.2ms)[0m   [0mINSERT INTO "movies" ("title", "created_at", "rating", "updated_at") VALUES('theri', '2016-05-17 16:08:28', 2, '2016-05-17 16:08:28')[0m
+Redirected to http://localhost:3000/movies/2
+Completed in 209ms (DB: 0) | 302 Found [http://localhost/movies]
+
+
+Processing MoviesController#show (for 127.0.0.1 at 2016-05-17 21:38:28) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mMovie Load (0.1ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering movies/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/movies/2]
+
+
+Processing MoviesController#show (for 127.0.0.1 at 2016-05-17 21:39:05) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mMovie Load (0.1ms)[0m   [0mSELECT * FROM "movies" WHERE ("movies"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering movies/show
+Completed in 59ms (View: 55, DB: 0) | 200 OK [http://localhost/movies/2]
+
+
+Processing MoviesController#edit (for 127.0.0.1 at 2016-05-17 21:39:07) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mMovie Load (0.1ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering movies/edit
+Completed in 14ms (View: 10, DB: 0) | 200 OK [http://localhost/movies/2/edit]
+
+
+Processing MoviesController#edit (for 127.0.0.1 at 2016-05-17 21:39:34) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mMovie Load (0.1ms)[0m   [0mSELECT * FROM "movies" WHERE ("movies"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering movies/edit
+Completed in 15ms (View: 12, DB: 0) | 200 OK [http://localhost/movies/2/edit]
+
+
+Processing MoviesController#edit (for 127.0.0.1 at 2016-05-17 21:39:36) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mMovie Load (0.1ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering movies/edit
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/movies/2/edit]
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2016-05-17 21:39:41) [GET]
+  [4;35;1mMovie Load (0.7ms)[0m   [0mSELECT * FROM "movies" [0m
+Rendering template within layouts/application
+Rendering movies/index
+Completed in 18ms (View: 9, DB: 1) | 200 OK [http://localhost/movies]
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2016-05-17 21:39:44) [GET]
+  [4;36;1mMovie Load (0.3ms)[0m   [0;1mSELECT * FROM "movies" [0m
+Rendering template within layouts/application
+Rendering movies/index
+Completed in 64ms (View: 61, DB: 0) | 200 OK [http://localhost/movies]
+
+
+Processing MoviesController#new (for 127.0.0.1 at 2016-05-17 21:39:46) [GET]
+Rendering template within layouts/application
+Rendering movies/new
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/movies/new]
+
+
+Processing MoviesController#create (for 127.0.0.1 at 2016-05-17 21:39:58) [POST]
+  Parameters: {"movie"=>{"title"=>"vijay", "rating"=>"1"}, "commit"=>"Create", "authenticity_token"=>"kQiNzXf7hkKS3pODY2EEokZhzjRx5SOADcZe6+rBKBY="}
+  [4;35;1mMovie Create (0.2ms)[0m   [0mINSERT INTO "movies" ("title", "created_at", "rating", "updated_at") VALUES('vijay', '2016-05-17 16:09:58', 1, '2016-05-17 16:09:58')[0m
+Redirected to http://localhost:3000/movies/3
+Completed in 245ms (DB: 0) | 302 Found [http://localhost/movies]
+
+
+Processing MoviesController#show (for 127.0.0.1 at 2016-05-17 21:39:59) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mMovie Load (0.1ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering movies/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/movies/3]
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2016-05-17 21:40:04) [GET]
+  [4;35;1mMovie Load (0.3ms)[0m   [0mSELECT * FROM "movies" [0m
+Rendering template within layouts/application
+Rendering movies/index
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/movies]
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2016-05-17 21:41:11) [GET]
+  [4;36;1mMovie Load (0.8ms)[0m   [0;1mSELECT * FROM "movies" [0m
+Rendering template within layouts/application
+Rendering movies/index
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/movies]
+
+
+Processing MoviesController#destroy (for 127.0.0.1 at 2016-05-17 21:41:17) [DELETE]
+  Parameters: {"id"=>"3", "authenticity_token"=>"kQiNzXf7hkKS3pODY2EEokZhzjRx5SOADcZe6+rBKBY="}
+  [4;35;1mMovie Load (0.1ms)[0m   [0mSELECT * FROM "movies" WHERE ("movies"."id" = 3) [0m
+  [4;36;1mMovie Destroy (1.0ms)[0m   [0;1mDELETE FROM "movies" WHERE "id" = 3[0m
+Redirected to http://localhost:3000/movies
+Completed in 184ms (DB: 1) | 302 Found [http://localhost/movies/3]
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2016-05-17 21:41:17) [GET]
+  [4;35;1mMovie Load (0.4ms)[0m   [0mSELECT * FROM "movies" [0m
+Rendering template within layouts/application
+Rendering movies/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/movies]
+
+
+Processing MoviesController#show (for 127.0.0.1 at 2016-05-17 21:41:22) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mMovie Load (0.1ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering movies/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/movies/1]
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2016-05-17 21:41:24) [GET]
+  [4;35;1mMovie Load (0.3ms)[0m   [0mSELECT * FROM "movies" [0m
+Rendering template within layouts/application
+Rendering movies/index
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://localhost/movies]
+
+
+Processing MoviesController#new (for 127.0.0.1 at 2016-05-17 21:41:26) [GET]
+Rendering template within layouts/application
+Rendering movies/new
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://localhost/movies/new]
+
+
+Processing MoviesController#create (for 127.0.0.1 at 2016-05-17 21:41:35) [POST]
+  Parameters: {"movie"=>{"title"=>"violet", "rating"=>"5"}, "commit"=>"Create", "authenticity_token"=>"kQiNzXf7hkKS3pODY2EEokZhzjRx5SOADcZe6+rBKBY="}
+  [4;36;1mMovie Create (0.2ms)[0m   [0;1mINSERT INTO "movies" ("title", "created_at", "rating", "updated_at") VALUES('violet', '2016-05-17 16:11:35', 5, '2016-05-17 16:11:35')[0m
+Redirected to http://localhost:3000/movies/4
+Completed in 251ms (DB: 0) | 302 Found [http://localhost/movies]
+
+
+Processing MoviesController#show (for 127.0.0.1 at 2016-05-17 21:41:35) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mMovie Load (0.1ms)[0m   [0mSELECT * FROM "movies" WHERE ("movies"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering movies/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/movies/4]
+
+
+Processing MoviesController#show (for 127.0.0.1 at 2016-05-17 21:41:53) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mMovie Load (0.1ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering movies/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/movies/4]
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2016-05-17 21:41:59) [GET]
+  [4;35;1mMovie Load (0.3ms)[0m   [0mSELECT * FROM "movies" [0m
+Rendering template within layouts/application
+Rendering movies/index
+Completed in 13ms (View: 7, DB: 0) | 200 OK [http://localhost/movies]
+
+
+Processing MoviesController#new (for 127.0.0.1 at 2016-05-17 21:42:02) [GET]
+Rendering template within layouts/application
+Rendering movies/new
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://localhost/movies/new]
+
+
+Processing MoviesController#create (for 127.0.0.1 at 2016-05-17 21:42:06) [POST]
+  Parameters: {"movie"=>{"title"=>"vijay"}, "commit"=>"Create", "authenticity_token"=>"kQiNzXf7hkKS3pODY2EEokZhzjRx5SOADcZe6+rBKBY="}
+Rendering template within layouts/application
+Rendering movies/new
+Completed in 15ms (View: 10, DB: 0) | 200 OK [http://localhost/movies]
+
+
+Processing MoviesController#create (for 127.0.0.1 at 2016-05-17 21:42:11) [POST]
+  Parameters: {"movie"=>{"title"=>"vijay", "rating"=>"1"}, "commit"=>"Create", "authenticity_token"=>"kQiNzXf7hkKS3pODY2EEokZhzjRx5SOADcZe6+rBKBY="}
+  [4;36;1mMovie Create (0.3ms)[0m   [0;1mINSERT INTO "movies" ("title", "created_at", "rating", "updated_at") VALUES('vijay', '2016-05-17 16:12:11', 1, '2016-05-17 16:12:11')[0m
+Redirected to http://localhost:3000/movies/5
+Completed in 139ms (DB: 0) | 302 Found [http://localhost/movies]
+
+
+Processing MoviesController#show (for 127.0.0.1 at 2016-05-17 21:42:11) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mMovie Load (0.3ms)[0m   [0mSELECT * FROM "movies" WHERE ("movies"."id" = 5) [0m
+Rendering template within layouts/application
+Rendering movies/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/movies/5]
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2016-05-17 21:42:19) [GET]
+  [4;36;1mMovie Load (0.4ms)[0m   [0;1mSELECT * FROM "movies" [0m
+Rendering template within layouts/application
+Rendering movies/index
+Completed in 13ms (View: 9, DB: 0) | 200 OK [http://localhost/movies]
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2016-05-17 21:43:59) [GET]
+  [4;35;1mMovie Load (0.7ms)[0m   [0mSELECT * FROM "movies" [0m
+Rendering template within layouts/application
+Rendering movies/index
+Completed in 20ms (View: 15, DB: 1) | 200 OK [http://localhost/movies]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2016-05-17 21:43:59) [GET]
+
+ActionController::RoutingError (No route matches "/pictures/images.jpeg" with {:method=>:get}):
+  /usr/lib/ruby/vendor_ruby/action_controller/routing/recognition_optimisation.rb:66:in `recognize_path'
+  /usr/lib/ruby/vendor_ruby/action_controller/routing/route_set.rb:442:in `recognize'
+  /usr/lib/ruby/vendor_ruby/action_controller/routing/route_set.rb:437:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/dispatcher.rb:87:in `dispatch'
+  /usr/lib/ruby/vendor_ruby/action_controller/dispatcher.rb:121:in `_call'
+  /usr/lib/ruby/vendor_ruby/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+  /usr/lib/ruby/vendor_ruby/active_record/query_cache.rb:29:in `call'
+  /usr/lib/ruby/vendor_ruby/active_record/query_cache.rb:29:in `call'
+  /usr/lib/ruby/vendor_ruby/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+  /usr/lib/ruby/vendor_ruby/active_record/query_cache.rb:9:in `cache'
+  /usr/lib/ruby/vendor_ruby/active_record/query_cache.rb:28:in `call'
+  /usr/lib/ruby/vendor_ruby/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/string_coercion.rb:25:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/head.rb:9:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/methodoverride.rb:24:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/params_parser.rb:15:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/session/cookie_store.rb:99:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/failsafe.rb:26:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/lock.rb:15:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/dispatcher.rb:114:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/reloader.rb:34:in `run'
+  /usr/lib/ruby/vendor_ruby/action_controller/dispatcher.rb:108:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/rack/static.rb:31:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/urlmap.rb:52:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/urlmap.rb:46:in `each'
+  /usr/lib/ruby/vendor_ruby/rack/urlmap.rb:46:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/rack/log_tailer.rb:17:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  /usr/lib/ruby/vendor_ruby/rack/handler/webrick.rb:13:in `run'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2016-05-17 21:44:03) [GET]
+  [4;36;1mMovie Load (0.5ms)[0m   [0;1mSELECT * FROM "movies" [0m
+Rendering template within layouts/application
+Rendering movies/index
+Completed in 15ms (View: 10, DB: 0) | 200 OK [http://localhost/movies]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2016-05-17 21:44:03) [GET]
+
+ActionController::RoutingError (No route matches "/pictures/images.jpeg" with {:method=>:get}):
+  /usr/lib/ruby/vendor_ruby/action_controller/routing/recognition_optimisation.rb:66:in `recognize_path'
+  /usr/lib/ruby/vendor_ruby/action_controller/routing/route_set.rb:442:in `recognize'
+  /usr/lib/ruby/vendor_ruby/action_controller/routing/route_set.rb:437:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/dispatcher.rb:87:in `dispatch'
+  /usr/lib/ruby/vendor_ruby/action_controller/dispatcher.rb:121:in `_call'
+  /usr/lib/ruby/vendor_ruby/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+  /usr/lib/ruby/vendor_ruby/active_record/query_cache.rb:29:in `call'
+  /usr/lib/ruby/vendor_ruby/active_record/query_cache.rb:29:in `call'
+  /usr/lib/ruby/vendor_ruby/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+  /usr/lib/ruby/vendor_ruby/active_record/query_cache.rb:9:in `cache'
+  /usr/lib/ruby/vendor_ruby/active_record/query_cache.rb:28:in `call'
+  /usr/lib/ruby/vendor_ruby/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/string_coercion.rb:25:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/head.rb:9:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/methodoverride.rb:24:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/params_parser.rb:15:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/session/cookie_store.rb:99:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/failsafe.rb:26:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/lock.rb:15:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/dispatcher.rb:114:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/reloader.rb:34:in `run'
+  /usr/lib/ruby/vendor_ruby/action_controller/dispatcher.rb:108:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/rack/static.rb:31:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/urlmap.rb:52:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/urlmap.rb:46:in `each'
+  /usr/lib/ruby/vendor_ruby/rack/urlmap.rb:46:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/rack/log_tailer.rb:17:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  /usr/lib/ruby/vendor_ruby/rack/handler/webrick.rb:13:in `run'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MoviesController#new (for 127.0.0.1 at 2016-05-17 21:44:05) [GET]
+Rendering template within layouts/application
+Rendering movies/new
+Completed in 66ms (View: 62, DB: 0) | 200 OK [http://localhost/movies/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2016-05-17 21:44:05) [GET]
+
+ActionController::RoutingError (No route matches "/pictures/images.jpeg" with {:method=>:get}):
+  /usr/lib/ruby/vendor_ruby/action_controller/routing/recognition_optimisation.rb:66:in `recognize_path'
+  /usr/lib/ruby/vendor_ruby/action_controller/routing/route_set.rb:442:in `recognize'
+  /usr/lib/ruby/vendor_ruby/action_controller/routing/route_set.rb:437:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/dispatcher.rb:87:in `dispatch'
+  /usr/lib/ruby/vendor_ruby/action_controller/dispatcher.rb:121:in `_call'
+  /usr/lib/ruby/vendor_ruby/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+  /usr/lib/ruby/vendor_ruby/active_record/query_cache.rb:29:in `call'
+  /usr/lib/ruby/vendor_ruby/active_record/query_cache.rb:29:in `call'
+  /usr/lib/ruby/vendor_ruby/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+  /usr/lib/ruby/vendor_ruby/active_record/query_cache.rb:9:in `cache'
+  /usr/lib/ruby/vendor_ruby/active_record/query_cache.rb:28:in `call'
+  /usr/lib/ruby/vendor_ruby/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/string_coercion.rb:25:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/head.rb:9:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/methodoverride.rb:24:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/params_parser.rb:15:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/session/cookie_store.rb:99:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/failsafe.rb:26:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/lock.rb:15:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/dispatcher.rb:114:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/reloader.rb:34:in `run'
+  /usr/lib/ruby/vendor_ruby/action_controller/dispatcher.rb:108:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/rack/static.rb:31:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/urlmap.rb:52:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/urlmap.rb:46:in `each'
+  /usr/lib/ruby/vendor_ruby/rack/urlmap.rb:46:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/rack/log_tailer.rb:17:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  /usr/lib/ruby/vendor_ruby/rack/handler/webrick.rb:13:in `run'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MoviesController#new (for 127.0.0.1 at 2016-05-17 21:44:07) [GET]
+Rendering template within layouts/application
+Rendering movies/new
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/movies/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2016-05-17 21:44:08) [GET]
+
+ActionController::RoutingError (No route matches "/pictures/images.jpeg" with {:method=>:get}):
+  /usr/lib/ruby/vendor_ruby/action_controller/routing/recognition_optimisation.rb:66:in `recognize_path'
+  /usr/lib/ruby/vendor_ruby/action_controller/routing/route_set.rb:442:in `recognize'
+  /usr/lib/ruby/vendor_ruby/action_controller/routing/route_set.rb:437:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/dispatcher.rb:87:in `dispatch'
+  /usr/lib/ruby/vendor_ruby/action_controller/dispatcher.rb:121:in `_call'
+  /usr/lib/ruby/vendor_ruby/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+  /usr/lib/ruby/vendor_ruby/active_record/query_cache.rb:29:in `call'
+  /usr/lib/ruby/vendor_ruby/active_record/query_cache.rb:29:in `call'
+  /usr/lib/ruby/vendor_ruby/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+  /usr/lib/ruby/vendor_ruby/active_record/query_cache.rb:9:in `cache'
+  /usr/lib/ruby/vendor_ruby/active_record/query_cache.rb:28:in `call'
+  /usr/lib/ruby/vendor_ruby/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/string_coercion.rb:25:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/head.rb:9:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/methodoverride.rb:24:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/params_parser.rb:15:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/session/cookie_store.rb:99:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/failsafe.rb:26:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/lock.rb:15:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/dispatcher.rb:114:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/reloader.rb:34:in `run'
+  /usr/lib/ruby/vendor_ruby/action_controller/dispatcher.rb:108:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/rack/static.rb:31:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/urlmap.rb:52:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/urlmap.rb:46:in `each'
+  /usr/lib/ruby/vendor_ruby/rack/urlmap.rb:46:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/rack/log_tailer.rb:17:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  /usr/lib/ruby/vendor_ruby/rack/handler/webrick.rb:13:in `run'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MoviesController#new (for 127.0.0.1 at 2016-05-17 21:45:05) [GET]
+Rendering template within layouts/application
+Rendering movies/new
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/movies/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2016-05-17 21:45:05) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/vijay/Pictures/images.jpeg" with {:method=>:get}):
+  /usr/lib/ruby/vendor_ruby/action_controller/routing/recognition_optimisation.rb:66:in `recognize_path'
+  /usr/lib/ruby/vendor_ruby/action_controller/routing/route_set.rb:442:in `recognize'
+  /usr/lib/ruby/vendor_ruby/action_controller/routing/route_set.rb:437:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/dispatcher.rb:87:in `dispatch'
+  /usr/lib/ruby/vendor_ruby/action_controller/dispatcher.rb:121:in `_call'
+  /usr/lib/ruby/vendor_ruby/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+  /usr/lib/ruby/vendor_ruby/active_record/query_cache.rb:29:in `call'
+  /usr/lib/ruby/vendor_ruby/active_record/query_cache.rb:29:in `call'
+  /usr/lib/ruby/vendor_ruby/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+  /usr/lib/ruby/vendor_ruby/active_record/query_cache.rb:9:in `cache'
+  /usr/lib/ruby/vendor_ruby/active_record/query_cache.rb:28:in `call'
+  /usr/lib/ruby/vendor_ruby/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/string_coercion.rb:25:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/head.rb:9:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/methodoverride.rb:24:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/params_parser.rb:15:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/session/cookie_store.rb:99:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/failsafe.rb:26:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/lock.rb:15:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/dispatcher.rb:114:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/reloader.rb:34:in `run'
+  /usr/lib/ruby/vendor_ruby/action_controller/dispatcher.rb:108:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/rack/static.rb:31:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/urlmap.rb:52:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/urlmap.rb:46:in `each'
+  /usr/lib/ruby/vendor_ruby/rack/urlmap.rb:46:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/rack/log_tailer.rb:17:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  /usr/lib/ruby/vendor_ruby/rack/handler/webrick.rb:13:in `run'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MoviesController#new (for 127.0.0.1 at 2016-05-17 21:45:06) [GET]
+Rendering template within layouts/application
+Rendering movies/new
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://localhost/movies/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2016-05-17 21:45:06) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/vijay/Pictures/images.jpeg" with {:method=>:get}):
+  /usr/lib/ruby/vendor_ruby/action_controller/routing/recognition_optimisation.rb:66:in `recognize_path'
+  /usr/lib/ruby/vendor_ruby/action_controller/routing/route_set.rb:442:in `recognize'
+  /usr/lib/ruby/vendor_ruby/action_controller/routing/route_set.rb:437:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/dispatcher.rb:87:in `dispatch'
+  /usr/lib/ruby/vendor_ruby/action_controller/dispatcher.rb:121:in `_call'
+  /usr/lib/ruby/vendor_ruby/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+  /usr/lib/ruby/vendor_ruby/active_record/query_cache.rb:29:in `call'
+  /usr/lib/ruby/vendor_ruby/active_record/query_cache.rb:29:in `call'
+  /usr/lib/ruby/vendor_ruby/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+  /usr/lib/ruby/vendor_ruby/active_record/query_cache.rb:9:in `cache'
+  /usr/lib/ruby/vendor_ruby/active_record/query_cache.rb:28:in `call'
+  /usr/lib/ruby/vendor_ruby/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/string_coercion.rb:25:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/head.rb:9:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/methodoverride.rb:24:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/params_parser.rb:15:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/session/cookie_store.rb:99:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/failsafe.rb:26:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/lock.rb:15:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/dispatcher.rb:114:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/reloader.rb:34:in `run'
+  /usr/lib/ruby/vendor_ruby/action_controller/dispatcher.rb:108:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/rack/static.rb:31:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/urlmap.rb:52:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/urlmap.rb:46:in `each'
+  /usr/lib/ruby/vendor_ruby/rack/urlmap.rb:46:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/rack/log_tailer.rb:17:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  /usr/lib/ruby/vendor_ruby/rack/handler/webrick.rb:13:in `run'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2016-05-17 21:45:11) [GET]
+  [4;35;1mMovie Load (0.4ms)[0m   [0mSELECT * FROM "movies" [0m
+Rendering template within layouts/application
+Rendering movies/index
+Completed in 13ms (View: 9, DB: 0) | 200 OK [http://localhost/movies]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2016-05-17 21:45:11) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/vijay/Pictures/images.jpeg" with {:method=>:get}):
+  /usr/lib/ruby/vendor_ruby/action_controller/routing/recognition_optimisation.rb:66:in `recognize_path'
+  /usr/lib/ruby/vendor_ruby/action_controller/routing/route_set.rb:442:in `recognize'
+  /usr/lib/ruby/vendor_ruby/action_controller/routing/route_set.rb:437:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/dispatcher.rb:87:in `dispatch'
+  /usr/lib/ruby/vendor_ruby/action_controller/dispatcher.rb:121:in `_call'
+  /usr/lib/ruby/vendor_ruby/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+  /usr/lib/ruby/vendor_ruby/active_record/query_cache.rb:29:in `call'
+  /usr/lib/ruby/vendor_ruby/active_record/query_cache.rb:29:in `call'
+  /usr/lib/ruby/vendor_ruby/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+  /usr/lib/ruby/vendor_ruby/active_record/query_cache.rb:9:in `cache'
+  /usr/lib/ruby/vendor_ruby/active_record/query_cache.rb:28:in `call'
+  /usr/lib/ruby/vendor_ruby/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/string_coercion.rb:25:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/head.rb:9:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/methodoverride.rb:24:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/params_parser.rb:15:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/session/cookie_store.rb:99:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/failsafe.rb:26:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/lock.rb:15:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/dispatcher.rb:114:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/reloader.rb:34:in `run'
+  /usr/lib/ruby/vendor_ruby/action_controller/dispatcher.rb:108:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/rack/static.rb:31:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/urlmap.rb:52:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/urlmap.rb:46:in `each'
+  /usr/lib/ruby/vendor_ruby/rack/urlmap.rb:46:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/rack/log_tailer.rb:17:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  /usr/lib/ruby/vendor_ruby/rack/handler/webrick.rb:13:in `run'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2016-05-17 21:45:13) [GET]
+  [4;36;1mMovie Load (0.5ms)[0m   [0;1mSELECT * FROM "movies" [0m
+Rendering template within layouts/application
+Rendering movies/index
+Completed in 12ms (View: 9, DB: 0) | 200 OK [http://localhost/movies]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2016-05-17 21:45:13) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/vijay/Pictures/images.jpeg" with {:method=>:get}):
+  /usr/lib/ruby/vendor_ruby/action_controller/routing/recognition_optimisation.rb:66:in `recognize_path'
+  /usr/lib/ruby/vendor_ruby/action_controller/routing/route_set.rb:442:in `recognize'
+  /usr/lib/ruby/vendor_ruby/action_controller/routing/route_set.rb:437:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/dispatcher.rb:87:in `dispatch'
+  /usr/lib/ruby/vendor_ruby/action_controller/dispatcher.rb:121:in `_call'
+  /usr/lib/ruby/vendor_ruby/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+  /usr/lib/ruby/vendor_ruby/active_record/query_cache.rb:29:in `call'
+  /usr/lib/ruby/vendor_ruby/active_record/query_cache.rb:29:in `call'
+  /usr/lib/ruby/vendor_ruby/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+  /usr/lib/ruby/vendor_ruby/active_record/query_cache.rb:9:in `cache'
+  /usr/lib/ruby/vendor_ruby/active_record/query_cache.rb:28:in `call'
+  /usr/lib/ruby/vendor_ruby/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/string_coercion.rb:25:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/head.rb:9:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/methodoverride.rb:24:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/params_parser.rb:15:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/session/cookie_store.rb:99:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/failsafe.rb:26:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/lock.rb:15:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/dispatcher.rb:114:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/reloader.rb:34:in `run'
+  /usr/lib/ruby/vendor_ruby/action_controller/dispatcher.rb:108:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/rack/static.rb:31:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/urlmap.rb:52:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/urlmap.rb:46:in `each'
+  /usr/lib/ruby/vendor_ruby/rack/urlmap.rb:46:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/rack/log_tailer.rb:17:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  /usr/lib/ruby/vendor_ruby/rack/handler/webrick.rb:13:in `run'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MoviesController#new (for 127.0.0.1 at 2016-05-17 21:45:15) [GET]
+Rendering template within layouts/application
+Rendering movies/new
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://localhost/movies/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2016-05-17 21:45:15) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/vijay/Pictures/images.jpeg" with {:method=>:get}):
+  /usr/lib/ruby/vendor_ruby/action_controller/routing/recognition_optimisation.rb:66:in `recognize_path'
+  /usr/lib/ruby/vendor_ruby/action_controller/routing/route_set.rb:442:in `recognize'
+  /usr/lib/ruby/vendor_ruby/action_controller/routing/route_set.rb:437:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/dispatcher.rb:87:in `dispatch'
+  /usr/lib/ruby/vendor_ruby/action_controller/dispatcher.rb:121:in `_call'
+  /usr/lib/ruby/vendor_ruby/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+  /usr/lib/ruby/vendor_ruby/active_record/query_cache.rb:29:in `call'
+  /usr/lib/ruby/vendor_ruby/active_record/query_cache.rb:29:in `call'
+  /usr/lib/ruby/vendor_ruby/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+  /usr/lib/ruby/vendor_ruby/active_record/query_cache.rb:9:in `cache'
+  /usr/lib/ruby/vendor_ruby/active_record/query_cache.rb:28:in `call'
+  /usr/lib/ruby/vendor_ruby/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/string_coercion.rb:25:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/head.rb:9:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/methodoverride.rb:24:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/params_parser.rb:15:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/session/cookie_store.rb:99:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/failsafe.rb:26:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/lock.rb:15:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/dispatcher.rb:114:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/reloader.rb:34:in `run'
+  /usr/lib/ruby/vendor_ruby/action_controller/dispatcher.rb:108:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/rack/static.rb:31:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/urlmap.rb:52:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/urlmap.rb:46:in `each'
+  /usr/lib/ruby/vendor_ruby/rack/urlmap.rb:46:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/rack/log_tailer.rb:17:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  /usr/lib/ruby/vendor_ruby/rack/handler/webrick.rb:13:in `run'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MoviesController#new (for 127.0.0.1 at 2016-05-17 21:46:37) [GET]
+Rendering template within layouts/application
+Rendering movies/new
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/movies/new]
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2016-05-17 21:46:43) [GET]
+  [4;35;1mMovie Load (0.4ms)[0m   [0mSELECT * FROM "movies" [0m
+Rendering template within layouts/application
+Rendering movies/index
+Completed in 13ms (View: 9, DB: 0) | 200 OK [http://localhost/movies]
+
+
+Processing MoviesController#new (for 127.0.0.1 at 2016-05-17 21:46:50) [GET]
+Rendering template within layouts/application
+Rendering movies/new
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://localhost/movies/new]
+
+
+Processing MoviesController#create (for 127.0.0.1 at 2016-05-17 21:46:55) [POST]
+  Parameters: {"movie"=>{"title"=>"vijay"}, "commit"=>"Create", "authenticity_token"=>"kQiNzXf7hkKS3pODY2EEokZhzjRx5SOADcZe6+rBKBY="}
+Rendering template within layouts/application
+Rendering movies/new
+Completed in 16ms (View: 10, DB: 0) | 200 OK [http://localhost/movies]
+
+
+Processing MoviesController#create (for 127.0.0.1 at 2016-05-17 21:47:01) [POST]
+  Parameters: {"movie"=>{"title"=>"vijay", "rating"=>"4"}, "commit"=>"Create", "authenticity_token"=>"kQiNzXf7hkKS3pODY2EEokZhzjRx5SOADcZe6+rBKBY="}
+  [4;36;1mMovie Create (0.2ms)[0m   [0;1mINSERT INTO "movies" ("title", "created_at", "rating", "updated_at") VALUES('vijay', '2016-05-17 16:17:01', 4, '2016-05-17 16:17:01')[0m
+Redirected to http://localhost:3000/movies/6
+Completed in 118ms (DB: 0) | 302 Found [http://localhost/movies]
+
+
+Processing MoviesController#show (for 127.0.0.1 at 2016-05-17 21:47:01) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mMovie Load (0.1ms)[0m   [0mSELECT * FROM "movies" WHERE ("movies"."id" = 6) [0m
+Rendering template within layouts/application
+Rendering movies/show
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://localhost/movies/6]
+
+
+Processing MoviesController#show (for 127.0.0.1 at 2016-05-17 21:47:07) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mMovie Load (0.1ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."id" = 6) [0m
+Rendering template within layouts/application
+Rendering movies/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/movies/6]
+
+
+Processing MoviesController#show (for 127.0.0.1 at 2016-05-17 21:49:58) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mMovie Load (0.1ms)[0m   [0mSELECT * FROM "movies" WHERE ("movies"."id" = 6) [0m
+Rendering template within layouts/application
+Rendering movies/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/movies/6]
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2016-05-17 21:50:02) [GET]
+  [4;36;1mMovie Load (0.4ms)[0m   [0;1mSELECT * FROM "movies" [0m
+Rendering template within layouts/application
+Rendering movies/index
+Completed in 31ms (View: 23, DB: 0) | 200 OK [http://localhost/movies]
+
+
+Processing MoviesController#new (for 127.0.0.1 at 2016-05-17 21:50:06) [GET]
+Rendering template within layouts/application
+Rendering movies/new
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://localhost/movies/new]
+
+
+Processing MoviesController#create (for 127.0.0.1 at 2016-05-17 21:50:22) [POST]
+  Parameters: {"movie"=>{"title"=>"", "rating"=>"2"}, "commit"=>"Create", "authenticity_token"=>"kQiNzXf7hkKS3pODY2EEokZhzjRx5SOADcZe6+rBKBY="}
+Rendering template within layouts/application
+Rendering movies/new
+Completed in 13ms (View: 8, DB: 0) | 200 OK [http://localhost/movies]
+
+
+Processing MoviesController#create (for 127.0.0.1 at 2016-05-17 21:50:27) [POST]
+  Parameters: {"movie"=>{"title"=>"rgt", "rating"=>"2"}, "commit"=>"Create", "authenticity_token"=>"kQiNzXf7hkKS3pODY2EEokZhzjRx5SOADcZe6+rBKBY="}
+  [4;35;1mMovie Create (0.2ms)[0m   [0mINSERT INTO "movies" ("title", "created_at", "rating", "updated_at") VALUES('rgt', '2016-05-17 16:20:27', 2, '2016-05-17 16:20:27')[0m
+Redirected to http://localhost:3000/movies/7
+Completed in 211ms (DB: 0) | 302 Found [http://localhost/movies]
+
+
+Processing MoviesController#show (for 127.0.0.1 at 2016-05-17 21:50:27) [GET]
+  Parameters: {"id"=>"7"}
+  [4;36;1mMovie Load (0.1ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."id" = 7) [0m
+Rendering template within layouts/application
+Rendering movies/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/movies/7]
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2016-05-17 21:50:30) [GET]
+  [4;35;1mMovie Load (0.4ms)[0m   [0mSELECT * FROM "movies" [0m
+Rendering template within layouts/application
+Rendering movies/index
+Completed in 16ms (View: 12, DB: 0) | 200 OK [http://localhost/movies]
+
+
+Processing MoviesController#show (for 127.0.0.1 at 2016-05-17 21:50:33) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mMovie Load (0.1ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering movies/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/movies/1]
+
+
+Processing MoviesController#show (for 127.0.0.1 at 2016-05-17 21:51:30) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mMovie Load (0.2ms)[0m   [0mSELECT * FROM "movies" WHERE ("movies"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering movies/show
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/movies/1]
+
+
+Processing MoviesController#show (for 127.0.0.1 at 2016-05-17 21:51:31) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mMovie Load (0.1ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering movies/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/movies/1]
+
+
+Processing Rails::InfoController#properties (for 127.0.0.1 at 2016-05-17 21:51:38) [GET]
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Completed in 30ms (View: 2, DB: 1) | 200 OK [http://localhost/rails/info/properties]
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2016-05-17 21:51:44) [GET]
+  [4;35;1mMovie Load (0.4ms)[0m   [0mSELECT * FROM "movies" [0m
+Rendering template within layouts/application
+Rendering movies/index
+Completed in 19ms (View: 14, DB: 0) | 200 OK [http://localhost/Movies]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2016-05-17 21:51:44) [GET]
+
+ActionController::RoutingError (No route matches "/images/star-gold-01.jpg" with {:method=>:get}):
+  /usr/lib/ruby/vendor_ruby/action_controller/routing/recognition_optimisation.rb:66:in `recognize_path'
+  /usr/lib/ruby/vendor_ruby/action_controller/routing/route_set.rb:442:in `recognize'
+  /usr/lib/ruby/vendor_ruby/action_controller/routing/route_set.rb:437:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/dispatcher.rb:87:in `dispatch'
+  /usr/lib/ruby/vendor_ruby/action_controller/dispatcher.rb:121:in `_call'
+  /usr/lib/ruby/vendor_ruby/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+  /usr/lib/ruby/vendor_ruby/active_record/query_cache.rb:29:in `call'
+  /usr/lib/ruby/vendor_ruby/active_record/query_cache.rb:29:in `call'
+  /usr/lib/ruby/vendor_ruby/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+  /usr/lib/ruby/vendor_ruby/active_record/query_cache.rb:9:in `cache'
+  /usr/lib/ruby/vendor_ruby/active_record/query_cache.rb:28:in `call'
+  /usr/lib/ruby/vendor_ruby/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/string_coercion.rb:25:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/head.rb:9:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/methodoverride.rb:24:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/params_parser.rb:15:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/session/cookie_store.rb:99:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/failsafe.rb:26:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/lock.rb:15:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/dispatcher.rb:114:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/reloader.rb:34:in `run'
+  /usr/lib/ruby/vendor_ruby/action_controller/dispatcher.rb:108:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/rack/static.rb:31:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/urlmap.rb:52:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/urlmap.rb:46:in `each'
+  /usr/lib/ruby/vendor_ruby/rack/urlmap.rb:46:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/rack/log_tailer.rb:17:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  /usr/lib/ruby/vendor_ruby/rack/handler/webrick.rb:13:in `run'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MoviesController#new (for 127.0.0.1 at 2016-05-17 21:51:46) [GET]
+Rendering template within layouts/application
+Rendering movies/new
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/movies/new]
+
+
+Processing MoviesController#create (for 127.0.0.1 at 2016-05-17 21:51:52) [POST]
+  Parameters: {"movie"=>{"title"=>"asdf", "rating"=>"2"}, "commit"=>"Create", "authenticity_token"=>"kQiNzXf7hkKS3pODY2EEokZhzjRx5SOADcZe6+rBKBY="}
+  [4;36;1mMovie Create (0.2ms)[0m   [0;1mINSERT INTO "movies" ("title", "created_at", "rating", "updated_at") VALUES('asdf', '2016-05-17 16:21:52', 2, '2016-05-17 16:21:52')[0m
+Redirected to http://localhost:3000/movies/8
+Completed in 227ms (DB: 0) | 302 Found [http://localhost/movies]
+
+
+Processing MoviesController#show (for 127.0.0.1 at 2016-05-17 21:51:53) [GET]
+  Parameters: {"id"=>"8"}
+  [4;35;1mMovie Load (0.1ms)[0m   [0mSELECT * FROM "movies" WHERE ("movies"."id" = 8) [0m
+Rendering template within layouts/application
+Rendering movies/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/movies/8]
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2016-05-17 21:51:54) [GET]
+  [4;36;1mMovie Load (0.4ms)[0m   [0;1mSELECT * FROM "movies" [0m
+Rendering template within layouts/application
+Rendering movies/index
+Completed in 72ms (View: 69, DB: 0) | 200 OK [http://localhost/movies]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2016-05-17 21:51:55) [GET]
+
+ActionController::RoutingError (No route matches "/images/star-gold-01.jpg" with {:method=>:get}):
+  /usr/lib/ruby/vendor_ruby/action_controller/routing/recognition_optimisation.rb:66:in `recognize_path'
+  /usr/lib/ruby/vendor_ruby/action_controller/routing/route_set.rb:442:in `recognize'
+  /usr/lib/ruby/vendor_ruby/action_controller/routing/route_set.rb:437:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/dispatcher.rb:87:in `dispatch'
+  /usr/lib/ruby/vendor_ruby/action_controller/dispatcher.rb:121:in `_call'
+  /usr/lib/ruby/vendor_ruby/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+  /usr/lib/ruby/vendor_ruby/active_record/query_cache.rb:29:in `call'
+  /usr/lib/ruby/vendor_ruby/active_record/query_cache.rb:29:in `call'
+  /usr/lib/ruby/vendor_ruby/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+  /usr/lib/ruby/vendor_ruby/active_record/query_cache.rb:9:in `cache'
+  /usr/lib/ruby/vendor_ruby/active_record/query_cache.rb:28:in `call'
+  /usr/lib/ruby/vendor_ruby/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/string_coercion.rb:25:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/head.rb:9:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/methodoverride.rb:24:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/params_parser.rb:15:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/session/cookie_store.rb:99:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/failsafe.rb:26:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/lock.rb:15:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/dispatcher.rb:114:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/reloader.rb:34:in `run'
+  /usr/lib/ruby/vendor_ruby/action_controller/dispatcher.rb:108:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/rack/static.rb:31:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/urlmap.rb:52:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/urlmap.rb:46:in `each'
+  /usr/lib/ruby/vendor_ruby/rack/urlmap.rb:46:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/rack/log_tailer.rb:17:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  /usr/lib/ruby/vendor_ruby/rack/handler/webrick.rb:13:in `run'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MoviesController#show (for 127.0.0.1 at 2016-05-17 21:51:56) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mMovie Load (0.1ms)[0m   [0mSELECT * FROM "movies" WHERE ("movies"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering movies/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/movies/1]
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2016-05-17 21:51:58) [GET]
+  [4;36;1mMovie Load (0.4ms)[0m   [0;1mSELECT * FROM "movies" [0m
+Rendering template within layouts/application
+Rendering movies/index
+Completed in 17ms (View: 14, DB: 0) | 200 OK [http://localhost/movies]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2016-05-17 21:51:58) [GET]
+
+ActionController::RoutingError (No route matches "/images/star-gold-01.jpg" with {:method=>:get}):
+  /usr/lib/ruby/vendor_ruby/action_controller/routing/recognition_optimisation.rb:66:in `recognize_path'
+  /usr/lib/ruby/vendor_ruby/action_controller/routing/route_set.rb:442:in `recognize'
+  /usr/lib/ruby/vendor_ruby/action_controller/routing/route_set.rb:437:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/dispatcher.rb:87:in `dispatch'
+  /usr/lib/ruby/vendor_ruby/action_controller/dispatcher.rb:121:in `_call'
+  /usr/lib/ruby/vendor_ruby/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+  /usr/lib/ruby/vendor_ruby/active_record/query_cache.rb:29:in `call'
+  /usr/lib/ruby/vendor_ruby/active_record/query_cache.rb:29:in `call'
+  /usr/lib/ruby/vendor_ruby/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+  /usr/lib/ruby/vendor_ruby/active_record/query_cache.rb:9:in `cache'
+  /usr/lib/ruby/vendor_ruby/active_record/query_cache.rb:28:in `call'
+  /usr/lib/ruby/vendor_ruby/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/string_coercion.rb:25:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/head.rb:9:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/methodoverride.rb:24:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/params_parser.rb:15:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/session/cookie_store.rb:99:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/failsafe.rb:26:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/lock.rb:15:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/dispatcher.rb:114:in `call'
+  /usr/lib/ruby/vendor_ruby/action_controller/reloader.rb:34:in `run'
+  /usr/lib/ruby/vendor_ruby/action_controller/dispatcher.rb:108:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/rack/static.rb:31:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/urlmap.rb:52:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/urlmap.rb:46:in `each'
+  /usr/lib/ruby/vendor_ruby/rack/urlmap.rb:46:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/rack/log_tailer.rb:17:in `call'
+  /usr/lib/ruby/vendor_ruby/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+  /usr/lib/ruby/vendor_ruby/rack/handler/webrick.rb:13:in `run'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MoviesController#edit (for 127.0.0.1 at 2016-05-17 21:52:10) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mMovie Load (0.1ms)[0m   [0mSELECT * FROM "movies" WHERE ("movies"."id" = 5) [0m
+Rendering template within layouts/application
+Rendering movies/edit
+Completed in 12ms (View: 9, DB: 0) | 200 OK [http://localhost/movies/5/edit]
+
+
+Processing MoviesController#edit (for 127.0.0.1 at 2016-05-17 21:52:14) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mMovie Load (0.1ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering movies/edit
+Completed in 64ms (View: 60, DB: 0) | 200 OK [http://localhost/movies/2/edit]
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2016-05-17 21:53:13) [GET]
+  [4;35;1mMovie Load (0.4ms)[0m   [0mSELECT * FROM "movies" [0m
+Rendering template within layouts/application
+Rendering movies/index
+Completed in 19ms (View: 15, DB: 0) | 200 OK [http://localhost/movies]
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2016-05-17 21:53:18) [GET]
+  [4;36;1mMovie Load (0.4ms)[0m   [0;1mSELECT * FROM "movies" [0m
+Rendering template within layouts/application
+Rendering movies/index
+Completed in 19ms (View: 15, DB: 0) | 200 OK [http://localhost/movies]
+
+
+Processing MoviesController#new (for 127.0.0.1 at 2016-05-17 21:53:20) [GET]
+Rendering template within layouts/application
+Rendering movies/new
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://localhost/movies/new]
+
+
+Processing MoviesController#new (for 127.0.0.1 at 2016-05-17 21:54:04) [GET]
+Rendering template within layouts/application
+Rendering movies/new
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://localhost/movies/new]
+
+
+Processing MoviesController#new (for 127.0.0.1 at 2016-05-17 21:54:45) [GET]
+Rendering template within layouts/application
+Rendering movies/new
+Completed in 65ms (View: 61, DB: 0) | 200 OK [http://localhost/movies/new]
+
+
+Processing MoviesController#new (for 127.0.0.1 at 2016-05-17 21:54:45) [GET]
+Rendering template within layouts/application
+Rendering movies/new
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://localhost/movies/new]
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2016-05-17 21:54:49) [GET]
+  [4;35;1mMovie Load (0.4ms)[0m   [0mSELECT * FROM "movies" [0m
+Rendering template within layouts/application
+Rendering movies/index
+Completed in 20ms (View: 16, DB: 0) | 200 OK [http://localhost/movies]
+
+
+Processing MoviesController#new (for 127.0.0.1 at 2016-05-17 21:54:51) [GET]
+Rendering template within layouts/application
+Rendering movies/new
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://localhost/movies/new]
+
+
+Processing MoviesController#create (for 127.0.0.1 at 2016-05-17 21:55:04) [POST]
+  Parameters: {"movie"=>{"title"=>"vip", "rating"=>"4"}, "commit"=>"Create", "authenticity_token"=>"kQiNzXf7hkKS3pODY2EEokZhzjRx5SOADcZe6+rBKBY="}
+  [4;36;1mMovie Create (0.6ms)[0m   [0;1mINSERT INTO "movies" ("title", "created_at", "rating", "updated_at") VALUES('vip', '2016-05-17 16:25:04', 4, '2016-05-17 16:25:04')[0m
+Redirected to http://localhost:3000/movies/9
+Completed in 537ms (DB: 1) | 302 Found [http://localhost/movies]
+
+
+Processing MoviesController#show (for 127.0.0.1 at 2016-05-17 21:55:05) [GET]
+  Parameters: {"id"=>"9"}
+  [4;35;1mMovie Load (0.1ms)[0m   [0mSELECT * FROM "movies" WHERE ("movies"."id" = 9) [0m
+Rendering template within layouts/application
+Rendering movies/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/movies/9]
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2016-05-17 21:55:07) [GET]
+  [4;36;1mMovie Load (0.5ms)[0m   [0;1mSELECT * FROM "movies" [0m
+Rendering template within layouts/application
+Rendering movies/index
+Completed in 20ms (View: 16, DB: 0) | 200 OK [http://localhost/movies]
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2016-05-17 21:56:37) [GET]
+  [4;35;1mMovie Load (0.4ms)[0m   [0mSELECT * FROM "movies" [0m
+Rendering template within layouts/application
+Rendering movies/index
+Completed in 24ms (View: 20, DB: 0) | 200 OK [http://localhost/movies]
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2016-05-17 21:59:49) [GET]
+  [4;36;1mMovie Load (0.4ms)[0m   [0;1mSELECT * FROM "movies" [0m
+Rendering template within layouts/application
+Rendering movies/index
+Completed in 21ms (View: 18, DB: 0) | 200 OK [http://localhost/movies]
+
+
+Processing MoviesController#new (for 127.0.0.1 at 2016-05-17 21:59:52) [GET]
+Rendering template within layouts/application
+Rendering movies/new
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://localhost/movies/new]
+
+
+Processing MoviesController#new (for 127.0.0.1 at 2016-05-17 22:00:29) [GET]
+Rendering template within layouts/application
+Rendering movies/new
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/movies/new]
+
+
+Processing MoviesController#new (for 127.0.0.1 at 2016-05-17 22:00:30) [GET]
+Rendering template within layouts/application
+Rendering movies/new
+Completed in 10ms (View: 7, DB: 0) | 200 OK [http://localhost/movies/new]
+
+
+Processing MoviesController#new (for 127.0.0.1 at 2016-05-17 22:01:16) [GET]
+Rendering template within layouts/application
+Rendering movies/new
+Completed in 13ms (View: 8, DB: 0) | 200 OK [http://localhost/movies/new]
+
+
+Processing MoviesController#create (for 127.0.0.1 at 2016-05-17 22:01:25) [POST]
+  Parameters: {"movie"=>{"title"=>"aslo", "rating"=>"1"}, "commit"=>"Create", "authenticity_token"=>"kQiNzXf7hkKS3pODY2EEokZhzjRx5SOADcZe6+rBKBY="}
+  [4;35;1mMovie Create (0.2ms)[0m   [0mINSERT INTO "movies" ("title", "created_at", "rating", "updated_at") VALUES('aslo', '2016-05-17 16:31:25', 1, '2016-05-17 16:31:25')[0m
+Redirected to http://localhost:3000/movies/10
+Completed in 249ms (DB: 0) | 302 Found [http://localhost/movies]
+
+
+Processing MoviesController#show (for 127.0.0.1 at 2016-05-17 22:01:25) [GET]
+  Parameters: {"id"=>"10"}
+  [4;36;1mMovie Load (0.1ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."id" = 10) [0m
+Rendering template within layouts/application
+Rendering movies/show
+Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/movies/10]
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2016-05-17 22:01:32) [GET]
+  [4;35;1mMovie Load (0.4ms)[0m   [0mSELECT * FROM "movies" [0m
+Rendering template within layouts/application
+Rendering movies/index
+Completed in 79ms (View: 75, DB: 0) | 200 OK [http://localhost/movies]
+
+
+Processing MoviesController#new (for 127.0.0.1 at 2016-05-17 22:01:46) [GET]
+Rendering template within layouts/application
+Rendering movies/new
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://localhost/movies/new]
+
+
+Processing MoviesController#new (for 127.0.0.1 at 2016-05-17 22:03:42) [GET]
+Rendering template within layouts/application
+Rendering movies/new
+Completed in 13ms (View: 9, DB: 0) | 200 OK [http://localhost/movies/new]
+
+
+Processing MoviesController#new (for 127.0.0.1 at 2016-05-17 22:03:44) [GET]
+Rendering template within layouts/application
+Rendering movies/new
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/movies/new]
+
+
+Processing MoviesController#new (for 127.0.0.1 at 2016-05-17 22:04:14) [GET]
+Rendering template within layouts/application
+Rendering movies/new
+Completed in 12ms (View: 9, DB: 0) | 200 OK [http://localhost/movies/new]
+
+
+Processing MoviesController#create (for 127.0.0.1 at 2016-05-17 22:04:20) [POST]
+  Parameters: {"movie"=>{"title"=>"adas", "rating"=>"3"}, "commit"=>"Create", "authenticity_token"=>"kQiNzXf7hkKS3pODY2EEokZhzjRx5SOADcZe6+rBKBY="}
+  [4;36;1mMovie Create (0.3ms)[0m   [0;1mINSERT INTO "movies" ("title", "created_at", "rating", "updated_at") VALUES('adas', '2016-05-17 16:34:20', 3, '2016-05-17 16:34:20')[0m
+Redirected to http://localhost:3000/movies/11
+Completed in 188ms (DB: 0) | 302 Found [http://localhost/movies]
+
+
+Processing MoviesController#show (for 127.0.0.1 at 2016-05-17 22:04:20) [GET]
+  Parameters: {"id"=>"11"}
+  [4;35;1mMovie Load (0.1ms)[0m   [0mSELECT * FROM "movies" WHERE ("movies"."id" = 11) [0m
+Rendering template within layouts/application
+Rendering movies/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/movies/11]
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2016-05-17 22:04:33) [GET]
+  [4;36;1mMovie Load (0.5ms)[0m   [0;1mSELECT * FROM "movies" [0m
+Rendering template within layouts/application
+Rendering movies/index
+Completed in 35ms (View: 28, DB: 1) | 200 OK [http://localhost/movies]
+
+
+Processing MoviesController#destroy (for 127.0.0.1 at 2016-05-17 22:04:38) [DELETE]
+  Parameters: {"id"=>"1", "authenticity_token"=>"kQiNzXf7hkKS3pODY2EEokZhzjRx5SOADcZe6+rBKBY="}
+  [4;35;1mMovie Load (0.1ms)[0m   [0mSELECT * FROM "movies" WHERE ("movies"."id" = 1) [0m
+  [4;36;1mMovie Destroy (0.2ms)[0m   [0;1mDELETE FROM "movies" WHERE "id" = 1[0m
+Redirected to http://localhost:3000/movies
+Completed in 136ms (DB: 0) | 302 Found [http://localhost/movies/1]
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2016-05-17 22:04:38) [GET]
+  [4;35;1mMovie Load (0.4ms)[0m   [0mSELECT * FROM "movies" [0m
+Rendering template within layouts/application
+Rendering movies/index
+Completed in 21ms (View: 17, DB: 0) | 200 OK [http://localhost/movies]
+
+
+Processing MoviesController#destroy (for 127.0.0.1 at 2016-05-17 22:04:40) [DELETE]
+  Parameters: {"id"=>"2", "authenticity_token"=>"kQiNzXf7hkKS3pODY2EEokZhzjRx5SOADcZe6+rBKBY="}
+  [4;36;1mMovie Load (0.1ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."id" = 2) [0m
+  [4;35;1mMovie Destroy (0.2ms)[0m   [0mDELETE FROM "movies" WHERE "id" = 2[0m
+Redirected to http://localhost:3000/movies
+Completed in 130ms (DB: 0) | 302 Found [http://localhost/movies/2]
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2016-05-17 22:04:40) [GET]
+  [4;36;1mMovie Load (0.6ms)[0m   [0;1mSELECT * FROM "movies" [0m
+Rendering template within layouts/application
+Rendering movies/index
+Completed in 22ms (View: 16, DB: 1) | 200 OK [http://localhost/movies]
+
+
+Processing MoviesController#destroy (for 127.0.0.1 at 2016-05-17 22:04:42) [DELETE]
+  Parameters: {"id"=>"4", "authenticity_token"=>"kQiNzXf7hkKS3pODY2EEokZhzjRx5SOADcZe6+rBKBY="}
+  [4;35;1mMovie Load (0.1ms)[0m   [0mSELECT * FROM "movies" WHERE ("movies"."id" = 4) [0m
+  [4;36;1mMovie Destroy (0.2ms)[0m   [0;1mDELETE FROM "movies" WHERE "id" = 4[0m
+Redirected to http://localhost:3000/movies
+Completed in 133ms (DB: 0) | 302 Found [http://localhost/movies/4]
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2016-05-17 22:04:42) [GET]
+  [4;35;1mMovie Load (0.4ms)[0m   [0mSELECT * FROM "movies" [0m
+Rendering template within layouts/application
+Rendering movies/index
+Completed in 18ms (View: 14, DB: 0) | 200 OK [http://localhost/movies]
+
+
+Processing MoviesController#destroy (for 127.0.0.1 at 2016-05-17 22:04:43) [DELETE]
+  Parameters: {"id"=>"5", "authenticity_token"=>"kQiNzXf7hkKS3pODY2EEokZhzjRx5SOADcZe6+rBKBY="}
+  [4;36;1mMovie Load (0.1ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."id" = 5) [0m
+  [4;35;1mMovie Destroy (0.2ms)[0m   [0mDELETE FROM "movies" WHERE "id" = 5[0m
+Redirected to http://localhost:3000/movies
+Completed in 134ms (DB: 0) | 302 Found [http://localhost/movies/5]
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2016-05-17 22:04:43) [GET]
+  [4;36;1mMovie Load (0.4ms)[0m   [0;1mSELECT * FROM "movies" [0m
+Rendering template within layouts/application
+Rendering movies/index
+Completed in 16ms (View: 12, DB: 0) | 200 OK [http://localhost/movies]
+
+
+Processing MoviesController#destroy (for 127.0.0.1 at 2016-05-17 22:04:44) [DELETE]
+  Parameters: {"id"=>"6", "authenticity_token"=>"kQiNzXf7hkKS3pODY2EEokZhzjRx5SOADcZe6+rBKBY="}
+  [4;35;1mMovie Load (0.1ms)[0m   [0mSELECT * FROM "movies" WHERE ("movies"."id" = 6) [0m
+  [4;36;1mMovie Destroy (0.2ms)[0m   [0;1mDELETE FROM "movies" WHERE "id" = 6[0m
+Redirected to http://localhost:3000/movies
+Completed in 144ms (DB: 0) | 302 Found [http://localhost/movies/6]
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2016-05-17 22:04:45) [GET]
+  [4;35;1mMovie Load (0.5ms)[0m   [0mSELECT * FROM "movies" [0m
+Rendering template within layouts/application
+Rendering movies/index
+Completed in 15ms (View: 11, DB: 0) | 200 OK [http://localhost/movies]
+
+
+Processing MoviesController#destroy (for 127.0.0.1 at 2016-05-17 22:04:46) [DELETE]
+  Parameters: {"id"=>"7", "authenticity_token"=>"kQiNzXf7hkKS3pODY2EEokZhzjRx5SOADcZe6+rBKBY="}
+  [4;36;1mMovie Load (0.6ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."id" = 7) [0m
+  [4;35;1mMovie Destroy (0.6ms)[0m   [0mDELETE FROM "movies" WHERE "id" = 7[0m
+Redirected to http://localhost:3000/movies
+Completed in 137ms (DB: 1) | 302 Found [http://localhost/movies/7]
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2016-05-17 22:04:46) [GET]
+  [4;36;1mMovie Load (0.3ms)[0m   [0;1mSELECT * FROM "movies" [0m
+Rendering template within layouts/application
+Rendering movies/index
+Completed in 12ms (View: 9, DB: 0) | 200 OK [http://localhost/movies]
+
+
+Processing MoviesController#destroy (for 127.0.0.1 at 2016-05-17 22:04:47) [DELETE]
+  Parameters: {"id"=>"8", "authenticity_token"=>"kQiNzXf7hkKS3pODY2EEokZhzjRx5SOADcZe6+rBKBY="}
+  [4;35;1mMovie Load (0.1ms)[0m   [0mSELECT * FROM "movies" WHERE ("movies"."id" = 8) [0m
+  [4;36;1mMovie Destroy (0.2ms)[0m   [0;1mDELETE FROM "movies" WHERE "id" = 8[0m
+Redirected to http://localhost:3000/movies
+Completed in 124ms (DB: 0) | 302 Found [http://localhost/movies/8]
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2016-05-17 22:04:47) [GET]
+  [4;35;1mMovie Load (0.3ms)[0m   [0mSELECT * FROM "movies" [0m
+Rendering template within layouts/application
+Rendering movies/index
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/movies]
+
+
+Processing MoviesController#destroy (for 127.0.0.1 at 2016-05-17 22:04:48) [DELETE]
+  Parameters: {"id"=>"9", "authenticity_token"=>"kQiNzXf7hkKS3pODY2EEokZhzjRx5SOADcZe6+rBKBY="}
+  [4;36;1mMovie Load (0.2ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."id" = 9) [0m
+  [4;35;1mMovie Destroy (0.2ms)[0m   [0mDELETE FROM "movies" WHERE "id" = 9[0m
+Redirected to http://localhost:3000/movies
+Completed in 120ms (DB: 0) | 302 Found [http://localhost/movies/9]
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2016-05-17 22:04:49) [GET]
+  [4;36;1mMovie Load (0.4ms)[0m   [0;1mSELECT * FROM "movies" [0m
+Rendering template within layouts/application
+Rendering movies/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/movies]
+
+
+Processing MoviesController#destroy (for 127.0.0.1 at 2016-05-17 22:04:51) [DELETE]
+  Parameters: {"id"=>"10", "authenticity_token"=>"kQiNzXf7hkKS3pODY2EEokZhzjRx5SOADcZe6+rBKBY="}
+  [4;35;1mMovie Load (0.2ms)[0m   [0mSELECT * FROM "movies" WHERE ("movies"."id" = 10) [0m
+  [4;36;1mMovie Destroy (0.4ms)[0m   [0;1mDELETE FROM "movies" WHERE "id" = 10[0m
+Redirected to http://localhost:3000/movies
+Completed in 145ms (DB: 1) | 302 Found [http://localhost/movies/10]
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2016-05-17 22:04:51) [GET]
+  [4;35;1mMovie Load (0.3ms)[0m   [0mSELECT * FROM "movies" [0m
+Rendering template within layouts/application
+Rendering movies/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/movies]
+
+
+Processing MoviesController#destroy (for 127.0.0.1 at 2016-05-17 22:04:53) [DELETE]
+  Parameters: {"id"=>"11", "authenticity_token"=>"kQiNzXf7hkKS3pODY2EEokZhzjRx5SOADcZe6+rBKBY="}
+  [4;36;1mMovie Load (0.2ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."id" = 11) [0m
+  [4;35;1mMovie Destroy (0.2ms)[0m   [0mDELETE FROM "movies" WHERE "id" = 11[0m
+Redirected to http://localhost:3000/movies
+Completed in 133ms (DB: 0) | 302 Found [http://localhost/movies/11]
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2016-05-17 22:04:53) [GET]
+  [4;36;1mMovie Load (0.3ms)[0m   [0;1mSELECT * FROM "movies" [0m
+Rendering template within layouts/application
+Rendering movies/index
+Completed in 5ms (View: 1, DB: 0) | 200 OK [http://localhost/movies]

@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="num_launchers" mtime="1457177262" type="int" value="0"/>
+	<entry name="launcher_hide_mode" mtime="1461556122" type="int" value="0"/>
+</gconf>

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<!--[if lt IE 7 ]> <html lang="en" class="ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="en"><!--<![endif]--><head>
+
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Difference between proc and lambda in ruby</title>
+<meta name="description" content="Proc will throw error only if the block uses the second param. Proc returns from the calling method, while lambda doesn't.">
+<meta name="generator" content="concrete5 - 5.5.2">
+
+<script type="text/javascript" async="" src="Difference%20between%20proc%20and%20lambda%20in%20ruby_files/3973.js"></script><script style="color: rgb(0, 0, 0);" src="Difference%20between%20proc%20and%20lambda%20in%20ruby_files/ga.js" async="" type="text/javascript"></script><script src="Difference%20between%20proc%20and%20lambda%20in%20ruby_files/all.js" id="facebook-jssdk"></script><script src="Difference%20between%20proc%20and%20lambda%20in%20ruby_files/widgets.js" id="twitter-wjs"></script><script type="text/javascript">
+var CCM_DISPATCHER_FILENAME = '/index.php';
+var CCM_CID = 361;
+var CCM_EDIT_MODE = false;
+var CCM_ARRANGE_MODE = false;
+var CCM_IMAGE_PATH = "/concrete/images";
+var CCM_TOOLS_PATH = "/index.php/tools/required";
+var CCM_BASE_URL = "http://www.compassitesinc.com";
+var CCM_REL = "";
+
+</script>
+
+	<link rel="shortcut icon" href="http://www.compassitesinc.com/files/1313/3939/4534/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="http://www.compassitesinc.com/files/1313/3939/4534/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="http://www.compassitesinc.com/files/6913/3939/4824/favicon.ico">
+
+<link rel="stylesheet" type="text/css" href="Difference%20between%20proc%20and%20lambda%20in%20ruby_files/ccm.css">
+<script type="text/javascript" src="Difference%20between%20proc%20and%20lambda%20in%20ruby_files/jquery_009.js"></script>
+<script type="text/javascript" src="Difference%20between%20proc%20and%20lambda%20in%20ruby_files/ccm.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<link rel="stylesheet" href="/packages/rigidlight/themes/rigidlight/style/ie.css" type="text/css"  />
+<![endif]-->
+
+<!-- css -->
+<link rel="stylesheet" href="Difference%20between%20proc%20and%20lambda%20in%20ruby_files/reset.css" type="text/css">
+<link rel="stylesheet" href="Difference%20between%20proc%20and%20lambda%20in%20ruby_files/layout.css" type="text/css">
+<link rel="stylesheet" href="Difference%20between%20proc%20and%20lambda%20in%20ruby_files/common.css" type="text/css">
+<link rel="stylesheet" href="Difference%20between%20proc%20and%20lambda%20in%20ruby_files/navigation.css" type="text/css">
+<link rel="stylesheet" href="Difference%20between%20proc%20and%20lambda%20in%20ruby_files/style.css" type="text/css">
+<link rel="stylesheet" href="Difference%20between%20proc%20and%20lambda%20in%20ruby_files/colorbox.css" type="text/css">
+<link rel="stylesheet" href="Difference%20between%20proc%20and%20lambda%20in%20ruby_files/tab.css" type="text/css">
+
+<!-- javascript -->
+<script type="text/javascript" src="Difference%20between%20proc%20and%20lambda%20in%20ruby_files/jquery.js"></script>
+<script type="text/javascript" src="Difference%20between%20proc%20and%20lambda%20in%20ruby_files/jquery_002.js"></script>
+<script type="text/javascript" src="Difference%20between%20proc%20and%20lambda%20in%20ruby_files/home.js"></script>
+<script type="text/javascript" src="Difference%20between%20proc%20and%20lambda%20in%20ruby_files/jquery_008.js"></script>
+<script type="text/javascript" src="Difference%20between%20proc%20and%20lambda%20in%20ruby_files/jquery_006.js"></script>
+<script type="text/javascript" src="Difference%20between%20proc%20and%20lambda%20in%20ruby_files/nav-hover.js"></script>
+<script type="text/javascript" src="Difference%20between%20proc%20and%20lambda%20in%20ruby_files/swfobject.js"></script>
+<script type="text/javascript" src="Difference%20between%20proc%20and%20lambda%20in%20ruby_files/custom.js"></script>
+<script type="text/javascript" src="Difference%20between%20proc%20and%20lambda%20in%20ruby_files/slides.js"></script>
+<script type="text/javascript" src="Difference%20between%20proc%20and%20lambda%20in%20ruby_files/jquery_003.js"></script>
+<script type="text/javascript" src="Difference%20between%20proc%20and%20lambda%20in%20ruby_files/job_description.js"></script>
+<script type="text/javascript" src="Difference%20between%20proc%20and%20lambda%20in%20ruby_files/caseStudies_script.js"></script>
+<script type="text/javascript" src="Difference%20between%20proc%20and%20lambda%20in%20ruby_files/sideBoxesClickable.js"></script>
+<script type="text/javascript" src="Difference%20between%20proc%20and%20lambda%20in%20ruby_files/people_script.js"></script>
+<script type="text/javascript" src="Difference%20between%20proc%20and%20lambda%20in%20ruby_files/jquery_004.js"></script>
+<script type="text/javascript" src="Difference%20between%20proc%20and%20lambda%20in%20ruby_files/jquery_005.js"></script>
+<script type="text/javascript" src="Difference%20between%20proc%20and%20lambda%20in%20ruby_files/blog_menu.js"></script>
+<script type="text/javascript" src="Difference%20between%20proc%20and%20lambda%20in%20ruby_files/interview_script.js"></script>
+<script type="text/javascript" src="Difference%20between%20proc%20and%20lambda%20in%20ruby_files/ourThoughtBlockScript.js"></script>
+<script type="text/javascript" src="Difference%20between%20proc%20and%20lambda%20in%20ruby_files/jquery_007.js"></script>
+<script>
+$(document).ready(function(){
+   $("a[rel='lb_image']").colorbox({returnFocus: false});
+}); 
+</script>
+<!--
+<link rel="stylesheet" href="/packages/rigidlight/themes/rigidlight/style/iGotStyle.css" type="text/css"  />
+<script type="text/javascript" src="/packages/rigidlight/themes/rigidlight/js/cufon-yui.js"></script>
+<script type="text/javascript" src="/packages/rigidlight/themes/rigidlight/js/whitney.js"></script>
+<script type="text/javascript" src="/packages/rigidlight/themes/rigidlight/js/whitney-bold.js"></script>
+<script type="text/javascript" src="/packages/rigidlight/themes/rigidlight/js/functions.js"></script>
+<script type="text/javascript" src="/packages/rigidlight/themes/rigidlight/js/CEO_boxes_hidden.js"></script>
+-->
+
+<script src="Difference%20between%20proc%20and%20lambda%20in%20ruby_files/button.js" async="" charset="utf-8" type="text/javascript"></script><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f6f7f8;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3a5795;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{width:auto;height:auto;min-height:initial;min-width:initial;background:none}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{color:#fff;display:block;padding-top:20px;clear:both;font-size:18px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;bottom:0;left:0;right:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #2f477a;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f8;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yD/r/t-wz8gw1xG1.png);background-repeat:no-repeat;background-position:50% 50%;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}</style></head>
+
+<body class="subpage rightColumn com-blog " id="pageid361">
+
+	<header class="container">
+    <div class="content_wrapper">
+    	<div id="logo">
+        
+        	<a href="http://www.compassitesinc.com/" class="simple-logo-block">
+            
+            	Compassites Software            
+            </a><!-- .simple-logo-block -->
+        
+        </div><!-- #logo -->
+        <a href="http://www.compassitesinc.com/services/"><div id="post-it">
+		
+		</div></a>
+       
+        <nav id="headerNav">
+            <ul class="header_top"></ul><div class="ccm-spacer">&nbsp;</div>        </nav>
+        <nav id="mainNav">
+        
+        	<ul class="nav"><li><a href="http://www.compassitesinc.com/">Home</a></li><li><a href="http://www.compassitesinc.com/services/">Services</a><ul><li><a href="http://www.compassitesinc.com/services/cloud-enablement/">Cloud Enablement</a></li><li><a href="http://www.compassitesinc.com/services/bigdata-analytics/">Big Data Analytics</a></li><li><a href="http://www.compassitesinc.com/services/consumerization-of-it/">Consumerization of IT</a></li><li><a href="http://www.compassitesinc.com/services/technology-consulting/">Technology Consulting</a></li></ul></li><li><a href="http://www.compassitesinc.com/client-speaks/">Client Speak</a><ul><li><a href="http://www.compassitesinc.com/client-speaks/testimonials/">Testimonials</a></li><li><a href="http://www.compassitesinc.com/client-speaks/why-compassites/">Why Compassites</a></li><li><a href="http://www.compassitesinc.com/client-speaks/engagement-models/">Engagement Models</a></li></ul></li><li><a href="http://www.compassitesinc.com/about-us/">About Us</a><ul><li><a href="http://www.compassitesinc.com/about-us/mission/">Mission &amp; Culture</a></li><li><a href="http://www.compassitesinc.com/about-us/people/">People</a></li><li><a href="http://www.compassitesinc.com/about-us/leadership/">Leadership</a></li><li><a href="http://www.compassitesinc.com/about-us/board-of-directors/">Board</a></li><li><a href="http://www.compassitesinc.com/about-us/thought-leadership/">Thought Leadership</a></li><li><a href="http://www.compassitesinc.com/about-us/coach/">COACH</a></li><li><a href="http://www.compassitesinc.com/about-us/values/">Values</a></li></ul></li><li><a href="http://www.compassitesinc.com/join-us/">Join Us</a><ul><li><a href="http://www.compassitesinc.com/join-us/process/">Process</a></li><li><a href="http://www.compassitesinc.com/join-us/5-reasons/">5 Reasons</a></li><li><a href="http://www.compassitesinc.com/join-us/tech-10/">Tech 10</a></li><li><a href="http://www.compassitesinc.com/join-us/recommended-reading/">Recommended Reading</a></li><li><a href="http://www.compassitesinc.com/blogs/how-social-media-increase-roi/">How social media increases ROI</a></li></ul></li></ul>        
+        </nav>
+      <!--  <div style="float:right;margin-top:20px;">
+    <form action="/index.php/search-results/" method="get" class="ccm-search-block" id="searchTool" onsubmit='return validate ()'>
+		<p class="search-heading">Search</p>
+		<input type="hidden" name="search_paths[]" value="" id="searchHiddenText">
+		<input type="text" name="query" value="" class="ccm-search-block-text" id="searchText">
+		<button style="border: medium none;" name="submit" value="" type="submit" id="searchButton">
+			<img width="18" height="18" src="/index.php/download_file/view_inline/385/" alt="search.gif" style="vertical-align:middle;">
+		</button>
+	</form>
+    </div>--> 
+    </div>
+    <div id="vignetteShell">
+    
+    	    
+    </div><!-- #vignetteShell -->
+	
+	<script language="javascript">
+		document.getElementById('searchText').focus();
+		
+		function validate () {
+			if(document.getElementById('searchText').value=="") {
+				alert("Please enter some keywords.");
+				return false;
+			}
+			return true;
+		}
+	</script>         
+</header>
+               
+    <section id="mainShell">
+    
+    	<div class="content_wrapper">
+    	
+	    	<div id="headerShadow"></div>
+	        
+	        <div class="container">
+	            
+                    <div id="page_banner">
+	            
+	                	                        
+	            </div>   
+	            <article id="main">
+	            
+	                <div class="pageSection">
+	</div>
+<div class="pageSection">
+	<h1>Difference between proc and lambda in ruby</h1>
+	<p class="meta">Posted by Santhosh Kattissery on June 9, 2013</p>		
+</div>
+<div class="pageSection">
+	<div id="ccm-layout-wrapper-6391" class="ccm-layout-wrapper"><div id="ccm-layout-main-558-1" class="ccm-layout ccm-layout-table  ccm-layout-name-Main-Layout-1 "><div class="ccm-layout-row ccm-layout-row-1"><div class="ccm-layout-558-col-1 ccm-layout-cell ccm-layout-col ccm-layout-col-1 first" style="width:75%"><p>
+<script type="text/javascript">// <![CDATA[
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+// ]]></script>
+</p>
+<div class=" fb_reset" id="fb-root">&nbsp;<div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe src="Difference%20between%20proc%20and%20lambda%20in%20ruby_files/xd_arbiter.html" style="border: medium none;" tabindex="-1" title="Facebook Cross Domain Communication Frame" aria-hidden="true" id="fb_xdm_frame_http" scrolling="no" allowfullscreen="true" allowtransparency="true" name="fb_xdm_frame_http" frameborder="0"></iframe><iframe src="Difference%20between%20proc%20and%20lambda%20in%20ruby_files/xd_arbiter_002.html" style="border: medium none;" tabindex="-1" title="Facebook Cross Domain Communication Frame" aria-hidden="true" id="fb_xdm_frame_https" scrolling="no" allowfullscreen="true" allowtransparency="true" name="fb_xdm_frame_https" frameborder="0"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div>
+<div class="inner_content_block" style="padding-bottom: 40px; text-align: justify;">
+<div id="fb-root">&nbsp;<img style="display: block; margin-left: auto; margin-right: auto;" src="Difference%20between%20proc%20and%20lambda%20in%20ruby_files/Santosh-Header.html" alt="Santhosh---Header.jpg"></div>
+<br>
+<p>One of the core concepts about Ruby that a programmer should remember
+ is that blocks are not objects. It is possible to convert them into 
+objects by wrapping them inside the "Proc" class instance. The "Proc" 
+and "Lambda" classes are probably the most awesome aspects of Ruby and 
+need to be used well in order to get the desired results. Not much of 
+knowledge is available on how to use Procs and Lambdas and what the 
+differences between both are. I'd like to take a stab at how we can 
+differentiate between Procs and Lambdas with a couple of thoughts below.
+ &nbsp;&nbsp;</p>
+<p><strong>1. Proc doesn't check the parameters passed, but Lambda does</strong><br> <br> <em>&gt; proc1 = Proc.new { |a, b| a + 5 }</em><br> <em></em></p>
+<p><em>&gt; proc1.call(2)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # call with only one parameter<br>
+ &nbsp;=&gt; 
+7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ # no error, unless the block uses the 2nd parameter</em><br> <em>&nbsp;&nbsp;</em><br> <em>&gt; lambda1 = lambda { |a, b| a + 5 }</em><br> <br> <em>&gt; lambda1.call(2)<br> ArgumentError: wrong number of arguments (1 for 2)</em><br> <em><br> </em><em> </em>Proc&nbsp;will throw error only if the block uses the second param.<br> <br> &nbsp;<em>&gt; proc2 = Proc.new { |a, b| a + b }</em><br> <br> <em>&gt; proc2.call(2)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # call with only one parameter<br> &nbsp;TypeError: nil can't be coerced into Fixnum</em><br> <br> <strong>&nbsp;2. Proc returns from the calling method, while Lambda doesn't</strong><br> <strong><br> </strong><em>&gt; def meth1<br> &gt;&nbsp;&nbsp; Proc.new { return 'return from proc' }.call<br> &gt; &nbsp; return 'return from method'<br> &gt; end<br> <br> &gt; puts meth1</em><br> <em>return from proc</em><br> <br> <em>&gt; def meth2<br> &gt;&nbsp;&nbsp; lambda { return 'return from lambda' }.call<br> &gt; &nbsp; return 'return from method'<br> &gt; end<br> <br> &gt; puts meth2</em><br> <em>return from method</em><br> <strong><br> </strong>If they are not called inside a method<strong>,</strong><br> <strong>&nbsp;</strong><em><br> </em><em>&gt; proc1 = Proc.new { return "Thank you" }</em>&nbsp;<br> <em><br> &gt; proc1.call</em>&nbsp;<em><br> LocalJumpError: unexpected return</em><br> <em><br> &gt; lambda1 = lambda { return "Thank you" }</em>&nbsp;<em><br></em><em></em></p>
+<p><em>&gt; lambda1.call</em></p>
+<p><em> =&gt; "Thank you"</em></p>
+<br>
+<p style="text-align: justify;"><img style="border: 5px solid white; float: left;" src="Difference%20between%20proc%20and%20lambda%20in%20ruby_files/Santhosh.gif" alt="Santhosh.gif" height="104" width="94"></p>
+<p style="text-align: justify;"><span style="color: #000000;">Santhosh 
+Kattissery is a senior consultant at Compassites. He is a web developer 
+with hands on experience in all phases of development, from requirements
+ gathering, database design, development, testing and deployment. He 
+specializes in open source technologies like Ruby on Rails, JQuery, 
+Mongodb &amp; MySql. Prior to Compassites he has worked as a contractor 
+for internet giants like Google and LinkedIn.</span></p>
+<p style="text-align: justify;"><span style="color: #000000;"><br></span></p>
+<p style="text-align: justify;">&nbsp;</p>
+<ul class="social" style="margin-left: 20px;">
+<li style="text-align: justify;">
+<div fb-iframe-plugin-query="app_id=&amp;container_width=60&amp;href=http%3A%2F%2Fwww.compassitesinc.com%2Fblogs%2Fdifference-between-proc-and-lambda-in-ruby&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;send=false&amp;show_faces=false&amp;width=25" fb-xfbml-state="rendered" class="fb-like fb_iframe_widget" data-href="http://www.compassitesinc.com/blogs/difference-between-proc-and-lambda-in-ruby" data-send="false" data-layout="button_count" data-width="25" data-show-faces="false"><span style="vertical-align: bottom; width: 78px; height: 20px;"><iframe class="" src="Difference%20between%20proc%20and%20lambda%20in%20ruby_files/like.html" style="border: medium none; visibility: visible; width: 78px; height: 20px;" title="fb:like Facebook Social Plugin" scrolling="no" allowfullscreen="true" allowtransparency="true" name="f124858a115dc14" frameborder="0" height="1000px" width="25px"></iframe></span></div>
+</li>
+<li style="text-align: justify;"><iframe data-url="http://www.compassitesinc.com/blogs/difference-between-proc-and-lambda-in-ruby" src="Difference%20between%20proc%20and%20lambda%20in%20ruby_files/tweet_button.html" title="Twitter Tweet Button" style="position: static; visibility: visible; width: 60px; height: 20px;" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" allowtransparency="true" scrolling="no" id="twitter-widget-0" frameborder="0"></iframe></li>
+</ul>
+</div><div id="fb-root">&nbsp;</div>
+<script type="text/javascript">// <![CDATA[
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+// ]]></script>
+<div fb-xfbml-state="rendered" class="fb-comments fb_iframe_widget" data-href="http://www.compassitesinc.com/blogs/difference-between-proc-and-lambda-in-ruby" data-width="470" data-num-posts="10"><span style="height: 290px; width: 470px;"><iframe src="Difference%20between%20proc%20and%20lambda%20in%20ruby_files/comments.html" class="fb_ltr" title="Facebook Social Plugin" style="border: medium none; overflow: hidden; height: 290px; width: 470px;" scrolling="no" name="f9e82af5ad9d2c" id="fde6789f2977a8"></iframe></span></div></div><div class="ccm-layout-558-col-2 ccm-layout-cell ccm-layout-col ccm-layout-col-2 last" style="width:24.99%"><div style="margin: 190px 0px 0px 0px; border: 2px solid #edecea; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; padding: 24px 16px; background-color: #fefefe;">
+<h3>Popular Tags</h3>
+<br> &nbsp;<a style="font-size: 20px; text-decoration: none; color: #38b8d5;" href="http://www.compassitesinc.com/blogs/the-enterprising-entrepreneur">Enterpreneur</a> &nbsp; &nbsp; <a style="font-size: 15px; text-decoration: none; color: #38b8d5;" href="http://www.compassitesinc.com/blogs/choosing-the-right-vendor-for-offshoring">Offshoring</a> &nbsp; &nbsp;<span style="color: #008000;"> <a style="font-size: 14px; text-decoration: none; color: #92ea92;" href="http://www.compassitesinc.com/blogs/designing-saas-applications"><span style="color: #008000;">SAAS</span></a></span> &nbsp; &nbsp; <a style="font-size: 19px; text-decoration: none; color: #38b8d5;" href="http://www.compassitesinc.com/blogs/rails-3-2-ajax-paperclip-image-uploading">RoR</a> &nbsp; &nbsp; <a style="font-size: 16px; text-decoration: none; color: #ff6b73;" href="http://www.compassitesinc.com/blogs/improving-team-dynamics-on-agile-teams">Team</a> &nbsp; &nbsp; <a style="font-size: 18px; text-decoration: none; color: #f1b23b;" href="http://www.compassitesinc.com/blogs/the-prototype-selling-approach">Prototype</a> &nbsp; &nbsp; <a style="font-size: 14px; text-decoration: none; color: #38b8d5;" href="http://www.compassitesinc.com/blogs/the-millennials-have-arrived">Millenials</a> &nbsp; &nbsp; <a style="font-size: 22px; text-decoration: none; color: #38b8d5;" href="http://www.compassitesinc.com/blogs/negotiation-how-do-you-strategize">Negotiation</a> &nbsp; &nbsp; <a style="font-size: 13px; text-decoration: none; color: #ff6b73;" href="http://www.compassitesinc.com/blogs/big-data-business-value">Big Data</a> &nbsp; &nbsp; <a style="font-size: 14px; text-decoration: none; color: #ff6b73;" href="http://www.compassitesinc.com/blogs/8-rules-for-creating-value-from-innovative-technologies">Innovation</a> &nbsp; &nbsp; <a style="font-size: 22px; text-decoration: none; color: #ff6b73;" href="http://www.compassitesinc.com/blogs/amazing-pentaho">Pentaho</a> &nbsp; &nbsp; <a style="font-size: 18px; color: #38b8d5;" href="http://www.compassitesinc.com/blogs/dao-unchained">DAO</a> &nbsp; &nbsp; <a style="font-size: 15px; text-decoration: none; color: #38b8d5;" href="http://www.compassitesinc.com/blogs/thoughts-on-standups-in-an-agile-environment">Standups</a> &nbsp; &nbsp; <span style="color: #008000;"><a style="font-size: 20px; text-decoration: none; color: #92ea92;" href="http://www.compassitesinc.com/blogs/alternative-php-cache-apc/"><span style="color: #008000;">PHP</span></a></span> &nbsp; &nbsp; <a style="font-size: 13px; text-
+
+decoration: none; color: #38b8d5;" href="http://www.compassitesinc.com/blogs/exploring-the-world-of-business-analysis">Business Analysis</a> &nbsp; &nbsp; <a style="font-size: 14px; text-decoration: none; color: #38b8d5;" href="http://www.compassitesinc.com/blogs/scaling-a-delivery-organization">Scaling</a> &nbsp; &nbsp; <span style="color: #008000;"><a style="font-size: 21px; text-decoration: none; color: #92ea92;" href="http://www.compassitesinc.com/blogs/the-incredible-rise-of-primefaces"><span style="color: #008000;">Prime Faces</span></a> &nbsp; &nbsp; <a style="font-size: 16px; text-decoration: none; color: #92ea92;" href="http://www.compassitesinc.com/blogs/the-importance-of-iteration-planning-and-showcases"><span style="color: #008000;">Planning</span></a></span> &nbsp; &nbsp; <a style="font-size: 13px; text-decoration: none; color: #f1b23b;" href="http://www.compassitesinc.com/blogs/the-tech-recruiter-s-kryptonite">Recruiter</a> &nbsp; &nbsp; <a style="font-size: 18px; text-decoration: none; color: #38b8d5;" href="http://www.compassitesinc.com/blogs/the-challenges-of-agile-testing">Agile</a> &nbsp; &nbsp; <span style="color: #008000;"><a style="font-size: 21px; text-decoration: none; color: #92ea92;" href="http://www.compassitesinc.com/blogs/reflecting-on-the-evolution-of-technology"><span style="color: #008000;">Evolution</span></a></span> &nbsp; &nbsp; <a style="font-size: 13px; text-decoration: none; color: #38b8d5;" href="http://www.compassitesinc.com/blogs/the-perception-about-clients-in-the-it-industry">Clients</a> &nbsp; &nbsp; <span style="color: #008000;"><a style="font-size: 16px; text-decoration: none; color: #92ea92;" href="http://www.compassitesinc.com/blogs/the-git-branching-model"><span style="color: #008000;">GIT</span></a></span> &nbsp; &nbsp; <a style="font-size: 20px; text-decoration: none; color: #f1b23b;" href="http://www.compassitesinc.com/blogs/why-i-work-at-compassites">Culture</a> &nbsp; &nbsp; <span style="color: #008000;"><a style="font-size: 12px; text-decoration: none; color: #92ea92;" href="http://www.compassitesinc.com/blogs/big-data-on-the-cloud"><span style="color: #008000;">Cloud</span></a></span> &nbsp; &nbsp; <a style="font-size: 20px; text-decoration: none; color: #38b8d5;" href="http://www.compassitesinc.com/blogs/developing-cross-platform-mobile-applications">Mobile</a> &nbsp; &nbsp; <a style="font-size: 21px; text-decoration: none; color: #38b8d5;" href="http://www.compassitesinc.com/blogs/why-use-mongodb">MongoDB</a> &nbsp; &nbsp; <a style="font-size: 20px; text-decoration: none; color: #ff6b73;" href="http://www.compassitesinc.com/blogs/making-feedback-count">Feedback</a> &nbsp; &nbsp; <a style="font-size: 19px; text-
+
+decoration: none; color: #ff6b73;" href="http://www.compassitesinc.com/blogs/the-solutioning-problem">Solution</a> &nbsp; &nbsp; <a style="font-size: 15px; text-decoration: none; color: #ff6b73;" href="http://www.compassitesinc.com/blogs/get-agile-the-scrum-way">Scrum</a> &nbsp; &nbsp;<span style="color: #008000;"> <a style="font-size: 15px; color: #92ea92;" href="http://www.compassitesinc.com/blogs/negotiation-how-do-you-strategize"><span style="color: #008000;">Strategize</span></a></span> &nbsp; &nbsp; <span style="color: #008000;"><a style="font-size: 22px; text-decoration: none; color: #92ea92;" href="http://www.compassitesinc.com/blogs/breaking-free-of-the-website-product-mindset-using-real-time-data-and-search"><span style="color: #008000;">Product</span></a> &nbsp;</span></div><div style="margin: 40px 0px 0px 0px; border: #edecea solid 2px; border-radius: 5px; padding: 24px 16px 24px 16px; background-color: #fefefe;">
+<h2 style="color: #8974db; font-size: 15px; margin-top: -6px; font-weight: bold; display: inline-block; vertical-align: middle; margin-left: 10px;"><img style="vertical-align: middle;" src="Difference%20between%20proc%20and%20lambda%20in%20ruby_files/mic-icon.png" alt="mic-icon.png" height="48" width="48">Interviews</h2>
+<ul style="text-align: center; text-decoration: none; list-style-type: none; color: black; font-size: 1.2em; margin-top: 20px;">
+<li style="margin-top: 10px; text-align: left;"><a style="color: black;" href="http://www.compassitesinc.com/blogs/the-architect-who-scales/">The architect who scales</a></li>
+<li style="margin-top: 10px; text-align: left;"><hr></li>
+<li style="text-align: left;"><a style="color: black;" href="http://www.compassitesinc.com/blogs/the-enterprising-entrepreneur/">The enterprising entrepreneur</a></li>
+<li style="margin-top: 10px; text-align: left;"><hr></li>
+<li style="margin-top: 10px; text-align: left;"><a style="color: black;" href="http://www.compassitesinc.com/blogs/the-solution-selling-approach/">The solution selling approach</a></li>
+<li style="margin-top: 10px; text-align: left;"><hr></li>
+<li style="margin-top: 10px; text-align: left;"><a style="color: black;" href="http://www.compassitesinc.com/blogs/exploring-the-world-of-business-analysis/">Exploring the world of BA</a></li>
+<li style="margin-top: 10px; text-align: left;"><hr><span style="background-color: #ffffff; color: #000000;"><a href="http://www.compassitesinc.com/blogs/exchanging-notes-on-big-data/"><span style="background-color: #ffffff; color: #000000;">Exchanging notes on Big Data</span></a></span></li>
+</ul>
+</div><div class="inner_content_block" style="margin: 30px 0; min-height: 200px;">
+<h2 style="margin-bottom: 10px; text-align: left;"><strong><img src="Difference%20between%20proc%20and%20lambda%20in%20ruby_files/youtube.jpg" alt="youtube.jpg" height="40" width="39"> Videos </strong></h2>
+<ul>
+<li><a style="text-decoration: none;" href="http://www.youtube.com/watch?v=TLbmH_dDIKU" target="_blank"> Elevator Pitch </a></li>
+<li><a style="text-decoration: none;" href="http://www.youtube.com/watch?v=WfgRa-LlqnU" target="_blank"> Jiffle Testimonial </a></li>
+<li><a style="text-decoration: none;" href="http://www.youtube.com/watch?v=SKWNN4DmE7U" target="_blank"> iCharts Testimonial </a></li>
+<li><a style="text-decoration: none;" href="http://www.youtube.com/watch?v=vUXmeiAqn4o" target="_blank"> Pune Office Launch </a></li>
+<li><a style="text-decoration: none;" href="http://www.youtube.com/watch?v=g3gBE94HsF8" target="_blank"> 100th Employee </a></li>
+</ul>
+</div></div><div class="ccm-spacer"></div></div><div class="ccm-layout-row ccm-layout-row-2"><div class="ccm-layout-558-col-1 ccm-layout-cell ccm-layout-col ccm-layout-col-1 first" style="width:75%">&nbsp;</div><div class="ccm-layout-558-col-2 ccm-layout-cell ccm-layout-col ccm-layout-col-2 last" style="width:24.99%">&nbsp;</div><div class="ccm-spacer"></div></div></div></div></div>
+<div class="pageSection">
+	</div>
+<div class="pageSection">
+	</div>	                        
+	            </article><!-- #main -->
+	            
+	            <section id="sidebar">
+	            
+	                	            
+	            </section><!-- #sidebar -->
+	            
+	            <div class="clear"></div>
+	            
+	            <section id="ctaShell">
+	            
+	                	            
+	            </section><!-- #ctaShell -->
+	        
+	        </div><!-- .container -->
+	        
+        </div><!-- .content_wrapper -->
+    
+    </section><!-- #mainShell -->
+    
+    <footer class="container">
+    
+    <div class="soclial_network_bar">
+		<div class="content_wrapper">
+			<ul>
+				<li><a target="_blank" href="https://www.facebook.com/compassites" class="facebook">Facebook</a></li>
+				<li><a target="_blank" href="https://twitter.com/#%21/compassites" class="twitter">Twitter</a></li>
+				<li><a target="_blank" href="http://www.linkedin.com/company/compassites-software-solutions" class="in">Linked In</a></li>
+				<li><a target="_blank" href="http://www.youtube.com/user/compassitesinc/videos" class="youtube">Youtube</a></li>
+				<li><a target="_blank" href="http://pinterest.com/compassitesinc/" class="pinterest">Pinterest</a></li>
+				<li><a target="_blank" href="http://www.slideshare.net/compassites" class="slideshare">Slide Share</a></li>
+				<li><a target="_blank" href="http://www.flickr.com/photos/compassites/" class="flickr">Flickr</a></li>
+				<li><a target="_blank" href="http://compassitesphotostories.wordpress.com/" class="wordpress">Wordpress</a></li>
+				<li><a target="_blank" href="http://www.compassites.blogspot.in/" class="blogspot">Blogspot</a></li>
+				<li><a target="_blank" href="http://compassitesclicks.tumblr.com/" class="tumblr">Tumblr</a></li>
+				<!--<li><a target="_blank" href="http://www.compassitesinc.com/index.php/tools/blocks/page_list/rss?bID=4204&cID=164&arHandle=Main%20:%20Layout%201%20:%20Cell%201" class="rssfeed">RSS</a></li>-->
+			</ul>
+			<!--<p><span>@maheshbaxi :</span> You cannot buy experience, it has to be earned. - Alan Wilkins</p>-->
+		</div>
+	</div>    
+	
+	<div class="content_wrapper">
+		<!--<ul class="footer_links">
+                        
+			<li><a href="/case-studies">Cases</a>|</li>
+			<li><a href="/news">News</a>|</li>
+			<li><a href="/events">Events</a>|</li>
+                        <li><a href="/open-source">Open Source</a>|</li>
+			<li><a href="/privacy-policy">Privacy</a>|</li>
+			<li><a href="/disclaimer">Disclaimer</a>|</li>-->
+			<!--<li><a href="#">Quick Links</a>|</li>-->
+			<!--<li><a href="/5-reasons/">5 Reasons</a>|</li>
+			<li><a href="/cloud-survey/">Survey</a>|</li>
+			<li><a href="/blogs/">Blogs</a>|</li>
+			<li><a href="/our-partners/">Partners</a>|</li>
+                        <li><a href="/sitemap/">Sitemap</a>|</li>
+			<li><a href="/contact-us/">Contact Us</a></li>-->
+			
+
+
+			<!--<li class="last"><a href="#">Download</a></li>	
+		</ul>	-->
+                <ul class="footer_links"></ul><div class="ccm-spacer">&nbsp;</div>		<p class="copyright">
+			Copyright © 2005 - 2016 Compassites
+			<br> All company names, product names, logos included on this website
+ may be registered trademarks or service marks of their respective 
+owners.
+		</p>
+	</div>
+<script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0019/3973.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+    </footer>
+    
+	<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-33217635-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+    
+<div style="display: none;" id="cboxOverlay"></div><div style="display: none; padding-bottom: 42px; padding-right: 42px;" class="" id="colorbox"><div id="cboxWrapper"><div><div style="float: left;" id="cboxTopLeft"></div><div style="float: left;" id="cboxTopCenter"></div><div style="float: left;" id="cboxTopRight"></div></div><div style="clear: left;"><div style="float: left;" id="cboxMiddleLeft"></div><div style="float: left;" id="cboxContent"><div style="width: 0px; height: 0px; overflow: hidden; float: left;" id="cboxLoadedContent"></div><div style="float: left;" id="cboxLoadingOverlay"></div><div style="float: left;" id="cboxLoadingGraphic"></div><div style="float: left;" id="cboxTitle"></div><div style="float: left;" id="cboxCurrent"></div><div style="float: left;" id="cboxNext"></div><div style="float: left;" id="cboxPrevious"></div><div style="float: left;" id="cboxSlideshow"></div><div style="float: left;" id="cboxClose"></div></div><div style="float: left;" id="cboxMiddleRight"></div></div><div style="clear: left;"><div style="float: left;" id="cboxBottomLeft"></div><div style="float: left;" id="cboxBottomCenter"></div><div style="float: left;" id="cboxBottomRight"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div></div><iframe style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border: medium none;" allowfullscreen="true" allowtransparency="true" scrolling="no" id="rufous-sandbox" frameborder="0"></iframe></body></html>

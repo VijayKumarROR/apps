@@ -1,0 +1,110 @@
+
+(gnome-settings-daemon:2039): power-plugin-WARNING **: gnome-session is not available
+
+(gnome-settings-daemon:2039): media-keys-plugin-WARNING **: Grab failed for some keys, another application may already have access the them.
+Backend     : gconf
+Integration : true
+Profile     : unity
+Adding plugins
+Initializing core options...done
+
+(gnome-settings-daemon:2039): GLib-CRITICAL **: g_variant_new_string: assertion `string != NULL' failed
+
+(gnome-settings-daemon:2039): GLib-GIO-CRITICAL **: g_settings_schema_key_type_check: assertion `value != NULL' failed
+
+(gnome-settings-daemon:2039): GLib-CRITICAL **: g_variant_get_type_string: assertion `value != NULL' failed
+
+(gnome-settings-daemon:2039): GLib-GIO-CRITICAL **: g_settings_set_value: key 'picture-uri' in 'org.gnome.desktop.background' expects type 's', but a GVariant of type '(null)' was given
+Initializing composite options...done
+** Message: applet now removed from the notification area
+** Message: using fallback from indicator to GtkStatusIcon
+Initializing opengl options...done
+Initializing decor options...done
+Initializing vpswitch options...done
+Initializing snap options...done
+Initializing mousepoll options...done
+Initializing resize options...done
+Initializing place options...done
+Initializing move options...done
+Initializing wall options...done
+Initializing grid options...done
+I/O warning : failed to load external entity "/home/vijay/.compiz/session/1052af57772286712e146356139069975000000019910033"
+Initializing session options...done
+Initializing gnomecompat options...done
+Initializing animation options...done
+Initializing fade options...done
+Initializing unitymtgrabhandles options...done
+Initializing workarounds options...done
+Initializing scale options...done
+compiz (expo) - Warn: failed to bind image to texture
+Initializing expo options...done
+Initializing ezoom options...done
+
+(compiz:2058): GConf-CRITICAL **: gconf_client_add_dir: assertion `gconf_valid_key (dirname, NULL)' failed
+Initializing unityshell options...done
+Setting Update "main_menu_key"
+Setting Update "run_key"
+** Message: moving back from GtkStatusIcon to indicator
+
+** (gnome-screensaver:2253): WARNING **: screensaver already running in this session
+
+(gdu-notification-daemon:2145): libgdu-WARNING **: Don't know how to handle device /dev/sr0
+
+(update-notifier:2289): libgdu-WARNING **: Don't know how to handle device /dev/sr0
+
+(update-notifier:2289): libgdu-WARNING **: Don't know how to handle device /dev/sr0
+
+(gdu-notification-daemon:2145): libgdu-WARNING **: Don't know how to handle device /dev/sr0
+Nautilus-Share-Message: Called "net usershare info" but it failed: 'net usershare' returned error 255: net usershare: cannot open usershare directory /var/lib/samba/usershares. Error No such file or directory
+Please ask your system administrator to enable user sharing.
+
+compiz (core) - Warn: failed to receive ConfigureNotify event on 0x34000ad
+
+Nautilus-Share-Message: Called "net usershare info" but it failed: 'net usershare' returned error 255: net usershare: cannot open usershare directory /var/lib/samba/usershares. Error No such file or directory
+Please ask your system administrator to enable user sharing.
+
+Nautilus-Share-Message: Called "net usershare info" but it failed: 'net usershare' returned error 255: net usershare: cannot open usershare directory /var/lib/samba/usershares. Error No such file or directory
+Please ask your system administrator to enable user sharing.
+
+
+(gnome-settings-daemon:2039): print-notifications-plugin-CRITICAL **: gsd_print_notifications_plugin_finalize: assertion `plugin->priv != NULL' failed
+
+(gnome-settings-daemon:2039): GLib-GObject-CRITICAL **: g_object_unref: assertion `G_IS_OBJECT (object)' failed
+
+(gnome-settings-daemon:2039): GLib-GObject-CRITICAL **: g_object_unref: assertion `G_IS_OBJECT (object)' failed
+
+(gnome-fallback-mount-helper:2082): Gdk-WARNING **: gnome-fallback-mount-helper: Fatal IO error 11 (Resource temporarily unavailable) on X server :0.
+
+
+(nm-applet:2079): Gdk-WARNING **: nm-applet: Fatal IO error 11 (Resource temporarily unavailable) on X server :0.
+
+
+(nautilus:2080): Gdk-WARNING **: nautilus: Fatal IO error 11 (Resource temporarily unavailable) on X server :0.
+
+
+(gdu-notification-daemon:2145): Gdk-WARNING **: gdu-notification-daemon: Fatal IO error 11 (Resource temporarily unavailable) on X server :0.
+
+
+(bluetooth-applet:2083): Gdk-WARNING **: bluetooth-applet: Fatal IO error 11 (Resource temporarily unavailable) on X server :0.
+
+
+(telepathy-indicator:2235): Gdk-WARNING **: telepathy-indicator: Fatal IO error 11 (Resource temporarily unavailable) on X server :0.
+
+
+(update-notifier:2289): Gdk-WARNING **: update-notifier: Fatal IO error 11 (Resource temporarily unavailable) on X server :0.
+
+gtk-window-decorator: Fatal IO error 11 (Resource temporarily unavailable) on X server :0.0.
+
+(deja-dup-monitor:2428): GVFS-RemoteVolumeMonitor-WARNING **: Owner :1.29 of volume monitor org.gtk.Private.GduVolumeMonitor disconnected from the bus; removing drives/volumes/mounts
+
+(deja-dup-monitor:2428): GVFS-RemoteVolumeMonitor-WARNING **: Owner :1.31 of volume monitor org.gtk.Private.AfcVolumeMonitor disconnected from the bus; removing drives/volumes/mounts
+
+(deja-dup-monitor:2428): GVFS-RemoteVolumeMonitor-WARNING **: Owner :1.33 of volume monitor org.gtk.Private.GPhoto2VolumeMonitor disconnected from the bus; removing drives/volumes/mounts
+
+(firefox:2570): GVFS-RemoteVolumeMonitor-WARNING **: Owner :1.29 of volume monitor org.gtk.Private.GduVolumeMonitor disconnected from the bus; removing drives/volumes/mounts
+
+(firefox:2570): GVFS-RemoteVolumeMonitor-WARNING **: Owner :1.31 of volume monitor org.gtk.Private.AfcVolumeMonitor disconnected from the bus; removing drives/volumes/mounts
+firefox: Fatal IO error 104 (Connection reset by peer) on X server :0.
+Terminated
+
+** (zeitgeist-datahub:2252): WARNING **: zeitgeist-datahub.vala:227: Unable to get name "org.gnome.zeitgeist.datahub" on the bus!

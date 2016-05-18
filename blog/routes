@@ -1,0 +1,197 @@
+Script started on Monday 16 May 2016 08:02:12 PM IST
+]0;vijay@vijay-A14RM0E: ~/blogvijay@vijay-A14RM0E:~/blog$ cd
+]0;vijay@vijay-A14RM0E: ~vijay@vijay-A14RM0E:~$ gem i[Klist rack
+
+*** LOCAL GEMS ***
+
+
+]0;vijay@vijay-A14RM0E: ~vijay@vijay-A14RM0E:~$ bundle show | grep xxx
+]0;vijay@vijay-A14RM0E: ~vijay@vijay-A14RM0E:~$ gem list
+
+*** LOCAL GEMS ***
+
+bundler (1.12.3)
+mysql2 (0.4.4)
+]0;vijay@vijay-A14RM0E: ~vijay@vijay-A14RM0E:~$ rails list
+      create  
+      create  app/controllers
+      create  app/helpers
+      create  app/models
+      create  app/views/layouts
+      create  config/environments
+      create  config/initializers
+      create  config/locales
+      create  db
+      create  doc
+      create  lib
+      create  lib/tasks
+      create  log
+      create  public/images
+      create  public/javascripts
+      create  public/stylesheets
+      create  script/performance
+      create  test/fixtures
+      create  test/functional
+      create  test/integration
+      create  test/performance
+      create  test/unit
+      create  vendor
+      create  vendor/plugins
+      create  tmp/sessions
+      create  tmp/sockets
+      create  tmp/cache
+      create  tmp/pids
+      create  Rakefile
+      create  README
+      create  app/controllers/application_controller.rb
+      create  app/helpers/application_helper.rb
+      create  config/database.yml
+      create  config/routes.rb
+      create  config/locales/en.yml
+      create  db/seeds.rb
+      create  config/initializers/backtrace_silencers.rb
+      create  config/initializers/inflections.rb
+      create  config/initializers/mime_types.rb
+      create  config/initializers/new_rails_defaults.rb
+      create  config/initializers/session_store.rb
+      create  config/initializers/cookie_verification_secret.rb
+      create  config/environment.rb
+      create  config/boot.rb
+      create  config/environments/production.rb
+      create  config/environments/development.rb
+      create  config/environments/test.rb
+      create  script/about
+      create  script/console
+      create  script/dbconsole
+      create  script/destroy
+      create  script/generate
+      create  script/runner
+      create  script/server
+      create  script/plugin
+      create  script/performance/benchmarker
+      create  script/performance/profiler
+      create  test/test_helper.rb
+      create  test/performance/browsing_test.rb
+      create  public/404.html
+      create  public/422.html
+      create  public/500.html
+      create  public/index.html
+      create  public/favicon.ico
+      create  public/robots.txt
+      create  public/images/rails.png
+      create  public/javascripts/prototype.js
+      create  public/javascripts/effects.js
+      create  public/javascripts/dragdrop.js
+      create  public/javascripts/controls.js
+      create  public/javascripts/application.js
+      create  doc/README_FOR_APP
+      create  log/server.log
+      create  log/production.log
+      create  log/development.log
+      create  log/test.log
+      create  vendor/rails
+]0;vijay@vijay-A14RM0E: ~vijay@vijay-A14RM0E:~$ gem list
+
+*** LOCAL GEMS ***
+
+bundler (1.12.3)
+mysql2 (0.4.4)
+]0;vijay@vijay-A14RM0E: ~vijay@vijay-A14RM0E:~$ gem envire[Konment
+RubyGems Environment:
+  - RUBYGEMS VERSION: 1.8.15
+  - RUBY VERSION: 1.8.7 (2011-06-30 patchlevel 352) [x86_64-linux]
+  - INSTALLATION DIRECTORY: /var/lib/gems/1.8
+  - RUBY EXECUTABLE: /usr/bin/ruby1.8
+  - EXECUTABLE DIRECTORY: /usr/local/bin
+  - RUBYGEMS PLATFORMS:
+    - ruby
+    - x86_64-linux
+  - GEM PATHS:
+     - /var/lib/gems/1.8
+     - /home/vijay/.gem/ruby/1.8
+  - GEM CONFIGURATION:
+     - :update_sources => true
+     - :verbose => true
+     - :benchmark => false
+     - :backtrace => false
+     - :bulk_threshold => 1000
+  - REMOTE SOURCES:
+     - http://rubygems.org/
+]0;vijay@vijay-A14RM0E: ~vijay@vijay-A14RM0E:~$ cd blog
+]0;vijay@vijay-A14RM0E: ~/blogvijay@vijay-A14RM0E:~/blog$ cd[K[Kbundle install
+[31mCould not locate Gemfile[0m
+]0;vijay@vijay-A14RM0E: ~/blogvijay@vijay-A14RM0E:~/blog$ gem install[K[K[K[K[K[K[Kinstall bundle
+ERROR:  While executing gem ... (Gem::FilePermissionError)
+    You don't have write permissions into the /var/lib/gems/1.8 directory.
+]0;vijay@vijay-A14RM0E: ~/blogvijay@vijay-A14RM0E:~/blog$ cd
+]0;vijay@vijay-A14RM0E: ~vijay@vijay-A14RM0E:~$ blog
+No command 'blog' found, did you mean:
+ Command 'plog' from package 'ppp' (main)
+ Command 'rlog' from package 'rcs' (universe)
+ Command 'flog' from package 'flog' (universe)
+ Command 'vlog' from package 'atfs' (universe)
+ Command 'xlog' from package 'xlog' (universe)
+ Command 'klog' from package 'openafs-krb5' (universe)
+ Command 'klog' from package 'klog' (universe)
+ Command 'klog' from package 'openafs-client' (universe)
+ Command 'boog' from package 'alliance' (universe)
+blog: command not found
+]0;vijay@vijay-A14RM0E: ~vijay@vijay-A14RM0E:~$ cd blog
+]0;vijay@vijay-A14RM0E: ~/blogvijay@vijay-A14RM0E:~/blog$  bundle install
+
+[31mCould not locate Gemfile[0m
+]0;vijay@vijay-A14RM0E: ~/blogvijay@vijay-A14RM0E:~/blog$ Could not locate Gemfile
+Could: command not found
+]0;vijay@vijay-A14RM0E: ~/blogvijay@vijay-A14RM0E:~/blog$ 
+]0;vijay@vijay-A14RM0E: ~/blogvijay@vijay-A14RM0E:~/blog$ Could not locate Gemfile[Kcd
+]0;vijay@vijay-A14RM0E: ~vijay@vijay-A14RM0E:~$  bundle install
+[31mCould not locate Gemfile or .bundle/ directory[0m
+]0;vijay@vijay-A14RM0E: ~vijay@vijay-A14RM0E:~$ Could not locate Gemfile
+Could: command not found
+]0;vijay@vijay-A14RM0E: ~vijay@vijay-A14RM0E:~$ bundle list
+[31mCould not locate Gemfile or .bundle/ directory[0m
+]0;vijay@vijay-A14RM0E: ~vijay@vijay-A14RM0E:~$ ls
+[0m[01;34mbin[0m
+[01;34mblog[0m
+bookofruby.pdf
+book-of-ruby.sln
+book-of-ruby.stproj
+[01;34mDesktop[0m
+[01;34mDocuments[0m
+[01;34mDownloads[0m
+examples.desktop
+getskype-linux-beta-ubuntu-beta-ubuntu-64
+[01;34mMusic[0m
+[01;34mMyMovies[0m
+[01;34mPictures[0m
+[01;34mproject[0m
+[01;34mPublic[0m
+ReadMe.txt
+[01;34mRESUME[0m
+[01;34msimpleform[0m
+[01;31mskype-ubuntu-lucid_4.2.0.11-1_i386.deb[0m
+[01;34mtimesheet[0m
+[01;34mtodo[0m
+Untitled Document 1~
+[01;34mversion[0m
+[01;34mvi[0m
+[01;34mVideos[0m
+wget-log
+]0;vijay@vijay-A14RM0E: ~vijay@vijay-A14RM0E:~$ cd MMoM[Covies
+bash: cd: MoMovies: No such file or directory
+]0;vijay@vijay-A14RM0E: ~vijay@vijay-A14RM0E:~$ cd MoMovies[1PMoviesyMovies[C[C[C[C[C[C
+]0;vijay@vijay-A14RM0E: ~/MyMoviesvijay@vijay-A14RM0E:~/MyMovies$ sc[K[Kscript/server
+NOTE: Gem.source_index is deprecated, use Specification. It will be removed on or after 2011-11-01.
+Gem.source_index called from /home/vijay/MyMovies/config/../vendor/rails/railties/lib/rails/gem_dependency.rb:21.
+NOTE: Gem::SourceIndex#initialize is deprecated with no replacement. It will be removed on or after 2011-11-01.
+Gem::SourceIndex#initialize called from /home/vijay/MyMovies/config/../vendor/rails/railties/lib/rails/vendor_gem_source_index.rb:100.
+NOTE: Gem::SourceIndex#add_spec is deprecated, use Specification.add_spec. It will be removed on or after 2011-11-01.
+Gem::SourceIndex#add_spec called from /usr/lib/ruby/vendor_ruby/1.8/rubygems/source_index.rb:91.
+NOTE: Gem::SourceIndex#add_spec is deprecated, use Specification.add_spec. It will be removed on or after 2011-11-01.
+Gem::SourceIndex#add_spec called from /usr/lib/ruby/vendor_ruby/1.8/rubygems/source_index.rb:91.
+NOTE: Gem::SourceIndex#add_spec is deprecated, use Specification.add_spec. It will be removed on or after 2011-11-01.
+Gem::SourceIndex#add_spec called from /usr/lib/ruby/vendor_ruby/1.8/rubygems/source_index.rb:91.
+NOTE: Gem::SourceIndex#add_spec is deprecated, use Specification.add_spec. It will be removed on or after 2011-11-01.
+Gem::SourceIndex#add_spec called from /usr/lib/ruby/vendor_ruby/1.8/rubygems/source_index.rb:91.
+NOTE: Gem::SourceIndex#add_spec is deprecated, use Specification.add_spec. It will be removed on or after 2011-11-01.
+Gem::So

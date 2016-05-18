@@ -1,0 +1,8 @@
+2016-04-20 12:44:27,590 - root         MainThread    :  INFO     - Logger initialized
+2016-04-20 12:44:27,591 - Service      MainThread    :  INFO     - Service starting
+2016-04-20 12:44:27,591 - Service      MainThread    :  INFO     - Running from the source tree
+2016-04-20 12:44:30,254 - root         MainThread    :  INFO     - Logger initialized
+2016-04-20 12:44:30,255 - Accounts     MainThread    :  INFO     - Running from the system path
+2016-04-20 12:44:33,014 - root         MainThread    :  INFO     - Logger initialized
+2016-04-20 12:44:33,014 - Accounts     MainThread    :  INFO     - Running from the system path
+2016-04-20 12:45:40,944 - Storage      MainThread    :  INFO     - Cleaning up database...

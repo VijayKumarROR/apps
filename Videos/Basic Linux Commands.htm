@@ -1,0 +1,942 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="ProgId" content="Word.Document">
+<meta name="Generator" content="Microsoft Word 11">
+<meta name="Originator" content="Microsoft Word 11">
+<link rel="File-List" href="http://www.pas.rochester.edu/%7Epavone/particle-www/telescopes/ComputerCommands_files/filelist.xml">
+<title>Basic Linux Commands</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>BCC</o:Author>
+  <o:Template>Normal</o:Template>
+  <o:LastAuthor>Kevin McFarland</o:LastAuthor>
+  <o:Revision>15</o:Revision>
+  <o:TotalTime>108</o:TotalTime>
+  <o:LastPrinted>2002-08-02T15:15:00Z</o:LastPrinted>
+  <o:Created>2002-08-05T17:14:00Z</o:Created>
+  <o:LastSaved>2004-08-04T11:20:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>1022</o:Words>
+  <o:Characters>5831</o:Characters>
+  <o:Company>Physics</o:Company>
+  <o:Lines>48</o:Lines>
+  <o:Paragraphs>13</o:Paragraphs>
+  <o:CharactersWithSpaces>6840</o:CharactersWithSpaces>
+  <o:Version>11.5703</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:Zoom>TextFit</w:Zoom>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+  <w:UseMarginsForDrawingGridOrigin/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Times;
+	panose-1:2 2 6 3 5 4 5 2 3 4;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:536902279 -2147483648 8 0 511 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Times;
+	mso-fareast-font-family:Times;
+	mso-bidi-font-family:"Times New Roman";}
+h1
+	{mso-style-next:Normal;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:16.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	color:blue;
+	mso-font-kerning:0pt;
+	text-decoration:underline;
+	text-underline:single;}
+h2
+	{mso-style-next:Normal;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:18.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Times;
+	mso-bidi-font-family:"Times New Roman";
+	color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+h3
+	{mso-style-next:Normal;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:2.5in;
+	margin-bottom:.0001pt;
+	text-indent:-2.5in;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:18.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	font-size:22.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:Times;
+	color:black;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;
+	text-decoration:underline;
+	text-underline:single;}
+p.Preformatted, li.Preformatted, div.Preformatted
+	{mso-style-name:Preformatted;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:0in 47.95pt 95.9pt 143.85pt 191.8pt 239.75pt 287.7pt 335.65pt 383.6pt 431.55pt 479.5pt;
+	layout-grid-mode:char;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:1018237386;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1629760120 67698689 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l0:level2
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level3
+	{mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level4
+	{mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level5
+	{mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level6
+	{mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level7
+	{mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level8
+	{mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level9
+	{mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1
+	{mso-list-id:1410543007;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-771221938 67698689 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l1:level2
+	{mso-level-tab-stop:1.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level3
+	{mso-level-tab-stop:1.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level4
+	{mso-level-tab-stop:2.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level5
+	{mso-level-tab-stop:2.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level6
+	{mso-level-tab-stop:3.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level7
+	{mso-level-tab-stop:3.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level8
+	{mso-level-tab-stop:4.0in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level9
+	{mso-level-tab-stop:4.5in;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="3074"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body style="tab-interval:.5in" lang="EN-US">
+
+<div class="Section1">
+
+<p class="MsoTitle">Basic Linux Commands</p>
+
+<p class="MsoNormal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;
+font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></p>
+
+<h1><span style="font-size:18.0pt;mso-bidi-font-size:10.0pt">Modes of Operation<o:p></o:p></span></h1>
+
+<p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span style="font-size:13.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></p>
+
+<p class="MsoNormal"><b><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;
+font-family:&quot;Times New Roman&quot;;color:black">The <span class="SpellE">linux</span>
+operating system used for the PARTICLE DAQ system can be used either in a
+terminal mode where you type commands or in a Windows Explorer style
+graphical user interface (GUI).<o:p></o:p></span></b></p>
+
+<p class="MsoNormal"><b><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;
+font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></p>
+
+<p class="MsoNormal"><b><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;
+font-family:&quot;Times New Roman&quot;;color:black">The Explorer-like GUI can be used
+for file manipulation functions (e.g., copying a file to a floppy) or deleting
+or moving files on the disk.<span style="mso-spacerun:yes">&nbsp; </span>It cannot
+be used to run the PARTICLE DAQ itself.<o:p></o:p></span></b></p>
+
+<p class="MsoNormal"><b><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;
+font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></p>
+
+<p class="MsoNormal"><b><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;
+font-family:&quot;Times New Roman&quot;;color:black">To begin using the Explorer-like
+GUI, double click on the icons on the Desktop.<span style="mso-spacerun:yes">&nbsp;
+</span>For the most part, Explorer mode will be familiar from Windows or MAC
+OS, so with a few exceptions, this information will not focus on this.<span style="mso-spacerun:yes">&nbsp; </span>Where something is much more easily done from
+Explorer mode, it will be highlighted here.<o:p></o:p></span></b></p>
+
+<p class="MsoNormal"><b><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;
+font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></p>
+
+<p class="MsoNormal"><b><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;
+font-family:&quot;Times New Roman&quot;;color:black">To begin working in the terminal
+mode, you will need to open a terminal.<span style="mso-spacerun:yes">&nbsp;
+</span>This can be accomplished by clicking on the terminal icon in the bottom
+icon bar, by using the main menu (footprint icon in lower left of bottom icon
+bar) System Tools -&gt; New Terminal.<span style="mso-spacerun:yes">&nbsp; </span><o:p></o:p></span></b></p>
+
+<p class="MsoNormal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;
+font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></p>
+
+<h1><span style="font-size:18.0pt;mso-bidi-font-size:10.0pt">The Manual
+(terminal mode)<o:p></o:p></span></h1>
+
+<p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span style="font-size:13.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></p>
+
+<p class="MsoNormal"><span class="GramE"><b style="mso-bidi-font-weight:normal"><span style="font-size:13.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;color:red">man</span></b></span><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;;
+color:black"><span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ </span><b style="mso-bidi-font-weight:normal">This command brings up the online Unix <o:p></o:p></b></span></p>
+
+<p class="MsoNormal" style="margin-left:2.0in"><span class="GramE"><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:
+10.0pt;font-family:&quot;Times New Roman&quot;;color:black">manual</span></b></span><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:
+10.0pt;font-family:&quot;Times New Roman&quot;;color:black">. Use it on each of the
+commands below. </span></b><span style="font-size:16.0pt;mso-bidi-font-size:
+10.0pt;font-family:&quot;Times New Roman&quot;;color:black"><o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;
+font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="line-height:150%"><b><span style="font-size:16.0pt;
+mso-bidi-font-size:10.0pt;line-height:150%;font-family:&quot;Times New Roman&quot;;
+color:black">For Example:<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span><o:p></o:p></span></b></p>
+
+<p class="MsoNormal" style="margin-left:2.0in;text-indent:-2.0in"><span class="GramE"><b style="mso-bidi-font-weight:normal"><span style="font-size:13.0pt;
+mso-bidi-font-size:10.0pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;;
+color:red">man</span></b></span><b style="mso-bidi-font-weight:normal"><span style="font-size:13.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;color:red"> <span class="SpellE">pwd</span></span></b><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;;
+color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ </span>Y<b style="mso-bidi-font-weight:normal">ou will see the manual for the <span class="SpellE">pwd</span> command.</b> <o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;
+font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;
+font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;
+font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></p>
+
+<h2>Accessing files in Folders (Directories) in terminal mode</h2>
+
+<p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span style="font-size:13.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;color:red"><o:p>&nbsp;</o:p></span></b></p>
+
+<p class="MsoNormal"><span class="SpellE"><span class="GramE"><b style="mso-bidi-font-weight:
+normal"><span style="font-size:13.0pt;mso-bidi-font-size:10.0pt;font-family:
+&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;;color:red">pwd</span></b></span></span><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;;
+color:black"><span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ </span><b style="mso-bidi-font-weight:normal">Shows what directory (folder) you are in. <o:p></o:p></b></span></p>
+
+<p class="MsoNormal" style="margin-left:2.0in"><b style="mso-bidi-font-weight:
+normal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:
+&quot;Times New Roman&quot;;color:black">In Linux, your home directory is /home/particle<o:p></o:p></span></b></p>
+
+<p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;;
+color:black"><o:p>&nbsp;</o:p></span></b></p>
+
+<p class="MsoNormal" style="margin-left:.5in;text-indent:-.25in;mso-list:l0 level1 lfo2;
+tab-stops:list .5in"><!--[if !supportLists]--><span style="font-size:16.0pt;
+mso-bidi-font-size:10.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;
+mso-bidi-font-family:Symbol;color:black"><span style="mso-list:Ignore">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><!--[endif]--><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:
+10.0pt;font-family:&quot;Times New Roman&quot;;color:black">Let's suppose you have
+several data files (data1, data2 ... etc.) in a directory called </span></b><span class="SpellE"><b style="mso-bidi-font-weight:normal"><span style="font-size:
+16.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;;color:green">muondata</span></b></span><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:
+10.0pt;font-family:&quot;Times New Roman&quot;;color:black">. <o:p></o:p></span></b></p>
+
+<p class="MsoNormal" style="margin-left:.5in;text-indent:-.25in;mso-list:l0 level1 lfo2;
+tab-stops:list .5in"><!--[if !supportLists]--><span style="font-size:16.0pt;
+mso-bidi-font-size:10.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;
+mso-bidi-font-family:Symbol;color:black"><span style="mso-list:Ignore">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><!--[endif]--><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:
+10.0pt;font-family:&quot;Times New Roman&quot;;color:black">Then suppose the directory </span></b><span class="SpellE"><b style="mso-bidi-font-weight:normal"><span style="font-size:
+16.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;;color:green">muondata</span></b></span><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:
+10.0pt;font-family:&quot;Times New Roman&quot;;color:black"> is an entry in your main
+home directory, </span></b><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;;
+color:#993366">/home/<span class="GramE">particle <span style="color:black">.</span></span></span></b><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:
+10.0pt;font-family:&quot;Times New Roman&quot;;color:black"> <o:p></o:p></span></b></p>
+
+<p class="MsoNormal" style="margin-left:.5in;text-indent:-.25in;mso-list:l0 level1 lfo2;
+tab-stops:list .5in"><!--[if !supportLists]--><span style="font-size:16.0pt;
+mso-bidi-font-size:10.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;
+mso-bidi-font-family:Symbol;color:black"><span style="mso-list:Ignore">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><!--[endif]--><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:
+10.0pt;font-family:&quot;Times New Roman&quot;;color:black">If you are in your home
+directory (where terminals start) and type <span class="SpellE">pwd</span>, you
+will see </span></b><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;;
+color:#993366">/home/particle</span></b><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;;
+color:black">. <o:p></o:p></span></b></p>
+
+<p class="MsoNormal" style="margin-left:.5in;text-indent:-.25in;mso-list:l0 level1 lfo2;
+tab-stops:list .5in"><!--[if !supportLists]--><span style="font-size:16.0pt;
+mso-bidi-font-size:10.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;
+mso-bidi-font-family:Symbol;color:black"><span style="mso-list:Ignore">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><!--[endif]--><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:
+10.0pt;font-family:&quot;Times New Roman&quot;;color:black">If you were in the </span></b><span class="SpellE"><b style="mso-bidi-font-weight:normal"><span style="font-size:
+16.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;;color:green">muondata</span></b></span><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:
+10.0pt;font-family:&quot;Times New Roman&quot;;color:black"> directory, <span class="SpellE">pwd</span> would give you </span></b><b style="mso-bidi-font-weight:
+normal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:
+&quot;Times New Roman&quot;;color:#993366">/home/particle/</span></b><span class="SpellE"><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:
+10.0pt;font-family:&quot;Times New Roman&quot;;color:green">muondata</span></b></span><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:
+10.0pt;font-family:&quot;Times New Roman&quot;;color:black"> instead<span style="mso-spacerun:yes">&nbsp; </span><span style="mso-spacerun:yes">&nbsp;</span>&nbsp;
+<o:p></o:p></span></b></p>
+
+<p class="MsoNormal" style="margin-left:.5in;text-indent:-.25in;mso-list:l0 level1 lfo2;
+tab-stops:list .5in"><!--[if !supportLists]--><span style="font-size:16.0pt;
+mso-bidi-font-size:10.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;
+mso-bidi-font-family:Symbol;color:black"><span style="mso-list:Ignore">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><!--[endif]--><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:
+10.0pt;font-family:&quot;Times New Roman&quot;;color:black">The last slash after a
+directory name is optional.<o:p></o:p></span></b></p>
+
+<p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;;
+color:black"><o:p>&nbsp;</o:p></span></b></p>
+
+<p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;;
+color:black">As you can see, each slash (/) indicates another sub-directory.</span></b><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;;
+color:black"> <o:p></o:p></span></p>
+
+<p class="MsoNormal"><span class="SpellE"><span class="GramE"><b style="mso-bidi-font-weight:
+normal"><span style="font-size:13.0pt;mso-bidi-font-size:10.0pt;font-family:
+&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;;color:red">cd</span></b></span></span><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;;
+color:black"><span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ </span><b style="mso-bidi-font-weight:normal">Changes directories. <o:p></o:p></b></span></p>
+
+<p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;;
+color:black"><o:p>&nbsp;</o:p></span></b></p>
+
+<p class="MsoNormal" style="line-height:150%"><b style="mso-bidi-font-weight:
+normal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;line-height:
+150%;font-family:&quot;Times New Roman&quot;;color:black">Examples of relative movement
+among directories:<o:p></o:p></span></b></p>
+
+<p class="MsoNormal"><span class="SpellE"><span class="GramE"><b style="mso-bidi-font-weight:
+normal"><span style="font-size:13.0pt;mso-bidi-font-size:10.0pt;font-family:
+&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;;color:red">cd</span></b></span></span><b style="mso-bidi-font-weight:normal"><span style="font-size:13.0pt;mso-bidi-font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;;
+color:red"> <span class="SpellE">muondata</span></span></b><b style="mso-bidi-font-weight:
+normal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:
+&quot;Times New Roman&quot;;color:black"> <span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Moves
+down from your current directory <o:p></o:p></span></b></p>
+
+<p class="MsoNormal" style="margin-left:1.5in;text-indent:.5in"><span class="GramE"><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;
+mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;;color:black">into</span></b></span><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:
+10.0pt;font-family:&quot;Times New Roman&quot;;color:black"> the <span class="SpellE">muondata</span>
+sub-directory</span></b><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;
+font-family:&quot;Times New Roman&quot;;color:black"> <o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;
+font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;
+font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span class="SpellE"><span class="GramE"><b style="mso-bidi-font-weight:
+normal"><span style="font-size:13.0pt;mso-bidi-font-size:10.0pt;font-family:
+&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;;color:red">cd</span></b></span></span><span class="GramE"><b style="mso-bidi-font-weight:normal"><span style="font-size:13.0pt;
+mso-bidi-font-size:10.0pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;;
+color:red"> ..</span></b></span><span style="font-size:16.0pt;mso-bidi-font-size:
+10.0pt;font-family:&quot;Times New Roman&quot;;color:black"><span style="mso-tab-count:
+3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ </span><b>Moves up one directory </b><b style="mso-bidi-font-weight:normal">(yes, include the <o:p></o:p></b></span></p>
+
+<p class="MsoNormal" style="margin-left:1.5in;text-indent:.5in"><span class="GramE"><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;
+mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;;color:black">two</span></b></span><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:
+10.0pt;font-family:&quot;Times New Roman&quot;;color:black"> little dots)&nbsp; <o:p></o:p></span></b></p>
+
+<p class="MsoNormal" style="margin-left:1.5in;text-indent:.5in"><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:
+10.0pt;font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></p>
+
+<p class="MsoNormal" style="line-height:150%"><b style="mso-bidi-font-weight:
+normal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;line-height:
+150%;font-family:&quot;Times New Roman&quot;;color:black">You can also move directly into
+directories<o:p></o:p></span></b></p>
+
+<p class="MsoNormal"><span class="SpellE"><span class="GramE"><b style="mso-bidi-font-weight:
+normal"><span style="font-size:13.0pt;mso-bidi-font-size:10.0pt;font-family:
+&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;;color:red">cd</span></b></span></span><b style="mso-bidi-font-weight:normal"><span style="font-size:13.0pt;mso-bidi-font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;;
+color:red"> /home/particle/<span class="SpellE">muondata</span><o:p></o:p></span></b></p>
+
+<p class="MsoNormal" style="margin-left:.5in;text-indent:.5in"><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:
+10.0pt;font-family:&quot;Times New Roman&quot;;color:black"><span style="mso-spacerun:yes">&nbsp;</span><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Moves
+from ANY directory into the <span class="SpellE">muondata</span><o:p></o:p></span></b></p>
+
+<p class="MsoNormal" style="margin-left:1.5in;text-indent:.5in"><span class="GramE"><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;
+mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;;color:black">sub-directory</span></b></span><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:
+10.0pt;font-family:&quot;Times New Roman&quot;;color:black"> of your home directory.<o:p></o:p></span></b></p>
+
+<p class="MsoNormal" style="margin-left:1.5in;text-indent:.5in"><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:
+10.0pt;font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></p>
+
+<p class="MsoNormal"><span class="SpellE"><span class="GramE"><b style="mso-bidi-font-weight:
+normal"><span style="font-size:13.0pt;mso-bidi-font-size:10.0pt;font-family:
+&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;;color:red">cd</span></b></span></span><b style="mso-bidi-font-weight:normal"><span style="font-size:13.0pt;mso-bidi-font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;;
+color:red"> ~<span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></b><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:
+10.0pt;font-family:&quot;Times New Roman&quot;;color:black">Takes you back to your home
+directory <o:p></o:p></span></b></p>
+
+<p class="MsoNormal" style="margin-left:1.5in;text-indent:.5in"><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:
+10.0pt;font-family:&quot;Times New Roman&quot;;color:black">(/home/particle)</span></b><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;;
+color:black"><o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;
+font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></p>
+
+<h2><span style="font-family:&quot;Times New Roman&quot;">Making or Removing a Directory
+(terminal mode)<o:p></o:p></span></h2>
+
+<p class="MsoNormal"><b><u><span style="font-size:18.0pt;mso-bidi-font-size:10.0pt;
+font-family:&quot;Times New Roman&quot;;color:blue"><o:p><span style="text-decoration:
+ none">&nbsp;</span></o:p></span></u></b></p>
+
+<p class="MsoNormal"><span class="SpellE"><span class="GramE"><b style="mso-bidi-font-weight:
+normal"><span style="font-size:13.0pt;mso-bidi-font-size:10.0pt;font-family:
+&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;;color:red">mkdir</span></b></span></span><b style="mso-bidi-font-weight:normal"><span style="font-size:13.0pt;mso-bidi-font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;;
+color:red"> <span class="SpellE">dirName</span></span></b><span style="font-size:
+16.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;;color:black"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b style="mso-bidi-font-weight:normal">Creates
+a directory with name <span class="SpellE">dirName</span>. <o:p></o:p></b></span></p>
+
+<p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;;
+color:black"><o:p>&nbsp;</o:p></span></b></p>
+
+<p class="MsoNormal" style="line-height:150%"><b style="mso-bidi-font-weight:
+normal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;line-height:
+150%;font-family:&quot;Times New Roman&quot;;color:black">For Example:<o:p></o:p></span></b></p>
+
+<p class="MsoNormal"><span class="SpellE"><span class="GramE"><b style="mso-bidi-font-weight:
+normal"><span style="font-size:13.0pt;mso-bidi-font-size:10.0pt;font-family:
+&quot;Courier New&quot;;color:red">mkdir</span></b></span></span><b style="mso-bidi-font-weight:
+normal"><span style="font-size:13.0pt;mso-bidi-font-size:10.0pt;font-family:
+&quot;Courier New&quot;;color:red"> temp</span></b><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Courier New&quot;;
+color:red"><span style="mso-tab-count:1">&nbsp;&nbsp; </span></span></b><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:
+10.0pt;font-family:&quot;Times New Roman&quot;;color:red"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></b><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;;
+color:black">Creates the directory temp. <o:p></o:p></span></b></p>
+
+<p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;;
+color:black"><o:p>&nbsp;</o:p></span></b></p>
+
+<p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;;
+color:black"><o:p>&nbsp;</o:p></span></b></p>
+
+<p class="MsoNormal"><span class="SpellE"><span class="GramE"><b style="mso-bidi-font-weight:
+normal"><span style="font-size:13.0pt;mso-bidi-font-size:10.0pt;font-family:
+&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;;color:red">rmdir</span></b></span></span><b style="mso-bidi-font-weight:normal"><span style="font-size:13.0pt;mso-bidi-font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;;
+color:red"> <span class="SpellE">dirName</span> <span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp; </span></span></b><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:
+10.0pt;font-family:&quot;Times New Roman&quot;">Removes a directory <span class="SpellE">dirName</span>.<o:p></o:p></span></b></p>
+
+<p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;"><o:p>&nbsp;</o:p></span></b></p>
+
+<p class="MsoNormal" style="line-height:150%"><b style="mso-bidi-font-weight:
+normal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;line-height:
+150%;font-family:&quot;Times New Roman&quot;">For Example:<o:p></o:p></span></b></p>
+
+<p class="MsoNormal"><span class="SpellE"><span class="GramE"><b style="mso-bidi-font-weight:
+normal"><span style="font-size:13.0pt;mso-bidi-font-size:10.0pt;font-family:
+&quot;Courier New&quot;;color:red">rmdir</span></b></span></span><b style="mso-bidi-font-weight:
+normal"><span style="font-size:13.0pt;mso-bidi-font-size:10.0pt;font-family:
+&quot;Courier New&quot;;color:red"> temp</span></b><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;;
+color:black"> <span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Removes the
+directory temp.</span></b><span style="font-size:16.0pt;mso-bidi-font-size:
+10.0pt;font-family:&quot;Times New Roman&quot;;color:black"> <o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;
+font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;
+font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></p>
+
+<h1><span style="font-size:18.0pt;mso-bidi-font-size:10.0pt">Looking at or
+Finding your Files (terminal mode)<o:p></o:p></span></h1>
+
+<p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span style="font-size:13.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></p>
+
+<p class="MsoNormal"><span class="SpellE"><span class="GramE"><b style="mso-bidi-font-weight:
+normal"><span style="font-size:13.0pt;mso-bidi-font-size:10.0pt;font-family:
+&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;;color:red">ls</span></b></span></span><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;;
+color:black"><span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ </span><b style="mso-bidi-font-weight:normal">Lists files.</b> <b style="mso-bidi-font-weight:
+normal"><o:p></o:p></b></span></p>
+
+<p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;;
+color:black"><o:p>&nbsp;</o:p></span></b></p>
+
+<p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;;
+color:black">If you add </span></b><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;;
+color:red">-al</span></b><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;;
+color:black"> after </span></b><span class="SpellE"><b style="mso-bidi-font-weight:
+normal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:
+&quot;Times New Roman&quot;;color:red">ls</span></b></span><b style="mso-bidi-font-weight:
+normal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:
+&quot;Times New Roman&quot;;color:black"> it will give more details for each file. Such
+as, size, permissions, owners, dates etc.</span></b><span style="font-size:
+16.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;;color:black"> <o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;
+font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:2.0in;text-indent:-2.0in"><span class="SpellE"><span class="GramE"><b style="mso-bidi-font-weight:normal"><span style="font-size:13.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;color:red">ls</span></b></span></span><b style="mso-bidi-font-weight:normal"><span style="font-size:13.0pt;mso-bidi-font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;;
+color:red"> al</span></b><span style="font-size:16.0pt;mso-bidi-font-size:
+10.0pt;font-family:&quot;Times New Roman&quot;;color:black"><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ </span><b style="mso-bidi-font-weight:normal">You'll
+see a huge list of files that you can't see with the '</b></span><span class="SpellE"><b style="mso-bidi-font-weight:normal"><span style="font-size:
+16.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;;color:red">ls</span></b></span><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:
+10.0pt;font-family:&quot;Times New Roman&quot;;color:black">' command alone and lots of
+details.<o:p></o:p></span></b></p>
+
+<p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;;
+color:black"><o:p>&nbsp;</o:p></span></b></p>
+
+<p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;;
+color:black">If you see such a long list of files that they scroll off the
+terminal screen, one way to solve the problem is to use:</span></b><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;;
+color:black"> <o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;
+font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span class="SpellE"><span class="GramE"><b style="mso-bidi-font-weight:
+normal"><span style="font-size:13.0pt;mso-bidi-font-size:10.0pt;font-family:
+&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;;color:red">ls</span></b></span></span><b style="mso-bidi-font-weight:normal"><span style="font-size:13.0pt;mso-bidi-font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;;
+color:red"> -al |more<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></b><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:
+10.0pt;font-family:&quot;Times New Roman&quot;;color:black">Shows one screen of file
+names at a time.</span></b><span style="font-size:16.0pt;mso-bidi-font-size:
+10.0pt;font-family:&quot;Times New Roman&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;
+font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:2.0in;text-indent:-2.0in"><span class="GramE"><b style="mso-bidi-font-weight:normal"><span style="font-size:13.0pt;
+mso-bidi-font-size:10.0pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;;
+color:red">less</span></b></span><b style="mso-bidi-font-weight:normal"><span style="font-size:13.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;color:red"> data1<span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></b><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;;
+color:black">Dumps the contents of the data1 file to your screen with a pause
+at each line so you don't miss any contents as they scroll. You may move
+through the file using page up, page down, home and end keys.<span style="mso-spacerun:yes">&nbsp; </span>When done with less you use the q key to
+get back to the main terminal.<o:p></o:p></span></b></p>
+
+<p class="MsoNormal"><b><span style="font-size:13.0pt;mso-bidi-font-size:10.0pt;
+font-family:&quot;Courier New&quot;;color:red"><o:p>&nbsp;</o:p></span></b></p>
+
+<p class="MsoNormal"><span class="SpellE"><span class="GramE"><b style="mso-bidi-font-weight:
+normal"><span style="font-size:13.0pt;mso-bidi-font-size:10.0pt;font-family:
+&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;;color:red">whereis</span></b></span></span><b style="mso-bidi-font-weight:normal"><span style="font-size:13.0pt;mso-bidi-font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;;
+color:red"> data1<span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></b><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;;
+color:black">S<b style="mso-bidi-font-weight:normal">hows you the location of
+the data1 file.</b> <o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;
+font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;
+font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;
+font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></p>
+
+<h2><span style="font-family:&quot;Times New Roman&quot;">Altering your Files<o:p></o:p></span></h2>
+
+<p class="MsoNormal"><b><u><span style="font-size:18.0pt;mso-bidi-font-size:10.0pt;
+font-family:&quot;Times New Roman&quot;;color:blue"><o:p><span style="text-decoration:
+ none">&nbsp;</span></o:p></span></u></b></p>
+
+<p class="MsoNormal"><span class="SpellE"><span class="GramE"><b style="mso-bidi-font-weight:
+normal"><span style="font-size:13.0pt;mso-bidi-font-size:10.0pt;font-family:
+&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;;color:red">rm</span></b></span></span><b style="mso-bidi-font-weight:normal"><span style="font-size:13.0pt;mso-bidi-font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;;
+color:red"> data1</span></b><span style="font-size:16.0pt;mso-bidi-font-size:
+10.0pt;font-family:&quot;Times New Roman&quot;;color:black"><span style="mso-tab-count:
+3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b>D</b><b style="mso-bidi-font-weight:normal">eletes
+the file data1 in the current directory.&nbsp; <o:p></o:p></b></span></p>
+
+<p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;;
+color:black"><o:p>&nbsp;</o:p></span></b></p>
+
+<p class="MsoNormal"><span class="SpellE"><span class="GramE"><b style="mso-bidi-font-weight:
+normal"><span style="font-size:13.0pt;mso-bidi-font-size:10.0pt;font-family:
+&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;;color:red">rm</span></b></span></span><b style="mso-bidi-font-weight:normal"><span style="font-size:13.0pt;mso-bidi-font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;;
+color:red"> -<span class="SpellE">i</span> muon*</span></b><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;;
+color:black"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b>R</b><b style="mso-bidi-font-weight:normal">emoves all of your muon data files <o:p></o:p></b></span></p>
+
+<p class="MsoNormal" style="margin-left:1.5in;text-indent:.5in"><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:
+10.0pt;font-family:&quot;Times New Roman&quot;;color:black">(<span class="GramE">careful</span>!!<span style="mso-spacerun:yes">&nbsp; </span><span class="SpellE"><span class="GramE">rm</span></span>
+* will remove ALL your files)</span></b><span style="font-size:16.0pt;
+mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;;color:black"><span style="mso-spacerun:yes">&nbsp; </span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:2.0in"><b style="mso-bidi-font-weight:
+normal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:
+&quot;Times New Roman&quot;;color:black">The "-<span class="SpellE">i</span>"
+makes the computer prompt before removing each file.&nbsp; If you really want
+to work without a net, omit the "-<span class="SpellE">i</span>".</span></b><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;;
+color:black"> <o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;
+font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span class="GramE"><b style="mso-bidi-font-weight:normal"><span style="font-size:13.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;color:red">cp</span></b></span><b style="mso-bidi-font-weight:normal"><span style="font-size:13.0pt;mso-bidi-font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;;
+color:red"> data1 <span class="SpellE">newdata</span>/</span></b><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;;
+color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </span><b style="mso-bidi-font-weight:
+normal">will copy the file data1 to the directory <span class="SpellE">newdata</span>
+(assuming it has already been created)</b> <b style="mso-bidi-font-weight:normal"><o:p></o:p></b></span></p>
+
+<p class="MsoNormal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;
+font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:2.0in;text-indent:-2.0in"><span class="SpellE"><span class="GramE"><b style="mso-bidi-font-weight:normal"><span style="font-size:13.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;color:red">mv</span></b></span></span><b style="mso-bidi-font-weight:normal"><span style="font-size:13.0pt;mso-bidi-font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;;
+color:red"> data1 <span class="SpellE">newdata</span>/</span></b><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:
+10.0pt;font-family:&quot;Times New Roman&quot;;color:black"><span style="mso-spacerun:yes">&nbsp; </span><span style="mso-tab-count:1">&nbsp; </span>moves
+the file data1 to the folder <span class="SpellE">newdata</span> and deletes
+the old one.<o:p></o:p></span></b></p>
+
+<p class="MsoNormal" style="margin-left:2.5in;text-indent:-2.5in"><o:p>&nbsp;</o:p></p>
+
+<h2><span style="font-family:&quot;Times New Roman&quot;;mso-bidi-font-weight:normal"><o:p><span style="text-decoration:none">&nbsp;</span></o:p></span></h2>
+
+<h2><span style="font-family:&quot;Times New Roman&quot;;mso-bidi-font-weight:normal">Using
+the Floppy Disk Drive in Linux<o:p></o:p></span></h2>
+
+<p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span style="font-size:13.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></b></p>
+
+<p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;;
+color:black">The simplest way to access the floppy drive under Linux is to use the
+Explorer-like interface.<span style="mso-spacerun:yes">&nbsp; </span>However,
+there is a very important detail!<span style="mso-spacerun:yes">&nbsp; </span>To
+access the files on the disk, you have to mount the floppy disk, which means
+that the operating system will scan the disk so that it can recognize the files
+on it.<span style="mso-spacerun:yes">&nbsp; </span>Although your computer will be
+perfectly happy to allow you to remove the disk by pushing the eject key on the
+laptop floppy drive, this may result in unexpected actions unless you <span class="SpellE">unmount</span> the disk.<span style="mso-spacerun:yes">&nbsp;
+</span>For example, your files may be only partly there or not there at
+all!<span style="mso-spacerun:yes">&nbsp; </span>(This is no different then under
+Windows or DOS; its just that those operating systems hide that detail from
+you a little better.<span style="mso-spacerun:yes">&nbsp; </span>This is why, for
+example, you must eject floppy disks from the disk properties menu in
+Windows.)<o:p></o:p></span></b></p>
+
+<p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;;
+color:black"><o:p>&nbsp;</o:p></span></b></p>
+
+<p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;;
+color:black">In the Explorer interface, to mount the floppy, you just double
+click on the desktop icon.<span style="mso-spacerun:yes">&nbsp; </span>This will
+bring up a window with the contents of the floppy, and you may drag and drop
+files there, or take any other actions you would with normal files. <span style="mso-spacerun:yes">&nbsp;&nbsp;</span>(Note: unlike in Windows and <span class="SpellE">MacOS</span>, when you drag a file from your home area to the
+floppy, it moves the file instead of making a copy.)<o:p></o:p></span></b></p>
+
+<p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;;
+color:black"><o:p>&nbsp;</o:p></span></b></p>
+
+<p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;;
+color:black">To remove the disk, you must first right-click on the desktop
+icon, and select <span class="SpellE">Unmount</span> volume or Eject (either
+does the same thing).<span style="mso-spacerun:yes">&nbsp; </span>When this is
+complete (and it may take a long time since it may have to complete writing
+files to the floppy!), you may push the eject button on the floppy to remove
+it.<o:p></o:p></span></b></p>
+
+<p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;;
+color:black"><o:p>&nbsp;</o:p></span></b></p>
+
+<p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;;
+color:black">Things are more complicated by possible in the terminal mode:<o:p></o:p></span></b></p>
+
+<p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;;
+color:black"><o:p>&nbsp;</o:p></span></b></p>
+
+<p class="MsoNormal"><span class="GramE"><b style="mso-bidi-font-weight:normal"><span style="font-size:13.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;color:red">mount</span></b></span><b style="mso-bidi-font-weight:normal"><span style="font-size:13.0pt;mso-bidi-font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;;
+color:red"> </span></b><b style="mso-bidi-font-weight:normal"><span style="font-size:13.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;color:black"><span style="mso-tab-count:
+3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></b><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;;
+color:black">Mounts a drive to the operating system. <o:p></o:p></span></b></p>
+
+<p class="MsoNormal" style="margin-left:1.5in;text-indent:.5in"><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:
+10.0pt;font-family:&quot;Times New Roman&quot;;color:black">Linux does not 'see' the
+floppy drive until <o:p></o:p></span></b></p>
+
+<p class="MsoNormal" style="margin-left:1.5in;text-indent:.5in"><span class="GramE"><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;
+mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;;color:black">you</span></b></span><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:
+10.0pt;font-family:&quot;Times New Roman&quot;;color:black"> tell it to. <o:p></o:p></span></b></p>
+
+<p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;;
+color:black"><o:p>&nbsp;</o:p></span></b></p>
+
+<p class="MsoNormal" style="line-height:150%"><b style="mso-bidi-font-weight:
+normal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;line-height:
+150%;font-family:&quot;Times New Roman&quot;;color:black">For Example:<o:p></o:p></span></b></p>
+
+<p class="MsoNormal"><span class="GramE"><b style="mso-bidi-font-weight:normal"><span style="font-size:13.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;color:red">mount</span></b></span><b style="mso-bidi-font-weight:normal"><span style="font-size:13.0pt;mso-bidi-font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;;
+color:red"> /<span class="SpellE">mnt</span>/floppy</span></b><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:
+10.0pt;font-family:&quot;Times New Roman&quot;;color:black"> <span style="mso-tab-count:
+1">&nbsp;&nbsp; </span>Allows you to use the floppy drive which has directory name /<span class="SpellE">mnt</span>/floppy</span></b><span style="font-size:16.0pt;
+mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;;color:black"> <o:p></o:p></span></p>
+
+<p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;;
+color:red"><o:p>&nbsp;</o:p></span></b></p>
+
+<p class="Preformatted"><span style="font-size:12.0pt;mso-bidi-font-size:10.0pt;
+font-family:&quot;Times New Roman&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="Preformatted"><span class="GramE"><b style="mso-bidi-font-weight:normal"><span style="font-size:13.0pt;mso-bidi-font-size:10.0pt;color:red">cp</span></b></span><b style="mso-bidi-font-weight:normal"><span style="font-size:13.0pt;mso-bidi-font-size:
+10.0pt;color:red"> <span class="SpellE">aFile</span> /<span class="SpellE">mnt</span>/floppy/<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp; </span></span></b><b style="mso-bidi-font-weight:
+normal"><span style="font-size:16.0pt;font-family:&quot;Times New Roman&quot;">Copies the
+file <span class="SpellE">aFile</span> to the floppy disk.<o:p></o:p></span></b></p>
+
+<p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt"><o:p>&nbsp;</o:p></span></b></p>
+
+<p class="MsoNormal" style="margin-left:2.75in;text-indent:-2.75in;tab-stops:
+list 40.5pt"><span class="SpellE"><span class="GramE"><b style="mso-bidi-font-weight:
+normal"><span style="font-size:13.0pt;font-family:&quot;Courier New&quot;;color:red">ls</span></b></span></span><b style="mso-bidi-font-weight:normal"><span style="font-size:13.0pt;font-family:
+&quot;Courier New&quot;;color:red"> /<span class="SpellE">mnt/qfloppy</span>/<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></b><b style="mso-bidi-font-weight:
+normal"><span style="font-size:16.0pt;font-family:&quot;Times New Roman&quot;">Allows you
+to see what files are on your floppy.<o:p></o:p></span></b></p>
+
+<p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt"><o:p>&nbsp;</o:p></span></b></p>
+
+<p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt">You may run into problems moving large files onto a
+1.44MB floppy disk.<span style="mso-spacerun:yes">&nbsp; </span>One option to fit
+larger files is to create a zip archive containing the file onto the
+floppy.<span style="mso-spacerun:yes">&nbsp; </span>For Example:<o:p></o:p></span></b></p>
+
+<p class="MsoNormal" style="margin-left:239.25pt;text-indent:-239.25pt;
+tab-stops:list 40.5pt"><b style="mso-bidi-font-weight:normal"><span style="font-size:13.0pt;font-family:&quot;Courier New&quot;;color:red"><o:p>&nbsp;</o:p></span></b></p>
+
+<p class="MsoNormal" style="tab-stops:list 40.5pt"><span class="GramE"><b style="mso-bidi-font-weight:normal"><span style="font-size:13.0pt;font-family:
+&quot;Courier New&quot;;color:red">zip</span></b></span><b style="mso-bidi-font-weight:
+normal"><span style="font-size:13.0pt;font-family:&quot;Courier New&quot;;color:red"> /<span class="SpellE">mnt/floppy/myFile.zip</span> <span class="SpellE">muon.myDataRun</span><span style="mso-tab-count:1">&nbsp; </span><o:p></o:p></span></b></p>
+
+<p class="MsoNormal" style="tab-stops:list 40.5pt"><b style="mso-bidi-font-weight:
+normal"><span style="font-size:13.0pt;font-family:&quot;Courier New&quot;;color:red"><span style="mso-tab-count:4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></b><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;font-family:
+&quot;Times New Roman&quot;">Moves the file <span class="SpellE">muon.myDataRun</span> into
+a zip file on the floppy named <span class="SpellE">myFile.zip</span><o:p></o:p></span></b></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;;
+color:black">After you are done and <u>before</u> you eject it (this is <u>very,
+very</u> important), you must <span class="SpellE">unmount</span> the floppy.</span></b><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;;
+color:black"><o:p></o:p></span></p>
+
+<p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;;
+color:red"><o:p>&nbsp;</o:p></span></b></p>
+
+<p class="MsoNormal" style="margin-left:2.5in;text-indent:-2.5in"><span class="SpellE"><span class="GramE"><b style="mso-bidi-font-weight:normal"><span style="font-size:13.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;color:red">umount</span></b></span></span><b style="mso-bidi-font-weight:normal"><span style="font-size:13.0pt;mso-bidi-font-size:
+10.0pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;;
+color:red"> /<span class="SpellE">mnt/qfloppy</span><span style="mso-tab-count:
+1">&nbsp;&nbsp;&nbsp;&nbsp; </span></span></b><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;">Allows
+you to remove the floppy disk<o:p></o:p></span></b></p>
+
+<p class="MsoNormal" style="margin-left:2.5in;text-indent:-2.5in"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo4;
+tab-stops:list .5in"><!--[if !supportLists]--><span style="font-size:16.0pt;
+mso-bidi-font-size:10.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;
+mso-bidi-font-family:Symbol;color:black"><span style="mso-list:Ignore">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><!--[endif]--><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:
+10.0pt;font-family:&quot;Times New Roman&quot;;color:black">Make sure you wait for the
+command prompt to reappear (this might take a few seconds)&nbsp;before ejecting
+the floppy.&nbsp;</span></b><span style="font-size:16.0pt;mso-bidi-font-size:
+10.0pt;font-family:&quot;Times New Roman&quot;;color:black"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo4;
+tab-stops:list .5in"><!--[if !supportLists]--><span style="font-size:16.0pt;
+mso-bidi-font-size:10.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;
+mso-bidi-font-family:Symbol;color:black"><span style="mso-list:Ignore">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><!--[endif]--><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:
+10.0pt;font-family:&quot;Times New Roman&quot;;color:black">If you eject the floppy
+before you <span class="SpellE">unmount</span> the floppy, it may corrupt the
+data on the floppy and cause the system to be confused if you try to use the
+floppy again.&nbsp; </span></b><span style="font-size:16.0pt;mso-bidi-font-size:
+10.0pt;font-family:&quot;Times New Roman&quot;;color:black"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo4;
+tab-stops:list .5in"><!--[if !supportLists]--><span style="font-size:16.0pt;
+mso-bidi-font-size:10.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;
+mso-bidi-font-family:Symbol;color:black"><span style="mso-list:Ignore">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><!--[endif]--><b style="mso-bidi-font-weight:normal"><span style="font-size:16.0pt;mso-bidi-font-size:
+10.0pt;font-family:&quot;Times New Roman&quot;;color:black">If you make a mistake like this,
+it's probably best to reboot.<span style="mso-spacerun:yes">&nbsp; </span>Sorry.</span></b><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;;
+color:black"><o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;
+font-family:&quot;Times New Roman&quot;;color:black"><span style="mso-spacerun:yes">&nbsp;</span><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:2.0in;text-indent:-2.0in"><span class="SpellE"><span class="GramE"><b style="mso-bidi-font-weight:normal"><span style="font-size:13.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;color:red">df</span></b></span></span><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;;
+color:black"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ </span><b style="mso-bidi-font-weight:normal">Shows the disk usage. This will tell you
+how much disk space you have left on your hard drive as well as the floppy.</b>
+<o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;
+font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal"><span style="font-size:16.0pt;mso-bidi-font-size:10.0pt;
+font-family:&quot;Times New Roman&quot;;color:black"><o:p>&nbsp;</o:p></span></p>
+
+<p class="MsoNormal" style="margin-left:2.5in;text-indent:-2.5in"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+</div>
+
+
+
+
+</body></html>

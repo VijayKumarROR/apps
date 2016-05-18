@@ -1,0 +1,18 @@
+<%= stylesheet_link_tag 'scaffold', 'style' %>
+<body>
+ 
+  <div id="pagewrap">
+ 
+    
+ 
+  </div>
+ 
+</body>
+
+<div class="user">
+  <%= link_to "Logout", :logout unless !logged_in? %>
+</div>
+
+<%= stylesheet_link_tag 'scaffold', 'style' %>
+<p style="color: red"><%= flash[:alert] %></p>
+

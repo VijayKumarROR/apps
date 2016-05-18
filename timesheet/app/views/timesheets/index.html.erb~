@@ -1,0 +1,23 @@
+<html>
+     <h1 align="center">Time sheet</h1>
+  <form method ="post" action ="">
+   <input type ="radiobutton" value="ADD ROWS" name="btn">
+</form>
+ <form>
+<background bgcolor ="red">
+<label align="left">Projects</label>
+   <select multiple tabindex="5">
+   <option>--select--</option>
+   <option>           </option>
+   <option>           </option>
+   <option>           </option>
+   <option>           </option>
+</select>
+  <label align="center">Hrs</label>
+  <select multiple tabindex="5">
+   <option>2hrs</option>
+   <option>5hrs</option>
+   <option>6hrs</option>
+   <option>24hrs</option>
+</select>
+

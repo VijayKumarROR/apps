@@ -1,0 +1,3447 @@
+<!DOCTYPE html>
+<html itemscope="" itemtype="http://schema.org/QAPage"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<title>How to implement an abstract class in ruby? - Stack Overflow</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/stackoverflow/img/favicon.ico?v=4f32ecc8f43d">
+    <link rel="apple-touch-icon image_src" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="http://stackoverflow.com/opensearch.xml">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:domain" content="stackoverflow.com">
+    <meta property="og:type" content="website">    
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon@2.png?v=73d79a89bded&amp;a">
+    <meta name="twitter:title" property="og:title" itemprop="title name" content="How to implement an abstract class in ruby?">
+    <meta name="twitter:description" property="og:description" itemprop="description" content="I know there is no concept of abstract class in ruby. But if at all it needs to be implemented, how to go about it? I tried something like...
+
+class A
+  def self.new
+    raise 'Doh! You are trying to ">
+    <meta property="og:url" content="http://stackoverflow.com/questions/512466/how-to-implement-an-abstract-class-in-ruby">
+    <link rel="canonical" href="http://stackoverflow.com/questions/512466/how-to-implement-an-abstract-class-in-ruby">
+
+    
+    
+    <script src="How%20to%20implement%20an%20abstract%20class%20in%20ruby%3F%20-%20Stack%20Overflow_files/ados_002.js" async="" type="text/javascript"></script><script src="How%20to%20implement%20an%20abstract%20class%20in%20ruby%3F%20-%20Stack%20Overflow_files/quant.js" async=""></script><script src="How%20to%20implement%20an%20abstract%20class%20in%20ruby%3F%20-%20Stack%20Overflow_files/beacon.js" async=""></script><script src="How%20to%20implement%20an%20abstract%20class%20in%20ruby%3F%20-%20Stack%20Overflow_files/analytics.js" async=""></script><script src="How%20to%20implement%20an%20abstract%20class%20in%20ruby%3F%20-%20Stack%20Overflow_files/ados.js" async="" type="text/javascript"></script><script src="How%20to%20implement%20an%20abstract%20class%20in%20ruby%3F%20-%20Stack%20Overflow_files/jquery.js"></script>
+    <script src="How%20to%20implement%20an%20abstract%20class%20in%20ruby%3F%20-%20Stack%20Overflow_files/stub.js"></script>
+    <link rel="stylesheet" type="text/css" href="How%20to%20implement%20an%20abstract%20class%20in%20ruby%3F%20-%20Stack%20Overflow_files/all.css">
+
+            <link rel="alternate" type="application/atom+xml" title="Feed for question 'How to implement an abstract class in ruby?'" href="http://stackoverflow.com/feeds/question/512466">
+            <meta name="twitter:app:country" content="US">
+            <meta name="twitter:app:name:iphone" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:iphone" content="871299723">
+            <meta name="twitter:app:url:iphone" content="se-zaphod://stackoverflow.com/questions/512466/how-to-implement-an-abstract-class-in-ruby">
+            <meta name="twitter:app:name:ipad" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:ipad" content="871299723">
+            <meta name="twitter:app:url:ipad" content="se-zaphod://stackoverflow.com/questions/512466/how-to-implement-an-abstract-class-in-ruby">
+            <meta name="twitter:app:name:googleplay" content="Stack Exchange Android">
+            <meta name="twitter:app:url:googleplay" content="http://stackoverflow.com/questions/512466/how-to-implement-an-abstract-class-in-ruby">
+            <meta name="twitter:app:id:googleplay" content="com.stackexchange.marvin">
+        <script>
+        
+            StackExchange.ready(function () {
+                    
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.initSnippetRenderer();
+                    });
+                    
+
+                StackExchange.using("postValidation", function () {
+                    StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+                });
+
+                
+                StackExchange.question.init({showAnswerHelp:true,totalCommentCount:3,shownCommentCount:3,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:512466});
+
+                styleCode();
+
+                    StackExchange.realtime.subscribeToQuestion('1', '512466');
+                                                                    StackExchange.using("gps", function () { StackExchange.gps.trackOutboundClicks('#content', '.post-text'); });
+
+            });
+        </script>
+
+
+    <script>
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","serverTime":1457075861,"networkMetaHostname":"meta.stackexchange.com","routeName":"Questions/Show","styleCode":true,"enableUserHovercards":true,"snippets":{"enabled":true,"domain":"stacksnippets.net"},"site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdchgIAAAAAAJwGpIzRQSOFaO0pU6s44Xt8aTwc","recaptchaAudioLang":"en","enableNewTagCreationWarning":true,"insertSpaceAfterNameTabCompletion":false,"id":1,"enableSocialMediaInSharePopup":true},"user":{"fkey":"4bf9950a3dcc93f67e48551082ece4e2","rep":0,"isAnonymous":true,"isAnonymousNetworkWide":true}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"7226ead6e52b","js/moderator.en.js":"481e310df8f0","js/full-anon.en.js":"9027a5f17c90","js/full.en.js":"0c515b3719c7","js/wmd.en.js":"262d7d978df3","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"52aabd47bbed","js/help.en.js":"c8004cc0095d","js/tageditor.en.js":"a0ed6b4d7f8d","js/tageditornew.en.js":"ddc17f22a99b","js/inline-tag-editing.en.js":"de80429b1816","js/revisions.en.js":"c2bb6b44f707","js/review.en.js":"12686b67ce29","js/tagsuggestions.en.js":"d1ff9b84abe5","js/post-validation.en.js":"d3889764c6ba","js/explore-qlist.en.js":"e71f14781288","js/events.en.js":"b95902faca59","js/keyboard-shortcuts.en.js":"fbad027ea81b","js/external-editor.en.js":"d3d544e5946c","js/external-editor.en.js":"d3d544e5946c","js/snippet-javascript.en.js":"1f4524dde381","js/snippet-javascript-codemirror.en.js":"c682f0a06284"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    
+        <script>
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+    
+    
+<script src="How%20to%20implement%20an%20abstract%20class%20in%20ruby%3F%20-%20Stack%20Overflow_files/full-anon.js" async=""></script><script src="How%20to%20implement%20an%20abstract%20class%20in%20ruby%3F%20-%20Stack%20Overflow_files/snippet-javascript.js" async=""></script><script src="How%20to%20implement%20an%20abstract%20class%20in%20ruby%3F%20-%20Stack%20Overflow_files/post-validation.js" async=""></script><script src="How%20to%20implement%20an%20abstract%20class%20in%20ruby%3F%20-%20Stack%20Overflow_files/prettify-full.js" async=""></script><script src="How%20to%20implement%20an%20abstract%20class%20in%20ruby%3F%20-%20Stack%20Overflow_files/external-editor.js" async=""></script><script src="How%20to%20implement%20an%20abstract%20class%20in%20ruby%3F%20-%20Stack%20Overflow_files/adFeedback.js" type="text/javascript"></script><link href="How%20to%20implement%20an%20abstract%20class%20in%20ruby%3F%20-%20Stack%20Overflow_files/adFeedback.css" rel="stylesheet"><link href="How%20to%20implement%20an%20abstract%20class%20in%20ruby%3F%20-%20Stack%20Overflow_files/jobs.css" rel="stylesheet" type="text/css"></head>
+<body class="question-page new-topbar">
+    <noscript><div id="noscript-padding"></div></noscript>
+    
+        <script>(function () { var old = $.fn.contents; $.fn.contents = function () { try { return old.apply(this, arguments); } catch (e) { return $([]); } } })()</script>
+        
+
+
+
+
+    <div id="notify-container"></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+
+
+
+
+
+<div class="topbar">
+    <div class="topbar-wrapper">
+
+        <div class="js-topbar-dialog-corral">
+
+
+<div class="topbar-dialog siteSwitcher-dialog dno">
+    <div class="header">
+        <h3><a href="http://stackoverflow.com/">current community</a></h3>
+    </div>
+    <div class="modal-content current-site-container">
+        <ul class="current-site">
+                <li>
+                        <div class="related-links">
+                    <a href="http://chat.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+            </div>
+
+
+
+
+    <a href="http://stackoverflow.com/" class="current-site-link site-link js-gps-track" data-id="1" data-gps-track="
+        site_switcher.click({ item_type:3 })">
+        <div class="site-icon favicon favicon-stackoverflow" title="Stack Overflow"></div>
+        Stack Overflow
+    </a>
+
+                </li>
+                <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    
+
+
+
+    <a href="http://meta.stackoverflow.com/" class="site-link js-gps-track" data-id="552" data-gps-track="
+            site.switch({ target_site:552, item_type:3 }),
+        site_switcher.click({ item_type:4 })">
+        <div class="site-icon favicon favicon-stackoverflowmeta" title="Meta Stack Overflow"></div>
+        Meta Stack Overflow
+    </a>
+
+                </li>
+                            <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    <a class="site-link js-gps-track" href="http://careers.stackoverflow.com/?utm_source=stackoverflow.com&amp;utm_medium=site-ui&amp;utm_campaign=multicollider" data-gps-track="site_switcher.click({ item_type:9 })">
+                        <div class="site-icon favicon favicon-careers" title="Stack Overflow Careers"></div>
+                        Stack Overflow Careers
+                    </a>
+                </li>
+        </ul>
+    </div>
+    
+    <div class="header" id="your-communities-header">
+        <h3>
+your communities        </h3>
+            
+    </div>
+    <div class="modal-content" id="your-communities-section">
+            
+            <div class="call-to-login">
+<a href="https://stackoverflow.com/users/signup?ssrc=site_switcher&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f512466%2fhow-to-implement-an-abstract-class-in-ruby" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Sign up</a> or <a href="https://stackoverflow.com/users/login?ssrc=site_switcher&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f512466%2fhow-to-implement-an-abstract-class-in-ruby" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log in</a> to customize your list.
+            </div>
+    </div>
+    
+    <div class="header">
+        <h3><a href="http://stackexchange.com/sites">more stack exchange communities</a></h3>
+        <a href="http://blog.stackoverflow.com/" class="fr">company blog</a>
+    </div>
+    <div class="modal-content">
+            <div class="child-content"></div>
+    </div>
+</div>
+        </div>
+
+        <div class="network-items">
+
+            <a href="http://stackexchange.com/" class="topbar-icon icon-site-switcher yes-hover js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 153 Stack Exchange sites">
+                <span class="hidden-text">Stack Exchange</span>
+            </a>
+
+    <a href="#" class="topbar-icon icon-inbox yes-hover js-inbox-button" title="Recent inbox messages">
+        <span class="hidden-text">Inbox</span>
+        <span class="unread-count" style="display:none"></span>
+    </a>
+    <a href="#" class="topbar-icon icon-achievements yes-hover js-achievements-button" data-unread-class="" title="Recent achievements: reputation, badges, and privileges earned">
+        <span class="hidden-text">Reputation and Badges</span>
+        <span class="unread-count" style="display:none">
+            
+        </span>
+    </a>
+        </div>
+
+        <div class="topbar-links">
+
+                <div class="links-container">
+                <span class="topbar-menu-links">
+                                    <a href="https://stackoverflow.com/users/signup?ssrc=head&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f512466%2fhow-to-implement-an-abstract-class-in-ruby" class="login-link">sign up</a>
+                                <a href="https://stackoverflow.com/users/login?ssrc=head&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f512466%2fhow-to-implement-an-abstract-class-in-ruby" class="login-link">log in</a>
+
+                        <a href="http://stackoverflow.com/tour">tour</a>
+                            <a href="#" class="icon-help js-help-button" title="Help Center and other resources">
+        help
+        <span class="triangle"></span>
+    </a>
+    <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="http://stackoverflow.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="http://stackoverflow.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                    <li>
+                        <a href="http://meta.stackoverflow.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                            Meta
+                            <span class="item-summary">
+                                Discuss the workings and policies of this site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="http://stackoverflow.com/company/about" class="js-gps-track" data-gps-track="help_popup.click({ item_type:6 })">
+                        About Us
+                        <span class="item-summary">
+                            Learn more about Stack Overflow the company
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://business.stackoverflow.com/?ref=topbar_help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:7 })">
+                        Business
+                        <span class="item-summary">
+                            Learn more about hiring developers or posting ads with us
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+                    </span>
+                </div>
+
+            <div class="search-container">
+                <form id="search" action="/search" method="get" autocomplete="off">
+                    <input name="q" placeholder="Search Q&amp;A" tabindex="1" autocomplete="off" maxlength="240" type="text">
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+    <script>
+        StackExchange.ready(function() { StackExchange.topbar.init(); });
+    </script>
+
+    <div class="container">
+        <div id="header">
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://stackoverflow.com/">
+                    Stack Overflow
+                </a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="http://stackoverflow.com/questions">Questions</a></li>
+                            <li><a id="nav-jobs" href="http://stackoverflow.com/jobs">Jobs</a></li>
+                        <li><a id="nav-tags" href="http://stackoverflow.com/tags">Tags</a></li>
+                        <li><a id="nav-users" href="http://stackoverflow.com/users">Users</a></li>
+                        <li><a id="nav-badges" href="http://stackoverflow.com/help/badges">Badges</a></li>
+                                            </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://stackoverflow.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        <div id="content" class="snippet-hidden">
+            
+
+<div itemscope="" itemtype="http://schema.org/Question">
+    <link itemprop="image" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+
+<div id="herobox">
+    <div id="hero-content">
+            <div id="close"><a title="click to minimize">_</a></div>
+        <div id="blurb">
+            Stack Overflow is a community of 4.7 million programmers, just like you, helping each other.
+            <br>
+                <br>Join them; it only takes a minute:<br>
+            <br>
+            <a href="http://stackoverflow.com/users/signup?ssrc=hero&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f512466%2fhow-to-implement-an-abstract-class-in-ruby" id="tell-me-more" class="button">Sign up</a>
+        </div>
+        <div id="desc">
+            <b>Join the Stack Overflow community to:</b>
+            <ol id="hiw">
+                <li id="q">Ask programming questions
+                </li>
+                <li id="an">Answer and help your peers
+                </li>
+                <li id="b">Get recognized for your expertise
+                </li>
+            </ol>
+        </div>
+        <div style="clear: both"></div>
+    </div>
+    <script>
+        StackExchange.ready(function () {
+
+            var location = 0;
+            if ($("body").hasClass("questions-page")) {
+                location = 1;;
+            } else if ($("body").hasClass("question-page")) {
+                location = 1;;
+            } else if ($("body").hasClass("faq-page")) {
+                location = 5;;
+            } else if ($("body").hasClass("home-page")) {
+                location = 3;;
+            }
+
+            $('#tell-me-more').click(function () {
+                StackExchange.using("gps", function () {
+                    StackExchange.gps.track("hero.action", { hero_action_type: 'cta', location: location }, true);
+                });
+            });
+            $('#herobox #close').click(function () {
+                StackExchange.using("gps", function () {
+                    StackExchange.gps.track("hero.action", { hero_action_type: "minimize", location: location }, true);
+                });
+                $.cookie("hero", "mini", { path: "/", expires: 365 });
+                $.ajax({
+                    url: "/hero-mini",
+                    success: function (data) {
+                        $("#herobox").fadeOut("fast", function () {
+                            $("#herobox").replaceWith(data);
+                            $("#herobox-mini").fadeIn("fast");
+                        });
+                    }
+                });
+                return false;
+            });
+        });
+
+    </script>
+</div>
+			<div id="question-header">
+                <h1 itemprop="name"><a href="http://stackoverflow.com/questions/512466/how-to-implement-an-abstract-class-in-ruby" class="question-hyperlink">How to implement an abstract class in ruby?</a></h1>
+		</div>
+			<div id="mainbar">
+
+			
+
+<div class="question" data-questionid="512466" id="question">
+
+    <script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk786901123",4).setZone(43); });
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk786901123"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NCwiYnQiOjAsImNtIjozMjI1MTQsImNoIjoxMTc4LCJjayI6e30sImNyIjoxMTk1NzgwLCJkaSI6ImU5M2ZmNDM1YTUzNzQ1MGZiNTFlOWM1YzYwNzhhZDMzIiwiZG0iOjEsImZjIjoxMjY5MTM5LCJmbCI6ODY0MjI1LCJpcCI6IjExNS4yNDEuMTAuMTQwIiwia3ciOiJydWJ5LGFic3RyYWN0LWNsYXNzIiwibnciOjIyLCJwYyI6MCwiZWMiOjAsInByIjoxNjA0LCJydCI6MSwicmYiOiJodHRwOi8vd3d3Lmdvb2dsZS5jby5pbi91cmw_c2E9dCZyY3Q9aiZxPSZlc3JjPXMmc291cmNlPXdlYiZjZD0xJnZlZD0wYWhVS0V3aXIxLURHdnFiTEFoWFVXNDRLSGVUMEJzTVFGZ2diTUFBJnVybD1odHRwOi8vc3RhY2tvdmVyZmxvdy5jb20vcXVlc3Rpb25zLzUxMjQ2Ni9ob3ctdG8taW1wbGVtZW50LWFuLWFic3RyYWN0LWNsYXNzLWluLXJ1YnkmdXNnPUFGUWpDTkhUaEtXb2otUUJ6NjhzanNwQmxTUDFEZmg4SXciLCJzdCI6ODI3NywidWsiOiJ1ZTEtOGY4YTcyMDc3YjlkNDVkMDg3NGZmMmI4M2I4ODJiN2UiLCJ6biI6NDMsInRzIjoxNDU3MDc1ODYzMDkwLCJiZiI6dHJ1ZSwicG4iOiJhZHplcms3ODY5MDExMjMiLCJ1ciI6Imh0dHA6Ly9jYXJlZXJzLnN0YWNrb3ZlcmZsb3cuY29tL3Byb2R1Y3RzP3V0bV9zb3VyY2U9c3RhY2tvdmVyZmxvdy5jb20mdXRtX21lZGl1bT1hZCZ1dG1fY2FtcGFpZ249ZW1wbG95ZXJzLXN1cGVyaGVyb2VzJnV0bV9jb250ZW50PWxiLXN1cGVyaGVyb2VzIn0&amp;s=_uaMsf2ncS6iBQhUNkbn3mOw9PA" rel="nofollow" target="_blank" title=""><img src="How%20to%20implement%20an%20abstract%20class%20in%20ruby%3F%20-%20Stack%20Overflow_files/af217662e49a4cbda030feae88418cdd.png" title="" alt="" border="0" height="90" width="728"></a><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input value="12" name="downvoteReason" type="radio">Uninteresting</label></li><li><label><input value="13" name="downvoteReason" type="radio">Misleading</label></li><li><label><input value="14" name="downvoteReason" type="radio">Offensive</label></li><li><label><input value="15" name="downvoteReason" type="radio">Repetitive</label></li><li><label><input value="16" name="downvoteReason" type="radio">Other</label></li></ul><a href="#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div><img src="How%20to%20implement%20an%20abstract%20class%20in%20ruby%3F%20-%20Stack%20Overflow_files/i.gif" style="position:absolute;" border="0" height="0px" width="0px"></div>    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="512466" type="hidden">
+        <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">74</span>
+        <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+
+        <a class="star-off" href="#" title="This is a favorite question (click again to undo)">favorite</a>
+        <div class="favoritecount"><b>30</b></div>
+
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+<p>I know there is no concept of abstract class in ruby. But if at all 
+it needs to be implemented, how to go about it? I tried something 
+like...</p>
+
+<pre style="" class="lang-rb prettyprint prettyprinted"><code><span class="kwd">class</span><span class="pln"> A
+  </span><span class="kwd">def</span><span class="pln"> </span><span class="kwd">self</span><span class="pun">.</span><span class="pln">new
+    raise </span><span class="str">'Doh! You are trying to write Java in Ruby!'</span><span class="pln">
+  </span><span class="kwd">end</span><span class="pln">
+</span><span class="kwd">end</span><span class="pln">
+
+</span><span class="kwd">class</span><span class="pln"> B </span><span class="pun">&lt;</span><span class="pln"> A
+  </span><span class="pun">...</span><span class="pln">
+  </span><span class="pun">...</span><span class="pln">
+</span><span class="kwd">end</span></code></pre>
+
+<p>But when I try to instantiate B, it is internally going to call <code>A.new</code> which is going to raise the exception.</p>
+
+<p>Also, modules cannot be instantiated but they cannot be inherited 
+too. making the new method private will also not work. Any pointers?</p>
+    </div>
+    <div class="post-taglist">
+        <a href="http://stackoverflow.com/questions/tagged/ruby" class="post-tag js-gps-track" title="show questions tagged 'ruby'" rel="tag">ruby</a> <a href="http://stackoverflow.com/questions/tagged/abstract-class" class="post-tag js-gps-track" title="show questions tagged 'abstract-class'" rel="tag">abstract-class</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/q/512466" title="short permalink to this question" class="short-link" id="link-post-512466">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/512466/edit" class="suggest-edit-post" title="">improve this question</a></div>        
+    </td>
+    <td class="post-signature" align="right">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/512466/revisions" title="show all edits to this post">edited <span title="2014-11-24 16:30:23Z" class="relativetime">Nov 24 '14 at 16:30</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </td>
+    <td class="post-signature owner">
+        <div class="user-info ">
+    <div class="user-action-time">
+        asked <span title="2009-02-04 17:35:43Z" class="relativetime">Feb 4 '09 at 17:35</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/45942/chirantan"><div class="gravatar-wrapper-32"><img src="How%20to%20implement%20an%20abstract%20class%20in%20ruby%3F%20-%20Stack%20Overflow_files/18bcc556d7688096bd4daa5d72bd6c32.jpeg" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/45942/chirantan">Chirantan</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">7,625</span><span title="5 gold badges"><span class="badge1"></span><span class="badgecount">5</span></span><span title="35 silver badges"><span class="badge2"></span><span class="badgecount">35</span></span><span title="61 bronze badges"><span class="badge3"></span><span class="badgecount">61</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+                
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-512466" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-326140" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Modules can be mixed in, but I supposed you need classical inheritance for some other reason?</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/9128/zach" title="13310 reputation" class="comment-user">Zach</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment326140_512466"><span title="2009-02-04 17:41:44Z" class="relativetime-clean">Feb 4 '09 at 17:41</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-326155" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="cool">3</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">It not that I <i>need</i> to 
+implement an abstract class. I was wondering about how to do it, if at 
+all one needs to do it. A programming problem. Thats it.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/45942/chirantan" title="7625 reputation" class="comment-user owner">Chirantan</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment326155_512466"><span title="2009-02-04 17:46:27Z" class="relativetime-clean">Feb 4 '09 at 17:46</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-8444442" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="supernova">83</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy"><code>raise "Doh! You are trying to write Java in Ruby"</code>.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/38765/andrew-grimm" title="30780 reputation" class="comment-user">Andrew Grimm</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment8444442_512466"><span title="2011-08-14 23:30:46Z" class="relativetime-clean">Aug 14 '11 at 23:30</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-512466" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>        </tbody></table>
+</div>
+
+			<div id="answers">
+
+				<a name="tab-top"></a>
+				<div id="answers-header">
+					<div class="subheader answers-subheader">
+						<h2>
+								16 Answers
+                                <span style="display:none;" itemprop="answerCount">16</span>
+						</h2>
+						<div>
+							<div id="tabs">
+        <a href="http://stackoverflow.com/questions/512466/how-to-implement-an-abstract-class-in-ruby?answertab=active#tab-top" data-nav-xhref="" title="Answers with the latest activity first" data-value="active">
+            active</a>
+        <a href="http://stackoverflow.com/questions/512466/how-to-implement-an-abstract-class-in-ruby?answertab=oldest#tab-top" data-nav-xhref="" title="Answers in the order they were provided" data-value="oldest">
+            oldest</a>
+        <a class="youarehere" href="http://stackoverflow.com/questions/512466/how-to-implement-an-abstract-class-in-ruby?answertab=votes#tab-top" data-nav-xhref="" title="Answers with the highest score first" data-value="votes">
+            votes</a>
+</div>
+						</div>
+					</div>    
+				</div>    
+
+
+
+
+  
+<a name="512505"></a>
+<div id="answer-512505" class="answer accepted-answer" data-answerid="512505" itemscope="" itemtype="http://schema.org/Answer" itemprop="acceptedAnswer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="512505" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">42</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+        <span class="vote-accepted-on load-accepted-answer-date" title="loading when this answer was accepted...">accepted</span>
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>I don't like using abstract classes in Ruby (there's almost always a 
+better way). If you really think it's the best technique for the 
+situation though, you can use the following snippet to be more 
+declarative about which methods are abstract:</p>
+
+<pre style="" class="lang-rb prettyprint prettyprinted"><code><span class="kwd">module</span><span class="pln"> </span><span class="typ">Abstract</span><span class="pln">
+  </span><span class="kwd">def</span><span class="pln"> </span><span class="kwd">self</span><span class="pun">.</span><span class="pln">included</span><span class="pun">(</span><span class="pln">base</span><span class="pun">)</span><span class="pln">
+    base</span><span class="pun">.</span><span class="pln">extend</span><span class="pun">(</span><span class="typ">ClassMethods</span><span class="pun">)</span><span class="pln">
+  </span><span class="kwd">end</span><span class="pln">
+
+  </span><span class="kwd">module</span><span class="pln"> </span><span class="typ">ClassMethods</span><span class="pln">
+    </span><span class="kwd">def</span><span class="pln"> abstract_methods</span><span class="pun">(*</span><span class="pln">args</span><span class="pun">)</span><span class="pln">
+      args</span><span class="pun">.</span><span class="pln">each </span><span class="kwd">do</span><span class="pln"> </span><span class="pun">|</span><span class="pln">name</span><span class="pun">|</span><span class="pln">
+        class_eval</span><span class="pun">(&lt;&lt;-</span><span class="kwd">END</span><span class="pun">,</span><span class="pln"> __FILE__</span><span class="pun">,</span><span class="pln"> __LINE__</span><span class="pun">)</span><span class="pln">
+          </span><span class="kwd">def</span><span class="pln"> </span><span class="com">#{name}(*args)</span><span class="pln">
+            raise </span><span class="typ">NotImplementedError</span><span class="pun">.</span><span class="pln">new</span><span class="pun">(</span><span class="str">"You must implement #{name}."</span><span class="pun">)</span><span class="pln">
+          </span><span class="kwd">end</span><span class="pln">
+        </span><span class="kwd">end</span><span class="pln">
+      </span><span class="kwd">end</span><span class="pln">
+    </span><span class="kwd">end</span><span class="pln">
+  </span><span class="kwd">end</span><span class="pln">
+</span><span class="kwd">end</span><span class="pln">
+
+require </span><span class="str">'rubygems'</span><span class="pln">
+require </span><span class="str">'spec'</span><span class="pln">
+
+describe </span><span class="str">"abstract methods"</span><span class="pln"> </span><span class="kwd">do</span><span class="pln">
+  before</span><span class="pun">(:</span><span class="pln">each</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">do</span><span class="pln">
+    </span><span class="lit">@klass</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Class</span><span class="pun">.</span><span class="pln">new </span><span class="kwd">do</span><span class="pln">
+      include </span><span class="typ">Abstract</span><span class="pln">
+
+      abstract_methods </span><span class="pun">:</span><span class="pln">foo</span><span class="pun">,</span><span class="pln"> </span><span class="pun">:</span><span class="pln">bar
+    </span><span class="kwd">end</span><span class="pln">
+  </span><span class="kwd">end</span><span class="pln">
+
+  it </span><span class="str">"raises NotImplementedError"</span><span class="pln"> </span><span class="kwd">do</span><span class="pln">
+    proc </span><span class="pun">{</span><span class="pln">
+      </span><span class="lit">@klass</span><span class="pun">.</span><span class="pln">new</span><span class="pun">.</span><span class="pln">foo
+    </span><span class="pun">}.</span><span class="pln">should raise_error</span><span class="pun">(</span><span class="typ">NotImplementedError</span><span class="pun">)</span><span class="pln">
+  </span><span class="kwd">end</span><span class="pln">
+
+  it </span><span class="str">"can be overridden"</span><span class="pln"> </span><span class="kwd">do</span><span class="pln">
+    subclass </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Class</span><span class="pun">.</span><span class="pln">new</span><span class="pun">(</span><span class="lit">@klass</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">do</span><span class="pln">
+      </span><span class="kwd">def</span><span class="pln"> foo
+        </span><span class="pun">:</span><span class="pln">overridden
+      </span><span class="kwd">end</span><span class="pln">
+    </span><span class="kwd">end</span><span class="pln">
+
+    subclass</span><span class="pun">.</span><span class="pln">new</span><span class="pun">.</span><span class="pln">foo</span><span class="pun">.</span><span class="pln">should </span><span class="pun">==</span><span class="pln"> </span><span class="pun">:</span><span class="pln">overridden
+  </span><span class="kwd">end</span><span class="pln">
+</span><span class="kwd">end</span></code></pre>
+
+<p>Basically, you just call <code>abstract_methods</code> with the list of methods that are abstract, and when they get called by an instance of the abstract class, a <code>NotImplementedError</code> exception will be raised.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/512505" title="short permalink to this answer" class="short-link" id="link-post-512505">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/512505/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td class="post-signature" align="right">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/512505/revisions" title="show all edits to this post">edited <span title="2012-01-16 07:18:32Z" class="relativetime">Jan 16 '12 at 7:18</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/1133932/manish-shrivastava"><div class="gravatar-wrapper-32"><img src="How%20to%20implement%20an%20abstract%20class%20in%20ruby%3F%20-%20Stack%20Overflow_files/BPZgR.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/1133932/manish-shrivastava">Manish Shrivastava</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">9,034</span><span title="5 gold badges"><span class="badge1"></span><span class="badgecount">5</span></span><span title="54 silver badges"><span class="badge2"></span><span class="badgecount">54</span></span><span title="75 bronze badges"><span class="badge3"></span><span class="badgecount">75</span></span>
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2009-02-04 17:48:27Z" class="relativetime">Feb 4 '09 at 17:48</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/39589/nakajima"><div class="gravatar-wrapper-32"><img src="How%20to%20implement%20an%20abstract%20class%20in%20ruby%3F%20-%20Stack%20Overflow_files/3399cbfb9e5fec93c324789b29309911.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/39589/nakajima">nakajima</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">1,500</span><span title="10 silver badges"><span class="badge2"></span><span class="badgecount">10</span></span><span title="11 bronze badges"><span class="badge3"></span><span class="badgecount">11</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+            
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-512505" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-1392670" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">This is more like an interface actually but I get the idea. Thanks.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/45942/chirantan" title="7625 reputation" class="comment-user owner">Chirantan</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment1392670_512505"><span title="2009-10-08 09:15:32Z" class="relativetime-clean">Oct 8 '09 at 9:15</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-39959165" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="cool">2</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">This doesn't sound as a valid use case of <code>NotImplementedError</code> which essentially means "platform-dependent, not available on yours".  <a href="http://ruby-doc.org/core-1.9.3/NotImplementedError.html" rel="nofollow">See docs</a>.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/304175/skalee" title="5188 reputation" class="comment-user">skalee</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment39959165_512505"><span title="2014-08-30 15:30:34Z" class="relativetime-clean">Aug 30 '14 at 15:30</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-42303334" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">28 upvotes for a class 
+definition that contains a glaring error in any version of ruby?  I 
+guess no one at stackoverflow knew how to program in ruby in 2009.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/926143/7stud" title="16665 reputation" class="comment-user">7stud</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment42303334_512505"><span title="2014-11-11 19:11:35Z" class="relativetime-clean">Nov 11 '14 at 19:11</span></a></span>
+                    <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-43141960" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">You are replacing a one line 
+method with meta-programming, now need to include a mixin and call a 
+method. I don't think this is more declarative at all.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/448934/pascal-betz" title="938 reputation" class="comment-user">pascal betz</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment43141960_512505"><span title="2014-12-07 13:47:41Z" class="relativetime-clean">Dec 7 '14 at 13:47</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-512505" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+<script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk1379322439",4).setZone(44); });
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk1379322439"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NCwiYnQiOjAsImNtIjozMjI1MTQsImNoIjoxMTc4LCJjayI6e30sImNyIjoxMjY3NTg4LCJkaSI6IjQwNWNhZGJhYTYzOTQxOWJiYzE3NGI1MTQzMDkxYzQwIiwiZG0iOjEsImZjIjoxMzY1OTUxLCJmbCI6ODY0MjI1LCJpcCI6IjExNS4yNDEuMTAuMTQwIiwia3ciOiJydWJ5LGFic3RyYWN0LWNsYXNzIiwibnciOjIyLCJwYyI6MCwiZWMiOjAsInByIjoxNjA0LCJydCI6MSwicmYiOiJodHRwOi8vd3d3Lmdvb2dsZS5jby5pbi91cmw_c2E9dCZyY3Q9aiZxPSZlc3JjPXMmc291cmNlPXdlYiZjZD0xJnZlZD0wYWhVS0V3aXIxLURHdnFiTEFoWFVXNDRLSGVUMEJzTVFGZ2diTUFBJnVybD1odHRwOi8vc3RhY2tvdmVyZmxvdy5jb20vcXVlc3Rpb25zLzUxMjQ2Ni9ob3ctdG8taW1wbGVtZW50LWFuLWFic3RyYWN0LWNsYXNzLWluLXJ1YnkmdXNnPUFGUWpDTkhUaEtXb2otUUJ6NjhzanNwQmxTUDFEZmg4SXciLCJzdCI6ODI3NywidWsiOiJ1ZTEtOGY4YTcyMDc3YjlkNDVkMDg3NGZmMmI4M2I4ODJiN2UiLCJ6biI6NDQsInRzIjoxNDU3MDc1ODYzMDkyLCJiZiI6dHJ1ZSwicG4iOiJhZHplcmsxMzc5MzIyNDM5IiwidXIiOiJodHRwOi8vc3RhY2tvdmVyZmxvdy5jb20vam9icy9yZW1vdGU_dXRtX3NvdXJjZT1zdGFja292ZXJmbG93LmNvbSZ1dG1fbWVkaXVtPWFkJnV0bV9jYW1wYWlnbj1jYW5kaWRhdGVzLXdmaCZ1dG1fY29udGVudD1sYi13Zmgta2lkLXdvcmstb24td29yayJ9&amp;s=qQaeQ7GPLtsFGlesSc__XOkWTtw" rel="nofollow" target="_blank" title=""><img src="How%20to%20implement%20an%20abstract%20class%20in%20ruby%3F%20-%20Stack%20Overflow_files/72156ae7d17b4328808246c02701d7b0.png" title="" alt="" border="0" height="90" width="728"></a><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input value="12" name="downvoteReason" type="radio">Uninteresting</label></li><li><label><input value="13" name="downvoteReason" type="radio">Misleading</label></li><li><label><input value="14" name="downvoteReason" type="radio">Offensive</label></li><li><label><input value="15" name="downvoteReason" type="radio">Repetitive</label></li><li><label><input value="16" name="downvoteReason" type="radio">Other</label></li></ul><a href="#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div><img src="How%20to%20implement%20an%20abstract%20class%20in%20ruby%3F%20-%20Stack%20Overflow_files/i_003.gif" style="position:absolute;" border="0" height="0px" width="0px"></div>
+  
+<a name="2502835"></a>
+<div id="answer-2502835" class="answer" data-answerid="2502835" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="2502835" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">86</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Just to chime in late here, I think that there's no reason to stop somebody from instantiating the abstract class, <a href="http://asqyzeron.wordpress.com/2007/01/14/toying-with-the-dynamic-features-of-ruby-adding-methods-at-run-time/">especially because they can add methods to it on the fly</a>. </p>
+
+<p>Duck-typing languages, like Ruby, use the presence/absence or 
+behavior of methods at runtime to determine whether they should be 
+called or not. Therefore your question, as it applies to an abstract <strong>method</strong>, makes sense</p>
+
+<pre style="" class="lang-rb prettyprint prettyprinted"><code><span class="kwd">def</span><span class="pln"> get_db_name
+   raise </span><span class="str">'this method should be overriden and return the db name'</span><span class="pln">
+</span><span class="kwd">end</span></code></pre>
+
+<p>and that should be about the end of the story. The only reason to use
+ abstract classes in Java is to insist that certain methods get 
+"filled-in" while others have their behavior in the abstract class. In a
+ duck-typing language, the focus is on methods, not on classes/types, so
+ you should move your worries to that level.</p>
+
+<p>In your question, you're basically trying to recreate the <code>abstract</code> keyword from Java, which is a code-smell for doing Java in Ruby.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/2502835" title="short permalink to this answer" class="short-link" id="link-post-2502835">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/2502835/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td class="post-signature" align="right">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/2502835/revisions" title="show all edits to this post">edited <span title="2010-03-24 13:02:06Z" class="relativetime">Mar 24 '10 at 13:02</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2010-03-23 19:05:31Z" class="relativetime">Mar 23 '10 at 19:05</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/8047/dan-rosenstark"><div class="gravatar-wrapper-32"><img src="How%20to%20implement%20an%20abstract%20class%20in%20ruby%3F%20-%20Stack%20Overflow_files/771d6811baa1b117dd8a5ff0708fc66b.jpeg" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/8047/dan-rosenstark">Dan Rosenstark</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 31767" dir="ltr">31.8k</span><span title="39 gold badges"><span class="badge1"></span><span class="badgecount">39</span></span><span title="182 silver badges"><span class="badge2"></span><span class="badgecount">182</span></span><span title="310 bronze badges"><span class="badge3"></span><span class="badgecount">310</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+            
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-2502835" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="1" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-21529850" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="cool">2</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Abstract classes are a code smell, even in Java.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/413414/christopher-perry" title="12797 reputation" class="comment-user">Christopher Perry</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment21529850_2502835"><span title="2013-03-07 05:06:47Z" class="relativetime-clean">Mar 7 '13 at 5:06</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-27366053" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="cool">2</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@Christopher Perry: Any reasons why?</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/434562/sasq" title="3753 reputation" class="comment-user">SasQ</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment27366053_2502835"><span title="2013-09-03 14:39:28Z" class="relativetime-clean">Sep 3 '13 at 14:39</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-27373231" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="warm">8</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@ChristopherPerry I still don't get it. Why shouldn't I want this dependency if the parent and sibling <i>are</i>
+ related after all and I want this relation to be explicit? Also, to 
+compose an object of some class inside some other class you need to know
+ its definition too. Inheritance is usually implemented as composition, 
+it just makes the interface of the composed object to be a part of the 
+interface of the class which embeds it. So you need the definition of 
+the embedded or inherited object nevertheless. Or maybe you're talking 
+about something else? Can you elaborate some more on that?</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/434562/sasq" title="3753 reputation" class="comment-user">SasQ</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment27373231_2502835"><span title="2013-09-03 18:23:38Z" class="relativetime-clean">Sep 3 '13 at 18:23</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-27374378" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@SasQ, You don't need to know
+ the parent class' implementation details to compose it, you need only 
+know its' API. However, if you inherit you are reliant on the parents' 
+implementation. Should the implementation change your code could break 
+in unexpected ways. More details <a href="http://books.google.com/books?id=ka2VUBqHiWkC&amp;pg=PA81&amp;lpg=PA81&amp;dq=inheritance+vs+composition+joshua+bloch&amp;source=bl&amp;ots=yYJnKhr5R3&amp;sig=Q6EbGV0EZXh8Ugv26Z69tGT9N0I&amp;hl=en&amp;sa=X&amp;ei=6TEmUpvUKvipsASLvoGIBA&amp;ved=0CCwQ6AEwAA#v=onepage&amp;q=inheritance%20vs%20composition%20joshua%20bloch&amp;f=false" rel="nofollow">here</a></span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/413414/christopher-perry" title="12797 reputation" class="comment-user">Christopher Perry</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment27374378_2502835"><span title="2013-09-03 19:04:45Z" class="relativetime-clean">Sep 3 '13 at 19:04</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-33140094" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="warm">7</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Sorry, but "Favor composition
+ over inheritance" doesn't say "Always user composition". Although in 
+general inheritance should be avoided, there are a couple of use cases 
+when they just fit better. Don't follow blindly the book.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/504845/nowaker" title="4979 reputation" class="comment-user">Nowaker</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment33140094_2502835"><span title="2014-02-19 16:16:11Z" class="relativetime-clean">Feb 19 '14 at 16:16</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-2502835" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link  dno" title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."></a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link " title="expand to show all comments on this post" href="#" onclick="">show <b>1</b> more comment</a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="512568"></a>
+<div id="answer-512568" class="answer" data-answerid="512568" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="512568" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">29</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Try this:</p>
+
+<pre style="" class="lang-rb prettyprint prettyprinted"><code><span class="kwd">class</span><span class="pln"> A
+  </span><span class="kwd">def</span><span class="pln"> initialize
+    raise </span><span class="str">'Doh! You are trying to instantiate an abstract class!'</span><span class="pln">
+  </span><span class="kwd">end</span><span class="pln">
+</span><span class="kwd">end</span><span class="pln">
+
+</span><span class="kwd">class</span><span class="pln"> B </span><span class="pun">&lt;</span><span class="pln"> A
+  </span><span class="kwd">def</span><span class="pln"> initialize
+  </span><span class="kwd">end</span><span class="pln">
+</span><span class="kwd">end</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/512568" title="short permalink to this answer" class="short-link" id="link-post-512568">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/512568/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2009-02-04 18:06:50Z" class="relativetime">Feb 4 '09 at 18:06</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/608/andrew-peters"><div class="gravatar-wrapper-32"><img src="How%20to%20implement%20an%20abstract%20class%20in%20ruby%3F%20-%20Stack%20Overflow_files/4cf5f3217e56c05247482eca4a673cdf.jpeg" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/608/andrew-peters">Andrew Peters</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">7,433</span><span title="2 gold badges"><span class="badge1"></span><span class="badgecount">2</span></span><span title="27 silver badges"><span class="badge2"></span><span class="badgecount">27</span></span><span title="32 bronze badges"><span class="badge3"></span><span class="badgecount">32</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+            
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-512568" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-2497450" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">this is fine +1</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/8047/dan-rosenstark" title="31767 reputation" class="comment-user">Dan Rosenstark</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment2497450_512568"><span title="2010-03-23 18:56:02Z" class="relativetime-clean">Mar 23 '10 at 18:56</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-3513991" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="hot">27</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">If you want to be able to use super in <code>#initialize</code> of B, you can actually just raise whatever in A#initialize <code>if self.class == A</code>.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/148195/mk12" title="8417 reputation" class="comment-user">Mk12</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment3513991_512568"><span title="2010-08-01 02:49:19Z" class="relativetime-clean">Aug 1 '10 at 2:49</span></a></span>
+                    <span class="edited-yes" title="this comment was edited 2 times"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-512568" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="513140"></a>
+<div id="answer-513140" class="answer" data-answerid="513140" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="513140" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">9</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>In the last 6 1/2 years of programming Ruby, I haven't <em>needed</em> an abstract class once.</p>
+
+<p>If you're thinking you need an abstract class, you're thinking too 
+much in a language that provides/requires them, not in Ruby as such.</p>
+
+<p>As others have suggested, a mixin is more appropriate for things that
+ are supposed to be interfaces (as Java defines them), and rethinking 
+your design is more appropriate for things that "need" abstract classes 
+from other languages like C++.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/513140" title="short permalink to this answer" class="short-link" id="link-post-513140">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/513140/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2009-02-04 20:27:44Z" class="relativetime">Feb 4 '09 at 20:27</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/36378/austin-ziegler"><div class="gravatar-wrapper-32"><img src="How%20to%20implement%20an%20abstract%20class%20in%20ruby%3F%20-%20Stack%20Overflow_files/67909c200a726f105536f4c17f4c85e8.jpeg" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/36378/austin-ziegler">Austin Ziegler</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">449</span><span title="7 silver badges"><span class="badge2"></span><span class="badgecount">7</span></span><span title="13 bronze badges"><span class="badge3"></span><span class="badgecount">13</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+            
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-513140" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-4633431" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="hot">17</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">You don't /need/ an abstract 
+class in Java either.  It's a way to document that it is a base class 
+and shouldn't be instantiated for people extending your class.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/12982/fijiaaron" title="1597 reputation" class="comment-user">fijiaaron</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment4633431_513140"><span title="2010-11-25 01:56:13Z" class="relativetime-clean">Nov 25 '10 at 1:56</span></a></span>
+                    <span class="edited-yes" title="this comment was edited 2 times"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-22240562" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">IMO, few languages should 
+constrict your notions of object-oriented programming. What's 
+appropriate in a given situation should not depend on the language, 
+unless there's a performance related reason (or something more 
+compelling).</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/241367/thekingoftruth" title="852 reputation" class="comment-user">thekingoftruth</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment22240562_513140"><span title="2013-03-27 20:32:46Z" class="relativetime-clean">Mar 27 '13 at 20:32</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-27366343" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="warm">7</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@fijiaaron: If you think so, 
+then you definitely don't understand what abstract base classes are. 
+They're not much to "document" that a class shouldn't be instantiated 
+(it's rather a side-effect of it being abstract). It's more about 
+stating a common interface for a bunch of derived classes, which then 
+guarantees that it will be implemented (if not, the derived class will 
+remain abstract too). Its goal is to support the Liskov's Substitution 
+Principle for classes for which instantiation doesn't make much sense.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/434562/sasq" title="3753 reputation" class="comment-user">SasQ</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment27366343_513140"><span title="2013-09-03 14:46:55Z" class="relativetime-clean">Sep 3 '13 at 14:46</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-27366557" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">(contd.) Of course one can 
+make just several classes with some common methods &amp; properties in 
+them, but the compiler/interpreter won't know then that these classes 
+are in any way related. The names of methods &amp; properties can be the
+ same in each of these classes, but this one alone doesn't mean yet that
+ they represent the same functionality (the name correspondence could be
+ just accidental). The only way to tell the compiler about this relation
+ is to use a base class, but it doesn't always make sense for the 
+instances of this base class itself to exist.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/434562/sasq" title="3753 reputation" class="comment-user">SasQ</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment27366557_513140"><span title="2013-09-03 14:52:09Z" class="relativetime-clean">Sep 3 '13 at 14:52</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-513140" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="518851"></a>
+<div id="answer-518851" class="answer" data-answerid="518851" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="518851" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">8</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<pre style="" class="lang-rb prettyprint prettyprinted"><code><span class="kwd">class</span><span class="pln"> A
+  private_class_method </span><span class="pun">:</span><span class="pln">new
+</span><span class="kwd">end</span><span class="pln">
+
+</span><span class="kwd">class</span><span class="pln"> B </span><span class="pun">&lt;</span><span class="pln"> A
+  public_class_method </span><span class="pun">:</span><span class="pln">new
+</span><span class="kwd">end</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/518851" title="short permalink to this answer" class="short-link" id="link-post-518851">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/518851/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2009-02-06 02:11:32Z" class="relativetime">Feb 6 '09 at 2:11</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/48098/bluehavana"><div class="gravatar-wrapper-32"><img src="How%20to%20implement%20an%20abstract%20class%20in%20ruby%3F%20-%20Stack%20Overflow_files/4160902129b2ac1b060aad6335894651.jpeg" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/48098/bluehavana">bluehavana</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">398</span><span title="2 silver badges"><span class="badge2"></span><span class="badgecount">2</span></span><span title="10 bronze badges"><span class="badge3"></span><span class="badgecount">10</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+            
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-518851" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-2314203" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="warm">5</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Additionally one could use 
+the inherited hook of the parent class to make the constructor method 
+automatically visible in all subclasses: def A.inherited(subclass); 
+subclass.instance_eval { public_class_method :new }; end</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/114490/t6d" title="1284 reputation" class="comment-user">t6d</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment2314203_518851"><span title="2010-02-26 14:46:11Z" class="relativetime-clean">Feb 26 '10 at 14:46</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-2331441" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Very nice t6d. As a comment, just make sure its documented, as that is surprising behaviour (violates least surprise).</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/48098/bluehavana" title="398 reputation" class="comment-user">bluehavana</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment2331441_518851"><span title="2010-03-01 16:10:56Z" class="relativetime-clean">Mar 1 '10 at 16:10</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-518851" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="10528422"></a>
+<div id="answer-10528422" class="answer" data-answerid="10528422" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="10528422" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">8</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>My 2¢: I opt for a simple, lightweight DSL mixin:</p>
+
+<pre style="" class="lang-rb prettyprint prettyprinted"><code><span class="kwd">module</span><span class="pln"> </span><span class="typ">Abstract</span><span class="pln">
+  extend </span><span class="typ">ActiveSupport</span><span class="pun">::</span><span class="typ">Concern</span><span class="pln">
+
+  included </span><span class="kwd">do</span><span class="pln">
+
+    </span><span class="com"># Interface for declaratively indicating that one or more methods are to be</span><span class="pln">
+    </span><span class="com"># treated as abstract methods, only to be implemented in child classes.</span><span class="pln">
+    </span><span class="com">#</span><span class="pln">
+    </span><span class="com"># Arguments:</span><span class="pln">
+    </span><span class="com"># - methods (Symbol or Array) list of method names to be treated as</span><span class="pln">
+    </span><span class="com">#   abstract base methods</span><span class="pln">
+    </span><span class="com">#</span><span class="pln">
+    </span><span class="kwd">def</span><span class="pln"> </span><span class="kwd">self</span><span class="pun">.</span><span class="pln">abstract_methods</span><span class="pun">(*</span><span class="pln">methods</span><span class="pun">)</span><span class="pln">
+      methods</span><span class="pun">.</span><span class="pln">each </span><span class="kwd">do</span><span class="pln"> </span><span class="pun">|</span><span class="pln">method_name</span><span class="pun">|</span><span class="pln">
+
+        define_method method_name </span><span class="kwd">do</span><span class="pln">
+          raise </span><span class="typ">NotImplementedError</span><span class="pun">,</span><span class="pln"> </span><span class="str">'This is an abstract base method. Implement in your subclass.'</span><span class="pln">
+        </span><span class="kwd">end</span><span class="pln">
+
+      </span><span class="kwd">end</span><span class="pln">
+    </span><span class="kwd">end</span><span class="pln">
+
+  </span><span class="kwd">end</span><span class="pln">
+
+</span><span class="kwd">end</span><span class="pln">
+
+</span><span class="com"># Usage:</span><span class="pln">
+</span><span class="kwd">class</span><span class="pln"> </span><span class="typ">AbstractBaseWidget</span><span class="pln">
+  include </span><span class="typ">Abstract</span><span class="pln">
+  abstract_methods </span><span class="pun">:</span><span class="pln">widgetify
+</span><span class="kwd">end</span><span class="pln">
+
+</span><span class="kwd">class</span><span class="pln"> </span><span class="typ">SpecialWidget</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln"> </span><span class="typ">AbstractBaseWidget</span><span class="pln">
+</span><span class="kwd">end</span><span class="pln">
+
+</span><span class="typ">SpecialWidget</span><span class="pun">.</span><span class="pln">new</span><span class="pun">.</span><span class="pln">widgetify </span><span class="com"># &lt;= raises NotImplementedError</span></code></pre>
+
+<p>And, of course, adding another error for initializing the base class would be trivial in this case.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/10528422" title="short permalink to this answer" class="short-link" id="link-post-10528422">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/10528422/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2012-05-10 06:15:35Z" class="relativetime">May 10 '12 at 6:15</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/886856/anthony-navarre"><div class="gravatar-wrapper-32"><img src="How%20to%20implement%20an%20abstract%20class%20in%20ruby%3F%20-%20Stack%20Overflow_files/3e47260133efe556a2ddb3991e5240b9.jpeg" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/886856/anthony-navarre">Anthony Navarre</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">241</span><span title="2 silver badges"><span class="badge2"></span><span class="badgecount">2</span></span><span title="6 bronze badges"><span class="badge3"></span><span class="badgecount">6</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+            
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-10528422" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-13618348" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">EDIT: For good measure, since this approach uses define_method, one might want to make sure backtrace remains intact, eg: <code>err = NotImplementedError.new(message); err.set_backtrace caller()</code> YMMV</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/886856/anthony-navarre" title="241 reputation" class="comment-user">Anthony Navarre</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment13618348_10528422"><span title="2012-05-10 06:18:53Z" class="relativetime-clean">May 10 '12 at 6:18</span></a></span>
+                    <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-57287665" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">I find this approach to be quite elegant. Thank you for your contribution to this question.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/1483788/wes-hysell" title="240 reputation" class="comment-user">wes.hysell</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment57287665_10528422"><span title="2016-01-13 16:05:05Z" class="relativetime-clean">Jan 13 at 16:05</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-10528422" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="512818"></a>
+<div id="answer-512818" class="answer" data-answerid="512818" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="512818" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">4</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>If you want to go with an uninstantiable class, in your A.new method, check if self == A before throwing the error.</p>
+
+<p>But really, a module seems more like what you want here — for 
+example, Enumerable is the sort of thing that might be an abstract class
+ in other languages. You technically can't subclass them, but calling <code>include SomeModule</code> achieves roughly the same goal. Is there some reason this won't work for you?</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/512818" title="short permalink to this answer" class="short-link" id="link-post-512818">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/512818/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2009-02-04 19:08:03Z" class="relativetime">Feb 4 '09 at 19:08</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/50742/chuck"><div class="gravatar-wrapper-32"><img src="How%20to%20implement%20an%20abstract%20class%20in%20ruby%3F%20-%20Stack%20Overflow_files/03cdad7329f1a13d2b2f3d9c8a08813d.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/50742/chuck">Chuck</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 165699" dir="ltr">166k</span><span title="18 gold badges"><span class="badge1"></span><span class="badgecount">18</span></span><span title="220 silver badges"><span class="badge2"></span><span class="badgecount">220</span></span><span title="328 bronze badges"><span class="badge3"></span><span class="badgecount">328</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+            
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-512818" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-512818" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="512482"></a>
+<div id="answer-512482" class="answer" data-answerid="512482" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="512482" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">3</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Personally I raise NotImplementedError in methods of abstract 
+classes. But you may want to leave it out of the 'new' method, for the 
+reasons you mentioned.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/512482" title="short permalink to this answer" class="short-link" id="link-post-512482">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/512482/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2009-02-04 17:39:40Z" class="relativetime">Feb 4 '09 at 17:39</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/62052/zack"><div class="gravatar-wrapper-32"><img src="How%20to%20implement%20an%20abstract%20class%20in%20ruby%3F%20-%20Stack%20Overflow_files/ef760aa59820d25550b6b928f658c6e4.jpeg" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/62052/zack">Zack</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">189</span><span title="7 bronze badges"><span class="badge3"></span><span class="badgecount">7</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+            
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-512482" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-326142" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">But then how to stop it from being instantiated?</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/45942/chirantan" title="7625 reputation" class="comment-user owner">Chirantan</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment326142_512482"><span title="2009-02-04 17:42:05Z" class="relativetime-clean">Feb 4 '09 at 17:42</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-326153" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Personally I'm just getting 
+started with Ruby, but in Python, subclasses with declared __init___() 
+methods don't automatically call their superclasses' __init__() methods.
+ I would hope there would be a similar concept in Ruby, but like I said 
+I'm just getting started.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/62052/zack" title="189 reputation" class="comment-user">Zack</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment326153_512482"><span title="2009-02-04 17:45:22Z" class="relativetime-clean">Feb 4 '09 at 17:45</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-3511463" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">In ruby parent's <code>initialize</code> methods don't get called automatically unless explicitly called with super.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/148195/mk12" title="8417 reputation" class="comment-user">Mk12</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment3511463_512482"><span title="2010-07-31 15:17:00Z" class="relativetime-clean">Jul 31 '10 at 15:17</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-512482" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="513118"></a>
+<div id="answer-513118" class="answer" data-answerid="513118" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="513118" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">3</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Another answer:</p>
+
+<pre style="" class="lang-rb prettyprint prettyprinted"><code><span class="kwd">module</span><span class="pln"> </span><span class="typ">Abstract</span><span class="pln">
+  </span><span class="kwd">def</span><span class="pln"> </span><span class="kwd">self</span><span class="pun">.</span><span class="pln">append_features</span><span class="pun">(</span><span class="pln">klass</span><span class="pun">)</span><span class="pln">
+    </span><span class="com"># access an object's copy of its class's methods &amp; such</span><span class="pln">
+    metaclass </span><span class="pun">=</span><span class="pln"> lambda </span><span class="pun">{</span><span class="pln"> </span><span class="pun">|</span><span class="pln">obj</span><span class="pun">|</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="pun">&lt;&lt;</span><span class="pln"> obj</span><span class="pun">;</span><span class="pln"> </span><span class="kwd">self</span><span class="pln"> </span><span class="pun">;</span><span class="pln"> </span><span class="kwd">end</span><span class="pln"> </span><span class="pun">}</span><span class="pln">
+
+    metaclass</span><span class="pun">[</span><span class="pln">klass</span><span class="pun">].</span><span class="pln">instance_eval </span><span class="kwd">do</span><span class="pln">
+      old_new </span><span class="pun">=</span><span class="pln"> instance_method</span><span class="pun">(:</span><span class="pln">new</span><span class="pun">)</span><span class="pln">
+      undef_method </span><span class="pun">:</span><span class="pln">new
+
+      define_method</span><span class="pun">(:</span><span class="pln">inherited</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">do</span><span class="pln"> </span><span class="pun">|</span><span class="pln">subklass</span><span class="pun">|</span><span class="pln">
+        metaclass</span><span class="pun">[</span><span class="pln">subklass</span><span class="pun">].</span><span class="pln">instance_eval </span><span class="kwd">do</span><span class="pln">
+          define_method</span><span class="pun">(:</span><span class="pln">new</span><span class="pun">,</span><span class="pln"> old_new</span><span class="pun">)</span><span class="pln">
+        </span><span class="kwd">end</span><span class="pln">
+      </span><span class="kwd">end</span><span class="pln">
+    </span><span class="kwd">end</span><span class="pln">
+  </span><span class="kwd">end</span><span class="pln">
+</span><span class="kwd">end</span></code></pre>
+
+<p>This relies on the normal #method_missing to report unimplemented methods,
+but keeps abstract classes from being implemented (even if they have an initialize method)</p>
+
+<pre style="" class="lang-rb prettyprint prettyprinted"><code><span class="kwd">class</span><span class="pln"> A
+  include </span><span class="typ">Abstract</span><span class="pln">
+</span><span class="kwd">end</span><span class="pln">
+</span><span class="kwd">class</span><span class="pln"> B </span><span class="pun">&lt;</span><span class="pln"> A
+</span><span class="kwd">end</span><span class="pln">
+
+B</span><span class="pun">.</span><span class="pln">new </span><span class="com">#=&gt; #&lt;B:0x24ea0&gt;</span><span class="pln">
+A</span><span class="pun">.</span><span class="pln">new </span><span class="com"># raises #&lt;NoMethodError: undefined method `new' for A:Class&gt;</span></code></pre>
+
+<p>Like the other posters have said, you should probably be using a mixin though, rather than an abstract class.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/513118" title="short permalink to this answer" class="short-link" id="link-post-513118">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/513118/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2009-02-04 20:23:05Z" class="relativetime">Feb 4 '09 at 20:23</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/9859/rampion"><div class="gravatar-wrapper-32"><img src="How%20to%20implement%20an%20abstract%20class%20in%20ruby%3F%20-%20Stack%20Overflow_files/KEZOL.jpg" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/9859/rampion">rampion</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 48690" dir="ltr">48.7k</span><span title="17 gold badges"><span class="badge1"></span><span class="badgecount">17</span></span><span title="115 silver badges"><span class="badge2"></span><span class="badgecount">115</span></span><span title="233 bronze badges"><span class="badge3"></span><span class="badgecount">233</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+            
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-513118" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-513118" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="4050604"></a>
+<div id="answer-4050604" class="answer" data-answerid="4050604" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="4050604" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">3</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>I did it this way, so it redefines new on child class to find a new on non abstract class.
+I still don't see any practical in using abstract classes in ruby.</p>
+
+<pre style="" class="lang-rb prettyprint prettyprinted"><code><span class="pln">puts </span><span class="str">'test inheritance'</span><span class="pln">
+</span><span class="kwd">module</span><span class="pln"> </span><span class="typ">Abstract</span><span class="pln">
+  </span><span class="kwd">def</span><span class="pln"> new
+    throw </span><span class="str">'abstract!'</span><span class="pln">
+  </span><span class="kwd">end</span><span class="pln">
+  </span><span class="kwd">def</span><span class="pln"> inherited</span><span class="pun">(</span><span class="pln">child</span><span class="pun">)</span><span class="pln">
+    </span><span class="lit">@abstract</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">true</span><span class="pln">
+    puts </span><span class="str">'inherited'</span><span class="pln">
+    non_abstract_parent </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">self</span><span class="pun">.</span><span class="pln">superclass</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">while</span><span class="pln"> non_abstract_parent</span><span class="pun">.</span><span class="pln">instance_eval </span><span class="pun">{</span><span class="lit">@abstract</span><span class="pun">}</span><span class="pln">
+      non_abstract_parent </span><span class="pun">=</span><span class="pln"> non_abstract_parent</span><span class="pun">.</span><span class="pln">superclass
+    </span><span class="kwd">end</span><span class="pln">
+    puts </span><span class="str">"Non abstract superclass is #{non_abstract_parent}"</span><span class="pln">
+    </span><span class="pun">(</span><span class="kwd">class</span><span class="pln"> </span><span class="pun">&lt;&lt;</span><span class="pln"> child</span><span class="pun">;</span><span class="kwd">self</span><span class="pun">;</span><span class="kwd">end</span><span class="pun">).</span><span class="pln">instance_eval </span><span class="kwd">do</span><span class="pln">
+      define_method </span><span class="pun">:</span><span class="pln">new</span><span class="pun">,</span><span class="pln"> non_abstract_parent</span><span class="pun">.</span><span class="pln">method</span><span class="pun">(</span><span class="str">'new'</span><span class="pun">)</span><span class="pln">
+      </span><span class="com"># # Or this can be done in this style:</span><span class="pln">
+      </span><span class="com"># define_method :new do |*args,&amp;block|</span><span class="pln">
+        </span><span class="com"># non_abstract_parent.method('new').unbind.bind(self).call(*args,&amp;block)</span><span class="pln">
+      </span><span class="com"># end</span><span class="pln">
+    </span><span class="kwd">end</span><span class="pln">
+  </span><span class="kwd">end</span><span class="pln">
+</span><span class="kwd">end</span><span class="pln">
+
+</span><span class="kwd">class</span><span class="pln"> </span><span class="typ">AbstractParent</span><span class="pln">
+  extend </span><span class="typ">Abstract</span><span class="pln">
+  </span><span class="kwd">def</span><span class="pln"> initialize
+    puts </span><span class="str">'parent initializer'</span><span class="pln">
+  </span><span class="kwd">end</span><span class="pln">
+</span><span class="kwd">end</span><span class="pln">
+
+</span><span class="kwd">class</span><span class="pln"> </span><span class="typ">Child</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln"> </span><span class="typ">AbstractParent</span><span class="pln">
+  </span><span class="kwd">def</span><span class="pln"> initialize
+    puts </span><span class="str">'child initializer'</span><span class="pln">
+    </span><span class="kwd">super</span><span class="pln">
+  </span><span class="kwd">end</span><span class="pln">
+</span><span class="kwd">end</span><span class="pln">
+
+</span><span class="com"># AbstractParent.new</span><span class="pln">
+puts </span><span class="typ">Child</span><span class="pun">.</span><span class="pln">new
+
+</span><span class="kwd">class</span><span class="pln"> </span><span class="typ">AbstractChild</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln"> </span><span class="typ">AbstractParent</span><span class="pln">
+  extend </span><span class="typ">Abstract</span><span class="pln">
+</span><span class="kwd">end</span><span class="pln">
+
+</span><span class="kwd">class</span><span class="pln"> </span><span class="typ">Child2</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln"> </span><span class="typ">AbstractChild</span><span class="pln">
+
+</span><span class="kwd">end</span><span class="pln">
+puts </span><span class="typ">Child2</span><span class="pun">.</span><span class="pln">new</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/4050604" title="short permalink to this answer" class="short-link" id="link-post-4050604">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/4050604/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2010-10-29 09:30:32Z" class="relativetime">Oct 29 '10 at 9:30</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/491116/zeusthetruegod"><div class="gravatar-wrapper-32"><img src="How%20to%20implement%20an%20abstract%20class%20in%20ruby%3F%20-%20Stack%20Overflow_files/548a765e0e61303472b7eb1d2a9f0de5.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/491116/zeusthetruegod">ZeusTheTrueGod</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">31</span><span title="1 bronze badge"><span class="badge3"></span><span class="badgecount">1</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+            
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-4050604" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-4050604" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="7038863"></a>
+<div id="answer-7038863" class="answer" data-answerid="7038863" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="7038863" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">3</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>You can try 3 rubygems:<br>
+<a href="http://rubygems.org/gems/interface" rel="nofollow">interface</a><br>
+<a href="http://rubygems.org/gems/abstract" rel="nofollow">abstract</a><br>
+<a href="https://rubygems.org/gems/simple_abstract" rel="nofollow">simple abstract</a></p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/7038863" title="short permalink to this answer" class="short-link" id="link-post-7038863">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/7038863/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td class="post-signature" align="right">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/7038863/revisions" title="show all edits to this post">edited <span title="2012-08-16 22:04:34Z" class="relativetime">Aug 16 '12 at 22:04</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2011-08-12 10:32:22Z" class="relativetime">Aug 12 '11 at 10:32</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/473429/nicklasos"><div class="gravatar-wrapper-32"><img src="How%20to%20implement%20an%20abstract%20class%20in%20ruby%3F%20-%20Stack%20Overflow_files/60119c8463c5ba067c2c040a01e7bf95.jpeg" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/473429/nicklasos">Nicklasos</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">496</span><span title="2 silver badges"><span class="badge2"></span><span class="badgecount">2</span></span><span title="8 bronze badges"><span class="badge3"></span><span class="badgecount">8</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+            
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-7038863" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-7038863" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="513106"></a>
+<div id="answer-513106" class="answer" data-answerid="513106" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="513106" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">2</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>What purpose are you trying to serve with an abstract class? There is
+ probably a better way to do it in ruby, but you didn't give any 
+details.</p>
+
+<p>My pointer is this; use a <a href="http://www.rubycentral.com/pickaxe/tut_modules.html" rel="nofollow">mixin</a> not inheritance.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/513106" title="short permalink to this answer" class="short-link" id="link-post-513106">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/513106/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2009-02-04 20:19:45Z" class="relativetime">Feb 4 '09 at 20:19</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/46505/jshen"><div class="gravatar-wrapper-32"><img src="How%20to%20implement%20an%20abstract%20class%20in%20ruby%3F%20-%20Stack%20Overflow_files/d3c1b61ef7ad0da5162130ca0f3a8aea.jpeg" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/46505/jshen">jshen</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">4,701</span><span title="5 gold badges"><span class="badge1"></span><span class="badgecount">5</span></span><span title="20 silver badges"><span class="badge2"></span><span class="badgecount">20</span></span><span title="43 bronze badges"><span class="badge3"></span><span class="badgecount">43</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+            
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-513106" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-513106" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="25717818"></a>
+<div id="answer-25717818" class="answer" data-answerid="25717818" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="25717818" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">2</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>There's also this small <code>abstract_type</code> gem, allowing to declare abstract classes and modules in an unobstrusive way.</p>
+
+<p>Example (from the <a href="https://github.com/dkubb/abstract_type/blob/master/README.md" rel="nofollow">README.md</a> file):</p>
+
+<pre style="" class="lang-rb prettyprint prettyprinted"><code><span class="kwd">class</span><span class="pln"> </span><span class="typ">Foo</span><span class="pln">
+  include </span><span class="typ">AbstractType</span><span class="pln">
+
+  </span><span class="com"># Declare abstract instance method</span><span class="pln">
+  abstract_method </span><span class="pun">:</span><span class="pln">bar
+
+  </span><span class="com"># Declare abstract singleton method</span><span class="pln">
+  abstract_singleton_method </span><span class="pun">:</span><span class="pln">baz
+</span><span class="kwd">end</span><span class="pln">
+
+</span><span class="typ">Foo</span><span class="pun">.</span><span class="pln">new  </span><span class="com"># raises NotImplementedError: Foo is an abstract type</span><span class="pln">
+</span><span class="typ">Foo</span><span class="pun">.</span><span class="pln">baz  </span><span class="com"># raises NotImplementedError: Foo.baz is not implemented</span><span class="pln">
+
+</span><span class="com"># Subclassing to allow instantiation</span><span class="pln">
+</span><span class="kwd">class</span><span class="pln"> </span><span class="typ">Baz</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln"> </span><span class="typ">Foo</span><span class="pun">;</span><span class="pln"> </span><span class="kwd">end</span><span class="pln">
+
+object </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Baz</span><span class="pun">.</span><span class="pln">new
+object</span><span class="pun">.</span><span class="pln">bar  </span><span class="com"># raises NotImplementedError: Baz#bar is not implemented</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/25717818" title="short permalink to this answer" class="short-link" id="link-post-25717818">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/25717818/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2014-09-08 05:15:12Z" class="relativetime">Sep 8 '14 at 5:15</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/172827/%e3%82%b7%e3%83%aa%e3%83%ab"><div class="gravatar-wrapper-32"><img src="How%20to%20implement%20an%20abstract%20class%20in%20ruby%3F%20-%20Stack%20Overflow_files/351ab0ddeb5b6d1d3b5ce3b2b32ee871.jpeg" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/172827/%e3%82%b7%e3%83%aa%e3%83%ab">シリル</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">59</span><span title="1 silver badge"><span class="badge2"></span><span class="badgecount">1</span></span><span title="3 bronze badges"><span class="badge3"></span><span class="badgecount">3</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+            
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-25717818" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-25717818" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="512506"></a>
+<div id="answer-512506" class="answer" data-answerid="512506" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="512506" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">1</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Nothing wrong with your approach.  Raise an error in initialize seems
+ fine, as long as all your subclasses override initialize of course.  
+But you dont want to define self.new like that.  Here's what I would do.</p>
+
+<pre style="" class="lang-rb prettyprint prettyprinted"><code><span class="kwd">class</span><span class="pln"> A
+  </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">AbstractClassInstiationError</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln"> </span><span class="typ">RuntimeError</span><span class="pun">;</span><span class="pln"> </span><span class="kwd">end</span><span class="pln">
+  </span><span class="kwd">def</span><span class="pln"> initialize
+    raise </span><span class="typ">AbstractClassInstiationError</span><span class="pun">,</span><span class="pln"> </span><span class="str">"Cannot instantiate this class directly, etc..."</span><span class="pln">
+  </span><span class="kwd">end</span><span class="pln">
+</span><span class="kwd">end</span></code></pre>
+
+<p>Another approach would be put all that functionality in a module, 
+which as you mentioned can never be instiated.  Then include the module 
+in your classes rather than inheriting from another class.  However, 
+this would break things like super.</p>
+
+<p>So it depends on how you want to structure it.  Although modules seem
+ like a cleaner solution for solving the problem of "How do I write some
+ stuff that is deigned for other classes to use"</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/512506" title="short permalink to this answer" class="short-link" id="link-post-512506">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/512506/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2009-02-04 17:48:33Z" class="relativetime">Feb 4 '09 at 17:48</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/62076/alex-wayne"><div class="gravatar-wrapper-32"><img src="How%20to%20implement%20an%20abstract%20class%20in%20ruby%3F%20-%20Stack%20Overflow_files/62c90b6f399e6b95554b2da31ca8619a.jpeg" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/62076/alex-wayne">Alex Wayne</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 78816" dir="ltr">78.8k</span><span title="26 gold badges"><span class="badge1"></span><span class="badgecount">26</span></span><span title="187 silver badges"><span class="badge2"></span><span class="badgecount">187</span></span><span title="237 bronze badges"><span class="badge3"></span><span class="badgecount">237</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+            
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-512506" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-326796" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">I wouldn't want to do that, either. The children can't call "super", then.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/36378/austin-ziegler" title="449 reputation" class="comment-user">Austin Ziegler</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment326796_512506"><span title="2009-02-04 20:24:13Z" class="relativetime-clean">Feb 4 '09 at 20:24</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-512506" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="6582321"></a>
+<div id="answer-6582321" class="answer" data-answerid="6582321" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="6582321" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">1</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>2-lines gem : <a href="https://rubygems.org/gems/abstract" rel="nofollow">https://rubygems.org/gems/abstract</a></p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/6582321" title="short permalink to this answer" class="short-link" id="link-post-6582321">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/6582321/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2011-07-05 12:01:11Z" class="relativetime">Jul 5 '11 at 12:01</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/75246/nikos-d"><div class="gravatar-wrapper-32"><img src="How%20to%20implement%20an%20abstract%20class%20in%20ruby%3F%20-%20Stack%20Overflow_files/59bbe3780ec28c45b4945f00435efeb3.jpeg" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/75246/nikos-d">Nikos D</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">323</span><span title="1 silver badge"><span class="badge2"></span><span class="badgecount">1</span></span><span title="13 bronze badges"><span class="badge3"></span><span class="badgecount">13</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+            
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-6582321" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-6582321" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="30466017"></a>
+<div id="answer-30466017" class="answer" data-answerid="30466017" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="30466017" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">0</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>for anyone in the rails world, implementing an ActiveRecord model as 
+an abstract class is done with this declaration in the model file:</p>
+
+<pre style="" class="lang-rb prettyprint prettyprinted"><code><span class="kwd">self</span><span class="pun">.</span><span class="pln">abstract_class </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">true</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/30466017" title="short permalink to this answer" class="short-link" id="link-post-30466017">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/30466017/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2015-05-26 18:19:36Z" class="relativetime">May 26 '15 at 18:19</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/2865270/fred-willmore"><div class="gravatar-wrapper-32"><img src="How%20to%20implement%20an%20abstract%20class%20in%20ruby%3F%20-%20Stack%20Overflow_files/picture.jpeg" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/2865270/fred-willmore">Fred Willmore</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">542</span><span title="5 silver badges"><span class="badge2"></span><span class="badgecount">5</span></span><span title="9 bronze badges"><span class="badge3"></span><span class="badgecount">9</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+            
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-30466017" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-30466017" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+									<a name="new-answer"></a>
+						<form id="post-form" action="/questions/512466/answer/submit" method="post" class="post-form">
+						    <input id="post-id" value="512466" type="hidden">
+                            <input id="qualityBanWarningShown" name="qualityBanWarningShown" value="false" type="hidden">
+                            <input name="referrer" value="http://www.google.co.in/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;ved=0ahUKEwir1-DGvqbLAhXUW44KHeT0BsMQFggbMAA&amp;url=http%3A%2F%2Fstackoverflow.com%2Fquestions%2F512466%2Fhow-to-implement-an-abstract-class-in-ruby&amp;usg=AFQjCNHThKWoj-QBz68sjspBlSP1Dfh8Iw" type="hidden">
+							<h2 class="space">Your Answer</h2>
+
+
+            <script>
+            StackExchange.ifUsing("editor", function () {
+                StackExchange.using("externalEditor", function () {
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.init();
+                    });
+                });
+            }, "code-snippets");
+        </script>
+    
+
+<script>
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+       
+        StackExchange.using("externalEditor", function() {
+                // Have to fire editor after snippets, if snippets enabled
+                if (StackExchange.options.snippets.enabled) {
+                    StackExchange.using("snippets", function() {
+                        createEditor();
+                    });
+                }
+                else {
+                    createEditor();
+                }
+            });
+
+            function createEditor() {
+                prepareEditor({
+                    heartbeatType: 'answer',
+                convertImagesToLinks: true,
+                reputationToPostImages: 10,
+                bindNavPrevention: true,
+                postfix: "",
+                    onDemand: true,
+                    discardSelector: ".discard-answer"
+                    ,immediatelyShowMarkdownHelp:true
+                    });
+                
+
+        }
+    });  
+</script>
+
+
+<div id="post-editor" class="post-editor js-post-editor">
+
+    <div style="position: relative;">     
+        <div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li style="left: 0px;" class="wmd-button" id="wmd-bold-button"><span style="background-position: 0px -20px;"></span></li><li style="left: 25px;" class="wmd-button" id="wmd-italic-button"><span style="background-position: -20px -20px;"></span></li><li style="left: 50px;" class="wmd-spacer" id="wmd-spacer1"><span style="background-position: -40px -20px;"></span></li><li style="left: 75px;" class="wmd-button" id="wmd-link-button"><span style="background-position: -40px -20px;"></span></li><li style="left: 100px;" class="wmd-button" id="wmd-quote-button"><span style="background-position: -60px -20px;"></span></li><li style="left: 125px;" class="wmd-button" id="wmd-code-button"><span style="background-position: -80px -20px;"></span></li><li style="left: 150px;" class="wmd-button" id="wmd-image-button"><span style="background-position: -100px -20px;"></span></li><li style="left: 175px;" class="wmd-spacer" id="wmd-spacer2"><span style="background-position: -120px -20px;"></span></li><li style="left: 200px;" class="wmd-button" id="wmd-olist-button"><span style="background-position: -120px -20px;"></span></li><li style="left: 225px;" class="wmd-button" id="wmd-ulist-button"><span style="background-position: -140px -20px;"></span></li><li style="left: 250px;" class="wmd-button" id="wmd-heading-button"><span style="background-position: -160px -20px;"></span></li><li style="left: 275px;" class="wmd-button" id="wmd-hr-button"><span style="background-position: -180px -20px;"></span></li><li style="left: 300px;" class="wmd-spacer" id="wmd-spacer3"><span style="background-position: -200px -20px;"></span></li><li style="left: 325px;" class="wmd-button" id="wmd-undo-button"><span style="background-position: -200px -20px;"></span></li><li style="left: 350px;" class="wmd-button" id="wmd-redo-button"><span style="background-position: -220px -20px;"></span></li></ul></div>
+            <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+        </div>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" value="4bf9950a3dcc93f67e48551082ece4e2" type="hidden">
+        <input id="author" name="author" type="text">
+    </div>
+
+
+
+</div>
+							<div style="position: relative;">
+								
+								            <div class="form-item new-post-login">
+        
+                <div class="new-login-form">
+                    <div class="new-login-left">
+                        <h3>Sign up or <a id="login-link" href="http://stackoverflow.com/users/login?ssrc=question_page&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f512466%2fhow-to-implement-an-abstract-class-in-ruby%23new-answer">log in</a></h3>
+                        <script>
+                            StackExchange.ready(function () {
+                                StackExchange.helpers.onClickDraftSave('#login-link');
+                            });
+                        </script>
+                        <div class="preferred-login google-login">
+                            <p><span class="icon"></span><span>Sign up using Google</span></p>
+                        </div>
+                        <div class="preferred-login facebook-login">
+                            <p><span class="icon"></span><span>Sign up using Facebook</span></p>
+                        </div>
+                        <div class="preferred-login stackexchange-login">
+                            <p><span class="icon"></span><span>Sign up using Email and Password</span></p>
+                        </div>
+                    </div>
+                    <input name="manual-openid" class="manual-openid" type="hidden">
+                    <input name="use-facebook" class="use-facebook" value="false" type="hidden">
+                    <input name="use-google" class="use-google" value="false" type="hidden">
+                    <input class="submit-openid" value="Submit" style="display:none" type="button">
+                    <div class="new-login-right">
+                                <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tbody><tr>
+                    <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" size="30" maxlength="30" tabindex="105" type="text">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" size="30" maxlength="100" tabindex="106" placeholder="required, but never shown" type="email">
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <script>
+                StackExchange.ready(
+                    function () {
+                        StackExchange.openid.initPostLogin('.new-post-login', 'http%3a%2f%2fstackoverflow.com%2fquestions%2f512466%2fhow-to-implement-an-abstract-class-in-ruby%23new-answer', 'question_page');
+                    }
+                );
+            </script>
+            <noscript>
+                        <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tr>
+                    <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" type="email" size="30" maxlength="100" value="" tabindex="106" placeholder="required, but never shown" />
+                </div>
+            </td>
+        </tr>
+        </table>
+    </div>
+
+            </noscript>
+
+							</div>
+           
+															<div class="form-submit cbt">
+									<input id="submit-button" value="Post Your Answer" tabindex="110" type="submit">
+									<a href="#" class="discard-answer dno">discard</a>
+
+<p class="privacy-policy-agreement">
+By posting your answer, you agree to the <a href="http://stackexchange.com/legal/privacy-policy" target="_blank">privacy policy</a> and <a href="http://stackexchange.com/legal/terms-of-service" target="_blank">terms of service</a>.</p>
+<input name="legalLinksShown" value="1" type="hidden">								</div>
+						</form>
+
+
+
+						<h2 class="bottom-notice" data-loc="1">
+Not the answer you're looking for?							Browse other questions tagged <a href="http://stackoverflow.com/questions/tagged/ruby" class="post-tag" title="show questions tagged 'ruby'" rel="tag">ruby</a> <a href="http://stackoverflow.com/questions/tagged/abstract-class" class="post-tag" title="show questions tagged 'abstract-class'" rel="tag">abstract-class</a>  or <a href="http://stackoverflow.com/questions/ask">ask your own question</a>.						</h2>
+			</div>
+		</div>
+				<div id="sidebar" class="show-votes">
+						    <div class="module question-stats">
+			        <table id="qinfo">
+			            <tbody><tr>
+			                <td>
+			                    <p class="label-key">asked</p>
+			                </td>
+			                <td style="padding-left: 10px">
+			                    <p class="label-key" title="2009-02-04 17:35:43Z"><b>7 years ago</b></p>
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <p class="label-key">viewed</p>
+			                </td>
+
+			                <td style="padding-left: 10px">
+			                    <p class="label-key">
+			                        <b>50693 times</b>
+			                    </p>
+			                </td>
+			            </tr>
+			                <tr>
+			                    <td>
+			                        <p class="label-key">active</p>
+			                    </td>
+			                    <td style="padding-left: 10px">
+			                        <p class="label-key"><b><a href="http://stackoverflow.com/questions/512466/how-to-implement-an-abstract-class-in-ruby?lastactivity" class="lastactivity-link" title="2015-05-26 18:19:36Z">9 months ago</a></b></p>
+			                    </td>
+			                </tr>
+			        </tbody></table>
+			    </div>
+						
+			<script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk1067743274",[5,17,2221]).setZone(45); });
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk1067743274"><div id="careersadsdoublehigh" style="display:none;"></div><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input value="12" name="downvoteReason" type="radio">Uninteresting</label></li><li><label><input value="13" name="downvoteReason" type="radio">Misleading</label></li><li><label><input value="14" name="downvoteReason" type="radio">Offensive</label></li><li><label><input value="15" name="downvoteReason" type="radio">Repetitive</label></li><li><label><input value="16" name="downvoteReason" type="radio">Other</label></li></ul><a href="#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div><img src="How%20to%20implement%20an%20abstract%20class%20in%20ruby%3F%20-%20Stack%20Overflow_files/i_002.gif" style="position:absolute;" border="0" height="0px" width="0px"></div>
+        <div class=" orange looking tagged" id="hireme"><a href="http://stackoverflow.com/jobs" target="_blank" data-tz="1" data-ti="0" class="top"><span>Looking for a job?</span></a><div class="middle"><ul class="jobs"><li><a data-at="0" data-tz="3" data-ti="186758" href="http://stackoverflow.com/jobs/100811/chennai-bangalore-sahaj-software-solutions-pvt" target="_blank" title="☕ ⒹⒺⓋⒺⓁⓄⓅⒺⓇ - Chennai &amp; Bangalore at Sahaj Software Solutions Pvt Ltd. Click to learn more.">☕ ⒹⒺⓋⒺⓁⓄⓅⒺⓇ - Chennai &amp; Bangalore<br><div class="company">Sahaj Software Solutions Pvt Ltd</div><div class="location" title="Chennai, India">Chennai, India</div><span class="post-tag">java</span><span class="post-tag">rubys</span></a></li><li><a data-at="0" data-tz="3" data-ti="152121" href="http://stackoverflow.com/jobs/65650/application-developer-chennai-thoughtworks-technologies" target="_blank" title="Application Developer,Chennai at ThoughtWorks Technologies. Click to learn more.">Application Developer,Chennai<br><div class="company">ThoughtWorks Technologies</div><div class="location" title="Chennai, India">Chennai, India</div><span class="post-tag">ruby</span><span class="post-tag">java</span></a></li><li><a data-at="0" data-tz="3" data-ti="152116" href="http://stackoverflow.com/jobs/65645/application-developer-bangalore-thoughtworks-technologies" target="_blank" title="Application Developer, Bangalore at ThoughtWorks Technologies. Click to learn more.">Application Developer, Bangalore<br><div class="company">ThoughtWorks Technologies</div><div class="location" title="Bengaluru, India">Bengaluru, India</div><span class="post-tag">ruby</span><span class="post-tag">.net</span></a></li><li><a data-at="0" data-tz="3" data-ti="152118" href="http://stackoverflow.com/jobs/65647/application-developer-hyderabad-thoughtworks-technologies" target="_blank" title="Application Developer,Hyderabad at ThoughtWorks Technologies. Click to learn more.">Application Developer,Hyderabad<br><div class="company">ThoughtWorks Technologies</div><div class="location" title="Hyderabad, India">Hyderabad, India</div><span class="post-tag highlight">ruby-on-rails</span><span class="post-tag">.net</span></a></li></ul></div><img class="impression" src="How%20to%20implement%20an%20abstract%20class%20in%20ruby%3F%20-%20Stack%20Overflow_files/soi.gif" style="display:none;"></div>
+			  
+    
+            <div class="module sidebar-linked">
+	<h4 id="h-linked">Linked</h4>
+	<div class="linked" data-tracker="lq=1">
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/26867742?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">0</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/26867742/how-to-achieve-abstract-class-functionality-in-ruby?lq=1" class="question-hyperlink">how to achieve abstract class functionality in ruby</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/35735705?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">0</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/35735705/how-to-get-private-constructor-in-ruby?lq=1" class="question-hyperlink">How to get private constructor in ruby?</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/2850418?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">14</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/2850418/rails-sti-prevent-base-class-from-instantiation?lq=1" class="question-hyperlink">Rails STI - Prevent base class from instantiation</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/4846021?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">12</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/4846021/calling-a-subclass-method-from-a-superclass?lq=1" class="question-hyperlink">Calling a subclass method from a superclass</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/5028082?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">17</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/5028082/rails-3-activerecord-abstract-objects?lq=1" class="question-hyperlink">Rails 3 ActiveRecord abstract objects</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/5076933?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">11</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/5076933/interfaces-abstract-classes-unnecessary-in-ruby-can-someone-explain?lq=1" class="question-hyperlink">“Interfaces &amp; Abstract Classes unnecessary in Ruby” --&gt; Can someone explain?</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/4619941?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">2</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/4619941/simulating-abstract-classes-in-ruby-rails?lq=1" class="question-hyperlink">Simulating abstract classes in Ruby (Rails)</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/6990564?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">1</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/6990564/factoring-out-belongs-to-into-a-common-module?lq=1" class="question-hyperlink">Factoring out belongs_to into a common module</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/13570232?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">0</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/13570232/is-there-a-way-to-restrict-ruby-class-initialization-only-to-a-subclass?lq=1" class="question-hyperlink">Is there a way to restrict Ruby Class initialization only to a subclass?</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/31027478?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">1</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/31027478/integer-and-other-abstract-classes-in-ruby?lq=1" class="question-hyperlink">Integer and other (?) abstract classes in Ruby</a>
+</div>					<div class="spacer more">
+				<a href="http://stackoverflow.com/questions/linked/512466?lq=1">see more linked questions…</a>
+			</div>
+	</div>
+</div>
+
+				<div class="module sidebar-related">
+					<h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/243274?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted large">282
+    </div>
+</a><a href="http://stackoverflow.com/questions/243274/how-to-unit-test-abstract-classes-extend-with-stubs?rq=1" class="question-hyperlink">How to unit test abstract classes: extend with stubs?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/761194?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted large">732
+    </div>
+</a><a href="http://stackoverflow.com/questions/761194/interface-vs-abstract-class-general-oo?rq=1" class="question-hyperlink">Interface vs Abstract Class (general OO)</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/948135?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted extra-large">1306
+    </div>
+</a><a href="http://stackoverflow.com/questions/948135/how-can-i-write-a-switch-statement-in-ruby?rq=1" class="question-hyperlink">How can I write a switch statement in Ruby?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/1034373?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted large">446
+    </div>
+</a><a href="http://stackoverflow.com/questions/1034373/creating-an-abstract-class-in-objective-c?rq=1" class="question-hyperlink">Creating an abstract class in Objective C</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/1913098?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted large">786
+    </div>
+</a><a href="http://stackoverflow.com/questions/1913098/what-is-the-difference-between-an-interface-and-abstract-class?rq=1" class="question-hyperlink">What is the difference between an interface and abstract class?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/2590172?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">2
+    </div>
+</a><a href="http://stackoverflow.com/questions/2590172/ruby-abstract-class-design?rq=1" class="question-hyperlink">Ruby Abstract Class Design</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/4004336?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">5
+    </div>
+</a><a href="http://stackoverflow.com/questions/4004336/alternatives-to-abstract-classes-in-ruby?rq=1" class="question-hyperlink">Alternatives to abstract classes in Ruby?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/18777989?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes large">119
+    </div>
+</a><a href="http://stackoverflow.com/questions/18777989/how-should-i-have-explained-the-difference-between-an-interface-and-an-abstract?rq=1" class="question-hyperlink">How should I have explained the difference between an Interface and an Abstract class?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/21739363?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/21739363/how-to-determine-which-implementation-of-an-abstract-class-to-use?rq=1" class="question-hyperlink">How to determine which implementation of an abstract class to use?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/29902623?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/29902623/ruby-designing-architecture-interfaces-or-abstract-classes?rq=1" class="question-hyperlink">Ruby Designing architecture: Interfaces or Abstract classes</a>
+</div>
+
+                    </div>
+				</div>
+            
+<div id="hot-network-questions" class="module">
+    <h4>
+        <a href="http://stackexchange.com/questions?tab=hot" class="js-gps-track" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li>
+                <div class="favicon favicon-stackoverflow" title="Stack Overflow"></div><a href="http://stackoverflow.com/questions/35764905/why-is-pure-polymorphism-preferable-over-using-rtti" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:1 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why is 'pure polymorphism' preferable over using RTTI?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-programmers" title="Programmers Stack Exchange"></div><a href="http://programmers.stackexchange.com/questions/311507/why-are-eval-like-features-considered-evil-in-contrast-to-other-possibly-harmfu" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:131 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why are eval-like features considered evil, in contrast to other possibly harmful features?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-serverfault" title="Server Fault"></div><a href="http://serverfault.com/questions/761247/how-is-possible-that-the-web-site-is-down-but-the-traceroute-is-ok" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:2 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How is possible that the web site is down but the traceroute is ok?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-photo" title="Photography Stack Exchange"></div><a href="http://photo.stackexchange.com/questions/75287/shooting-food-pictures-with-steam-need-help-with-the-settings" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:61 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Shooting food pictures with steam. Need help with the settings
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-gaming" title="Arqade"></div><a href="http://gaming.stackexchange.com/questions/256801/whats-the-difference-between-bug-and-glitch" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:41 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What's the difference between "Bug" and "Glitch"?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="http://codegolf.stackexchange.com/questions/74698/how-many-characters-are-there-on-the-icon-of-a-stack-exchange-site" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How many characters are there on the icon of a Stack Exchange site?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-matheducators" title="Mathematics Educators Stack Exchange"></div><a href="http://matheducators.stackexchange.com/questions/10680/what-books-are-like-knuths-surreal-numbers" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:548 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What books are like Knuth's Surreal Numbers?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-unix" title="Unix &amp; Linux Stack Exchange"></div><a href="http://unix.stackexchange.com/questions/267507/creating-a-shell-script-inside-a-text-editor" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:106 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Creating a shell script inside a text editor
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-askubuntu" title="Ask Ubuntu"></div><a href="http://askubuntu.com/questions/741723/moving-entire-linux-installation-to-another-drive" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:89 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Moving entire Linux installation to another drive
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="http://academia.stackexchange.com/questions/64384/should-i-warn-a-professor-about-his-bad-internet-security-practice" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Should I warn a professor about his bad internet security practice?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="http://academia.stackexchange.com/questions/64249/is-it-plagiarism-to-reference-a-fictitious-source" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is it plagiarism to reference a fictitious source?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-security" title="Information Security Stack Exchange"></div><a href="http://security.stackexchange.com/questions/116354/how-does-a-company-like-cloudflare-block-bot-crawling-and-email-harvesters" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How does a company like CloudFlare block bot crawling and email harvesters?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-cooking" title="Seasoned Advice"></div><a href="http://cooking.stackexchange.com/questions/67054/jamon-serrano-smells-awful" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:49 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Jamon Serrano smells awful
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-gaming" title="Arqade"></div><a href="http://gaming.stackexchange.com/questions/257498/should-i-watch-the-tv-series-before-playing-game-of-thrones" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:41 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Should I watch the TV series before playing Game of Thrones?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-rpg" title="Role-playing Games Stack Exchange"></div><a href="http://rpg.stackexchange.com/questions/76551/is-the-flight-that-a-variant-tiefling-scag-has-game-breaking" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is the flight that a variant Tiefling (SCAG) has game breaking?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-security" title="Information Security Stack Exchange"></div><a href="http://security.stackexchange.com/questions/116139/what-is-drown-and-why-is-it-even-possible" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What is DROWN and why is it even possible?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-salesforce" title="Salesforce Stack Exchange"></div><a href="http://salesforce.stackexchange.com/questions/112885/need-some-help-with-jquery-plugin-select2-and-vf-page" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:459 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Need some help with jquery plugin select2 and VF page
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-puzzling" title="Puzzling Stack Exchange"></div><a href="http://puzzling.stackexchange.com/questions/28201/youve-probably-seen-me-naked" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:559 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    You've Probably Seen Me Naked
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-dba" title="Database Administrators Stack Exchange"></div><a href="http://dba.stackexchange.com/questions/131204/average-of-last-4-runs-of-a-product" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:182 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Average of last 4 runs of a product
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="http://academia.stackexchange.com/questions/64507/someone-reported-cheating-during-a-quiz-but-i-didnt-catch-it-myself" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Someone reported cheating during a quiz, but I didn't catch it myself
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-lifehacks" title="Lifehacks Stack Exchange"></div><a href="http://lifehacks.stackexchange.com/questions/11247/how-can-i-sharpen-a-knife" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:593 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How can I sharpen a knife?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-vi" title="Vi and Vim Stack Exchange"></div><a href="http://vi.stackexchange.com/questions/6749/after-copying-a-visual-selection-to-keyboard-return-to-original-location" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:599 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    After copying a visual selection to keyboard, return to original location
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-mathematica" title="Mathematica Stack Exchange"></div><a href="http://mathematica.stackexchange.com/questions/108987/do-s-and-dont-s-when-teaching-mathematica-in-undergraduate-courses" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:387 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Do[ ]s and Don't[ ]s when teaching Mathematica in undergraduate courses
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-graphicdesign" title="Graphic Design Stack Exchange"></div><a href="http://graphicdesign.stackexchange.com/questions/67925/why-does-a-gif-increase-in-size-when-i-add-a-logo-although-number-of-colors-stay" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:174 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why does a GIF increase in size when I add a logo although number of colors stays the same?
+                </a>
+
+            </li>
+    </ul>
+
+        
+</div>
+		</div>
+	
+<div id="feed-link">
+    <div id="feed-link-text">
+        <a href="http://stackoverflow.com/feeds/question/512466" title="feed of this question and its answers">
+            <span class="feed-icon"></span>question feed
+        </a>
+    </div>
+</div>	<script>
+StackExchange.ready(function(){$.get('/posts/512466/ivc/c729');});
+</script>
+<noscript>
+    <div><img src="/posts/512466/ivc/c729" class="dno" alt="" width="0" height="0"></div>
+</noscript><div style="display:none" id="prettify-lang">lang-rb</div></div>
+
+
+        </div>
+    </div>
+    <div id="footer" class="categories">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <div class="top-footer-links">
+                    <a href="http://stackoverflow.com/company/about">about us</a>
+                        <a href="http://stackoverflow.com/tour">tour</a>
+                    <a href="http://stackoverflow.com/help">help</a>
+                    <a href="http://blog.stackoverflow.com/?blb=1">blog</a>
+                        <a href="http://chat.stackoverflow.com/">chat</a>
+                    <a href="http://data.stackexchange.com/">data</a>
+                    <a href="http://stackexchange.com/legal">legal</a>
+                    <a href="http://stackexchange.com/legal/privacy-policy">privacy policy</a>
+                    <a href="http://stackoverflow.com/company/work-here">work here</a>
+                    <a href="http://stackexchange.com/mediakit">advertising info</a>
+
+                    <a onclick='StackExchange.switchMobile("on")'>mobile</a>
+                    <b><a href="http://stackoverflow.com/contact">contact us</a></b>
+                        <b><a href="http://meta.stackoverflow.com/">feedback</a></b>
+                    
+                </div>
+                <div id="footer-sites">
+                    <table>
+    <tbody><tr>
+            <th colspan="3">
+                Technology
+            </th>
+            <th>
+                Life / Arts
+            </th>
+            <th>
+                Culture / Recreation
+            </th>
+            <th>
+                Science
+            </th>
+            <th>
+                Other
+            </th>
+    </tr>
+    <tr>
+            <td>
+                <ol>
+                        <li><a href="http://stackoverflow.com/" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                        <li><a href="http://serverfault.com/" title="system and network administrators">Server Fault</a></li>
+                        <li><a href="http://superuser.com/" title="computer enthusiasts and power users">Super User</a></li>
+                        <li><a href="http://webapps.stackexchange.com/" title="power users of web applications">Web Applications</a></li>
+                        <li><a href="http://askubuntu.com/" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                        <li><a href="http://webmasters.stackexchange.com/" title="pro webmasters">Webmasters</a></li>
+                        <li><a href="http://gamedev.stackexchange.com/" title="professional and independent game developers">Game Development</a></li>
+                        <li><a href="http://tex.stackexchange.com/" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://programmers.stackexchange.com/" title="professional programmers interested in conceptual questions about software development">Programmers</a></li>
+                        <li><a href="http://unix.stackexchange.com/" title="users of Linux, FreeBSD and other Un*x-like operating systems">Unix &amp; Linux</a></li>
+                        <li><a href="http://apple.stackexchange.com/" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                        <li><a href="http://wordpress.stackexchange.com/" title="WordPress developers and administrators">WordPress Development</a></li>
+                        <li><a href="http://gis.stackexchange.com/" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                        <li><a href="http://electronics.stackexchange.com/" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                        <li><a href="http://android.stackexchange.com/" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                        <li><a href="http://security.stackexchange.com/" title="information security professionals">Information Security</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://dba.stackexchange.com/" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                        <li><a href="http://drupal.stackexchange.com/" title="Drupal developers and administrators">Drupal Answers</a></li>
+                        <li><a href="http://sharepoint.stackexchange.com/" title="SharePoint enthusiasts">SharePoint</a></li>
+                        <li><a href="http://ux.stackexchange.com/" title="user experience researchers and experts">User Experience</a></li>
+                        <li><a href="http://mathematica.stackexchange.com/" title="users of Mathematica">Mathematica</a></li>
+                        <li><a href="http://salesforce.stackexchange.com/" title="Salesforce administrators, implementation experts, developers and anybody in-between">Salesforce</a></li>
+                        <li><a href="http://expressionengine.stackexchange.com/" title="administrators, end users, developers and designers for ExpressionEngine® CMS">ExpressionEngine® Answers</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#technology" class="more">
+                                more (13)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://photo.stackexchange.com/" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                        <li><a href="http://scifi.stackexchange.com/" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                        <li><a href="http://graphicdesign.stackexchange.com/" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                        <li><a href="http://movies.stackexchange.com/" title="movie and tv enthusiasts">Movies &amp; TV</a></li>
+                        <li><a href="http://cooking.stackexchange.com/" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                        <li><a href="http://diy.stackexchange.com/" title="contractors and serious DIYers">Home Improvement</a></li>
+                        <li><a href="http://money.stackexchange.com/" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                        <li><a href="http://academia.stackexchange.com/" title="academics and those enrolled in higher education">Academia</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#lifearts" class="more">
+                                more (9)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://english.stackexchange.com/" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                        <li><a href="http://skeptics.stackexchange.com/" title="scientific skepticism">Skeptics</a></li>
+                        <li><a href="http://judaism.stackexchange.com/" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                        <li><a href="http://travel.stackexchange.com/" title="road warriors and seasoned travelers">Travel</a></li>
+                        <li><a href="http://christianity.stackexchange.com/" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                        <li><a href="http://gaming.stackexchange.com/" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                        <li><a href="http://bicycles.stackexchange.com/" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                        <li><a href="http://rpg.stackexchange.com/" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#culturerecreation" class="more">
+                                more (21)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://math.stackexchange.com/" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                        <li><a href="http://stats.stackexchange.com/" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                        <li><a href="http://cstheory.stackexchange.com/" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                        <li><a href="http://physics.stackexchange.com/" title="active researchers, academics and students of physics">Physics</a></li>
+                        <li><a href="http://mathoverflow.net/" title="professional mathematicians">MathOverflow</a></li>
+                        <li><a href="http://chemistry.stackexchange.com/" title="scientists, academics, teachers and students">Chemistry</a></li>
+                        <li><a href="http://biology.stackexchange.com/" title="biology researchers, academics, and students">Biology</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#science" class="more">
+                                more (5)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://stackapps.com/" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                        <li><a href="http://meta.stackexchange.com/" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                        <li><a href="http://area51.stackexchange.com/" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                        <li><a href="http://careers.stackoverflow.com/">Stack Overflow Careers</a></li>
+                    
+                </ol>
+            </td>
+    </tr>
+</tbody></table>
+                </div>
+            </div>
+
+            <div id="copyright">
+                site design / logo © 2016 Stack Exchange Inc; user contributions licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc by-sa 3.0</a> 
+                with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            <div id="svnrev">
+                rev 2016.3.3.3315
+            </div>
+            
+        </div>
+    </div>
+    <noscript>
+        <div id="noscript-warning">Stack Overflow works best with JavaScript enabled<img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"></div>
+    </noscript>
+<script>var p = "http", d = "static"; if (document.location.protocol == "https:") { p += "s"; d = "engine"; } var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = p + "://" + d + ".adzerk.net/ados.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script>
+<script>
+    var ados = ados || {};
+    ados.run = ados.run || [];
+    ados.run.push(function () {
+            setTimeout(function () { $("#adzerk-user-match").remove(); }, window.AUMIframeDone ? 0 : 2000);
+        ados_setKeywords('ruby,abstract-class');; ados_load();
+    });         
+</script>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-5620270-1');
+                        ga('set', 'dimension2', '|ruby|abstract-class|');         ga('send', 'pageview');
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+            qc.async=true;
+            qc.src=(ssl?'https://secure':'http://edge')+'.quantserve.com/quant.js';
+            s.parentNode.insertBefore(qc, s);
+            var sc=document.createElement('script');
+            sc.async=true;
+            sc.src=(ssl?'https://sb':'http://b') + '.scorecardresearch.com/beacon.js';
+            s.parentNode.insertBefore(sc, s);
+        })();
+        _comscore.push({ c1: "2", c2: "17440561" });
+        _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+    </script>
+            
+    
+<script src="How%20to%20implement%20an%20abstract%20class%20in%20ruby%3F%20-%20Stack%20Overflow_files/p.js" async=""></script></body></html>

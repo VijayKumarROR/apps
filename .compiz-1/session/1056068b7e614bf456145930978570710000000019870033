@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<compiz_session id="1056068b7e614bf456145930978570710000000019870033">
+  <window id="1056068b7e614bf456145931736818951300000019870038" title="bookofruby.pdf" class="Evince" name="evince" command="evince">
+    <geometry x="65" y="24" width="600" height="600"/>
+    <minimized/>
+    <maximized vert="yes" horz="yes"/>
+    <workspace index="0"/>
+  </window>
+  <window id="1056068b7e614bf456145931739533424000000019870039" title="vijay@vijay-A14RM0E: ~" class="Gnome-terminal" name="gnome-terminal" role="gnome-terminal-window-7268-1652783190-1459317395" command="gnome-terminal">
+    <geometry x="65" y="24" width="722" height="434"/>
+    <minimized/>
+    <workspace index="0"/>
+  </window>
+</compiz_session>

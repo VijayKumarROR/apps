@@ -1,0 +1,873 @@
+/* TypeFocus theme for Wordpress.
+ * Author: Ajay Divakaran http://www.ajaydk.com
+ * Released under GPL2.0.
+ * Feel free to use this in your projects without restriction. However,
+ * ... try to make it better. Better, is always good :-) 
+ */
+
+
+
+
+/* -------------------------------------------------------------- */ 
+/* Container Positions */
+/* -------------------------------------------------------------- */
+
+html { font-size: 62.5% }
+body{
+	position: relative;
+}
+
+/* Insert equal size block after body (CSS-Hack to introduce background transparency) */
+body:after { 
+	content : "";
+	display:block;
+	position: absolute;
+	top: 0; 
+	left: 0; 
+	bottom: 0; 
+	right: 0;
+	background: url('images/redox_01.png')  ;     
+	opacity : 0.7;
+	z-index:-1;
+}
+
+.site{
+	margin:0 auto;
+	max-width: 100rem;
+}
+
+#page
+ 
+/* -------------
+ * URL styling
+ * -------------*/
+
+a:link, a:visited, a:active, h1 a:hover, h2 a:hover { text-decoration: none;}
+a:hover { text-decoration: underline; }
+
+
+
+/* -----------------
+ * HEADER
+ * -----------------*/
+
+.site-header{
+	padding-top:80px;
+	padding-top: 8rem;
+	text-align: center;
+}
+
+.header-separator{
+	margin:0 40px;
+	margin:4rem;
+	border-bottom: 2px solid #999;
+}
+
+
+
+/* ------ Site Branding ------ */
+
+div.site-branding{padding: 2rem 0;
+}
+
+h1.site-title, h1.site-title a {
+     font-size:50px;	
+     font: 900 5rem 'alegreya_sans_scthin';
+     color: #474747;
+     letter-spacing: 1.5px;
+     line-height: 6rem;
+} 
+
+h2.site-description{ 
+    font: 500 2.4rem  'alegreya_sansregular', sans-serif;
+    /font-style: italic;
+    width:60%;
+    color:#bbb;
+    margin:0 auto;
+    letter-spacing: 0.3px;
+    
+
+} 
+
+
+
+/* ------ Author & Social Icons ------ */
+
+div.author-social{ padding:3rem 0 3rem 0; }
+
+.header-social{
+    font-size:2.4em;
+}
+
+.header-social i{padding:1rem;}
+.header-social a{text-decoration: none; color: #333; opacity:0.2;}
+.header-social a:hover{color: #000000; opacity:1;}
+
+i.fa.fa-user{
+	font-size: 8rem;
+}
+
+
+
+.author-image{ 
+	display: inline-block; 
+	margin:0 auto; 
+	width:100%;
+	color:#000000;
+	/padding:5rem 0 0 0;
+}
+
+.author-image img { 
+	border-radius: 48px; 
+	-webkit-border-radius: 48px; 
+	-moz-border-radius: 48px; 
+	/padding:0.7rem; 
+	background:rgba(0,0,0,0.1); 
+	border-color: rgba(0,0,0,0.2); 
+	border-width:0.1rem; 
+	border-style:solid;
+	max-width: 10rem;
+}
+
+
+#disclaimer{
+	letter-spacing: 0.25px;
+	color:#999;
+	width:100%;
+	margin:0 auto;
+	/text-align:right;
+	font: 200 2rem 'alegreya_sansmedium_italic';
+	line-height: 2rem;
+	color: rgba(0,0,0,0.3) !important;
+	letter-spacing: 0.2px;
+	float:none;
+	clear:both;
+}
+
+#disclaimer i{
+	font-size:2rem;
+        float:none;
+        clear:both;
+	border:0;
+}
+
+/* ------ Nav Menu ------ */
+
+button.menu-toggle{ font-family: alegreya_sansbold;   font-size:2rem; font-weight: 500; text-transform: uppercase;
+letter-spacing: 1px;
+color:#777;
+}
+.main-navigation {
+    position: relative;
+    float: left;
+    width: 100%;
+    display: block;
+    clear: both;
+    background: #eee;
+
+}
+.main-navigation ul {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+}
+.main-navigation li {
+	position: relative;
+	float: none; 
+	border-top: 1px solid #ddd;
+	position: relative;
+}
+.main-navigation a {
+    display: block;
+    padding: 1.3em 1em;
+    font-size: 20px;
+    font-size: 2rem;
+    text-decoration: none;
+    line-height: 1.3em;
+    color: #777;
+    font-weight: 200;
+    font-family: alegreya_sansregular;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+.main-navigation ul ul {
+    position: absolute;
+    left: 0;
+    z-index: 99999;
+    display: none;
+    float: left;
+    padding: 0;
+    background: #EEE;
+}
+.main-navigation ul ul ul {
+    left: 100%;
+    top: 0;
+}
+.main-navigation ul ul a {
+    width: 200px;
+}
+.main-navigation ul ul li {
+	
+}
+.main-navigation li:hover > a {
+    color: #000;
+    background: #ccc;
+
+}
+.main-navigation ul ul :hover > a {
+}
+.main-navigation ul ul a:hover {
+    background: #ddd;
+
+}
+.main-navigation ul li:hover > ul {
+    display: block;
+}
+
+.main-navigation .current_page_item > a:hover,
+.main-navigation .current-menu-item > a:hover {
+    background:#aaa;
+    color: #fff;
+
+}
+
+.main-navigation .current_page_item > a,
+.main-navigation .current-menu-item > a {
+	font-weight:900;
+}
+
+.main-navigation .current_page_ancestor {
+    background: #4d4d4d;
+    background: hsl(0, 0%, 30%);
+}
+
+.main-navigation ul ul .current_page_parent,
+.main-navigation .current_page_parent .current_page_item > a {
+    color: #313131;
+
+    background: #eee;
+
+} 
+                
+
+nav div.menu ul li:last-child{border-bottom:2px solid #999;}
+
+button.menu-toggle {width:100%;}
+
+nav div.menu ul li {
+
+}
+
+
+
+
+
+
+/*--------------------------------------------------------------
+Typography Overrides
+--------------------------------------------------------------*/
+body,button,input,select,textarea {
+	color: #;
+	color: hsl(0, 0%, 25%);
+	font-family: alegreyaregular, sans-serif;
+	font-size: 16px;
+	font-size: 1.6rem;
+	line-height: 1.6;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-family: alegreyaregular, sans-serif;
+	font-weight: 700;
+}
+
+
+
+/*--------------------------------------
+Content Area
+----------------------------------------*/
+
+div#primary.content-area, section#primary.content-area{
+	margin: 10px 40px;
+	margin: 1rem 4rem;
+	font-size:20px;
+	font-size:2rem;
+	line-height:30px;
+	line-height:3rem;
+}
+
+
+div.entry-content{margin-top:0;}
+
+
+article{
+	border-bottom: 1px solid #dedede;
+	padding:3rem 0;
+}
+
+.sticky {
+	background: #FFF;
+	padding: 40px 20px;
+	padding:4rem 7rem;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+
+/* Entry Meta */
+div.entry-meta  {
+	font: 500 1.7rem  'merriweatheritalic', serif;
+	opacity: 0.4 !important;
+	padding-bottom:1rem;
+}
+div.entry-meta a { color: #333; text-decoration: none;}
+
+header.entry-header div.entry-meta {
+	line-height: 10rem;
+	font-size:2.2rem ;
+	padding:0;
+	letter-spacing: .1rem;
+}
+
+div.entry-meta.home_1, div.entry-meta.search_1,div.entry-meta.category_1   { line-height:4rem !important; font-size:1.8rem !important; }
+div.entry-summary{margin:1.5rem 0 0 0;}
+div.entry-summary p {margin:0.5rem 0;}
+
+
+/* Entry footer */
+footer.entry-footer  {
+	font: 1.8rem  'alegreya_sansmedium_italic', sans-serif;
+	color: #404040;
+	opacity:0.8;
+	padding-top:2rem;
+	letter-spacing: 1px;
+	
+}
+
+footer.entry-footer.home_1{display:none;}
+
+/* Headings */
+header a{color:#454545;}
+
+h1{
+	text-shadow: 0 1px 0 #fff;
+	font: 300 5rem 'alegreyaregular', serif;
+	line-height: 5rem;
+	text-shadow: 0 1px 0 #fff;
+}
+
+h2{
+	margin:2rem 0;
+	font: 900 3rem 'alegreyaregular', serif;
+	color: hsl( 0,0%,25% );
+	line-height:4rem;
+}
+
+h3{
+	font: 600 2.4rem 'alegreyaregular', serif;
+	color: hsl( 0,0%,25% );
+	line-height:3.4rem;
+}
+
+
+h4,h5,h6{
+	font: 600 2rem 'alegreyaregular', serif;
+	color: hsl( 0,0%,25% );
+	line-height:3.4rem;
+}
+
+header.entry-header a.quote-post {
+        text-decoration: none;
+        color:#333;
+        font: 300 2rem  'merriweatherlight_italic', serif;
+        line-height: 4rem;
+        text-shadow: 0 1px 0 #eee;
+	opacity: 0.9;
+	letter-spacing: 0.5px;
+}
+
+header.entry-header h1.entry-title a { font-size:3.5rem; color:#333;}
+/* -- Blockquote -- */
+blockquote {
+	font-size: 20px;
+	line-height: 3.5rem;
+	position: relative;
+	border-left: 5px solid #ccc;
+	margin: 1.5rem 10px;
+	padding: 2rem 2rem;
+	quotes: "\201C""\201D""\2018""\2019";
+	font-family: merriweatherlight_italic;
+}
+
+
+
+blockquote:before {
+	color: #ccc;
+	content: open-quote;
+	font-size: 4em;
+	line-height: 0.1rem;
+	margin-right: 2rem;
+	vertical-align: -0.4em;
+}
+
+blockquote p {
+	display: inline;
+}
+
+i.fa-quote-left{
+    font-size: 2.8rem;
+    border:0;
+}
+
+/* -- Tables -- */
+table {
+	background: #fff;
+	border: 1px solid #ddd;
+	margin:auto;
+	margin:3rem 0;
+	
+}
+
+table thead, table tfoot { background: #eee;  }
+table thead th, table tfoot th { padding:1rem;}
+table tbody tr.even,
+table tbody tr.alt { background: #f9f9f9; }
+table tbody tr:nth-child(even) { background: #f9f9f9; }
+table tbody tr td { color: #333; padding: 9px 10px; vertical-align: top; border: none; }
+table tbody tr th { color: #333; padding: 9px 10px; vertical-align: top; border: none; }
+
+
+
+
+
+/* -- Definition Lists -- */
+dt {
+	font-weight: bold;
+}
+dd {
+	background:none no-repeat left top;
+	padding-left: 50px;
+}
+
+
+/* -- HTML Tags -- */
+address {
+	font-weight: 500;
+	font-style: italic;
+	border: 1px dashed #777;
+	padding:3rem;
+	display: inline-block;
+}
+
+
+/* -- image tags -- */
+.entry-content img{
+    border:5px solid rgba(0,0,0,0.1);
+    padding:0.7rem;
+    background:rgba(0,0,0,0.1);
+    border-color: rgba(0,0,0,0.2);
+    border-width:0.1rem;
+    border-style:solid;
+}
+
+
+/* -- Continue Reading -- */
+.more-link {
+    color: #444 !important;
+    font: 700 2.2rem  'alegreyaregular', serif;
+    line-height:3rem;
+}
+   
+
+.continue-reading {
+    text-decoration: none;
+    font: 500 1.8rem  'merriweatherlight', serif;
+    line-height:4rem;
+
+}
+ 
+ 
+/* -- quote -- */
+q { font-style: italic;}
+
+
+/* Comments */
+
+article.comment-body{
+    border:0;
+    border:1px dashed rgba(1,1,1,0.1);
+    padding:1rem;
+    margin-bottom:3rem;
+}
+#comments h2.comments-title{
+    font: 700 3rem  'alegreyaregular', serif;
+    line-height: 5rem;
+}
+
+#comments ol{
+    list-style: none;
+}
+
+
+article.comment-body .reply a{
+    font: 700 1.8rem  'alegreya_sansmedium_italic', serif;
+    text-decoration: none;
+    letter-spacing: 0.05rem;
+}
+
+article.comment-body .reply {border-top:1px dashed #ccc;}
+
+div.comment-metadata .reply{
+    display: inline-block;
+}
+
+.comment-reply-title{
+	line-height: 10rem;
+	border-top:1px solid #ccc;
+	margin-top:5rem;
+}
+
+.comment-form p #submit{font-size:2rem;}
+    
+
+/* -- tags & category -- */
+span.tags-links, span.cat-links {
+	display:block;
+	font-family:merriweatheritalic;
+	
+}
+
+
+
+
+
+
+
+/* Widget Area
+ * ----------- */
+
+div#secondary.widget-area{
+	margin: 40px;
+	margin: 2rem 4rem;
+	font-size:20px;
+	font-size:2rem;
+	line-height:30px;
+	line-height:3rem;
+}
+
+.widget-title, form.search-form{
+	font-weight: 300 !important;
+	padding:1rem;
+}
+
+
+input.search-field{ min-width:50%;}
+
+.widget{
+	margin:5rem 0;
+}
+
+
+.widget{
+	margin-top:5rem;
+}
+
+.widget-area aside{
+    text-align: center;
+    background:rgba(0,0,0,0.025);
+    margin-bottom:40px;
+    
+}
+.widget-area aside h3{  
+    font: 300 1.8rem  'alegreyaregular', serif;
+    padding:10px;
+    text-align:center;
+    border-bottom:2px solid rgba(0,0,0,0.05);;
+}
+.widget-area aside ul{  
+    font: 300 2rem  'alegreyaregular', serif;
+    text-align:center;
+    list-style: none;
+    display:inline-block;
+    margin:0;
+    width:100%;
+    
+}
+.widget-area aside ul li{  
+    padding:15px;
+    border-bottom:2px dashed #e5e5e5;
+
+}
+.widget-area aside ul li:last-child{border:0;}
+
+.widget-area aside ul li a{  
+    text-decoration: none;
+}
+
+.widget-area aside select{
+    margin:15px 0px;
+    font-size:1.8rem;
+}
+
+.widget-area aside form{
+    padding:15px;
+    font-size:1.8rem;
+}
+
+.widget-area input {
+    font:700 2rem 'alegreyaregular', serif;
+    text-align: center;
+}
+
+/* calendar widget */
+
+#wp-calendar {width: 100%; }
+#wp-calendar caption, #wp-calendar tfoot {
+    text-align: right;
+    margin: 10px 20px;
+    font: 700 1.4rem  'alegreyaregular', serif;
+
+}
+#wp-calendar thead {  }
+#wp-calendar thead th {
+    padding: 10px;
+    text-align: center;
+    font: 700 1.4rem  'alegreyaregular', serif;
+    opacity:0.5;
+}
+#wp-calendar tbody {
+    opacity:0.8;
+    font: 700 1.4rem  'alegreyaregular', serif;
+}
+#wp-calendar tbody td { background: #f5f5f5; border: 1px solid #fff; text-align: center; padding:8px;}
+#wp-calendar tbody td:hover { background: #fff; }
+#wp-calendar tfoot #next { text-align: right; padding:10px 20px;}
+#wp-calendar tfoot #prev { text-align: left; padding:10px 20px;}
+#wp-calendar tfoot #next a, #wp-calendar tfoot #prev a{text-decoration:none; }
+
+
+
+/* Site footer
+-------------------------------------------------------------- */
+.site-footer{
+    border-top:1px solid #ccc;
+    margin:0 auto;
+    margin-top:3rem;
+    text-align: center;
+    padding:20px;
+    font: 300 1.4rem  'merriweatherlight_italic', sans-serif;
+    color:#f0f0f0;
+    background:#444;
+}
+.site-footer a{
+    text-decoration: underline;
+    color:#f0f0f0;
+}
+
+   
+
+/* Nav links */
+/* --------- */
+nav.navigation.post-navigation div.nav-links a{
+	font-size: 16px;
+	font-size: 1.6rem;
+	line-height: 20px;
+	line-height: 2rem;
+	text-decoration: none;
+	font-weight: 700;
+	font-family: merriweatherlight_italic;
+}
+div.nav-links div.nav-previous a{float:left;}
+div.nav-links div.nav-next a{float:right;}
+nav.navigation.post-navigation{
+	padding-bottom:20px;
+	padding-bottom: 2rem;
+	border-bottom:1px solid rgba(0,0,0,.1);
+}
+
+   
+
+
+/* MISC Hand Jobs ( To override those places where WP defaults to undesirable settings )
+ * -------------------------------------------------------------------------------------  */
+div.entry-content ul li span {font-size: inherit  !important;}
+div.entry-content ul li em {font-size: inherit  !important;}
+div.entry-content ul li strong {font-size: inherit  !important;}
+
+
+
+ 
+
+/* ----------------------------------
+ * Media Responsiveness 
+ * ---------------------------------*/
+
+/* Center Align for smaller screens */
+@media screen and (max-width: 930px )
+{
+	#masthead{position:relative !important;}
+	/* Pull site-nav up top */
+	nav.main-navigation{
+		position:absolute;
+		top:0;
+	}
+	.menu-toggle,
+	.main-navigation.toggled .nav-menu {
+		display: block;
+	}
+
+	.main-navigation ul {
+		display: none;
+	}	
+	/* Headings */
+	h1{
+		font: 700 3.2rem 'alegreyaregular', serif;
+		line-height: 4rem;
+	}
+	
+	article{
+		font-size:1.6rem;
+		font-family: merriweatherlight;
+		font-weight: 100;
+		line-height: 3.5rem;
+	}
+
+	
+	.widget-title{
+		font-size:2.6rem;
+		border-bottom:2px solid rgba(0,0,0,0.05);
+	}
+	
+	.widget-area aside{
+		text-align:center;
+	}
+}
+
+
+
+@media screen and (min-width:931px) 
+{
+	header#masthead{
+		float:left;
+		width:30rem;
+		padding:4rem 1rem 0rem 2rem;
+		
+	}
+	
+	div#content{
+		width:65%;
+		float:right;
+		/background: #fff;
+		padding:6rem 0;
+	}
+	
+
+	article{
+		font-size:1.6rem;
+		font-family: merriweatherlight;
+		line-height: 3.2rem;
+		font-weight: 500;
+		padding-top:0;
+		margin-bottom:4rem !important;
+	}
+	
+	footer.site-footer{
+		clear:both;
+		position:relative;
+	}
+	
+	div.site-branding{
+		text-align: right;
+		padding:1rem 0 0 0rem;
+		margin-bottom:2rem;
+		border-bottom:1px solid #ccc;
+	}
+	h2.site-description{
+		padding:2rem 0;
+		width:100% !important;
+		line-height: 3rem;
+	}
+	
+
+	h1.site-title a, h1.site-title{
+		line-height:4rem;
+		font-size:4rem;
+		font-family:alegreya_sans_scthin;
+		font-weight:900;
+	}
+
+	.header-separator{ display:none;}
+	
+	div.author-image{
+		text-align: right;
+		padding:2rem 0 0rem 0;
+	}
+	
+	div.header-social i:last-child{padding-right: 0 !important;}
+	div.header-social i{font-size: 5rem;}
+	div.header-social, #disclaimer{text-align:right;}
+	#disclaimer{padding-bottom: 2rem;}
+	
+	.main-navigation {background: transparent;}
+	.main-navigation li {
+		position: relative;
+		float: right;
+		clear:right;
+		border-top: 0px solid #ddd;
+		position: relative;
+		width:100%;
+		text-align: right;
+		background:transparent;
+	}
+	
+	.main-navigation li a {
+		padding:1rem ;
+		margin-right: -1rem;
+	}
+	.main-navigation li ul a { margin-right: 0;}
+	nav div.menu ul li:last-child{border:0px;}
+	
+	.main-navigation a { text-transform: uppercase; }
+
+	.widget-title{
+		font-size:2.8rem;
+		border-bottom:2px solid rgba(0,0,0,0.05);
+	}
+	
+	
+}
+
+
+@media screen and ( min-width: 960px )
+{
+	header#masthead{
+		width:31rem;
+	}
+	
+	div#content{
+		width:67%;
+	}
+
+}
+
+@media screen and ( min-width: 1024px )
+{
+	header#masthead{
+		/width:32rem;
+	}
+	
+	div#content{
+		width:68%;
+	}
+
+}
+
+@media screen and ( min-width: 1100px )
+{
+	header#masthead{
+		/width:33rem;
+	}
+	
+	div#content{
+		width:68%;
+	}
+
+}

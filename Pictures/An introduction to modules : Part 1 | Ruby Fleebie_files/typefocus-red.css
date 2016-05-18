@@ -1,0 +1,53 @@
+/* TypeFocus theme for Wordpress.
+ * Author: Ajay Divakaran http://www.ajaydk.com
+ * Released under GPL2.0.
+ * Feel free to use this in your projects without restriction. However,
+ * ... make it better. Better, is always good :-) 
+ */
+
+
+#page{
+	border-top: 5px solid #c0392b;
+	
+}
+
+/* URLs
+ * ---- */
+
+div.table a:link, tbody tr th a{ color:#c0392b !important;}
+span.cat-links a, span.comments-link a, span.tags-links a { color:#c0392b;}
+.main-navigation a {    color: #c0392b;}
+.header-social a:hover{color:#c0392b ; opacity:1;}
+.widget-area aside ul li a{  color:#c0392b !important ;}
+.site-footer, .site-footer a{ color:#f0f0f0; background:#c0392b;}
+div.tagcloud a {color:#c0392b !important ;}
+nav.navigation.post-navigation div.nav-links a{color:#c0392b ;}
+
+
+
+/* Text Styling
+ * ------------ */
+blockquote {border-color:#c0392b;}
+dt,.continue-reading,.continue-reading a {color:#c0392b !important;}
+
+
+
+
+
+/* ----------------------------------
+ * Media Responsiveness 
+ * ---------------------------------*/
+
+/* Center Align for smaller screens */
+@media screen and (max-width: 930px )
+{
+
+}
+
+
+
+@media screen and (min-width:931px) 
+{
+
+}
+

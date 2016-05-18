@@ -1,0 +1,22 @@
+<h1>Listing mymovies</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Rating</th>
+  </tr>
+
+<% @mymovies.each do |mymovie| %>
+  <tr>
+    <td><%=h mymovie.Title %></td>
+    <td><%=h mymovie.Rating %></td>
+    <td><%= link_to 'Show', mymovie %></td>
+    <td><%= link_to 'Edit', edit_mymovie_path(mymovie) %></td>
+    <td><%= link_to 'Destroy', mymovie, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New mymovie', new_mymovie_path %>

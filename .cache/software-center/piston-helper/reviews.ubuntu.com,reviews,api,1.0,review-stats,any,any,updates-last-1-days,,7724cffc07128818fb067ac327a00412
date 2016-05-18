@@ -1,0 +1,199 @@
+status: 200
+content-length: 4888
+expires: Mon, 29 Feb 2016 10:54:02 GMT
+content-location: https://reviews.ubuntu.com/reviews/api/1.0/review-stats/any/any/updates-last-1-days/
+strict-transport-security: max-age=15768000; includeSubDomains; preload
+vary: Accept,Accept-Encoding
+server: gunicorn/19.3.0
+last-modified: Mon, 29 Feb 2016 06:54:02 GMT
+-content-encoding: gzip
+x-bzr-revision-number: 313
+cache-control: max-age=14400
+date: Mon, 29 Feb 2016 07:29:15 GMT
+content-type: application/json; charset=utf-8
+-varied-accept-encoding: gzip, deflate
+
+[
+    {
+        "ratings_total": 11, 
+        "ratings_average": "4.36", 
+        "app_name": "", 
+        "package_name": "josm", 
+        "histogram": "[0, 2, 0, 1, 8]"
+    }, 
+    {
+        "ratings_total": 14, 
+        "ratings_average": "3.64", 
+        "app_name": "", 
+        "package_name": "openstreetmap-client", 
+        "histogram": "[1, 2, 1, 7, 3]"
+    }, 
+    {
+        "ratings_total": 160, 
+        "ratings_average": "4.59", 
+        "app_name": "", 
+        "package_name": "openarena", 
+        "histogram": "[3, 2, 9, 30, 116]"
+    }, 
+    {
+        "ratings_total": 190, 
+        "ratings_average": "4.49", 
+        "app_name": "", 
+        "package_name": "steam-launcher", 
+        "histogram": "[13, 7, 6, 11, 153]"
+    }, 
+    {
+        "ratings_total": 363, 
+        "ratings_average": "4.29", 
+        "app_name": "", 
+        "package_name": "libreoffice-writer", 
+        "histogram": "[14, 20, 30, 80, 219]"
+    }, 
+    {
+        "ratings_total": 15, 
+        "ratings_average": "3.07", 
+        "app_name": "", 
+        "package_name": "yandex-disk", 
+        "histogram": "[3, 2, 2, 7, 1]"
+    }, 
+    {
+        "ratings_total": 323, 
+        "ratings_average": "4.36", 
+        "app_name": "", 
+        "package_name": "soundconverter", 
+        "histogram": "[26, 11, 14, 42, 230]"
+    }, 
+    {
+        "ratings_total": 35, 
+        "ratings_average": "3.91", 
+        "app_name": "", 
+        "package_name": "wine1.6", 
+        "histogram": "[7, 1, 2, 3, 22]"
+    }, 
+    {
+        "ratings_total": 35, 
+        "ratings_average": "4.23", 
+        "app_name": "", 
+        "package_name": "soundkonverter", 
+        "histogram": "[4, 0, 2, 7, 22]"
+    }, 
+    {
+        "ratings_total": 35, 
+        "ratings_average": "3.29", 
+        "app_name": "", 
+        "package_name": "gresistor", 
+        "histogram": "[10, 2, 4, 6, 13]"
+    }, 
+    {
+        "ratings_total": 110, 
+        "ratings_average": "3.26", 
+        "app_name": "", 
+        "package_name": "allvideodownloader", 
+        "histogram": "[40, 4, 4, 11, 51]"
+    }, 
+    {
+        "ratings_total": 263, 
+        "ratings_average": "4.57", 
+        "app_name": "", 
+        "package_name": "calibre", 
+        "histogram": "[4, 10, 12, 43, 194]"
+    }, 
+    {
+        "ratings_total": 86, 
+        "ratings_average": "4.09", 
+        "app_name": "", 
+        "package_name": "brightness-controller", 
+        "histogram": "[13, 1, 5, 13, 54]"
+    }, 
+    {
+        "ratings_total": 1190, 
+        "ratings_average": "4.62", 
+        "app_name": "", 
+        "package_name": "gimp", 
+        "histogram": "[36, 21, 40, 166, 927]"
+    }, 
+    {
+        "ratings_total": 41, 
+        "ratings_average": "2.37", 
+        "app_name": "", 
+        "package_name": "gnome-orca", 
+        "histogram": "[18, 5, 9, 3, 6]"
+    }, 
+    {
+        "ratings_total": 68, 
+        "ratings_average": "3.97", 
+        "app_name": "", 
+        "package_name": "libreoffice-impress", 
+        "histogram": "[6, 3, 10, 17, 32]"
+    }, 
+    {
+        "ratings_total": 8, 
+        "ratings_average": "3.62", 
+        "app_name": "", 
+        "package_name": "sm", 
+        "histogram": "[1, 1, 1, 2, 3]"
+    }, 
+    {
+        "ratings_total": 360, 
+        "ratings_average": "4.52", 
+        "app_name": "", 
+        "package_name": "cairo-dock", 
+        "histogram": "[19, 7, 17, 43, 274]"
+    }, 
+    {
+        "ratings_total": 141, 
+        "ratings_average": "4.40", 
+        "app_name": "", 
+        "package_name": "asunder", 
+        "histogram": "[4, 5, 10, 33, 89]"
+    }, 
+    {
+        "ratings_total": 1324, 
+        "ratings_average": "4.34", 
+        "app_name": "", 
+        "package_name": "firefox", 
+        "histogram": "[97, 46, 85, 182, 914]"
+    }, 
+    {
+        "ratings_total": 2082, 
+        "ratings_average": "4.76", 
+        "app_name": "", 
+        "package_name": "vlc", 
+        "histogram": "[42, 21, 50, 159, 1810]"
+    }, 
+    {
+        "ratings_total": 485, 
+        "ratings_average": "4.78", 
+        "app_name": "", 
+        "package_name": "stellarium", 
+        "histogram": "[9, 5, 5, 45, 421]"
+    }, 
+    {
+        "ratings_total": 163, 
+        "ratings_average": "3.64", 
+        "app_name": "", 
+        "package_name": "sweethome3d", 
+        "histogram": "[32, 6, 13, 49, 63]"
+    }, 
+    {
+        "ratings_total": 1, 
+        "ratings_average": "4.00", 
+        "app_name": "", 
+        "package_name": "fonts-gfs-neohellenic", 
+        "histogram": "[0, 0, 0, 1, 0]"
+    }, 
+    {
+        "ratings_total": 1, 
+        "ratings_average": "4.00", 
+        "app_name": "", 
+        "package_name": "fonts-gfs-bodoni-classic", 
+        "histogram": "[0, 0, 0, 1, 0]"
+    }, 
+    {
+        "ratings_total": 1, 
+        "ratings_average": "5.00", 
+        "app_name": "", 
+        "package_name": "apt-file", 
+        "histogram": "[0, 0, 0, 0, 1]"
+    }
+]

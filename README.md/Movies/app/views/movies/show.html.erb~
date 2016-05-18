@@ -1,0 +1,13 @@
+<p>
+  <b style="color:black">Title:</b>
+  <%=h @movie.title %>
+</p>
+
+<p>
+  <b style="color:black">Rating:</b>
+  <%=h @movie.rating %>
+</p>
+
+
+<%= link_to 'Edit', edit_movie_path(@movie) %> |
+<%= link_to 'Back', movies_path %>

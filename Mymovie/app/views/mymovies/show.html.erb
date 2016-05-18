@@ -1,0 +1,13 @@
+<p>
+  <b>Title:</b>
+  <%=h @mymovie.Title %>
+</p>
+
+<p>
+  <b>Rating:</b>
+  <%=h @mymovie.Rating %>
+</p>
+
+
+<%= link_to 'Edit', edit_mymovie_path(@mymovie) %> |
+<%= link_to 'Back', mymovies_path %>

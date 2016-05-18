@@ -1,0 +1,131 @@
+/*footer starts*/
+.cls{clear:both;}
+.f11{font-size:12px; color:#444;  font-family:arial; verdana;}
+a {color: #0000FF; font-weight:normal; text-decoration: none;}
+a:hover{color: #0000FF; font-weight:normal; text-decoration:underline}
+.footNTp{background:url(../images/footer_ic.png) repeat-x 0 20px; height:60px; clear:both;}
+.w765N{width:765px; margin:0 auto;}
+.lwft, .lwft1{float:left; width:190px; border-left:1px dotted #999; font-size:10px;}
+.lwft1{border:none;}
+.lwft div, .lwft1 div{padding:5px;}
+.lwft div strong, .lwft1 div strong{display:block; padding:0 0 5px 5px; font-size:12px; font-family:arial; verdana;}
+.lwft a, .lwft1 a{display:block; color:#3190db; padding:2px 0 2px 5px; font-size:12px; text-decoration:none; width:175px; font-family:arial; verdana;}
+.lwft a:hover, .lwft1 a:hover{text-decoration:underline; background:#fafafa;}
+.crNbg{background:#fbfbfb; border:1px solid #ececec; border-width:1px 0; padding:4px 0; clear:both;}
+.copy{padding:10px;text-align:center;}
+.p20lr{padding:0 20px;}
+.lfic, .rfic{float:left; margin-top:10px; background:url(../images/footer_ic.png) no-repeat -13px -57px; height:39px; width:21px; display:block;text-decoration:none;}
+.rfic{float:right; background-position:-13px -102px;}
+.ht6{line-height:6px; height:6px;}
+.pcic{float:left;width:683px; overflow:hidden;position:relative; height:50px;}
+.c1F{width:170px; float:left; padding-right:0;}
+.padL20F{padding-left:18px; font-size:10px;}
+.divCF{position:absolute; top:0; width:3000px; border:1px solid #edebeb; border-width:1px 0; margin-top:10px; height:37px; }
+.acrF, .jsF, .ngF, .fnF, .bjF, .acdF, .shkF, .pbzF, .zmtF, .mrtF{background:url(../images/fotter_ic.png) no-repeat left -159px; padding-left:20px; display:block; color:#3190db; font:bold 11px Arial, Helvetica, sans-serif; text-decoration:none; margin-top:3px; line-height:20px; height:20px; width:129px;}
+.jsF{background-position:left -194px;}
+.ngF{background-position:left -233px;}
+.fnF{background-position:left -273px;}
+.bjF{background-position:left -311px;}
+.pbzF{background-position:left -352px;}
+.shkF{background-position:left -392px;}
+.acdF{background-position:left -433px;}
+.mrtF{background-position:left -471px;}
+.zmtF{background-position:left -508px;}
+.p105{padding:10px 5px;}
+/*footer*/
+
+/*New Buttons Styles Starts*/
+.mic_appBtn p, .mic_appBtn b{background:url(../images/srpIC.png) no-repeat 0 0; display:block;}
+.mic_appBtn input {background: url(../images/srpY.png) repeat-x 0px 0px; height: 26px; margin: 0; border: none; padding: 0; cursor: pointer; cursor: hand; float: left;}
+.mic_appBtn{float:left; margin-right:10px;}
+.mic_appBtn p, .mic_appBtn b{margin:0; padding:0; float:left; background-position:-41px 0; width:6px; height:26px;}
+.mic_appBtn b{background-position:-47px 0;}
+.mic_appBtn input.mic_w105{width:120px !important;}
+.mic_appBtn input.mic_w90{width:105px !important;}
+.mic_appBtn input.mic_w172{width:197px !important;}
+.mic_appBtn input.mic_w55{width:65px !important;}
+.mic_appBtn input.mic_w156BT{width:176px !important;}
+.mic_appBtn input.mic_w40BT{width:50px !important;}
+/*New Buttons Styles Ends*/
+.t11{font:normal 11px verdana,arial; color:#000;}
+.t11{font:normal 11px verdana,arial; color:#000;}
+.t11 a{font:normal 11px verdana,arial; color:#0000cc; text-decoration:none}
+.t11 a:hover{font:normal 11px verdana,arial; color:#0000cc; text-decoration:underline}
+.lf{float:left}
+.grbtn{width:173px; height:28px; font:normal 11px verdana,arial; color:#3C3D4A; padding:0 0 2px 0 }
+.aaplyext{background:url(../images/apply_btnw_ext.gif) #e5e5e1; width:91px; height:26px; font:bold 11px verdana,arial; color:#000; border:none; padding:0 0 0 0px }
+.loginaaply{background:url(../images/loginapply.gif) #e5e5e1; width:127px; height:26px; font:bold 11px verdana,arial; color:#000; border:none; padding:0 0 0 0px }
+*:first-child+html .loginaaply{background:url(../images/loginapply.gif) #e5e5e1; width:127px; height:26px; font:bold 11px verdana,arial; color:#000; border:none; padding:0 0 0 0px }
+*html .loginaaply{background:url(../images/loginapply.gif) #e5e5e1; width:127px; height:26px; font:bold 11px verdana,arial; color:#000; border:none; padding:0 0 0 0px }
+.aaplyar{background:url(../images/apply_btn_ar.gif) #e5e5e1; width:22px; height:26px; border:none; padding:0 0 0 0px; }
+.t12l{font:normal 12px verdana; color:#4886eb; line-height:25px; text-decoration:none}
+.t12l a{font:normal 12px verdana; color:#4886eb; line-height:25px; text-decoration:none}
+.t12l a:hover{font:normal 12px verdana; color:#4886eb; background-color:#ececec; display:block; line-height:25px; text-decoration:none}
+.newuser{background:url(../images/newuser.gif) #e5e5e1; width:153px; height:26px; font:bold 11px verdana,arial; color:#000; border:none; padding:0 0 0 25px  }
+.aaply{background:url(../images/apply_btn.gif) #e5e5e1; width:81px; height:26px; font:bold 11px verdana,arial;color:#000; border:none }
+*:first-child+html .aaply{background:url(../images/apply_btn.gif) #e5e5e1; width:81px; height:26px; font:bold 11px verdana,arial; color:#000; border:none; padding:0 10px 0 0}
+*html .aaply{background:url(../images/apply_btn.gif) #e5e5e1; width:81px; height:26px; font:bold 11px verdana,arial; color:#000; border:none; padding:0 10px 0 0}
+.errormain{background:#fffbd3; font:normal 15px verdana,arial; color:#de0101; height:34px; padding:0 0 0 25px; margin:0px 0 10px 0px}
+.conbg{background:url(../images/conf.gif) left no-repeat; padding:2px 0 2px 0  }
+.confirm{background:#8ec512; font:bold 13px verdana,arial;margin-left:32px; color:#FFF; border:1px solid #76aa00; border-left:none; padding:5px; }
+
+/*lightbox*/
+.modC{filter: alpha(opacity=60);filter: progid:DXImageTransform.Microsoft.Alpha(opacity=60);-moz-opacity: .6;-khtml-opacity: .6;opacity: .6; margin:auto;}
+.frm{margin:0;padding:0; position:absolute; z-index:999; background-color:#000;left:0;top:0; filter: alpha(opacity=0);filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);-moz-opacity: 0;-khtml-opacity: 0;opacity: .0;}
+.mod1{position:absolute; left:0; top:0;z-index:998;margin:auto; background:#000;}
+.alertLB{background-position:-30px -75px; height:45px; width:60px; float:left;}
+.lCont{position:absolute; z-index:1000;background:#fff;color:#000; border:2px solid #4b4b4b;display:none;}
+/*class to be change*/
+.lHead{font:bold 12px Verdana, Arial; height:25px; line-height:25px; padding:0 10px; background:#0099FF; color:#fff;}
+.crossLB{height:15px; width:15px; cursor:pointer; display:block;}
+/*class to be change*/
+.lMid{padding:10px;}
+
+/*lightbox*/
+.newLightbox .lHead{background:#fff; font-weight:bold; color:#333; font-size:13px; font-family:Arial, Helvetica, sans-serif; padding:5px; margin:0 5px; border-bottom:2px solid #FFB812}
+.newLightbox .fr{float:right}
+.newLightbox .fl{float:left}
+.newLightbox .cl{clear:both; height:1px; overflow:hidden;}
+.newLightbox .sp10{height:10px;}
+.newLightbox .crossLB{width:auto;}
+.newLightbox .crossLB a{font-size:11px; color:#0000FF; text-transform:capitalize}
+.newLightbox .content{background:transparent; border:none;}
+.newLightbox ul.bullet{padding:0; margin:0; list-style:none;}
+.newLightbox ul.bullet li{padding:0 0 5px 5px; margin:0; }
+.newLightbox .text{border:1px solid #999; padding:1px;}
+.newLightbox .appBtn{margin-right:5px;margin-left:5px;}
+.newLightbox .w45BT{width:45px;}
+.newLightbox .w60{width:60px;}
+.newLightbox .mt7{margin-top:7px;}
+.newLightbox #confirm{background:#8ec512; border:1px solid #71971c; margin:6px 2px;}
+.newLightbox #confirm .content, #confirm .contJDN{color:#fff; font-size:21px; font-weight:bold; margin:4px 5px 8px 40px; position:relative;}
+.newLightbox #confirm .content14{font-size:14px; margin-top:8px}
+.newLightbox #confirm .confIc{position:absolute; left:-35px; top:-8px;background:url(../images/srpIC1.png) no-repeat; background-position:-167px -22px; height:30px; width:30px;}
+#rap_acknowledge{display:none;}
+.rap_ackconfirmmsg {display:block;font-size:15px; padding:5px 5px 10px; background:none; border:none;}
+.loader{background:url(../images/loader.gif) no-repeat center center; height:100%;}
+.loader1{height:100px;}
+/*ReportAbuse Style Ends*/
+
+.t11{font:normal 11px verdana,arial; color:#000;}
+.t11{font:normal 11px verdana,arial; color:#000;}
+.t11 a{font:normal 11px verdana,arial; color:#0000cc; text-decoration:none}
+.t11 a:hover{font:normal 11px verdana,arial; color:#0000cc; text-decoration:underline}
+.lf{float:left}
+.grbtn{width:173px; height:28px; font:normal 11px verdana,arial; color:#3C3D4A; padding:0 0 2px 0 }
+.aaplyext{background:url(../images/apply_btnw_ext.gif) #e5e5e1; width:91px; height:26px; font:bold 11px verdana,arial; color:#000; border:none; padding:0 0 0 0px }
+.loginaaply{background:url(../images/loginapply.gif) #e5e5e1; width:127px; height:26px; font:bold 11px verdana,arial; color:#000; border:none; padding:0 0 0 0px }
+*:first-child+html .loginaaply{background:url(../images/loginapply.gif) #e5e5e1; width:127px; height:26px; font:bold 11px verdana,arial; color:#000; border:none; padding:0 0 0 0px }
+*html .loginaaply{background:url(../images/loginapply.gif) #e5e5e1; width:127px; height:26px; font:bold 11px verdana,arial; color:#000; border:none; padding:0 0 0 0px }
+.aaplyar{background:url(../images/apply_btn_ar.gif) #e5e5e1; width:22px; height:26px; border:none; padding:0 0 0 0px; }
+.t12l{font:normal 12px verdana; color:#4886eb; line-height:25px; text-decoration:none}
+.t12l a{font:normal 12px verdana; color:#4886eb; line-height:25px; text-decoration:none}
+.t12l a:hover{font:normal 12px verdana; color:#4886eb; background-color:#ececec; display:block; line-height:25px; text-decoration:none}
+.newuser{background:url(../images/newuser.gif) #e5e5e1; width:153px; height:26px; font:bold 11px verdana,arial; color:#000; border:none; padding:0 0 0 25px  }
+.aaply{background:url(../images/apply_btn.gif) #e5e5e1; width:81px; height:26px; font:bold 11px verdana,arial;color:#000; border:none }
+*:first-child+html .aaply{background:url(../images/apply_btn.gif) #e5e5e1; width:81px; height:26px; font:bold 11px verdana,arial; color:#000; border:none; padding:0 10px 0 0}
+*html .aaply{background:url(../images/apply_btn.gif) #e5e5e1; width:81px; height:26px; font:bold 11px verdana,arial; color:#000; border:none; padding:0 10px 0 0}
+.errormain{background:#fffbd3; font:normal 15px verdana,arial; color:#de0101; height:34px; padding:0 0 0 25px; margin:0px 0 10px 0px}
+.conbg{background:url(../images/conf.gif) left no-repeat; padding:2px 0 2px 0  }
+.confirm{background:#8ec512; font:bold 13px verdana,arial;margin-left:32px; color:#FFF; border:1px solid #76aa00; border-left:none; padding:5px; }
+

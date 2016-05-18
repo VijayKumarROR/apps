@@ -1,0 +1,19 @@
+<h1>New mymovie</h1>
+
+<% form_for(@mymovie) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :Title %><br />
+    <%= f.text_field :Title %>
+  </p>
+  <p>
+    <%= f.label :Rating %><br />
+    <%= f.text_field :Rating %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', mymovies_path %>

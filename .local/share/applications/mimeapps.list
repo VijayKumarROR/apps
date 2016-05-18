@@ -1,0 +1,6 @@
+[Added Associations]
+video/3gpp=ubuntu-software-center.desktop;
+application/x-compressed-tar=ubuntu-software-center.desktop;
+text/html=ubuntu-software-center.desktop;
+application/x-ms-dos-executable=ubuntu-software-center.desktop;
+text/plain=gedit.desktop;

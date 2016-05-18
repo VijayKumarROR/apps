@@ -1,0 +1,55 @@
+
+(gnome-settings-daemon:2487): power-plugin-WARNING **: gnome-session is not available
+
+(gnome-settings-daemon:2487): media-keys-plugin-WARNING **: Grab failed for some keys, another application may already have access the them.
+Backend     : gconf
+Integration : true
+Profile     : unity
+Adding plugins
+Initializing core options...done
+
+(gnome-settings-daemon:2487): GLib-CRITICAL **: g_variant_new_string: assertion `string != NULL' failed
+
+(gnome-settings-daemon:2487): GLib-GIO-CRITICAL **: g_settings_schema_key_type_check: assertion `value != NULL' failed
+
+(gnome-settings-daemon:2487): GLib-CRITICAL **: g_variant_get_type_string: assertion `value != NULL' failed
+
+(gnome-settings-daemon:2487): GLib-GIO-CRITICAL **: g_settings_set_value: key 'picture-uri' in 'org.gnome.desktop.background' expects type 's', but a GVariant of type '(null)' was given
+Initializing composite options...done
+** Message: applet now removed from the notification area
+** Message: using fallback from indicator to GtkStatusIcon
+Initializing opengl options...done
+Initializing decor options...done
+Initializing vpswitch options...done
+Initializing snap options...done
+Initializing mousepoll options...done
+Initializing resize options...done
+Initializing place options...done
+Initializing move options...done
+Initializing wall options...done
+Initializing grid options...done
+I/O warning : failed to load external entity "/home/vijay/.compiz/session/109649aedc2ab6ee1e146357938377999900000024390033"
+Initializing session options...done
+Initializing gnomecompat options...done
+Initializing animation options...done
+Initializing fade options...done
+Initializing unitymtgrabhandles options...done
+Initializing workarounds options...done
+Initializing scale options...done
+compiz (expo) - Warn: failed to bind image to texture
+Initializing expo options...done
+Initializing ezoom options...done
+
+(compiz:2505): GConf-CRITICAL **: gconf_client_add_dir: assertion `gconf_valid_key (dirname, NULL)' failed
+Initializing unityshell options...done
+Setting Update "main_menu_key"
+Setting Update "run_key"
+** Message: moving back from GtkStatusIcon to indicator
+
+** (gnome-screensaver:2773): WARNING **: screensaver already running in this session
+
+(gnome-settings-daemon:2487): GLib-CRITICAL **: g_variant_get_int32: assertion `g_variant_is_of_type (value, G_VARIANT_TYPE_INT32)' failed
+WARNING:root:timeout reached, exiting
+Nautilus-Share-Message: Called "net usershare info" but it failed: 'net usershare' returned error 255: net usershare: cannot open usershare directory /var/lib/samba/usershares. Error No such file or directory
+Please ask your system administrator to enable user sharing.
+

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    
+    <title>Abstract classes in Ruby - losing the security blanket</title>
+
+    <meta name="description" content="" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Open+Sans:700,400" />
+
+    
+    <meta name="generator" content="Ghost 0.3" />
+<link rel="alternate" type="application/rss+xml" title="RSS" href="/rss/">
+</head>
+<body class="post-template">
+
+    
+    
+
+
+
+<main class="content" role="main">
+
+    <article class="post">
+
+        
+        <header class="post-header">
+            <a id="blog-logo" href="http://yakhairsurplus.com">
+                
+                    <img src="/content/images/2014/Jan/YakNo2.png" alt="Blog Logo" />
+                
+            </a>
+        </header>
+
+        
+        <div style="clear:both"></div>
+
+        
+        
+
+        
+        <span class="post-meta"><time datetime="2013-10-06">06 Oct 2013</time> </span>
+
+        <h1 class="post-title">Abstract classes in Ruby - losing the security blanket</h1>
+
+        <section class="post-content">
+            <p>I recently built a <a href="http://www.sinatrarb.com/">Sinatra</a> app and used an object-relational mapping library (ORM) to persist my models. Since deploying the app, I have become concerned that the use of public methods added by the ORM to my model classes has bled in to my controllers. I've therefore created a dependency on this specific ORM throughout my code.</p>  
+
+<p>My initial reflex on my next project was to create an <a href="http://en.wikipedia.org/wiki/Abstract_class">abstract class</a> to represent a storage system and a descendant concrete class to use whatever ORM I chose today. My model classes would serve as input and output for concrete storage class and they would have no knowledge at all about ORMs nor about my own storage system.</p>  
+
+<p>Having decided that this was my preferred approach, I searched online for `ruby abstract class` and rapidly came to realise that this was not actually a feature of Ruby. I'm not the only person who has looked for this information. Stack Overflow has an impressive amount of <a href="http://stackoverflow.com/search?q=ruby+abstract+class">activity on this topic</a>.</p>  
+
+<h4>What is an abstract class for?</h4>  
+
+<p>Abstract classes are a tool to aid developers to "program to an interface", as the <a href="http://www.alibris.co.uk/Design-Patterns-Elements-of-Reusable-Object-Oriented-Software-Erich-Gamma/book/7930081?matches=58&cm_sp=works*listing*title">Gang of Four</a> would put it. By eliminating any mention of concrete classes in client code, programmers are able to "swap out" the concrete class being used without rewriting that client code. To many programmers this is self-evidently A Good Thing. In many languages (my experience is in C-family languages) the compiler will not permit an abstract class to be instantiated. This provides a check at compile time that the programmer has implemented all the inherited abstract methods in their concrete class. The abstract class therefore serves as a contract to provide a certain set of methods.</p>  
+
+<h4>Why doesn't Ruby have abstract classes?</h4>  
+
+<p>The implication in my description of the purpose of an abstract class is that some aspect of the client code refers to the <em>type</em> of the objects that the client code is handling. Not so in Ruby where there are no variable type declarations. If a programmer decides to swap out their "concrete" class for any other class then this will not affect any client code so long as the replacement class implements public methods with compatible signatures to those of the original class. This is the reality of a duck-typed language.</p>  
+
+<p>Many of the stack exchange answers on this topic point out that Ruby is extraordinarily dynamic. Methods can be added to individual objects at run time, meaning that you can't rule out a given object's ability to respond to a given message until the point at which that message is sent to the object. An argument can be made that if a method's implementation can be delayed until just before the method is called then a mechanism for determining the completeness of an object's interface before this point is redundant. Of course, many of us rarely use such a high level of dynamism.</p>  
+
+<h4>Would implementing abstract classes in Ruby be useful?</h4>  
+
+<p>You might be able to implement something to warn you at object instantiation if the new object fails to implement an interface defined by a superclass. (If you actually call a non-existent method then Ruby will raise an exception.) The pertinent question is whether an abstract class would help you to program to an interface. A contract to honour a given interface sounds great but in the absence of variable type declarations I don't see what role this contract has. I'm still trying to get comfortable with this fact. Almost all my programming career has been spent working with explicitly typed languages and I'm finding it hard to let go of the security blanket of abstract types (which is why I wrote this post.)</p>  
+
+<h4>So what should I use instead of abstract classes?</h4>  
+
+<p>How about tests? It's often desirable for the public interface of a replacement class to behave the same way as that of the original class, e.g. for persistence classes talking to different data stores. Tests in this scenario should be directly transferable to the new class except, for example, if you are using mocks to verify messages <em>sent</em> by the objects under test. Sometimes we do want different public behaviour, e.g. when interfacing to strategy classes that encapsulate different algorithms but (in order to be a direct swap-out) the replacement class will still need to respond to the same method signatures, meaning that the existing tests will at least serve as a rough scaffold.</p>  
+
+<p></br>  </p>
+
+<p><strong>Edit:</strong> Having experimented with the approach I proposed to take with my new app, I decided I would be recoding too much of the ORM functionality. Instead I found I was able to find all the methods included in my models from the ORM module and make them private. Now my model classes can use all the functionality of the included ORM but my controllers are safe from evolving unwanted dependencies.</p>  
+
+<p><strong>Edit to the edit:</strong> I hadn't fully understood one aspect of Ruby method access control: Class methods are unable to call protected (or private) methods on instances of the class. This defeats my attempt to hide the ORM functionality because it is implemented in a mixture of class and instance methods. Now I have to choose whether to implement my original idea or just cease to worry about this problem altogether. (I have to admit that no one else in the Ruby developement world seems to be worrying about it.)</p>
+        </section>
+
+        <footer class="post-footer">
+
+            
+                <section class="author">
+                    <h4>Justin Hellings</h4>
+                    <p>&quot;Justin? Hell of a guy! We would have kept him but you know how it is. Genius like that is always restless ... Eh? ... Oh, him ... No, I thought you meant someone else.&quot;</p>
+                </section>
+            
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="http://twitter.com/share?text=Abstract classes in Ruby - losing the security blanket&via=jhellings&url=http://yakhairsurplus.com/abstract-classes-ruby-losing-security-blanket/"
+                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://yakhairsurplus.com/abstract-classes-ruby-losing-security-blanket/"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://yakhairsurplus.com/abstract-classes-ruby-losing-security-blanket/"
+                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+
+            </footer>
+
+	<div><hr /></div>
+        <div class="subscribe-link" style="text-align:center">
+You may <a href="http://feedburner.google.com/fb/a/mailverify?uri=YakHairSurplus&amp;loc=en_US">subscribe to email updates</a> from Yak hair surplus.
+        </div>
+
+        
+
+	<div><hr /></div>
+	<div id="disqus_thread"></div>
+	<script type="text/javascript">
+	var disqus_shortname = 'yak-hair-surplus';
+
+    // make sure to use the post.id as an identifier, otherwise disqus will use the pages url per default, which might be problematic...
+	var disqus_identifier = '17'; 
+
+	/* * * DON'T EDIT BELOW THIS LINE * * */
+	(function() {
+	 var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	 dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+	 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	 })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </article>
+
+</main>
+
+
+    <footer class="site-footer">
+        <a class="subscribe icon-feed" href="http://yakhairsurplus.com/rss/"><span class="tooltip">Subscribe!</span></a>
+        <div class="inner">
+             <section class="copyright">All content copyright <a href="/">Yak hair surplus</a> &copy; 2013 &bull; All rights reserved.</section>
+             <section class="poweredby">Proudly published with <a class="icon-ghost" href="http://ghost.org">Ghost</a></section>
+        </div>
+    </footer>
+
+    
+    <script src="/shared/vendor/jquery/jquery.js"></script>
+
+    
+    <script type="text/javascript" src="/assets/js/index.js"></script>
+    
+    
+    <script type="text/javascript">
+      var _paq = _paq || [];
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+      var u=(("https:" == document.location.protocol) ? "https" : "http") + "://analytics.hellings.webfactional.com/";
+      _paq.push(['setTrackerUrl', u+'piwik.php']);
+      _paq.push(['setSiteId', 1]);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
+      g.defer=true; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+    <noscript><p><img src="http://analytics.hellings.webfactional.com/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+    
+
+</body>
+</html>

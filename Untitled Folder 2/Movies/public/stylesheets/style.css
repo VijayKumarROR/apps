@@ -1,0 +1,11 @@
+html, body {
+background-color:green;
+}
+#pagewrap
+{
+-moz-border-radius: 10px;
+ margin: 0 auto;
+  padding: 10px;
+  width: 900px;
+}
+

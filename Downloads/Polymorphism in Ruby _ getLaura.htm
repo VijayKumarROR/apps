@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en-US" xmlns:fb="http://ogp.me/ns/fb#" xmlns:addthis="http://www.addthis.com/help/api-spec" >
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<title>Polymorphism in Ruby | getLaura</title>
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="pingback" href="http://www.getlaura.com/xmlrpc.php" />
+<!--[if lt IE 9]>
+<script src="http://www.getlaura.com/wp-content/themes/untitled/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+
+<!-- All in One SEO Pack 2.2.7.2 by Michael Torbert of Semper Fi Web Design[208,246] -->
+<meta name="description" itemprop="description" content="Polymorphism comes form the greek words 'polys' meaning much or many and 'morphe' meaning form or shape. In programming, it refers to the ability to use" />
+
+<meta name="keywords" itemprop="keywords" content="polymorphism,ruby" />
+
+<link rel="canonical" href="http://www.getlaura.com/polymorphism-in-ruby/" />
+			<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-49810300-1', 'auto');
+			
+			ga('send', 'pageview');
+			</script>
+<!-- /all in one seo pack -->
+<link rel="alternate" type="application/rss+xml" title="getLaura &raquo; Feed" href="http://www.getlaura.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="getLaura &raquo; Comments Feed" href="http://www.getlaura.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="getLaura &raquo; Polymorphism in Ruby Comments Feed" href="http://www.getlaura.com/polymorphism-in-ruby/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"http:\/\/www.getlaura.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.4.2"}};
+			!function(a,b,c){function d(a){var c,d=b.createElement("canvas"),e=d.getContext&&d.getContext("2d"),f=String.fromCharCode;return e&&e.fillText?(e.textBaseline="top",e.font="600 32px Arial","flag"===a?(e.fillText(f(55356,56806,55356,56826),0,0),d.toDataURL().length>3e3):"diversity"===a?(e.fillText(f(55356,57221),0,0),c=e.getImageData(16,16,1,1).data.toString(),e.fillText(f(55356,57221,55356,57343),0,0),c!==e.getImageData(16,16,1,1).data.toString()):("simple"===a?e.fillText(f(55357,56835),0,0):e.fillText(f(55356,57135),0,0),0!==e.getImageData(16,16,1,1).data[0])):!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g;c.supports={simple:d("simple"),flag:d("flag"),unicode8:d("unicode8"),diversity:d("diversity")},c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.simple&&c.supports.flag&&c.supports.unicode8&&c.supports.diversity||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='output-css'  href='http://www.getlaura.com/wp-content/plugins/addthis/css/output.css?ver=4.4.2' type='text/css' media='all' />
+<link rel='stylesheet' id='mailchimp-for-wp-checkbox-css'  href='http://www.getlaura.com/wp-content/plugins/mailchimp-for-wp/assets/css/checkbox.min.css?ver=2.2' type='text/css' media='all' />
+<link rel='stylesheet' id='mailchimp-for-wp-form-theme-light-css'  href='http://www.getlaura.com/wp-content/plugins/mailchimp-for-wp/assets/css/form-theme-light.min.css?ver=2.2' type='text/css' media='all' />
+<link rel='stylesheet' id='style-css'  href='http://www.getlaura.com/wp-content/themes/untitled/style.css?ver=4.4.2' type='text/css' media='all' />
+<link rel='stylesheet' id='untitled-webfont-css'  href='http://fonts.googleapis.com/css?family=Raleway%3A400%2C600%7CArvo%3A400%2C700&#038;ver=4.4.2' type='text/css' media='all' />
+<link rel='stylesheet' id='untitled-flex-slider-style-css'  href='http://www.getlaura.com/wp-content/themes/untitled/js/flex-slider/flexslider.css?ver=2.0' type='text/css' media='all' />
+<script type='text/javascript' src='http://www.getlaura.com/wp-includes/js/jquery/jquery.js?ver=1.11.3'></script>
+<script type='text/javascript' src='http://www.getlaura.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+<script type='text/javascript' src='http://www.getlaura.com/wp-content/themes/untitled/js/flex-slider/jquery.flexslider-min.js?ver=2.1'></script>
+<script type='text/javascript' src='http://www.getlaura.com/wp-content/themes/untitled/js/untitled.js?ver=4.4.2'></script>
+<link rel='https://api.w.org/' href='http://www.getlaura.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.getlaura.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.getlaura.com/wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='Given/When/Then' href='http://www.getlaura.com/given-when-then/' />
+<link rel='next' title='Writing a Programming Language 101' href='http://www.getlaura.com/writing-a-programming-language-101/' />
+<meta name="generator" content="WordPress 4.4.2" />
+<link rel='shortlink' href='http://www.getlaura.com/?p=130' />
+<link rel="alternate" type="application/json+oembed" href="http://www.getlaura.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.getlaura.com%2Fpolymorphism-in-ruby%2F" />
+<link rel="alternate" type="text/xml+oembed" href="http://www.getlaura.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.getlaura.com%2Fpolymorphism-in-ruby%2F&#038;format=xml" />
+</head>
+
+<body class="single single-post postid-130 single-format-standard widget-area">
+	<div id="page" class="hfeed site">
+				<div id="masthead-wrap">
+			<header id="masthead" class="site-header" role="banner">
+				<div id="logo">
+										<h1 class="site-title"><a href="http://www.getlaura.com/" title="getLaura" rel="home">getLaura</a></h1>
+									</div>
+				<div class="nav-wrap">
+					<nav role="navigation" class="site-navigation main-navigation">
+						<h1 class="assistive-text">Menu</h1>
+						<div class="assistive-text skip-link"><a href="#content" title="Skip to content">Skip to content</a></div>
+
+						<div class="menu-menu-1-container"><ul id="menu-menu-1" class="menu"><li id="menu-item-312" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-312"><a href="http://www.getlaura.com/good-books/">Good Books</a></li>
+<li id="menu-item-236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-236"><a href="http://www.getlaura.com/about/">About</a></li>
+<li id="menu-item-31" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31"><a href="http://www.getlaura.com/contact-me/">Contact</a></li>
+</ul></div>					</nav><!-- .site-navigation -->
+				</div><!-- .nav-wrap -->
+			</header><!-- #masthead -->
+		</div><!-- #masthead-wrap -->
+
+	<div id="single-main" class="site-main">
+		<div id="single-primary" class="content-area">
+			<div id="content" class="site-content" role="main">
+
+				
+				<article id="post-130" class="post-130 post type-post status-publish format-standard hentry category-code category-cs category-ruby tag-polymorphism tag-ruby">
+
+					<header class="entry-header">
+						<div class="entry-meta">
+							<a href="http://www.getlaura.com/polymorphism-in-ruby/" title="6:28 pm" rel="bookmark"><time class="entry-date" datetime="2014-06-24T18:28:32+00:00">June 24, 2014</time></a><span class="byline"> by <span class="author vcard"><a class="url fn n" href="http://www.getlaura.com/author/getlaura/" title="View all posts by getLaura" rel="author">getLaura</a></span></span>						</div><!-- .entry-meta -->
+						<h1 class="page-title">Polymorphism in Ruby</h1>					</header><!-- .entry-header -->
+
+					<div class="entry-content">
+						<p><strong>Polymorphism</strong> comes form the greek words &#8216;polys&#8217; meaning much or many and &#8216;morphe&#8217; meaning form or shape. In programming, it refers to the ability to use functions or methods in different ways for different objects or data types.</p>
+<p>Having the ability to use the same method in a different way depending on data input is very useful in Ruby. It greatly decreases the need for long, ugly if statements like this:<span id="more-130"></span></p>
+<pre>class Person
+    def initialize(first, last, age)
+         @first_name = first
+         @last_name = last
+         @age = age
+    end
+
+    def birthday
+         @age += 1
+    end
+
+    def introduce(type)
+         if type == "Student"
+             puts "Hello teacher. My name is #{@first_name} #{@last_name}."
+         elsif type == "Teacher"
+             puts "Hello class. My name is #{@first_name} #{@last_name}."
+         elsif type == "Parent"
+             puts "Hi. I'm one of the parents. My name is #{@first_name} #{@last_name}."
+         else
+             puts "Hi everyone. My name is #{@first_name} #{@last_name}."
+    end
+end
+
+john = Person.new("John", "Doe", 18)
+john.introduce("Student")   #=&gt; Hello teacher. My name is John Doe.</pre>
+<p>Now with polymorphism we are going to eliminate this ugly if statement by creating multiple classes that all have the introduce method. We are just going to change what the introduce method does for each class.</p>
+<h2>Example 1: Polymorphism with inheritance</h2>
+<p>All of our different types of people, i.e., students, parents, and teachers, are persons and they share similarities like names and birthdays. We don&#8217;t want to eliminate the Person class or the common methods. We are going to add class for each type of person that will inherit the person class. Then our new classes will inherit the common methods from Person, but will have a customized introduce method.</p>
+<pre>class Person
+    def initialize(first, last, age)
+         @first_name = first
+         @last_name = last
+         @age = age
+    end
+
+    def birthday
+         @age += 1
+    end
+
+    def introduce
+          puts "Hi everyone. My name is #{@first_name} #{@last_name}."
+    end
+end
+
+class Student &lt; Person
+    def introduce
+          puts "Hello teacher. My name is #{@first_name} #{@last_name}."
+    end
+end
+
+class Teacher &lt; Person
+    def introduce
+          puts "Hello class. My name is #{@first_name} #{@last_name}."
+    end
+end
+
+class Parent &lt; Person     
+    def introduce           
+        puts "Hi. I'm one of the parents. My name is #{@first_name} #{@last_name}."     
+    end 
+end 
+
+john = Student.new("John", "Doe", 18) 
+john.introduce   #=&gt; Hello teacher. My name is John Doe.</pre>
+<h2>Example 2: Polymorphism on different objects</h2>
+<p>The above example is easy to understand, but at least for me, this doesn&#8217;t really show us why polymorphism is so useful. Here is a more practical example. Our user is going to select an option from a list of possible actions relating to a Student. We won&#8217;t be able to predict which action the user will call so we send the same method to whichever object he/she picks.</p>
+<pre>class Student
+    attr_accessor :first_name, :last_name, :age
+def initialize(first, last, age)
+@first_name = first
+@last_name = last
+@age = age
+end
+
+def birthday
+@age += 1
+end
+end
+
+class ViewStudent
+def initialize(student)
+@student = student
+end
+
+def do_something
+puts "Student name: #{@student.first_name} #{@student.last_name}"
+end
+end
+
+class UpdateStudent
+def initialize(student)
+@student = student
+end
+
+def do_something
+puts "What is the student's first name?"
+@student.first_name = gets.chomp
+puts "What is the student's last name?"
+@student.last_name = gets.chomp
+puts "Updated student: #{@student.first_name} #{@student.last_name}"
+end
+end
+
+choices = [ViewStudent, UpdateStudent]
+
+student = Student.new("John", "Doe", 18)
+
+puts "Select 1 to view student or 2 to update student."
+selection = gets.chomp.to_i
+obj = choices[selection - 1]
+obj = obj.new(student)
+obj.do_something</pre>
+<p>Have fun with polymorphism!</p>
+<div class="addthis_toolbox addthis_default_style addthis_" addthis:url='http://www.getlaura.com/polymorphism-in-ruby/' addthis:title='Polymorphism in Ruby ' ><a class="addthis_button_facebook"></a><a class="addthis_button_twitter"></a><a class="addthis_button_email"></a><a class="addthis_button_pinterest_share"></a><a class="addthis_button_compact"></a><a class="addthis_counter addthis_bubble_style"></a></div>					</div><!-- .entry-content -->
+
+					<footer class="entry-meta">
+						This entry was posted in <a href="http://www.getlaura.com/category/code/" rel="category tag">Code</a>, <a href="http://www.getlaura.com/category/cs/" rel="category tag">CS</a>, <a href="http://www.getlaura.com/category/ruby/" rel="category tag">Ruby</a> and tagged <a href="http://www.getlaura.com/tag/polymorphism/" rel="tag">Polymorphism</a>, <a href="http://www.getlaura.com/tag/ruby/" rel="tag">Ruby</a>. Bookmark the <a href="http://www.getlaura.com/polymorphism-in-ruby/" title="Permalink to Polymorphism in Ruby" rel="bookmark">permalink</a>.					</footer><!-- .entry-meta -->
+				</article><!-- #post-## -->
+
+					<nav role="navigation" id="nav-below" class="site-navigation post-navigation">
+		<h1 class="assistive-text">Post navigation</h1>
+
+	
+		<div class="nav-previous"><a href="http://www.getlaura.com/given-when-then/" rel="prev">Given/When/Then</a></div>		<div class="nav-next"><a href="http://www.getlaura.com/writing-a-programming-language-101/" rel="next">Writing a Programming Language 101</a></div>
+	
+	</nav><!-- #nav-below -->
+	
+<div id="comments" class="comments-area">
+
+	
+	
+					<div id="respond" class="comment-respond">
+			<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/polymorphism-in-ruby/#respond" style="display:none;">Cancel reply</a></small></h3>				<form action="http://www.getlaura.com/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+					<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8"  aria-required="true" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" aria-required='true' required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" aria-describedby="email-notes" aria-required='true' required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="text" value="" size="30" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='130' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="48b236f735" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="231"/></p>				</form>
+					</div><!-- #respond -->
+		
+</div><!-- #comments .comments-area -->
+
+			</div><!-- #content -->
+		</div><!-- #primary -->
+
+<div id="secondary" class="widget-area" role="complementary">
+	<aside id="search-2" class="widget widget_search"><form method="get" id="searchform" class="searchform" action="http://www.getlaura.com/" role="search">
+	<label for="s" class="screen-reader-text">Search</label>
+	<input type="search" class="field" name="s" value="" id="s" placeholder="Search &hellip;" />
+	<input type="submit" class="submit" id="searchsubmit" value="Search" />
+</form>
+</aside><aside id="text-5" class="widget widget_text"><h1 class="widget-title">My favorite must-have books</h1>			<div class="textwidget"><h5><a style="text-decoration: underline;" href="http://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented-ebook/dp/B000SEIBB8?tag=whatisspiruli-20">Design Patterns</a></span></h5>
+<a href="http://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented-ebook/dp/B000SEIBB8?tag=whatisspiruli-20"><img src="http://ecx.images-amazon.com/images/I/51kuc0iWoKL._SX326_BO1,204,203,200_.jpg" style="height:150px"></a></br>
+
+<h5><a style="text-decoration: underline;" href="http://www.amazon.com/gp/product/1118907442?tag=whatisspiruli-20">HTML/CSS & Javascript/JQuery</a></h5>
+<a href="http://www.amazon.com/gp/product/1118907442?tag=whatisspiruli-20"><img src="http://ecx.images-amazon.com/images/I/41hyTxIxT1L._SX435_BO1,204,203,200_.jpg" style="height:150px"></a>
+
+<h5><a style="text-decoration: underline;" href="http://www.amazon.com/Python-Data-Analysis-Wrangling-IPython/dp/1449319793?tag=whatisspiruli-20">Python for Data Analysis</a></h5>
+<a href="http://www.amazon.com/Python-Data-Analysis-Wrangling-IPython/dp/1449319793?tag=whatisspiruli-20"><img src="http://ecx.images-amazon.com/images/I/514byZUF8nL._SX375_BO1,204,203,200_.jpg" style="height:150px"></a></div>
+		</aside><aside id="categories-2" class="widget widget_categories"><h1 class="widget-title">Categories</h1>		<ul>
+	<li class="cat-item cat-item-14"><a href="http://www.getlaura.com/category/algorithms/" >Algorithms</a>
+</li>
+	<li class="cat-item cat-item-49"><a href="http://www.getlaura.com/category/api/" >API</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="http://www.getlaura.com/category/code/" >Code</a>
+</li>
+	<li class="cat-item cat-item-13"><a href="http://www.getlaura.com/category/cs/" >CS</a>
+</li>
+	<li class="cat-item cat-item-17"><a href="http://www.getlaura.com/category/developer-tools/" >Developer Tools</a>
+</li>
+	<li class="cat-item cat-item-42"><a href="http://www.getlaura.com/category/git-2/" >git</a>
+</li>
+	<li class="cat-item cat-item-12"><a href="http://www.getlaura.com/category/kata-2/" >kata</a>
+</li>
+	<li class="cat-item cat-item-45"><a href="http://www.getlaura.com/category/ms-in-computer-science/" >MS in Computer Science</a>
+</li>
+	<li class="cat-item cat-item-48"><a href="http://www.getlaura.com/category/python/" >Python</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="http://www.getlaura.com/category/ruby/" >Ruby</a>
+</li>
+	<li class="cat-item cat-item-40"><a href="http://www.getlaura.com/category/sinatra/" >Sinatra</a>
+</li>
+	<li class="cat-item cat-item-39"><a href="http://www.getlaura.com/category/software-engineering-concepts/" >Software Engineering Concepts</a>
+</li>
+	<li class="cat-item cat-item-8"><a href="http://www.getlaura.com/category/tdd/" >TDD</a>
+</li>
+	<li class="cat-item cat-item-1"><a href="http://www.getlaura.com/category/uncategorized/" >Uncategorized</a>
+</li>
+		</ul>
+</aside><aside id="text-4" class="widget widget_text"><h1 class="widget-title">Follow</h1>			<div class="textwidget">Twitter:<a href="www.twitter.com/getlaura">@getLaura</a></div>
+		</aside><aside id="mc4wp_widget-2" class="widget widget_mc4wp_widget"><h1 class="widget-title">Get Updates</h1><!-- Form by MailChimp for WordPress plugin v2.2 - https://mc4wp.com/ --><form method="post" action="http://www.getlaura.com/polymorphism-in-ruby/" id="mc4wp-form-1" class="form mc4wp-form"><p>
+	<label for="mc4wp_email"></label>
+	<input type="email" id="mc4wp_email" name="EMAIL" required placeholder="Your email address" />
+</p>
+
+<p>
+	<input type="submit" value="Sign up" />
+</p><textarea name="_mc4wp_required_but_not_really" style="display: none !important;"></textarea><input type="hidden" name="_mc4wp_form_submit" value="1" /><input type="hidden" name="_mc4wp_form_instance" value="1" /><input type="hidden" name="_mc4wp_form_nonce" value="326f08a599" /></form><!-- / MailChimp for WP Plugin --></aside></div><!-- #secondary -->
+
+	</div><!-- #main .site-main -->
+</div><!-- #page .hfeed .site -->
+
+	<div id="colophon-wrap">
+		<footer id="colophon" class="site-footer" role="contentinfo">
+			<div class="site-info">
+								<a href="http://wordpress.org/" title="A Semantic Personal Publishing Platform" rel="generator">Proudly powered by WordPress</a>.
+				Theme: Untitled by <a href="http://theme.wordpress.com/" rel="designer">WordPress.com</a>.			</div><!-- .site-info -->
+		</footer><!-- #colophon -->
+	</div><!-- #colophon-wrap -->
+
+<script type="text/javascript">
+
+var addthis_config = {"data_track_clickback":false,"data_track_addressbar":false,"data_track_textcopy":false,"ui_atversion":"300"};
+var addthis_product = 'wpp-4.0';
+</script><script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=6ba85de85879d5b2b6abce0436df4e41"></script><script type='text/javascript' src='http://www.getlaura.com/wp-content/plugins/akismet/_inc/form.js?ver=3.1.5'></script>
+<script type="text/javascript">
+				jQuery('.mc4wp-form').find('[type="submit"]').click(function () {
+					jQuery(this).parents('.mc4wp-form').addClass('mc4wp-form-submitted');
+				});
+			</script><script type='text/javascript' src='http://www.getlaura.com/wp-content/themes/untitled/js/small-menu.js?ver=20120206'></script>
+<script type='text/javascript' src='http://www.getlaura.com/wp-includes/js/comment-reply.min.js?ver=4.4.2'></script>
+<script type='text/javascript' src='http://www.getlaura.com/wp-includes/js/wp-embed.min.js?ver=4.4.2'></script>
+<!--wp_footer--></body>
+</html>

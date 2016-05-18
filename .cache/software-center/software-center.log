@@ -1,0 +1,870 @@
+2016-02-07 20:56:06,668 - softwarecenter.ui.gtk3.app - INFO - setting up proxy 'None'
+2016-02-07 20:56:06,720 - softwarecenter.db.database - INFO - open() database: path=None use_axi=True use_agent=True
+2016-02-07 20:56:06,738 - softwarecenter.db.database - ERROR - failed to add apt-xapian-index
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/db/database.py", line 183, in _get_new_xapiandb
+    softwarecenter.paths.APT_XAPIAN_INDEX_DB_PATH)
+  File "/usr/lib/python2.7/dist-packages/xapian/__init__.py", line 3666, in __init__
+    _xapian.Database_swiginit(self,_xapian.new_Database(*args))
+DatabaseOpeningError: Couldn't stat '/var/lib/apt-xapian-index/index' (No such file or directory)
+2016-02-07 20:56:07,675 - softwarecenter.backend.reviews - WARNING - Could not get usefulness from server, no username in config file
+2016-02-07 20:56:08,024 - softwarecenter.ui.gtk3.app - INFO - show_available_packages: search_text is '', app is None.
+2016-02-07 20:56:08,043 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-02-07 20:56:09,574 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'RatingsAndReviewsAPI', 'review_stats']'
+2016-02-07 20:56:09,575 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at reviews.ubuntu.com
+'
+2016-02-07 20:56:10,240 - softwarecenter.db.categories - WARNING - sort by cataloged time requested but your a-x-i does not seem to support that yet
+2016-02-07 20:56:11,211 - softwarecenter.db.categories - WARNING - sort by cataloged time requested but your a-x-i does not seem to support that yet
+2016-02-07 20:56:11,384 - softwarecenter.db.categories - WARNING - sort by cataloged time requested but your a-x-i does not seem to support that yet
+2016-02-07 20:56:11,452 - softwarecenter.db.categories - WARNING - sort by cataloged time requested but your a-x-i does not seem to support that yet
+2016-02-07 20:56:11,520 - softwarecenter.db.categories - WARNING - sort by cataloged time requested but your a-x-i does not seem to support that yet
+2016-02-07 20:56:12,060 - softwarecenter.db.categories - WARNING - sort by cataloged time requested but your a-x-i does not seem to support that yet
+2016-02-07 20:56:12,126 - softwarecenter.db.categories - WARNING - sort by cataloged time requested but your a-x-i does not seem to support that yet
+2016-02-07 20:56:12,221 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'SoftwareCenterAgentAPI', 'exhibits', '{"lang": "en", "series": "precise"}']'
+2016-02-07 20:56:12,223 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at software-center.ubuntu.com
+'
+2016-02-07 20:56:12,996 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'SoftwareCenterAgentAPI', 'available_apps', '{"lang": "en", "series": "precise", "arch": "amd64"}']'
+2016-02-07 20:56:12,997 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at software-center.ubuntu.com
+'
+2016-02-07 20:56:12,997 - softwarecenter.db.update - WARNING - error: WARNING:__main__:Unable to find the server at software-center.ubuntu.com
+
+2016-02-07 20:56:13,034 - softwarecenter.ui.gtk3.app - INFO - software-center-agent finished with status 1
+2016-02-07 20:56:15,284 - softwarecenter.db.database - ERROR - failed to add apt-xapian-index
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/db/database.py", line 183, in _get_new_xapiandb
+    softwarecenter.paths.APT_XAPIAN_INDEX_DB_PATH)
+  File "/usr/lib/python2.7/dist-packages/xapian/__init__.py", line 3666, in __init__
+    _xapian.Database_swiginit(self,_xapian.new_Database(*args))
+DatabaseOpeningError: Couldn't stat '/var/lib/apt-xapian-index/index' (No such file or directory)
+2016-02-07 21:00:22,817 - softwarecenter.ui.gtk3.app - INFO - setting up proxy 'None'
+2016-02-07 21:00:22,831 - softwarecenter.db.database - INFO - open() database: path=None use_axi=True use_agent=True
+2016-02-07 21:00:22,833 - softwarecenter.db.database - ERROR - failed to add apt-xapian-index
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/db/database.py", line 183, in _get_new_xapiandb
+    softwarecenter.paths.APT_XAPIAN_INDEX_DB_PATH)
+  File "/usr/lib/python2.7/dist-packages/xapian/__init__.py", line 3666, in __init__
+    _xapian.Database_swiginit(self,_xapian.new_Database(*args))
+DatabaseOpeningError: Couldn't stat '/var/lib/apt-xapian-index/index' (No such file or directory)
+2016-02-07 21:00:22,934 - softwarecenter.region - WARNING - failed to use geoclue: 'org.freedesktop.Geoclue.Error.notAvailable: Geoclue master client has no usable Address providers'
+2016-02-07 21:00:23,084 - softwarecenter.backend.reviews - WARNING - Could not get usefulness from server, no username in config file
+2016-02-07 21:00:23,317 - softwarecenter.ui.gtk3.app - INFO - show_available_packages: search_text is '', app is None.
+2016-02-07 21:00:23,364 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-02-07 21:00:23,508 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'RatingsAndReviewsAPI', 'review_stats']'
+2016-02-07 21:00:23,509 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at reviews.ubuntu.com
+'
+2016-02-07 21:00:23,819 - softwarecenter.db.categories - WARNING - sort by cataloged time requested but your a-x-i does not seem to support that yet
+2016-02-07 21:00:24,331 - softwarecenter.db.categories - WARNING - sort by cataloged time requested but your a-x-i does not seem to support that yet
+2016-02-07 21:00:24,468 - softwarecenter.db.categories - WARNING - sort by cataloged time requested but your a-x-i does not seem to support that yet
+2016-02-07 21:00:24,537 - softwarecenter.db.categories - WARNING - sort by cataloged time requested but your a-x-i does not seem to support that yet
+2016-02-07 21:00:24,605 - softwarecenter.db.categories - WARNING - sort by cataloged time requested but your a-x-i does not seem to support that yet
+2016-02-07 21:00:25,049 - softwarecenter.db.categories - WARNING - sort by cataloged time requested but your a-x-i does not seem to support that yet
+2016-02-07 21:00:25,115 - softwarecenter.db.categories - WARNING - sort by cataloged time requested but your a-x-i does not seem to support that yet
+2016-02-07 21:00:25,172 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'SoftwareCenterAgentAPI', 'exhibits', '{"lang": "en", "series": "precise"}']'
+2016-02-07 21:00:25,172 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at software-center.ubuntu.com
+'
+2016-02-07 21:00:27,700 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'SoftwareCenterAgentAPI', 'available_apps', '{"lang": "en", "series": "precise", "arch": "amd64"}']'
+2016-02-07 21:00:27,701 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at software-center.ubuntu.com
+'
+2016-02-07 21:00:27,701 - softwarecenter.db.update - WARNING - error: WARNING:__main__:Unable to find the server at software-center.ubuntu.com
+
+2016-02-07 21:00:27,736 - softwarecenter.ui.gtk3.app - INFO - software-center-agent finished with status 1
+2016-02-07 21:00:27,973 - softwarecenter.db.database - ERROR - failed to add apt-xapian-index
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/db/database.py", line 183, in _get_new_xapiandb
+    softwarecenter.paths.APT_XAPIAN_INDEX_DB_PATH)
+  File "/usr/lib/python2.7/dist-packages/xapian/__init__.py", line 3666, in __init__
+    _xapian.Database_swiginit(self,_xapian.new_Database(*args))
+DatabaseOpeningError: Couldn't stat '/var/lib/apt-xapian-index/index' (No such file or directory)
+2016-02-07 18:51:08,387 - softwarecenter.ui.gtk3.app - INFO - setting up proxy 'None'
+2016-02-07 18:51:08,441 - softwarecenter.db.database - INFO - open() database: path=None use_axi=True use_agent=True
+2016-02-07 18:51:09,002 - softwarecenter.backend.reviews - WARNING - Could not get usefulness from server, no username in config file
+2016-02-07 18:51:09,299 - softwarecenter.ui.gtk3.app - INFO - show_available_packages: search_text is '', app is None.
+2016-02-07 18:51:09,308 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-02-07 18:51:30,607 - softwarecenter.fixme - WARNING - logs to the root logger: '('/usr/share/software-center/softwarecenter/utils.py', 201, 'get_title_from_html')'
+2016-02-07 18:51:30,607 - root - WARNING - failed to parse: '<div style="background-color: #161513; width:1680px; height:200px;">
+ <div style="background: url('/site_media/exhibits/2013/09/AAMFP_Leaderboard_700x200_1.jpg') top left no-repeat; width:700px; height:200px;"></div>
+</div>' ('ascii' codec can't encode character u'\xa0' in position 70: ordinal not in range(128))
+2016-02-07 18:52:08,086 - softwarecenter.db.update - INFO - skipping region restricted app: 'Bulleti d'esquerra de Calonge i Sant Antoni ' (not whitelisted)
+2016-02-07 18:52:08,225 - softwarecenter.db.update - INFO - skipping region restricted app: 'Just Play MP3' (not whitelisted)
+2016-02-07 18:52:08,309 - softwarecenter.db.update - INFO - skipping region restricted app: 'reEarCandy' (not whitelisted)
+2016-02-07 18:52:08,421 - softwarecenter.db.update - INFO - skipping region restricted app: '蚂蚁浏览器' (not whitelisted)
+2016-02-07 18:52:08,613 - softwarecenter.db.update - INFO - skipping region restricted app: 'Source Code Analyzer' (not whitelisted)
+2016-02-07 18:52:08,941 - softwarecenter.db.update - INFO - skipping region restricted app: 'Flaggame' (not whitelisted)
+2016-02-07 18:52:09,163 - softwarecenter.db.update - INFO - skipping region restricted app: 'Comentarios Web' (not whitelisted)
+2016-02-07 18:52:11,297 - softwarecenter.ui.gtk3.app - INFO - software-center-agent finished with status 0
+2016-02-07 18:52:11,298 - softwarecenter.db.database - INFO - reopen() database
+2016-02-07 18:52:11,298 - softwarecenter.db.database - INFO - open() database: path=None use_axi=True use_agent=True
+2016-02-07 18:54:27,837 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-02-09 13:50:21,823 - softwarecenter.ui.gtk3.app - INFO - setting up proxy 'None'
+2016-02-09 13:50:21,876 - softwarecenter.db.database - INFO - open() database: path=None use_axi=True use_agent=True
+2016-02-09 13:50:24,354 - softwarecenter.backend.reviews - WARNING - Could not get usefulness from server, no username in config file
+2016-02-09 13:50:25,144 - softwarecenter.ui.gtk3.app - ERROR - show_available_packages: can not open ['/tmp/Sexy-Dakoda-grinds-against-her-man---Sologirlcontent.3gp'], error:
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/app.py", line 1332, in show_available_packages
+    search_text, app = parse_packages_args(packages)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/app.py", line 181, in parse_packages_args
+    app = DebFileApplication(request)
+  File "/usr/share/software-center/softwarecenter/db/debfile.py", line 50, in __init__
+    raise DebFileOpenError("Could not open %r." % debfile, debfile)
+DebFileOpenError: Could not open '/tmp/Sexy-Dakoda-grinds-against-her-man---Sologirlcontent.3gp'.
+2016-02-09 13:50:25,849 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-02-09 13:51:03,028 - softwarecenter.db.update - INFO - skipping region restricted app: 'Bulleti d'esquerra de Calonge i Sant Antoni ' (not whitelisted)
+2016-02-09 13:51:03,895 - softwarecenter.db.update - INFO - skipping region restricted app: 'Just Play MP3' (not whitelisted)
+2016-02-09 13:51:04,039 - softwarecenter.db.update - INFO - skipping region restricted app: 'reEarCandy' (not whitelisted)
+2016-02-09 13:51:04,232 - softwarecenter.db.update - INFO - skipping region restricted app: '蚂蚁浏览器' (not whitelisted)
+2016-02-09 13:51:04,664 - softwarecenter.db.update - INFO - skipping region restricted app: 'Source Code Analyzer' (not whitelisted)
+2016-02-09 13:51:05,287 - softwarecenter.db.update - INFO - skipping region restricted app: 'Flaggame' (not whitelisted)
+2016-02-09 13:51:05,662 - softwarecenter.db.update - INFO - skipping region restricted app: 'Comentarios Web' (not whitelisted)
+2016-02-09 13:51:18,505 - softwarecenter.ui.gtk3.app - INFO - software-center-agent finished with status 0
+2016-02-09 13:51:18,507 - softwarecenter.db.database - INFO - reopen() database
+2016-02-09 13:51:18,508 - softwarecenter.db.database - INFO - open() database: path=None use_axi=True use_agent=True
+2016-02-09 13:51:31,254 - softwarecenter.ui.gtk3.app - INFO - show_available_packages: search_text is None, app is None.
+2016-02-09 13:51:44,643 - softwarecenter.fixme - WARNING - logs to the root logger: '('/usr/share/software-center/softwarecenter/utils.py', 201, 'get_title_from_html')'
+2016-02-09 13:51:44,643 - root - WARNING - failed to parse: '<div style="background-color: #161513; width:1680px; height:200px;">
+ <div style="background: url('/site_media/exhibits/2013/09/AAMFP_Leaderboard_700x200_1.jpg') top left no-repeat; width:700px; height:200px;"></div>
+</div>' ('ascii' codec can't encode character u'\xa0' in position 70: ordinal not in range(128))
+2016-02-09 13:52:32,912 - softwarecenter.backend - WARNING - daemon dies, ignoring: <AptTransaction object at 0x585cbe0 (aptdaemon+client+AptTransaction at 0x77cd6e0)> exit-failed
+2016-02-09 13:52:32,913 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-02-09 13:52:35,473 - softwarecenter.utils - WARNING - Could not determine the installed desktop file path for app-install desktop file: '/usr/share/app-install/desktop/vlc:vlc.desktop'
+2016-02-09 13:58:16,453 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-02-09 13:58:19,368 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-02-09 13:58:40,398 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_get_reviews_helper.py', '--language', 'en', '--origin', 'ubuntu', '--distroseries', 'precise', '--pkgname', 'vlc', '--page', '1', '--sort', 'helpful']'
+2016-02-09 13:58:40,399 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'Traceback (most recent call last):
+  File "/usr/share/software-center/piston_get_reviews_helper.py", line 86, in <module>
+    piston_reviews = try_get_reviews(kwargs)
+  File "/usr/share/software-center/piston_get_reviews_helper.py", line 23, in try_get_reviews
+    piston_reviews = rnrclient.get_reviews(**kwargs)
+  File "/usr/lib/python2.7/dist-packages/piston_mini_client/validators.py", line 44, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/piston_mini_client/validators.py", line 44, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/piston_mini_client/validators.py", line 44, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/piston_mini_client/validators.py", line 44, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/piston_mini_client/validators.py", line 44, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/piston_mini_client/validators.py", line 65, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/piston_mini_client/validators.py", line 65, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/piston_mini_client/validators.py", line 65, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/piston_mini_client/__init__.py", line 140, in wrapper
+    data = json.loads(body)
+  File "/usr/lib/python2.7/json/__init__.py", line 326, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python2.7/json/decoder.py", line 366, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python2.7/json/decoder.py", line 384, in raw_decode
+    raise ValueError("No JSON object could be decoded")
+ValueError: No JSON object could be decoded
+'
+2016-02-09 13:58:46,297 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_get_reviews_helper.py', '--language', 'en', '--origin', 'ubuntu', '--distroseries', 'precise', '--pkgname', 'vlc', '--page', '1', '--sort', 'helpful']'
+2016-02-09 13:58:46,329 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'Traceback (most recent call last):
+  File "/usr/share/software-center/piston_get_reviews_helper.py", line 86, in <module>
+    piston_reviews = try_get_reviews(kwargs)
+  File "/usr/share/software-center/piston_get_reviews_helper.py", line 23, in try_get_reviews
+    piston_reviews = rnrclient.get_reviews(**kwargs)
+  File "/usr/lib/python2.7/dist-packages/piston_mini_client/validators.py", line 44, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/piston_mini_client/validators.py", line 44, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/piston_mini_client/validators.py", line 44, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/piston_mini_client/validators.py", line 44, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/piston_mini_client/validators.py", line 44, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/piston_mini_client/validators.py", line 65, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/piston_mini_client/validators.py", line 65, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/piston_mini_client/validators.py", line 65, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/piston_mini_client/__init__.py", line 140, in wrapper
+    data = json.loads(body)
+  File "/usr/lib/python2.7/json/__init__.py", line 326, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python2.7/json/decoder.py", line 366, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python2.7/json/decoder.py", line 384, in raw_decode
+    raise ValueError("No JSON object could be decoded")
+ValueError: No JSON object could be decoded
+'
+2016-02-09 13:58:46,435 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_get_reviews_helper.py', '--language', 'en', '--origin', 'ubuntu', '--distroseries', 'precise', '--pkgname', 'vlc', '--page', '1', '--sort', 'helpful']'
+2016-02-09 13:58:46,435 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'Traceback (most recent call last):
+  File "/usr/share/software-center/piston_get_reviews_helper.py", line 86, in <module>
+    piston_reviews = try_get_reviews(kwargs)
+  File "/usr/share/software-center/piston_get_reviews_helper.py", line 23, in try_get_reviews
+    piston_reviews = rnrclient.get_reviews(**kwargs)
+  File "/usr/lib/python2.7/dist-packages/piston_mini_client/validators.py", line 44, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/piston_mini_client/validators.py", line 44, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/piston_mini_client/validators.py", line 44, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/piston_mini_client/validators.py", line 44, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/piston_mini_client/validators.py", line 44, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/piston_mini_client/validators.py", line 65, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/piston_mini_client/validators.py", line 65, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/piston_mini_client/validators.py", line 65, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/piston_mini_client/__init__.py", line 140, in wrapper
+    data = json.loads(body)
+  File "/usr/lib/python2.7/json/__init__.py", line 326, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python2.7/json/decoder.py", line 366, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python2.7/json/decoder.py", line 384, in raw_decode
+    raise ValueError("No JSON object could be decoded")
+ValueError: No JSON object could be decoded
+'
+2016-02-12 12:25:58,255 - softwarecenter.ui.gtk3.app - INFO - setting up proxy 'None'
+2016-02-12 12:25:58,342 - softwarecenter.db.database - INFO - open() database: path=None use_axi=True use_agent=True
+2016-02-12 12:26:00,676 - softwarecenter.backend.reviews - WARNING - Could not get usefulness from server, no username in config file
+2016-02-12 12:26:01,117 - softwarecenter.ui.gtk3.app - INFO - show_available_packages: search_text is '', app is None.
+2016-02-12 12:26:01,130 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'RatingsAndReviewsAPI', 'review_stats', '{"days": 3}']'
+2016-02-12 12:26:01,131 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at reviews.ubuntu.com
+'
+2016-02-12 12:26:01,131 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-02-12 12:26:11,944 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'SoftwareCenterAgentAPI', 'available_apps', '{"lang": "en", "series": "precise", "arch": "amd64"}']'
+2016-02-12 12:26:11,945 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at software-center.ubuntu.com
+'
+2016-02-12 12:26:11,945 - softwarecenter.db.update - WARNING - error: WARNING:__main__:Unable to find the server at software-center.ubuntu.com
+
+2016-02-12 12:26:15,048 - softwarecenter.ui.gtk3.app - INFO - software-center-agent finished with status 1
+2016-02-12 12:26:15,066 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'SoftwareCenterAgentAPI', 'exhibits', '{"lang": "en", "series": "precise"}']'
+2016-02-12 12:26:15,066 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at software-center.ubuntu.com
+'
+2016-02-16 20:04:24,189 - softwarecenter.ui.gtk3.app - INFO - setting up proxy 'None'
+2016-02-16 20:04:24,254 - softwarecenter.db.database - INFO - open() database: path=None use_axi=True use_agent=True
+2016-02-16 20:04:26,026 - softwarecenter.backend.reviews - WARNING - Could not get usefulness from server, no username in config file
+2016-02-16 20:04:26,351 - softwarecenter.ui.gtk3.app - INFO - show_available_packages: search_text is '', app is None.
+2016-02-16 20:04:26,375 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-02-16 20:04:27,891 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'RatingsAndReviewsAPI', 'review_stats', '{"days": 8}']'
+2016-02-16 20:04:27,892 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at reviews.ubuntu.com
+'
+2016-02-16 20:04:37,409 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'SoftwareCenterAgentAPI', 'available_apps', '{"lang": "en", "series": "precise", "arch": "amd64"}']'
+2016-02-16 20:04:37,410 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at software-center.ubuntu.com
+'
+2016-02-16 20:04:37,411 - softwarecenter.db.update - WARNING - error: WARNING:__main__:Unable to find the server at software-center.ubuntu.com
+
+2016-02-16 20:04:40,148 - softwarecenter.ui.gtk3.app - INFO - software-center-agent finished with status 1
+2016-02-16 20:04:40,178 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'SoftwareCenterAgentAPI', 'exhibits', '{"lang": "en", "series": "precise"}']'
+2016-02-16 20:04:40,178 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at software-center.ubuntu.com
+'
+2016-02-18 09:05:54,204 - softwarecenter.ui.gtk3.app - INFO - setting up proxy 'None'
+2016-02-18 09:05:54,272 - softwarecenter.db.database - INFO - open() database: path=None use_axi=True use_agent=True
+2016-02-18 09:05:55,437 - softwarecenter.backend.reviews - WARNING - Could not get usefulness from server, no username in config file
+2016-02-18 09:05:55,727 - softwarecenter.ui.gtk3.app - INFO - show_available_packages: search_text is '', app is None.
+2016-02-18 09:05:55,735 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-02-18 09:06:03,058 - softwarecenter.fixme - WARNING - logs to the root logger: '('/usr/share/software-center/softwarecenter/utils.py', 201, 'get_title_from_html')'
+2016-02-18 09:06:03,058 - root - WARNING - failed to parse: '<div style="background-color: #161513; width:1680px; height:200px;">
+ <div style="background: url('/site_media/exhibits/2013/09/AAMFP_Leaderboard_700x200_1.jpg') top left no-repeat; width:700px; height:200px;"></div>
+</div>' ('ascii' codec can't encode character u'\xa0' in position 70: ordinal not in range(128))
+2016-02-18 09:06:27,525 - softwarecenter.db.update - INFO - skipping region restricted app: 'Bulleti d'esquerra de Calonge i Sant Antoni ' (not whitelisted)
+2016-02-18 09:06:27,668 - softwarecenter.db.update - INFO - skipping region restricted app: 'Just Play MP3' (not whitelisted)
+2016-02-18 09:06:27,751 - softwarecenter.db.update - INFO - skipping region restricted app: 'reEarCandy' (not whitelisted)
+2016-02-18 09:06:27,866 - softwarecenter.db.update - INFO - skipping region restricted app: '蚂蚁浏览器' (not whitelisted)
+2016-02-18 09:06:28,053 - softwarecenter.db.update - INFO - skipping region restricted app: 'Source Code Analyzer' (not whitelisted)
+2016-02-18 09:06:28,392 - softwarecenter.db.update - INFO - skipping region restricted app: 'Flaggame' (not whitelisted)
+2016-02-18 09:06:28,610 - softwarecenter.db.update - INFO - skipping region restricted app: 'Comentarios Web' (not whitelisted)
+2016-02-18 09:06:30,382 - softwarecenter.ui.gtk3.app - INFO - software-center-agent finished with status 0
+2016-02-18 09:06:30,384 - softwarecenter.db.database - INFO - reopen() database
+2016-02-18 09:06:30,384 - softwarecenter.db.database - INFO - open() database: path=None use_axi=True use_agent=True
+2016-02-18 09:07:22,144 - softwarecenter.ui.gtk3.app - INFO - setting up proxy 'None'
+2016-02-18 09:07:22,149 - softwarecenter.db.database - INFO - open() database: path=None use_axi=True use_agent=True
+2016-02-18 09:07:22,741 - softwarecenter.backend.reviews - WARNING - Could not get usefulness from server, no username in config file
+2016-02-18 09:07:22,977 - softwarecenter.ui.gtk3.app - INFO - show_available_packages: search_text is '', app is None.
+2016-02-18 09:07:22,984 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-02-18 09:07:26,815 - softwarecenter.fixme - WARNING - logs to the root logger: '('/usr/share/software-center/softwarecenter/utils.py', 201, 'get_title_from_html')'
+2016-02-18 09:07:26,815 - root - WARNING - failed to parse: '<div style="background-color: #161513; width:1680px; height:200px;">
+ <div style="background: url('/site_media/exhibits/2013/09/AAMFP_Leaderboard_700x200_1.jpg') top left no-repeat; width:700px; height:200px;"></div>
+</div>' ('ascii' codec can't encode character u'\xa0' in position 70: ordinal not in range(128))
+2016-02-18 09:07:29,035 - softwarecenter.db.update - INFO - skipping region restricted app: 'Bulleti d'esquerra de Calonge i Sant Antoni ' (not whitelisted)
+2016-02-18 09:07:29,175 - softwarecenter.db.update - INFO - skipping region restricted app: 'Just Play MP3' (not whitelisted)
+2016-02-18 09:07:29,256 - softwarecenter.db.update - INFO - skipping region restricted app: 'reEarCandy' (not whitelisted)
+2016-02-18 09:07:29,369 - softwarecenter.db.update - INFO - skipping region restricted app: '蚂蚁浏览器' (not whitelisted)
+2016-02-18 09:07:29,552 - softwarecenter.db.update - INFO - skipping region restricted app: 'Source Code Analyzer' (not whitelisted)
+2016-02-18 09:07:29,877 - softwarecenter.db.update - INFO - skipping region restricted app: 'Flaggame' (not whitelisted)
+2016-02-18 09:07:30,091 - softwarecenter.db.update - INFO - skipping region restricted app: 'Comentarios Web' (not whitelisted)
+2016-02-18 09:07:31,788 - softwarecenter.ui.gtk3.app - INFO - software-center-agent finished with status 0
+2016-02-18 09:07:31,789 - softwarecenter.db.database - INFO - reopen() database
+2016-02-18 09:07:31,789 - softwarecenter.db.database - INFO - open() database: path=None use_axi=True use_agent=True
+2016-02-18 12:39:48,914 - softwarecenter.ui.gtk3.app - INFO - setting up proxy 'None'
+2016-02-18 12:39:48,990 - softwarecenter.db.database - INFO - open() database: path=None use_axi=True use_agent=True
+2016-02-18 12:39:50,199 - softwarecenter.backend.reviews - WARNING - Could not get usefulness from server, no username in config file
+2016-02-18 12:39:50,546 - softwarecenter.ui.gtk3.app - INFO - show_available_packages: search_text is '', app is [Application: appname= pkgname=skype-4-3-0-37-multi-ubu].
+2016-02-18 12:39:50,580 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'RatingsAndReviewsAPI', 'review_stats', '{"days": 1}']'
+2016-02-18 12:39:50,581 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at reviews.ubuntu.com
+'
+2016-02-18 12:39:50,582 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-02-18 12:39:57,292 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'SoftwareCenterAgentAPI', 'exhibits', '{"lang": "en", "series": "precise"}']'
+2016-02-18 12:39:57,293 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at software-center.ubuntu.com
+'
+2016-02-18 12:39:59,626 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'SoftwareCenterAgentAPI', 'available_apps', '{"lang": "en", "series": "precise", "arch": "amd64"}']'
+2016-02-18 12:39:59,626 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at software-center.ubuntu.com
+'
+2016-02-18 12:39:59,627 - softwarecenter.db.update - WARNING - error: WARNING:__main__:Unable to find the server at software-center.ubuntu.com
+
+2016-02-18 12:40:00,650 - softwarecenter.ui.gtk3.app - INFO - software-center-agent finished with status 1
+2016-02-18 12:40:00,903 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'SoftwareCenterRecommenderAPI', 'recommend_app', '{"pkgname": "skype"}']'
+2016-02-18 12:40:00,904 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at rec.ubuntu.com
+'
+2016-02-18 12:40:00,904 - softwarecenter.db.categories - WARNING - Error while accessing the recommender service: WARNING:__main__:Unable to find the server at rec.ubuntu.com
+
+2016-02-18 12:40:00,905 - softwarecenter.ui.gtk3.widgets.recommendations - WARNING - Error while accessing the recommender agent for the details view recommendations: WARNING:__main__:Unable to find the server at rec.ubuntu.com
+
+2016-02-18 12:40:34,857 - softwarecenter.ui.gtk3.app - INFO - setting up proxy 'None'
+2016-02-18 12:40:34,864 - softwarecenter.db.database - INFO - open() database: path=None use_axi=True use_agent=True
+2016-02-18 12:40:35,648 - softwarecenter.backend.reviews - WARNING - Could not get usefulness from server, no username in config file
+2016-02-18 12:40:35,909 - softwarecenter.ui.gtk3.app - INFO - show_available_packages: search_text is '', app is [Application: appname= pkgname=teamviewer].
+2016-02-18 12:40:35,932 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'RatingsAndReviewsAPI', 'review_stats', '{"days": 1}']'
+2016-02-18 12:40:35,933 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at reviews.ubuntu.com
+'
+2016-02-18 12:40:35,933 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-02-18 12:40:40,925 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'SoftwareCenterAgentAPI', 'exhibits', '{"lang": "en", "series": "precise"}']'
+2016-02-18 12:40:40,926 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at software-center.ubuntu.com
+'
+2016-02-18 12:40:43,262 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'SoftwareCenterAgentAPI', 'available_apps', '{"lang": "en", "series": "precise", "arch": "amd64"}']'
+2016-02-18 12:40:43,263 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at software-center.ubuntu.com
+'
+2016-02-18 12:40:43,263 - softwarecenter.db.update - WARNING - error: WARNING:__main__:Unable to find the server at software-center.ubuntu.com
+
+2016-02-18 12:40:43,767 - softwarecenter.ui.gtk3.app - INFO - software-center-agent finished with status 1
+2016-02-18 12:40:44,024 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'SoftwareCenterRecommenderAPI', 'recommend_app', '{"pkgname": "teamviewer"}']'
+2016-02-18 12:40:44,024 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at rec.ubuntu.com
+'
+2016-02-18 12:40:44,025 - softwarecenter.db.categories - WARNING - Error while accessing the recommender service: WARNING:__main__:Unable to find the server at rec.ubuntu.com
+
+2016-02-18 12:40:44,025 - softwarecenter.ui.gtk3.widgets.recommendations - WARNING - Error while accessing the recommender agent for the details view recommendations: WARNING:__main__:Unable to find the server at rec.ubuntu.com
+
+2016-02-21 08:37:20,736 - softwarecenter.ui.gtk3.app - INFO - setting up proxy 'None'
+2016-02-21 08:37:20,741 - softwarecenter.db.database - INFO - open() database: path=None use_axi=True use_agent=True
+2016-02-21 08:37:21,125 - softwarecenter.region - WARNING - failed to use geoclue: 'org.freedesktop.Geoclue.Error.notAvailable: Geoclue master client has no usable Address providers'
+2016-02-21 08:37:21,883 - softwarecenter.backend.reviews - WARNING - Could not get usefulness from server, no username in config file
+2016-02-21 08:37:22,121 - softwarecenter.ui.gtk3.app - INFO - show_available_packages: search_text is '', app is None.
+2016-02-21 08:37:22,154 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-02-21 08:37:23,284 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'RatingsAndReviewsAPI', 'review_stats', '{"days": 3}']'
+2016-02-21 08:37:23,284 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at reviews.ubuntu.com
+'
+2016-02-21 08:37:26,398 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'SoftwareCenterAgentAPI', 'exhibits', '{"lang": "en", "series": "precise"}']'
+2016-02-21 08:37:26,398 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at software-center.ubuntu.com
+'
+2016-02-21 08:37:29,316 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'SoftwareCenterAgentAPI', 'available_apps', '{"lang": "en", "series": "precise", "arch": "amd64"}']'
+2016-02-21 08:37:29,316 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at software-center.ubuntu.com
+'
+2016-02-21 08:37:29,317 - softwarecenter.db.update - WARNING - error: WARNING:__main__:Unable to find the server at software-center.ubuntu.com
+
+2016-02-21 08:37:29,390 - softwarecenter.ui.gtk3.app - INFO - software-center-agent finished with status 1
+2016-02-21 08:44:04,718 - softwarecenter.backend - ERROR - error in _on_trans_finished 'Error: Failed to download package files
+Check your Internet connection.
+
+Failed to fetch http://in.archive.ubuntu.com/ubuntu/pool/universe/m/menu/menu_2.1.46ubuntu1_amd64.deb Cannot initiate the connection to in.archive.ubuntu.com:80 (91.189.92.201). - connect (101: Network is unreachable) [IP: 91.189.92.201 80]
+Failed to fetch http://in.archive.ubuntu.com/ubuntu/pool/universe/w/wifi-radar/wifi-radar_2.0.s08+dfsg-1ubuntu1_all.deb Cannot initiate the connection to in.archive.ubuntu.com:80 (91.189.92.201). - connect (101: Network is unreachable) [IP: 91.189.92.201 80]
+'
+2016-02-21 08:46:18,970 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-02-21 08:46:19,991 - softwarecenter.utils - WARNING - Could not determine the installed desktop file path for app-install desktop file: '/usr/share/app-install/desktop/wifi-radar:wifi-radar.desktop'
+2016-02-23 15:53:55,707 - softwarecenter.ui.gtk3.app - INFO - setting up proxy 'None'
+2016-02-23 15:53:55,716 - softwarecenter.db.database - INFO - open() database: path=None use_axi=True use_agent=True
+2016-02-23 15:53:55,943 - softwarecenter.region - WARNING - failed to use geoclue: 'org.freedesktop.Geoclue.Error.notAvailable: Geoclue master client has no usable Address providers'
+2016-02-23 15:53:56,819 - softwarecenter.backend.reviews - WARNING - Could not get usefulness from server, no username in config file
+2016-02-23 15:53:57,125 - softwarecenter.ui.gtk3.app - ERROR - show_available_packages: can not open ['/media/Ubuntu 12.04.5 LTS amd64/vijay.kkkk/wine1.5_1.5.19-0ubuntu1.debian.tar.gz'], error:
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/app.py", line 1332, in show_available_packages
+    search_text, app = parse_packages_args(packages)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/app.py", line 181, in parse_packages_args
+    app = DebFileApplication(request)
+  File "/usr/share/software-center/softwarecenter/db/debfile.py", line 50, in __init__
+    raise DebFileOpenError("Could not open %r." % debfile, debfile)
+DebFileOpenError: Could not open '/media/Ubuntu 12.04.5 LTS amd64/vijay.kkkk/wine1.5_1.5.19-0ubuntu1.debian.tar.gz'.
+2016-02-23 15:53:57,393 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'RatingsAndReviewsAPI', 'review_stats', '{"days": 6}']'
+2016-02-23 15:53:57,394 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at reviews.ubuntu.com
+'
+2016-02-23 15:53:57,395 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-02-23 15:54:00,312 - softwarecenter.ui.gtk3.app - INFO - show_available_packages: search_text is None, app is None.
+2016-02-23 15:54:02,840 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'SoftwareCenterAgentAPI', 'available_apps', '{"lang": "en", "series": "precise", "arch": "amd64"}']'
+2016-02-23 15:54:02,847 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at software-center.ubuntu.com
+'
+2016-02-23 15:54:02,848 - softwarecenter.db.update - WARNING - error: WARNING:__main__:Unable to find the server at software-center.ubuntu.com
+
+2016-02-23 15:54:04,466 - softwarecenter.ui.gtk3.app - INFO - software-center-agent finished with status 1
+2016-02-23 15:54:04,467 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'SoftwareCenterAgentAPI', 'exhibits', '{"lang": "en", "series": "precise"}']'
+2016-02-23 15:54:04,468 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at software-center.ubuntu.com
+'
+2016-02-26 16:12:59,239 - softwarecenter.ui.gtk3.app - INFO - setting up proxy 'None'
+2016-02-26 16:12:59,263 - softwarecenter.db.database - INFO - open() database: path=None use_axi=True use_agent=True
+2016-02-26 16:12:59,366 - softwarecenter.region - WARNING - failed to use geoclue: 'org.freedesktop.Geoclue.Error.notAvailable: Geoclue master client has no usable Address providers'
+2016-02-26 16:13:00,237 - softwarecenter.backend.reviews - WARNING - Could not get usefulness from server, no username in config file
+2016-02-26 16:13:00,503 - softwarecenter.ui.gtk3.app - INFO - show_available_packages: search_text is '', app is None.
+2016-02-26 16:13:00,511 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'RatingsAndReviewsAPI', 'review_stats', '{"days": 9}']'
+2016-02-26 16:13:00,511 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at reviews.ubuntu.com
+'
+2016-02-26 16:13:00,511 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-02-26 16:13:04,700 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'SoftwareCenterAgentAPI', 'exhibits', '{"lang": "en", "series": "precise"}']'
+2016-02-26 16:13:04,701 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at software-center.ubuntu.com
+'
+2016-02-26 16:13:07,753 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'SoftwareCenterAgentAPI', 'available_apps', '{"lang": "en", "series": "precise", "arch": "amd64"}']'
+2016-02-26 16:13:07,753 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at software-center.ubuntu.com
+'
+2016-02-26 16:13:07,753 - softwarecenter.db.update - WARNING - error: WARNING:__main__:Unable to find the server at software-center.ubuntu.com
+
+2016-02-26 16:13:08,013 - softwarecenter.ui.gtk3.app - INFO - software-center-agent finished with status 1
+2016-02-28 19:42:07,840 - softwarecenter.ui.gtk3.app - INFO - setting up proxy 'None'
+2016-02-28 19:42:07,871 - softwarecenter.db.database - INFO - open() database: path=None use_axi=True use_agent=True
+2016-02-28 19:42:08,246 - softwarecenter.region - WARNING - failed to use geoclue: 'org.freedesktop.Geoclue.Error.notAvailable: Geoclue master client has no usable Address providers'
+2016-02-28 19:42:09,392 - softwarecenter.backend.reviews - WARNING - Could not get usefulness from server, no username in config file
+2016-02-28 19:42:09,804 - softwarecenter.ui.gtk3.app - INFO - show_available_packages: search_text is '', app is None.
+2016-02-28 19:42:09,817 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'RatingsAndReviewsAPI', 'review_stats', '{"days": 11}']'
+2016-02-28 19:42:09,818 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at reviews.ubuntu.com
+'
+2016-02-28 19:42:09,818 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-02-28 19:42:17,509 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'SoftwareCenterAgentAPI', 'exhibits', '{"lang": "en", "series": "precise"}']'
+2016-02-28 19:42:17,510 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at software-center.ubuntu.com
+'
+2016-02-28 19:42:21,165 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'SoftwareCenterAgentAPI', 'available_apps', '{"lang": "en", "series": "precise", "arch": "amd64"}']'
+2016-02-28 19:42:21,166 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at software-center.ubuntu.com
+'
+2016-02-28 19:42:21,166 - softwarecenter.db.update - WARNING - error: WARNING:__main__:Unable to find the server at software-center.ubuntu.com
+
+2016-02-28 19:42:21,284 - softwarecenter.ui.gtk3.app - INFO - software-center-agent finished with status 1
+2016-02-28 19:43:43,290 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-02-28 19:43:51,777 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-02-28 21:13:30,299 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_get_reviews_helper.py', '--language', 'en', '--origin', 'any', '--distroseries', 'any', '--pkgname', 'synaptic', '--page', '1', '--sort', 'helpful']'
+2016-02-28 21:13:30,377 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'Traceback (most recent call last):
+  File "/usr/share/software-center/piston_get_reviews_helper.py", line 86, in <module>
+    piston_reviews = try_get_reviews(kwargs)
+  File "/usr/share/software-center/piston_get_reviews_helper.py", line 23, in try_get_reviews
+    piston_reviews = rnrclient.get_reviews(**kwargs)
+  File "/usr/lib/python2.7/dist-packages/piston_mini_client/validators.py", line 44, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/piston_mini_client/validators.py", line 44, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/piston_mini_client/validators.py", line 44, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/piston_mini_client/validators.py", line 44, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/piston_mini_client/validators.py", line 44, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/piston_mini_client/validators.py", line 65, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/piston_mini_client/validators.py", line 65, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/piston_mini_client/validators.py", line 65, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/piston_mini_client/__init__.py", line 140, in wrapper
+    data = json.loads(body)
+  File "/usr/lib/python2.7/json/__init__.py", line 326, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python2.7/json/decoder.py", line 366, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python2.7/json/decoder.py", line 384, in raw_decode
+    raise ValueError("No JSON object could be decoded")
+ValueError: No JSON object could be decoded
+'
+2016-02-28 21:13:33,809 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_get_reviews_helper.py', '--language', 'en', '--origin', 'any', '--distroseries', 'any', '--pkgname', 'synaptic', '--page', '1', '--sort', 'helpful']'
+2016-02-28 21:13:33,810 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'Traceback (most recent call last):
+  File "/usr/share/software-center/piston_get_reviews_helper.py", line 86, in <module>
+    piston_reviews = try_get_reviews(kwargs)
+  File "/usr/share/software-center/piston_get_reviews_helper.py", line 23, in try_get_reviews
+    piston_reviews = rnrclient.get_reviews(**kwargs)
+  File "/usr/lib/python2.7/dist-packages/piston_mini_client/validators.py", line 44, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/piston_mini_client/validators.py", line 44, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/piston_mini_client/validators.py", line 44, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/piston_mini_client/validators.py", line 44, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/piston_mini_client/validators.py", line 44, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/piston_mini_client/validators.py", line 65, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/piston_mini_client/validators.py", line 65, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/piston_mini_client/validators.py", line 65, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/piston_mini_client/__init__.py", line 140, in wrapper
+    data = json.loads(body)
+  File "/usr/lib/python2.7/json/__init__.py", line 326, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python2.7/json/decoder.py", line 366, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python2.7/json/decoder.py", line 384, in raw_decode
+    raise ValueError("No JSON object could be decoded")
+ValueError: No JSON object could be decoded
+'
+2016-02-29 09:23:58,146 - softwarecenter.ui.gtk3.app - INFO - setting up proxy 'None'
+2016-02-29 09:23:58,233 - softwarecenter.db.database - INFO - open() database: path=None use_axi=True use_agent=True
+2016-02-29 09:23:59,738 - softwarecenter.backend.reviews - WARNING - Could not get usefulness from server, no username in config file
+2016-02-29 09:24:00,112 - softwarecenter.ui.gtk3.app - INFO - show_available_packages: search_text is '', app is [Application: appname= pkgname=skype-ubuntu-lucid].
+2016-02-29 09:24:00,123 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'RatingsAndReviewsAPI', 'review_stats', '{"days": 12}']'
+2016-02-29 09:24:00,124 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at reviews.ubuntu.com
+'
+2016-02-29 09:24:00,124 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-02-29 09:24:07,224 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'SoftwareCenterAgentAPI', 'exhibits', '{"lang": "en", "series": "precise"}']'
+2016-02-29 09:24:07,225 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at software-center.ubuntu.com
+'
+2016-02-29 09:24:07,601 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'SoftwareCenterRecommenderAPI', 'recommend_app', '{"pkgname": null}']'
+2016-02-29 09:24:07,601 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'ERROR:__main__:urclient_apps
+Traceback (most recent call last):
+  File "/usr/share/software-center/piston_generic_helper.py", line 214, in <module>
+    piston_reply = f(**kwargs)
+  File "/usr/lib/python2.7/dist-packages/piston_mini_client/validators.py", line 36, in wrapper
+    "Argument '%s' must be a string" % varname)
+ValidationException: Argument 'pkgname' must be a string
+'
+2016-02-29 09:24:07,601 - softwarecenter.db.categories - WARNING - Error while accessing the recommender service: ERROR:__main__:urclient_apps
+Traceback (most recent call last):
+  File "/usr/share/software-center/piston_generic_helper.py", line 214, in <module>
+    piston_reply = f(**kwargs)
+  File "/usr/lib/python2.7/dist-packages/piston_mini_client/validators.py", line 36, in wrapper
+    "Argument '%s' must be a string" % varname)
+ValidationException: Argument 'pkgname' must be a string
+
+2016-02-29 09:24:07,602 - softwarecenter.ui.gtk3.widgets.recommendations - WARNING - Error while accessing the recommender agent for the details view recommendations: ERROR:__main__:urclient_apps
+Traceback (most recent call last):
+  File "/usr/share/software-center/piston_generic_helper.py", line 214, in <module>
+    piston_reply = f(**kwargs)
+  File "/usr/lib/python2.7/dist-packages/piston_mini_client/validators.py", line 36, in wrapper
+    "Argument '%s' must be a string" % varname)
+ValidationException: Argument 'pkgname' must be a string
+
+2016-02-29 09:24:09,763 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'SoftwareCenterAgentAPI', 'available_apps', '{"lang": "en", "series": "precise", "arch": "amd64"}']'
+2016-02-29 09:24:09,764 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at software-center.ubuntu.com
+'
+2016-02-29 09:24:09,765 - softwarecenter.db.update - WARNING - error: WARNING:__main__:Unable to find the server at software-center.ubuntu.com
+
+2016-02-29 09:24:09,850 - softwarecenter.ui.gtk3.app - INFO - software-center-agent finished with status 1
+2016-02-29 09:24:15,331 - softwarecenter.ui.gtk3.app - INFO - setting up proxy 'None'
+2016-02-29 09:24:15,339 - softwarecenter.db.database - INFO - open() database: path=None use_axi=True use_agent=True
+2016-02-29 09:24:16,128 - softwarecenter.backend.reviews - WARNING - Could not get usefulness from server, no username in config file
+2016-02-29 09:24:16,428 - softwarecenter.ui.gtk3.app - INFO - show_available_packages: search_text is '', app is [Application: appname= pkgname=skype-ubuntu-lucid].
+2016-02-29 09:24:16,472 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-02-29 09:24:16,500 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'RatingsAndReviewsAPI', 'review_stats', '{"days": 12}']'
+2016-02-29 09:24:16,501 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at reviews.ubuntu.com
+'
+2016-02-29 09:24:21,352 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'SoftwareCenterAgentAPI', 'exhibits', '{"lang": "en", "series": "precise"}']'
+2016-02-29 09:24:21,354 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at software-center.ubuntu.com
+'
+2016-02-29 09:24:21,696 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'SoftwareCenterRecommenderAPI', 'recommend_app', '{"pkgname": null}']'
+2016-02-29 09:24:21,697 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'ERROR:__main__:urclient_apps
+Traceback (most recent call last):
+  File "/usr/share/software-center/piston_generic_helper.py", line 214, in <module>
+    piston_reply = f(**kwargs)
+  File "/usr/lib/python2.7/dist-packages/piston_mini_client/validators.py", line 36, in wrapper
+    "Argument '%s' must be a string" % varname)
+ValidationException: Argument 'pkgname' must be a string
+'
+2016-02-29 09:24:21,698 - softwarecenter.db.categories - WARNING - Error while accessing the recommender service: ERROR:__main__:urclient_apps
+Traceback (most recent call last):
+  File "/usr/share/software-center/piston_generic_helper.py", line 214, in <module>
+    piston_reply = f(**kwargs)
+  File "/usr/lib/python2.7/dist-packages/piston_mini_client/validators.py", line 36, in wrapper
+    "Argument '%s' must be a string" % varname)
+ValidationException: Argument 'pkgname' must be a string
+
+2016-02-29 09:24:21,698 - softwarecenter.ui.gtk3.widgets.recommendations - WARNING - Error while accessing the recommender agent for the details view recommendations: ERROR:__main__:urclient_apps
+Traceback (most recent call last):
+  File "/usr/share/software-center/piston_generic_helper.py", line 214, in <module>
+    piston_reply = f(**kwargs)
+  File "/usr/lib/python2.7/dist-packages/piston_mini_client/validators.py", line 36, in wrapper
+    "Argument '%s' must be a string" % varname)
+ValidationException: Argument 'pkgname' must be a string
+
+2016-02-29 09:24:23,842 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'SoftwareCenterAgentAPI', 'available_apps', '{"lang": "en", "series": "precise", "arch": "amd64"}']'
+2016-02-29 09:24:23,843 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at software-center.ubuntu.com
+'
+2016-02-29 09:24:23,844 - softwarecenter.db.update - WARNING - error: WARNING:__main__:Unable to find the server at software-center.ubuntu.com
+
+2016-02-29 09:24:23,935 - softwarecenter.ui.gtk3.app - INFO - software-center-agent finished with status 1
+2016-02-29 12:58:47,322 - softwarecenter.ui.gtk3.app - INFO - setting up proxy 'None'
+2016-02-29 12:58:47,332 - softwarecenter.db.database - INFO - open() database: path=None use_axi=True use_agent=True
+2016-02-29 12:58:48,165 - softwarecenter.backend.reviews - WARNING - Could not get usefulness from server, no username in config file
+2016-02-29 12:58:48,522 - softwarecenter.ui.gtk3.app - ERROR - show_available_packages: can not open ['/home/vijay/getskype-linux-beta-ubuntu-beta-ubuntu-64'], error:
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/app.py", line 1332, in show_available_packages
+    search_text, app = parse_packages_args(packages)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/app.py", line 181, in parse_packages_args
+    app = DebFileApplication(request)
+  File "/usr/share/software-center/softwarecenter/db/debfile.py", line 50, in __init__
+    raise DebFileOpenError("Could not open %r." % debfile, debfile)
+DebFileOpenError: Could not open '/home/vijay/getskype-linux-beta-ubuntu-beta-ubuntu-64'.
+2016-02-29 12:58:48,791 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-02-29 12:58:51,365 - softwarecenter.ui.gtk3.app - INFO - show_available_packages: search_text is None, app is None.
+2016-02-29 12:58:59,285 - softwarecenter.fixme - WARNING - logs to the root logger: '('/usr/share/software-center/softwarecenter/utils.py', 201, 'get_title_from_html')'
+2016-02-29 12:58:59,285 - root - WARNING - failed to parse: '<div style="background-color: #161513; width:1680px; height:200px;">
+ <div style="background: url('/site_media/exhibits/2013/09/AAMFP_Leaderboard_700x200_1.jpg') top left no-repeat; width:700px; height:200px;"></div>
+</div>' ('ascii' codec can't encode character u'\xa0' in position 70: ordinal not in range(128))
+2016-02-29 12:59:06,935 - softwarecenter.ui.gtk3.app - INFO - setting up proxy 'None'
+2016-02-29 12:59:06,943 - softwarecenter.db.database - INFO - open() database: path=None use_axi=True use_agent=True
+2016-02-29 12:59:07,740 - softwarecenter.backend.reviews - WARNING - Could not get usefulness from server, no username in config file
+2016-02-29 12:59:08,098 - softwarecenter.ui.gtk3.app - INFO - show_available_packages: search_text is '', app is [Application: appname= pkgname=skype-ubuntu-lucid].
+2016-02-29 12:59:08,116 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-02-29 12:59:11,682 - softwarecenter.db.update - INFO - skipping region restricted app: 'Bulleti d'esquerra de Calonge i Sant Antoni ' (not whitelisted)
+2016-02-29 12:59:12,212 - softwarecenter.db.update - INFO - skipping region restricted app: 'Just Play MP3' (not whitelisted)
+2016-02-29 12:59:12,442 - softwarecenter.db.update - INFO - skipping region restricted app: 'reEarCandy' (not whitelisted)
+2016-02-29 12:59:12,854 - softwarecenter.db.update - INFO - skipping region restricted app: '蚂蚁浏览器' (not whitelisted)
+2016-02-29 12:59:13,283 - softwarecenter.db.update - INFO - skipping region restricted app: 'Source Code Analyzer' (not whitelisted)
+2016-02-29 12:59:14,212 - softwarecenter.db.update - INFO - skipping region restricted app: 'Flaggame' (not whitelisted)
+2016-02-29 12:59:14,700 - softwarecenter.fixme - WARNING - logs to the root logger: '('/usr/share/software-center/softwarecenter/utils.py', 201, 'get_title_from_html')'
+2016-02-29 12:59:14,699 - root - WARNING - failed to parse: '<div style="background-color: #161513; width:1680px; height:200px;">
+ <div style="background: url('/site_media/exhibits/2013/09/AAMFP_Leaderboard_700x200_1.jpg') top left no-repeat; width:700px; height:200px;"></div>
+</div>' ('ascii' codec can't encode character u'\xa0' in position 70: ordinal not in range(128))
+2016-02-29 12:59:14,834 - softwarecenter.db.update - INFO - skipping region restricted app: 'Comentarios Web' (not whitelisted)
+2016-02-29 12:59:19,249 - softwarecenter.fixme - WARNING - logs to the root logger: '('/usr/share/software-center/update-software-center-agent', 96, '<module>')'
+2016-02-29 12:59:19,248 - root - WARNING - Another instance of the update agent already holds a write lock on /home/vijay/.cache/software-center/software-center-agent.db.tmp
+2016-02-29 12:59:19,708 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'SoftwareCenterRecommenderAPI', 'recommend_app', '{"pkgname": null}']'
+2016-02-29 12:59:19,709 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'ERROR:__main__:urclient_apps
+Traceback (most recent call last):
+  File "/usr/share/software-center/piston_generic_helper.py", line 214, in <module>
+    piston_reply = f(**kwargs)
+  File "/usr/lib/python2.7/dist-packages/piston_mini_client/validators.py", line 36, in wrapper
+    "Argument '%s' must be a string" % varname)
+ValidationException: Argument 'pkgname' must be a string
+'
+2016-02-29 12:59:19,709 - softwarecenter.db.categories - WARNING - Error while accessing the recommender service: ERROR:__main__:urclient_apps
+Traceback (most recent call last):
+  File "/usr/share/software-center/piston_generic_helper.py", line 214, in <module>
+    piston_reply = f(**kwargs)
+  File "/usr/lib/python2.7/dist-packages/piston_mini_client/validators.py", line 36, in wrapper
+    "Argument '%s' must be a string" % varname)
+ValidationException: Argument 'pkgname' must be a string
+
+2016-02-29 12:59:19,710 - softwarecenter.ui.gtk3.widgets.recommendations - WARNING - Error while accessing the recommender agent for the details view recommendations: ERROR:__main__:urclient_apps
+Traceback (most recent call last):
+  File "/usr/share/software-center/piston_generic_helper.py", line 214, in <module>
+    piston_reply = f(**kwargs)
+  File "/usr/lib/python2.7/dist-packages/piston_mini_client/validators.py", line 36, in wrapper
+    "Argument '%s' must be a string" % varname)
+ValidationException: Argument 'pkgname' must be a string
+
+2016-02-29 12:59:19,726 - softwarecenter.ui.gtk3.app - INFO - software-center-agent finished with status 1
+2016-02-29 13:18:32,894 - softwarecenter.ui.gtk3.app - INFO - setting up proxy 'None'
+2016-02-29 13:18:32,903 - softwarecenter.db.database - INFO - open() database: path=None use_axi=True use_agent=True
+2016-02-29 13:18:33,044 - softwarecenter.region - WARNING - failed to use geoclue: 'org.freedesktop.Geoclue.Error.notAvailable: Geoclue master client has no usable Address providers'
+2016-02-29 13:18:33,797 - softwarecenter.backend.reviews - WARNING - Could not get usefulness from server, no username in config file
+2016-02-29 13:18:34,196 - softwarecenter.ui.gtk3.app - ERROR - show_available_packages: can not open ['/home/vijay/Documents/Skype/Browser/SkypeBrowserHost.exe'], error:
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/app.py", line 1332, in show_available_packages
+    search_text, app = parse_packages_args(packages)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/app.py", line 181, in parse_packages_args
+    app = DebFileApplication(request)
+  File "/usr/share/software-center/softwarecenter/db/debfile.py", line 50, in __init__
+    raise DebFileOpenError("Could not open %r." % debfile, debfile)
+DebFileOpenError: Could not open '/home/vijay/Documents/Skype/Browser/SkypeBrowserHost.exe'.
+2016-02-29 13:18:34,462 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'RatingsAndReviewsAPI', 'review_stats', '{"days": 1}']'
+2016-02-29 13:18:34,462 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at reviews.ubuntu.com
+'
+2016-02-29 13:18:34,463 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-02-29 13:18:37,452 - softwarecenter.ui.gtk3.app - INFO - show_available_packages: search_text is None, app is None.
+2016-02-29 13:18:39,886 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'SoftwareCenterAgentAPI', 'available_apps', '{"lang": "en", "series": "precise", "arch": "amd64"}']'
+2016-02-29 13:18:39,887 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at software-center.ubuntu.com
+'
+2016-02-29 13:18:39,887 - softwarecenter.db.update - WARNING - error: WARNING:__main__:Unable to find the server at software-center.ubuntu.com
+
+2016-02-29 13:18:41,103 - softwarecenter.ui.gtk3.app - INFO - software-center-agent finished with status 1
+2016-02-29 13:18:41,104 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'SoftwareCenterAgentAPI', 'exhibits', '{"lang": "en", "series": "precise"}']'
+2016-02-29 13:18:41,104 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at software-center.ubuntu.com
+'
+2016-02-29 16:06:50,780 - softwarecenter.ui.gtk3.app - INFO - setting up proxy 'None'
+2016-02-29 16:06:50,785 - softwarecenter.db.database - INFO - open() database: path=None use_axi=True use_agent=True
+2016-02-29 16:06:50,887 - softwarecenter.region - WARNING - failed to use geoclue: 'org.freedesktop.Geoclue.Error.notAvailable: Geoclue master client has no usable Address providers'
+2016-02-29 16:06:51,354 - softwarecenter.backend.reviews - WARNING - Could not get usefulness from server, no username in config file
+2016-02-29 16:06:51,563 - softwarecenter.ui.gtk3.app - ERROR - show_available_packages: can not open ['/media/VIJAY/Skypee/AutoIt3.exe'], error:
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/app.py", line 1332, in show_available_packages
+    search_text, app = parse_packages_args(packages)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/app.py", line 181, in parse_packages_args
+    app = DebFileApplication(request)
+  File "/usr/share/software-center/softwarecenter/db/debfile.py", line 50, in __init__
+    raise DebFileOpenError("Could not open %r." % debfile, debfile)
+DebFileOpenError: Could not open '/media/VIJAY/Skypee/AutoIt3.exe'.
+2016-02-29 16:06:51,728 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'RatingsAndReviewsAPI', 'review_stats', '{"days": 1}']'
+2016-02-29 16:06:51,729 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at reviews.ubuntu.com
+'
+2016-02-29 16:06:51,729 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-02-29 16:06:55,385 - softwarecenter.ui.gtk3.app - INFO - show_available_packages: search_text is None, app is None.
+2016-02-29 16:06:56,171 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'SoftwareCenterAgentAPI', 'available_apps', '{"lang": "en", "series": "precise", "arch": "amd64"}']'
+2016-02-29 16:06:56,172 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at software-center.ubuntu.com
+'
+2016-02-29 16:06:56,172 - softwarecenter.db.update - WARNING - error: WARNING:__main__:Unable to find the server at software-center.ubuntu.com
+
+2016-02-29 16:06:58,521 - softwarecenter.ui.gtk3.app - INFO - software-center-agent finished with status 1
+2016-02-29 16:06:58,522 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'SoftwareCenterAgentAPI', 'exhibits', '{"lang": "en", "series": "precise"}']'
+2016-02-29 16:06:58,522 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at software-center.ubuntu.com
+'
+2016-02-29 22:08:23,167 - softwarecenter.ui.gtk3.app - INFO - setting up proxy 'None'
+2016-02-29 22:08:23,268 - softwarecenter.db.database - INFO - open() database: path=None use_axi=True use_agent=True
+2016-02-29 22:08:24,140 - softwarecenter.region - WARNING - failed to use geoclue: 'org.freedesktop.Geoclue.Error.notAvailable: Geoclue master client has no usable Address providers'
+2016-02-29 22:08:25,680 - softwarecenter.backend.reviews - WARNING - Could not get usefulness from server, no username in config file
+2016-02-29 22:08:26,266 - softwarecenter.ui.gtk3.app - INFO - show_available_packages: search_text is '', app is None.
+2016-02-29 22:08:26,318 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-02-29 22:08:28,000 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'RatingsAndReviewsAPI', 'review_stats', '{"days": 1}']'
+2016-02-29 22:08:28,001 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at reviews.ubuntu.com
+'
+2016-02-29 22:08:33,729 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'SoftwareCenterAgentAPI', 'available_apps', '{"lang": "en", "series": "precise", "arch": "amd64"}']'
+2016-02-29 22:08:33,730 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at software-center.ubuntu.com
+'
+2016-02-29 22:08:33,820 - softwarecenter.db.update - WARNING - error: WARNING:__main__:Unable to find the server at software-center.ubuntu.com
+
+2016-02-29 22:08:37,029 - softwarecenter.ui.gtk3.app - INFO - software-center-agent finished with status 1
+2016-02-29 22:08:37,059 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'SoftwareCenterAgentAPI', 'exhibits', '{"lang": "en", "series": "precise"}']'
+2016-02-29 22:08:37,060 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at software-center.ubuntu.com
+'
+2016-02-29 22:09:51,868 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-02-29 22:10:00,311 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-02-29 22:11:23,748 - softwarecenter.fixme - WARNING - logs to the root logger: '('/usr/lib/python2.7/dist-packages/dbus/proxies.py', 410, '_introspect_error_handler')'
+2016-02-29 22:11:23,716 - dbus.proxies - ERROR - Introspect error on :1.376:/org/debian/apt/transaction/5568e1a0100843e48175c3c34d183ef2: dbus.exceptions.DBusException: org.freedesktop.DBus.Error.NoReply: Did not receive a reply. Possible causes include: the remote application did not send a reply, the message bus security policy blocked the reply, the reply timeout expired, or the network connection was broken.
+2016-02-29 22:13:25,371 - softwarecenter.db.database - INFO - reopen() database
+2016-02-29 22:13:25,377 - softwarecenter.db.database - INFO - open() database: path=None use_axi=True use_agent=True
+2016-02-29 22:13:25,693 - softwarecenter.db.database - INFO - afile '<__main__.GLocalFile object at 0x68940f0 (GLocalFile at 0x2856c60)>' changed
+2016-02-29 22:13:25,959 - softwarecenter.db.application - WARNING - document no longer valid after db reopen
+2016-02-29 22:13:26,647 - softwarecenter.db.database - INFO - reopen() database
+2016-02-29 22:13:26,647 - softwarecenter.db.database - INFO - open() database: path=None use_axi=True use_agent=True
+2016-03-01 21:07:00,085 - softwarecenter.ui.gtk3.app - INFO - setting up proxy 'None'
+2016-03-01 21:07:00,152 - softwarecenter.db.database - INFO - open() database: path=None use_axi=True use_agent=True
+2016-03-01 21:07:01,288 - softwarecenter.backend.reviews - WARNING - Could not get usefulness from server, no username in config file
+2016-03-01 21:07:01,550 - softwarecenter.ui.gtk3.app - INFO - show_available_packages: search_text is '', app is None.
+2016-03-01 21:07:01,561 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'RatingsAndReviewsAPI', 'review_stats', '{"days": 2}']'
+2016-03-01 21:07:01,562 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at reviews.ubuntu.com
+'
+2016-03-01 21:07:01,562 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-03-01 21:07:05,823 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'SoftwareCenterAgentAPI', 'exhibits', '{"lang": "en", "series": "precise"}']'
+2016-03-01 21:07:05,824 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at software-center.ubuntu.com
+'
+2016-03-01 21:07:07,262 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'SoftwareCenterAgentAPI', 'available_apps', '{"lang": "en", "series": "precise", "arch": "amd64"}']'
+2016-03-01 21:07:07,262 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at software-center.ubuntu.com
+'
+2016-03-01 21:07:07,263 - softwarecenter.db.update - WARNING - error: WARNING:__main__:Unable to find the server at software-center.ubuntu.com
+
+2016-03-01 21:07:07,337 - softwarecenter.ui.gtk3.app - INFO - software-center-agent finished with status 1
+2016-03-01 21:08:32,800 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-03-01 21:08:41,867 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-03-01 21:18:50,627 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-03-01 21:18:50,665 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-03-04 10:55:22,860 - softwarecenter.ui.gtk3.app - INFO - setting up proxy 'None'
+2016-03-04 10:55:22,942 - softwarecenter.db.database - INFO - open() database: path=None use_axi=True use_agent=True
+2016-03-04 10:55:23,271 - softwarecenter.region - WARNING - failed to use geoclue: 'org.freedesktop.Geoclue.Error.notAvailable: Geoclue master client has no usable Address providers'
+2016-03-04 10:55:24,320 - softwarecenter.backend.reviews - WARNING - Could not get usefulness from server, no username in config file
+2016-03-04 10:55:24,719 - softwarecenter.ui.gtk3.app - INFO - show_available_packages: search_text is '', app is None.
+2016-03-04 10:55:24,739 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'RatingsAndReviewsAPI', 'review_stats', '{"days": 4}']'
+2016-03-04 10:55:24,739 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at reviews.ubuntu.com
+'
+2016-03-04 10:55:24,740 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-03-04 10:55:31,544 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'SoftwareCenterAgentAPI', 'exhibits', '{"lang": "en", "series": "precise"}']'
+2016-03-04 10:55:31,544 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at software-center.ubuntu.com
+'
+2016-03-04 10:55:33,992 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'SoftwareCenterAgentAPI', 'available_apps', '{"lang": "en", "series": "precise", "arch": "amd64"}']'
+2016-03-04 10:55:33,993 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at software-center.ubuntu.com
+'
+2016-03-04 10:55:33,993 - softwarecenter.db.update - WARNING - error: WARNING:__main__:Unable to find the server at software-center.ubuntu.com
+
+2016-03-04 10:55:34,082 - softwarecenter.ui.gtk3.app - INFO - software-center-agent finished with status 1
+2016-03-10 09:21:28,912 - softwarecenter.ui.gtk3.app - INFO - setting up proxy 'None'
+2016-03-10 09:21:28,994 - softwarecenter.db.database - INFO - open() database: path=None use_axi=True use_agent=True
+2016-03-10 09:21:31,878 - softwarecenter.backend.reviews - WARNING - Could not get usefulness from server, no username in config file
+2016-03-10 09:21:32,282 - softwarecenter.ui.gtk3.app - INFO - show_available_packages: search_text is '', app is None.
+2016-03-10 09:21:32,288 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'RatingsAndReviewsAPI', 'review_stats', '{"days": 10}']'
+2016-03-10 09:21:32,289 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at reviews.ubuntu.com
+'
+2016-03-10 09:21:32,289 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-03-10 09:21:36,719 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'SoftwareCenterAgentAPI', 'exhibits', '{"lang": "en", "series": "precise"}']'
+2016-03-10 09:21:36,720 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at software-center.ubuntu.com
+'
+2016-03-10 09:21:38,214 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'SoftwareCenterAgentAPI', 'available_apps', '{"lang": "en", "series": "precise", "arch": "amd64"}']'
+2016-03-10 09:21:38,214 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at software-center.ubuntu.com
+'
+2016-03-10 09:21:38,215 - softwarecenter.db.update - WARNING - error: WARNING:__main__:Unable to find the server at software-center.ubuntu.com
+
+2016-03-10 09:21:38,285 - softwarecenter.ui.gtk3.app - INFO - software-center-agent finished with status 1
+2016-03-19 20:01:05,454 - softwarecenter.ui.gtk3.app - INFO - setting up proxy 'None'
+2016-03-19 20:01:05,540 - softwarecenter.db.database - INFO - open() database: path=None use_axi=True use_agent=True
+2016-03-19 20:01:05,960 - softwarecenter.region - WARNING - failed to use geoclue: 'org.freedesktop.Geoclue.Error.notAvailable: Geoclue master client has no usable Address providers'
+2016-03-19 20:01:06,719 - softwarecenter.backend.reviews - WARNING - Could not get usefulness from server, no username in config file
+2016-03-19 20:01:07,053 - softwarecenter.ui.gtk3.app - INFO - show_available_packages: search_text is '', app is None.
+2016-03-19 20:01:07,067 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-03-19 20:01:32,913 - softwarecenter.fixme - WARNING - logs to the root logger: '('/usr/share/software-center/softwarecenter/utils.py', 201, 'get_title_from_html')'
+2016-03-19 20:01:32,913 - root - WARNING - failed to parse: '<div style="background-color: #161513; width:1680px; height:200px;">
+ <div style="background: url('/site_media/exhibits/2013/09/AAMFP_Leaderboard_700x200_1.jpg') top left no-repeat; width:700px; height:200px;"></div>
+</div>' ('ascii' codec can't encode character u'\xa0' in position 70: ordinal not in range(128))
+2016-03-19 20:01:35,698 - softwarecenter.region - WARNING - failed to use geoclue: 'org.freedesktop.Geoclue.Error.notAvailable: Geoclue master client has no usable Address providers'
+2016-03-19 20:01:36,006 - softwarecenter.db.update - INFO - skipping region restricted app: 'Bulleti d'esquerra de Calonge i Sant Antoni ' (not whitelisted)
+2016-03-19 20:01:36,218 - softwarecenter.db.update - INFO - skipping region restricted app: 'Just Play MP3' (not whitelisted)
+2016-03-19 20:01:36,325 - softwarecenter.db.update - INFO - skipping region restricted app: 'reEarCandy' (not whitelisted)
+2016-03-19 20:01:36,481 - softwarecenter.db.update - INFO - skipping region restricted app: '蚂蚁浏览器' (not whitelisted)
+2016-03-19 20:01:36,728 - softwarecenter.db.update - INFO - skipping region restricted app: 'Source Code Analyzer' (not whitelisted)
+2016-03-19 20:01:37,224 - softwarecenter.db.update - INFO - skipping region restricted app: 'Flaggame' (not whitelisted)
+2016-03-19 20:01:37,547 - softwarecenter.db.update - INFO - skipping region restricted app: 'Comentarios Web' (not whitelisted)
+2016-03-19 20:01:39,699 - softwarecenter.ui.gtk3.app - INFO - software-center-agent finished with status 0
+2016-03-19 20:01:39,700 - softwarecenter.db.database - INFO - reopen() database
+2016-03-19 20:01:39,700 - softwarecenter.db.database - INFO - open() database: path=None use_axi=True use_agent=True
+2016-03-19 20:01:45,606 - softwarecenter.backend - WARNING - _on_trans_error: org.freedesktop.PolicyKit.Error.NotAuthorized: ('system-bus-name', {'name':  ':1.84'}): org.debian.apt.install-or-remove-packages
+2016-03-19 20:02:05,553 - softwarecenter.backend - WARNING - _on_trans_error: org.freedesktop.PolicyKit.Error.NotAuthorized: ('system-bus-name', {'name':  ':1.84'}): org.debian.apt.install-or-remove-packages
+2016-03-19 20:03:30,283 - softwarecenter.ui.gtk3.app - INFO - setting up proxy 'None'
+2016-03-19 20:03:30,290 - softwarecenter.db.database - INFO - open() database: path=None use_axi=True use_agent=True
+2016-03-19 20:03:30,384 - softwarecenter.region - WARNING - failed to use geoclue: 'org.freedesktop.Geoclue.Error.notAvailable: Geoclue master client has no usable Address providers'
+2016-03-19 20:03:31,082 - softwarecenter.backend.reviews - WARNING - Could not get usefulness from server, no username in config file
+2016-03-19 20:03:31,345 - softwarecenter.ui.gtk3.app - INFO - show_available_packages: search_text is '', app is None.
+2016-03-19 20:03:31,390 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'RatingsAndReviewsAPI', 'review_stats', '{"days": 1}']'
+2016-03-19 20:03:31,391 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at reviews.ubuntu.com
+'
+2016-03-19 20:03:31,391 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-03-19 20:03:35,892 - softwarecenter.fixme - WARNING - logs to the root logger: '('/usr/share/software-center/softwarecenter/utils.py', 201, 'get_title_from_html')'
+2016-03-19 20:03:35,891 - root - WARNING - failed to parse: '<div style="background-color: #161513; width:1680px; height:200px;">
+ <div style="background: url('/site_media/exhibits/2013/09/AAMFP_Leaderboard_700x200_1.jpg') top left no-repeat; width:700px; height:200px;"></div>
+</div>' ('ascii' codec can't encode character u'\xa0' in position 70: ordinal not in range(128))
+2016-03-19 20:03:39,495 - softwarecenter.region - WARNING - failed to use geoclue: 'org.freedesktop.Geoclue.Error.notAvailable: Geoclue master client has no usable Address providers'
+2016-03-19 20:03:39,895 - softwarecenter.db.update - INFO - skipping region restricted app: 'Bulleti d'esquerra de Calonge i Sant Antoni ' (not whitelisted)
+2016-03-19 20:03:40,133 - softwarecenter.db.update - INFO - skipping region restricted app: 'Just Play MP3' (not whitelisted)
+2016-03-19 20:03:40,271 - softwarecenter.db.update - INFO - skipping region restricted app: 'reEarCandy' (not whitelisted)
+2016-03-19 20:03:40,463 - softwarecenter.db.update - INFO - skipping region restricted app: '蚂蚁浏览器' (not whitelisted)
+2016-03-19 20:03:40,773 - softwarecenter.db.update - INFO - skipping region restricted app: 'Source Code Analyzer' (not whitelisted)
+2016-03-19 20:03:41,325 - softwarecenter.db.update - INFO - skipping region restricted app: 'Flaggame' (not whitelisted)
+2016-03-19 20:03:41,684 - softwarecenter.db.update - INFO - skipping region restricted app: 'Comentarios Web' (not whitelisted)
+2016-03-29 17:38:27,616 - softwarecenter.ui.gtk3.app - INFO - setting up proxy 'None'
+2016-03-29 17:38:27,684 - softwarecenter.db.database - INFO - open() database: path=None use_axi=True use_agent=True
+2016-03-29 17:38:28,488 - softwarecenter.region - WARNING - failed to use geoclue: 'org.freedesktop.Geoclue.Error.notAvailable: Geoclue master client has no usable Address providers'
+2016-03-29 17:38:29,463 - softwarecenter.backend.reviews - WARNING - Could not get usefulness from server, no username in config file
+2016-03-29 17:38:29,852 - softwarecenter.ui.gtk3.app - INFO - show_available_packages: search_text is '', app is None.
+2016-03-29 17:38:29,871 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-03-29 17:40:06,638 - softwarecenter.region - WARNING - failed to use geoclue: 'org.freedesktop.Geoclue.Error.notAvailable: Geoclue master client has no usable Address providers'
+2016-03-29 17:40:06,930 - softwarecenter.db.update - INFO - skipping region restricted app: 'Bulleti d'esquerra de Calonge i Sant Antoni ' (not whitelisted)
+2016-03-29 17:40:07,072 - softwarecenter.db.update - INFO - skipping region restricted app: 'Just Play MP3' (not whitelisted)
+2016-03-29 17:40:07,155 - softwarecenter.db.update - INFO - skipping region restricted app: 'reEarCandy' (not whitelisted)
+2016-03-29 17:40:07,270 - softwarecenter.db.update - INFO - skipping region restricted app: '蚂蚁浏览器' (not whitelisted)
+2016-03-29 17:40:07,454 - softwarecenter.db.update - INFO - skipping region restricted app: 'Source Code Analyzer' (not whitelisted)
+2016-03-29 17:40:07,805 - softwarecenter.db.update - INFO - skipping region restricted app: 'Flaggame' (not whitelisted)
+2016-03-29 17:40:08,043 - softwarecenter.db.update - INFO - skipping region restricted app: 'Comentarios Web' (not whitelisted)
+2016-05-17 18:54:32,242 - softwarecenter.ui.gtk3.app - INFO - setting up proxy 'None'
+2016-05-17 18:54:32,374 - softwarecenter.db.database - INFO - open() database: path=None use_axi=True use_agent=True
+2016-05-17 18:54:34,329 - softwarecenter.region - WARNING - failed to use geoclue: 'org.freedesktop.Geoclue.Error.notAvailable: Geoclue master client has no usable Address providers'
+2016-05-17 18:54:36,008 - softwarecenter.backend.reviews - WARNING - Could not get usefulness from server, no username in config file
+2016-05-17 18:54:36,685 - softwarecenter.ui.gtk3.app - ERROR - show_available_packages: can not open ['/home/vijay/MyMovies/app/views/users/new.html.erb'], error:
+Traceback (most recent call last):
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/app.py", line 1332, in show_available_packages
+    search_text, app = parse_packages_args(packages)
+  File "/usr/share/software-center/softwarecenter/ui/gtk3/app.py", line 181, in parse_packages_args
+    app = DebFileApplication(request)
+  File "/usr/share/software-center/softwarecenter/db/debfile.py", line 50, in __init__
+    raise DebFileOpenError("Could not open %r." % debfile, debfile)
+DebFileOpenError: Could not open '/home/vijay/MyMovies/app/views/users/new.html.erb'.
+2016-05-17 18:54:36,960 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'RatingsAndReviewsAPI', 'review_stats', '{"days": 59}']'
+2016-05-17 18:54:36,960 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at reviews.ubuntu.com
+'
+2016-05-17 18:54:36,961 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2016-05-17 18:54:47,103 - softwarecenter.ui.gtk3.app - INFO - show_available_packages: search_text is None, app is None.
+2016-05-17 18:54:50,832 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'SoftwareCenterAgentAPI', 'available_apps', '{"lang": "en", "series": "precise", "arch": "amd64"}']'
+2016-05-17 18:54:50,833 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at software-center.ubuntu.com
+'
+2016-05-17 18:54:50,833 - softwarecenter.db.update - WARNING - error: WARNING:__main__:Unable to find the server at software-center.ubuntu.com
+
+2016-05-17 18:54:54,175 - softwarecenter.ui.gtk3.app - INFO - software-center-agent finished with status 1
+2016-05-17 18:54:54,197 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'SoftwareCenterAgentAPI', 'exhibits', '{"lang": "en", "series": "precise"}']'
+2016-05-17 18:54:54,198 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at software-center.ubuntu.com
+'

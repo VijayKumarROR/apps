@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<!--[if !IE]>
+	<html class="no-js non-ie" lang="en-US" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<!--[if IE 7 ]>
+	<html class="no-js ie7" lang="en-US" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<!--[if IE 8 ]>
+	<html class="no-js ie8" lang="en-US" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<!--[if IE 9 ]>
+	<html class="no-js ie9" lang="en-US" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html style="" class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" prefix="og: http://ogp.me/ns#" lang="en-US"><!--<![endif]--><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ruby Inheritance, Encapsulation and Polymorphism</title>
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://samurails.com/xmlrpc.php">
+
+<!-- favicon -->
+
+<link rel="icon" href="https://samurails.com/wp-content/uploads/2015/08/logo2.png">
+
+<!--[if IE]><link rel="shortcut icon" href="//samurails.com/wp-content/uploads/2015/08/logo2.png" /><![endif]-->
+
+
+<!-- This site is optimized with the Yoast SEO plugin v3.0.7 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="A quick and simple overview of Inheritance, Encapsulation and Polymorphism in Ruby.">
+<meta name="robots" content="noodp">
+<link rel="canonical" href="https://samurails.com/interview/ruby-inheritance-encapsulation-polymorphism/">
+<link rel="publisher" href="https://plus.google.com/100939512332061042696/posts">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ruby Inheritance, Encapsulation and Polymorphism">
+<meta property="og:description" content="A quick and simple overview of Inheritance, Encapsulation and Polymorphism in Ruby.">
+<meta property="og:url" content="https://samurails.com/interview/ruby-inheritance-encapsulation-polymorphism/">
+<meta property="og:site_name" content="Samurails">
+<meta property="article:section" content="interview">
+<meta property="article:published_time" content="2014-10-04T11:56:42+00:00">
+<meta property="article:modified_time" content="2014-12-11T15:00:43+00:00">
+<meta property="og:updated_time" content="2014-12-11T15:00:43+00:00">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:description" content="A quick and simple overview of Inheritance, Encapsulation and Polymorphism in Ruby.">
+<meta name="twitter:title" content="Ruby Inheritance, Encapsulation and Polymorphism">
+<meta name="twitter:site" content="@T_dnzt">
+<meta name="twitter:creator" content="@T_dnzt">
+<!-- / Yoast SEO plugin. -->
+
+		<script src="Ruby%20Inheritance,%20Encapsulation%20and%20Polymorphism_files/analytics.js" async=""></script><script src="Ruby%20Inheritance,%20Encapsulation%20and%20Polymorphism_files/sdk.js" id="facebook-jssdk"></script><script src="Ruby%20Inheritance,%20Encapsulation%20and%20Polymorphism_files/fbds.js" async=""></script><script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"https:\/\/samurails.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.4.2"}};
+			!function(a,b,c){function d(a){var c,d=b.createElement("canvas"),e=d.getContext&&d.getContext("2d"),f=String.fromCharCode;return e&&e.fillText?(e.textBaseline="top",e.font="600 32px Arial","flag"===a?(e.fillText(f(55356,56806,55356,56826),0,0),d.toDataURL().length>3e3):"diversity"===a?(e.fillText(f(55356,57221),0,0),c=e.getImageData(16,16,1,1).data.toString(),e.fillText(f(55356,57221,55356,57343),0,0),c!==e.getImageData(16,16,1,1).data.toString()):("simple"===a?e.fillText(f(55357,56835),0,0):e.fillText(f(55356,57135),0,0),0!==e.getImageData(16,16,1,1).data[0])):!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g;c.supports={simple:d("simple"),flag:d("flag"),unicode8:d("unicode8"),diversity:d("diversity")},c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.simple&&c.supports.flag&&c.supports.unicode8&&c.supports.diversity||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script type="text/javascript" src="Ruby%20Inheritance,%20Encapsulation%20and%20Polymorphism_files/wp-emoji-release.js"></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="form-manager-css-css" href="Ruby%20Inheritance,%20Encapsulation%20and%20Polymorphism_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="crayon-css" href="Ruby%20Inheritance,%20Encapsulation%20and%20Polymorphism_files/crayon.css" type="text/css" media="all">
+<link rel="stylesheet" id="crayon-theme-solarized-light-css" href="Ruby%20Inheritance,%20Encapsulation%20and%20Polymorphism_files/solarized-light.css" type="text/css" media="all">
+<link rel="stylesheet" id="crayon-font-monaco-css" href="Ruby%20Inheritance,%20Encapsulation%20and%20Polymorphism_files/monaco.css" type="text/css" media="all">
+<link rel="stylesheet" id="A5-framework-css" href="Ruby%20Inheritance,%20Encapsulation%20and%20Polymorphism_files/a5-framework-frontend.html" type="text/css" media="all">
+<link rel="stylesheet" id="et_bloom-open-sans-css" href="Ruby%20Inheritance,%20Encapsulation%20and%20Polymorphism_files/css.css" type="text/css" media="all">
+<link rel="stylesheet" id="et_bloom-css-css" href="Ruby%20Inheritance,%20Encapsulation%20and%20Polymorphism_files/style_003.css" type="text/css" media="all">
+<link rel="stylesheet" id="et_monarch-open-sans-css" href="Ruby%20Inheritance,%20Encapsulation%20and%20Polymorphism_files/css.css" type="text/css" media="all">
+<link rel="stylesheet" id="et_monarch-css-css" href="Ruby%20Inheritance,%20Encapsulation%20and%20Polymorphism_files/style_002.css" type="text/css" media="all">
+<link rel="stylesheet" id="sparkling-bootstrap-css" href="Ruby%20Inheritance,%20Encapsulation%20and%20Polymorphism_files/bootstrap.css" type="text/css" media="all">
+<link rel="stylesheet" id="sparkling-icons-css" href="Ruby%20Inheritance,%20Encapsulation%20and%20Polymorphism_files/font-awesome.css" type="text/css" media="all">
+<link rel="stylesheet" id="sparkling-fonts-css" href="Ruby%20Inheritance,%20Encapsulation%20and%20Polymorphism_files/css_004.css" type="text/css" media="all">
+<link rel="stylesheet" id="sparkling-style-css" href="Ruby%20Inheritance,%20Encapsulation%20and%20Polymorphism_files/style_004.css" type="text/css" media="all">
+<link rel="stylesheet" id="amazon-link-style-css" href="Ruby%20Inheritance,%20Encapsulation%20and%20Polymorphism_files/Amazon.css" type="text/css" media="all">
+<link rel="stylesheet" id="genericons-css" href="Ruby%20Inheritance,%20Encapsulation%20and%20Polymorphism_files/genericons.css" type="text/css" media="all">
+<link rel="stylesheet" id="jetpack_css-css" href="Ruby%20Inheritance,%20Encapsulation%20and%20Polymorphism_files/jetpack.css" type="text/css" media="all">
+<script type="text/javascript">
+/* <![CDATA[ */
+var fm_user_I18n = {"ajaxurl":"https:\/\/samurails.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Ruby%20Inheritance,%20Encapsulation%20and%20Polymorphism_files/userscripts.js"></script>
+<script type="text/javascript" src="Ruby%20Inheritance,%20Encapsulation%20and%20Polymorphism_files/jquery.js"></script>
+<script type="text/javascript" src="Ruby%20Inheritance,%20Encapsulation%20and%20Polymorphism_files/jquery-migrate.js"></script>
+<script type="text/javascript" src="Ruby%20Inheritance,%20Encapsulation%20and%20Polymorphism_files/related-posts.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"https:\/\/samurails.com\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+var CrayonSyntaxStrings = {"copy":"Press %s to Copy, %s to Paste","minimize":"Click To Expand Code"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Ruby%20Inheritance,%20Encapsulation%20and%20Polymorphism_files/crayon.js"></script>
+<script type="text/javascript" src="Ruby%20Inheritance,%20Encapsulation%20and%20Polymorphism_files/modernizr.js"></script>
+<script type="text/javascript" src="Ruby%20Inheritance,%20Encapsulation%20and%20Polymorphism_files/bootstrap.js"></script>
+<script type="text/javascript" src="Ruby%20Inheritance,%20Encapsulation%20and%20Polymorphism_files/functions.js"></script>
+<link rel="https://api.w.org/" href="https://samurails.com/wp-json/">
+<meta name="generator" content="WordPress 4.4.2">
+<link rel="alternate" type="application/json+oembed" href="https://samurails.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fsamurails.com%2Finterview%2Fruby-inheritance-encapsulation-polymorphism%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://samurails.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fsamurails.com%2Finterview%2Fruby-inheritance-encapsulation-polymorphism%2F&amp;format=xml">
+<style type="text/css" id="et-bloom-custom-css">
+					.et_bloom .et_bloom_optin_3 .et_bloom_form_content { background-color: #f56d3b !important; } .et_bloom .et_bloom_optin_3 .et_bloom_form_container .et_bloom_form_header { background-color: #ffffff !important; } .et_bloom .et_bloom_optin_3 .carrot_edge .et_bloom_form_content:before { border-top-color: #ffffff !important; } .et_bloom .et_bloom_optin_3 .carrot_edge.et_bloom_form_right .et_bloom_form_content:before, .et_bloom .et_bloom_optin_3 .carrot_edge.et_bloom_form_left .et_bloom_form_content:before { border-top-color: transparent !important; border-left-color: #ffffff !important; }
+						@media only screen and ( max-width: 767px ) {.et_bloom .et_bloom_optin_3 .carrot_edge.et_bloom_form_right .et_bloom_form_content:before, .et_bloom .et_bloom_optin_3 .carrot_edge.et_bloom_form_left .et_bloom_form_content:before { border-top-color: #ffffff !important; border-left-color: transparent !important; }
+						}.et_bloom .et_bloom_optin_3 .et_bloom_form_content button { background-color: #ffffff !important; } .et_bloom .et_bloom_optin_3 .et_bloom_border_solid { border-color: #f56d3b !important } .et_bloom .et_bloom_optin_3 .et_bloom_form_content button { background-color: #ffffff !important; } .et_bloom .et_bloom_optin_3 h2, .et_bloom .et_bloom_optin_3 h2 span, .et_bloom .et_bloom_optin_3 h2 strong { font-family: "Open Sans", Helvetica, Arial, Lucida, sans-serif; }.et_bloom .et_bloom_optin_3 p, .et_bloom .et_bloom_optin_3 p span, .et_bloom .et_bloom_optin_3 p strong, .et_bloom .et_bloom_optin_3 form input, .et_bloom .et_bloom_optin_3 form button span { font-family: "Open Sans", Helvetica, Arial, Lucida, sans-serif; } .et_bloom .et_bloom_optin_4 .et_bloom_form_content { background-color: #3b3b3b !important; } .et_bloom .et_bloom_optin_4 .et_bloom_form_container .et_bloom_form_header { background-color: #ededed !important; } .et_bloom .et_bloom_optin_4 .carrot_edge .et_bloom_form_content:before { border-top-color: #ededed !important; } .et_bloom .et_bloom_optin_4 .carrot_edge.et_bloom_form_right .et_bloom_form_content:before, .et_bloom .et_bloom_optin_4 .carrot_edge.et_bloom_form_left .et_bloom_form_content:before { border-top-color: transparent !important; border-left-color: #ededed !important; }
+						@media only screen and ( max-width: 767px ) {.et_bloom .et_bloom_optin_4 .carrot_edge.et_bloom_form_right .et_bloom_form_content:before, .et_bloom .et_bloom_optin_4 .carrot_edge.et_bloom_form_left .et_bloom_form_content:before { border-top-color: #ededed !important; border-left-color: transparent !important; }
+						}.et_bloom .et_bloom_optin_4 .et_bloom_form_content button { background-color: #feac4b !important; } .et_bloom .et_bloom_optin_4 .et_bloom_form_content button { background-color: #feac4b !important; } .et_bloom .et_bloom_optin_4 h2, .et_bloom .et_bloom_optin_4 h2 span, .et_bloom .et_bloom_optin_4 h2 strong { font-family: "Open Sans", Helvetica, Arial, Lucida, sans-serif; }.et_bloom .et_bloom_optin_4 p, .et_bloom .et_bloom_optin_4 p span, .et_bloom .et_bloom_optin_4 p strong, .et_bloom .et_bloom_optin_4 form input, .et_bloom .et_bloom_optin_4 form button span { font-family: "Open Sans", Helvetica, Arial, Lucida, sans-serif; } .et_bloom .et_bloom_optin_5 .et_bloom_form_content { background-color: #34495e !important; } .et_bloom .et_bloom_optin_5 .et_bloom_form_container .et_bloom_form_header { background-color: #f2f2f2 !important; } .et_bloom .et_bloom_optin_5 .et_bloom_form_content button { background-color: #f89406 !important; } .et_bloom .et_bloom_optin_5 .et_bloom_border_solid { border-color: #f89406 !important } .et_bloom .et_bloom_optin_5 .et_bloom_form_content button { background-color: #f89406 !important; } .et_bloom .et_bloom_optin_5 h2, .et_bloom .et_bloom_optin_5 h2 span, .et_bloom .et_bloom_optin_5 h2 strong { font-family: "Open Sans", Helvetica, Arial, Lucida, sans-serif; }.et_bloom .et_bloom_optin_5 p, .et_bloom .et_bloom_optin_5 p span, .et_bloom .et_bloom_optin_5 p strong, .et_bloom .et_bloom_optin_5 form input, .et_bloom .et_bloom_optin_5 form button span { font-family: "Lato", Helvetica, Arial, Lucida, sans-serif; } 
+				</style><script>(function() {
+                    var _fbq = window._fbq || (window._fbq = []);
+                    if (!_fbq.loaded) {
+                        var fbds = document.createElement('script');
+                        fbds.async = true;
+                        fbds.src = '//connect.facebook.net/en_US/fbds.js';
+                        var s = document.getElementsByTagName('script')[0];
+                        s.parentNode.insertBefore(fbds, s);
+                        _fbq.loaded = true;
+                    }                    
+                    })();
+                    window._fbq = window._fbq || [];
+                    window._fbq.push(['track', '1195401140486018', {'value':'0.00','currency':''}]);
+                    </script> 
+                     
+                    
+                
+                    <noscript><img height='1' width='1' alt='' style='display:none' src='https://www.facebook.com/tr?ev=1195401140486018&amp;cd[value]=0.00&amp;cd[currency]=&amp;noscript=1' /></noscript><style type="text/css" id="et-social-custom-css">
+				 
+			</style>
+<link rel="dns-prefetch" href="https://i0.wp.com/">
+<link rel="dns-prefetch" href="https://i1.wp.com/">
+<link rel="dns-prefetch" href="https://i2.wp.com/">
+<style type="text/css">img#wpstats{display:none}</style><style type="text/css">.navbar.navbar-default {background-color: #f89406;}.entry-content {font-family: Open Sans; font-size:14px; font-weight: normal; color:#444444;}#secondary .widget a {
+    color: #DA4453;
+}
+
+#secondary .widget {
+    margin-bottom: 30px;
+    color: #444;
+    overflow: hidden;
+}</style>		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+		<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #f2f2f2; }
+</style>
+
+<link rel="stylesheet" type="text/css" id="gravatar-card-css" href="Ruby%20Inheritance,%20Encapsulation%20and%20Polymorphism_files/hovercard.css"><link rel="stylesheet" type="text/css" id="gravatar-card-services-css" href="Ruby%20Inheritance,%20Encapsulation%20and%20Polymorphism_files/services.css"><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f6f7f8;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3a5795;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{width:auto;height:auto;min-height:initial;min-width:initial;background:none}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{color:#fff;display:block;padding-top:20px;clear:both;font-size:18px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;bottom:0;left:0;right:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #2f477a;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f8;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yD/r/t-wz8gw1xG1.png);background-repeat:no-repeat;background-position:50% 50%;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}</style></head>
+
+<body class="single single-post postid-550 single-format-standard custom-background et_bloom et_monarch">
+<div id="page" class="hfeed site">
+
+	<header id="masthead" class="site-header" role="banner">
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="container">
+				<div class="row">
+					<div class="site-navigation-inner col-sm-12">
+		        <div class="navbar-header">
+		            <button type="button" class="btn navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+		                <span class="sr-only">Toggle navigation</span>
+		                <span class="icon-bar"></span>
+		                <span class="icon-bar"></span>
+		                <span class="icon-bar"></span>
+		            </button>
+
+				
+					<div id="logo">
+						<a href="https://samurails.com/"><img src="Ruby%20Inheritance,%20Encapsulation%20and%20Polymorphism_files/cropped-weblogosamurailz_final.png" alt="Samurails" height="76" width="300"></a>
+					</div><!-- end of #logo -->
+
+				
+				
+		        </div>
+					<div class="collapse navbar-collapse navbar-ex1-collapse"><ul id="menu-top" class="nav navbar-nav"><li id="menu-item-600" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-600"><a title="Jutsus" href="https://samurails.com/jutsus/">Jutsus</a></li>
+<li id="menu-item-1002" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1002"><a title="Resources" href="https://samurails.com/lifestyle/tools-of-the-trade/">Resources</a></li>
+<li id="menu-item-1004" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1004 dropdown"><a title="Must-Read" href="#" data-toggle="dropdown" class="dropdown-toggle">Must-Read <span class="caret"></span></a>
+<ul role="menu" class=" dropdown-menu">
+	<li id="menu-item-662" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-662"><a title="Prepare for a Ruby Job Interview" href="https://samurails.com/prepare-ruby-job-interview-complete-guide/">Prepare for a Ruby Job Interview</a></li>
+	<li id="menu-item-1003" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1003"><a title="Ruby Tricks" href="https://samurails.com/ruby/ruby-tricks-improve-code/">Ruby Tricks</a></li>
+	<li id="menu-item-1007" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1007"><a title="Best Ruby on Rails books" href="https://samurails.com/review/8-best-books-learn-ruby-rails/">Best Ruby on Rails books</a></li>
+	<li id="menu-item-1006" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1006"><a title="Learn Ruby on Rails" href="https://samurails.com/review/learn-ruby-rails/">Learn Ruby on Rails</a></li>
+	<li id="menu-item-1005" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1005"><a title="Story behind my book" href="https://samurails.com/books/story-behind-modular-rails/">Story behind my book</a></li>
+</ul>
+</li>
+<li id="menu-item-915" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-915"><a title="Modular Rails" href="http://modularity.samurails.com/">Modular Rails</a></li>
+<li id="menu-item-1060" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1060"><a title="Write for Samurails" href="https://samurails.com/write-for-samurails/">Write for Samurails</a></li>
+</ul></div>					</div>
+		    </div>
+		  </div>
+		</nav><!-- .site-navigation -->
+	</header><!-- #masthead -->
+
+	<div id="content" class="site-content">
+
+			<div class="top-section">
+											</div>
+
+		<div class="container main-content-area">
+			<div class="row">
+				<div id="content" class="main-content-inner col-sm-12 col-md-8 pull-left">
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+		
+			
+<article id="post-550" class="post-550 post type-post status-publish format-standard hentry category-interview">
+		<div class="post-inner-content">
+		<header class="entry-header page-header">
+
+			<h1 class="entry-title ">Ruby Inheritance, Encapsulation and Polymorphism</h1>
+
+			<div class="entry-meta">
+				<span class="posted-on"><i class="fa fa-calendar"></i> <a href="https://samurails.com/interview/ruby-inheritance-encapsulation-polymorphism/" rel="bookmark"><time class="entry-date published" datetime="2014-10-04T11:56:42+00:00">October 4, 2014</time><time class="updated" datetime="2014-12-11T15:00:43+00:00">December 11, 2014</time></a></span><span class="byline"> <i class="fa fa-user"></i> <span class="author vcard"><a class="url fn n" href="https://samurails.com/author/thibault/">Thibault</a></span></span>
+								<span class="cat-links"><i class="fa fa-folder-open-o"></i>
+					 <a href="https://samurails.com/category/interview/" rel="category tag">interview</a>				</span>
+								
+			</div><!-- .entry-meta -->
+		</header><!-- .entry-header -->
+
+		<div class="entry-content">
+			<p>Second article in the <a href="https://samurails.com/interview/prepare-for-a-ruby-job-interview/">Prepare for a Ruby job interview</a> series. Today, we’re gonna talk about Inheritance, Encapsulation and Polymorphism.</p>
+<p><span id="more-550"></span></p>
+<h2>Inheritance</h2>
+<p>Inheritance is a relation between two classes. A child class inherits
+ all the features of its parent class. Methods from the parent can be 
+overridden in the child and new logic can be added.</p>
+<p>Usually, inheritance is used to specialize a class. See the following example :</p>
+<p></p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-56d8e88f3322b945832560" class="crayon-syntax crayon-theme-solarized-light crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px ! important; line-height: 15px ! important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" show" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="Toggle Line Numbers"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Toggle Plain Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon"></div></div><div style="display: none;" class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon"></div></div><span class="crayon-language">Ruby</span></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="readonly" style="-moz-tab-size: 4; font-size: 12px ! important; line-height: 15px ! important; z-index: 0; opacity: 0; overflow: hidden;">class Document
+  def initialize; end
+
+  # logic to deal with any document
+
+  def print
+    # logic to print any kind of document
+  end
+end
+</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table style="" class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-56d8e88f3322b945832560-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-56d8e88f3322b945832560-2">2</div><div class="crayon-num" data-line="crayon-56d8e88f3322b945832560-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-56d8e88f3322b945832560-4">4</div><div class="crayon-num" data-line="crayon-56d8e88f3322b945832560-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-56d8e88f3322b945832560-6">6</div><div class="crayon-num" data-line="crayon-56d8e88f3322b945832560-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-56d8e88f3322b945832560-8">8</div><div class="crayon-num" data-line="crayon-56d8e88f3322b945832560-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-56d8e88f3322b945832560-10">10</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-56d8e88f3322b945832560-1"><span class="crayon-r">class</span><span class="crayon-h"> </span><span class="crayon-i">Document</span></div><div class="crayon-line crayon-striped-line" id="crayon-56d8e88f3322b945832560-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-r">def</span><span class="crayon-h"> </span><span class="crayon-v">initialize</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-st">end</span></div><div class="crayon-line" id="crayon-56d8e88f3322b945832560-3">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-56d8e88f3322b945832560-4"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c"># logic to deal with any document</span></div><div class="crayon-line" id="crayon-56d8e88f3322b945832560-5">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-56d8e88f3322b945832560-6"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-r">def</span><span class="crayon-h"> </span><span class="crayon-v">print</span></div><div class="crayon-line" id="crayon-56d8e88f3322b945832560-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c"># logic to print any kind of document</span></div><div class="crayon-line crayon-striped-line" id="crayon-56d8e88f3322b945832560-8"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-st">end</span></div><div class="crayon-line" id="crayon-56d8e88f3322b945832560-9"><span class="crayon-st">end</span></div><div class="crayon-line crayon-striped-line" id="crayon-56d8e88f3322b945832560-10">&nbsp;</div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0075 seconds] -->
+<p></p>
+<p>—</p>
+<p></p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-56d8e88f33253393152975" class="crayon-syntax crayon-theme-solarized-light crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px ! important; line-height: 15px ! important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" show" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="Toggle Line Numbers"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Toggle Plain Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon"></div></div><div style="display: none;" class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon"></div></div><span class="crayon-language">Ruby</span></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="readonly" style="-moz-tab-size: 4; font-size: 12px ! important; line-height: 15px ! important; z-index: 0; opacity: 0; overflow: hidden;">class XmlDocument &lt; Document
+  # logic to deal with any document
+
+  def print
+    # logic to print a xml document
+  end
+end
+</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table style="" class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-56d8e88f33253393152975-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-56d8e88f33253393152975-2">2</div><div class="crayon-num" data-line="crayon-56d8e88f33253393152975-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-56d8e88f33253393152975-4">4</div><div class="crayon-num" data-line="crayon-56d8e88f33253393152975-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-56d8e88f33253393152975-6">6</div><div class="crayon-num" data-line="crayon-56d8e88f33253393152975-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-56d8e88f33253393152975-8">8</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-56d8e88f33253393152975-1"><span class="crayon-r">class</span><span class="crayon-h"> </span><span class="crayon-v">XmlDocument</span><span class="crayon-h"> </span><span class="crayon-o">&lt;</span><span class="crayon-h"> </span><span class="crayon-v">Document</span></div><div class="crayon-line crayon-striped-line" id="crayon-56d8e88f33253393152975-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c"># logic to deal with any document</span></div><div class="crayon-line" id="crayon-56d8e88f33253393152975-3">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-56d8e88f33253393152975-4"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-r">def</span><span class="crayon-h"> </span><span class="crayon-v">print</span></div><div class="crayon-line" id="crayon-56d8e88f33253393152975-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-c"># logic to print a xml document</span></div><div class="crayon-line crayon-striped-line" id="crayon-56d8e88f33253393152975-6"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-st">end</span></div><div class="crayon-line" id="crayon-56d8e88f33253393152975-7"><span class="crayon-st">end</span></div><div class="crayon-line crayon-striped-line" id="crayon-56d8e88f33253393152975-8">&nbsp;</div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0011 seconds] -->
+<p></p>
+<p>A class can only inherit from one class as opposed to c++ where multi-inheritance can be done (not always for the better).</p>
+<p>You can however replicate a certain form of multi-inheritance through the use of modules as mix-ins :</p>
+<p></p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-56d8e88f3325e828213116" class="crayon-syntax crayon-theme-solarized-light crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px ! important; line-height: 15px ! important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" show" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="Toggle Line Numbers"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Toggle Plain Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon"></div></div><div style="display: none;" class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon"></div></div><span class="crayon-language">Ruby</span></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="readonly" style="-moz-tab-size: 4; font-size: 12px ! important; line-height: 15px ! important; z-index: 0; opacity: 0; overflow: hidden;">module Presenter
+  def to_html; end
+end
+</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table style="" class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-56d8e88f3325e828213116-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-56d8e88f3325e828213116-2">2</div><div class="crayon-num" data-line="crayon-56d8e88f3325e828213116-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-56d8e88f3325e828213116-4">4</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-56d8e88f3325e828213116-1"><span class="crayon-r">module</span><span class="crayon-h"> </span><span class="crayon-i">Presenter</span></div><div class="crayon-line crayon-striped-line" id="crayon-56d8e88f3325e828213116-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-r">def</span><span class="crayon-h"> </span><span class="crayon-v">to_html</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-st">end</span></div><div class="crayon-line" id="crayon-56d8e88f3325e828213116-3"><span class="crayon-st">end</span></div><div class="crayon-line crayon-striped-line" id="crayon-56d8e88f3325e828213116-4">&nbsp;</div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0004 seconds] -->
+<p></p>
+<p>—</p>
+<p></p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-56d8e88f33269071443279" class="crayon-syntax crayon-theme-solarized-light crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px ! important; line-height: 15px ! important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" show" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="Toggle Line Numbers"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Toggle Plain Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon"></div></div><div style="display: none;" class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon"></div></div><span class="crayon-language">Ruby</span></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="readonly" style="-moz-tab-size: 4; font-size: 12px ! important; line-height: 15px ! important; z-index: 0; opacity: 0; overflow: hidden;">class XmlDocument &lt; Document
+  include Presenter
+  # can call the method to_html
+end
+</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table style="" class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-56d8e88f33269071443279-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-56d8e88f33269071443279-2">2</div><div class="crayon-num" data-line="crayon-56d8e88f33269071443279-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-56d8e88f33269071443279-4">4</div><div class="crayon-num" data-line="crayon-56d8e88f33269071443279-5">5</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-56d8e88f33269071443279-1"><span class="crayon-r">class</span><span class="crayon-h"> </span><span class="crayon-v">XmlDocument</span><span class="crayon-h"> </span><span class="crayon-o">&lt;</span><span class="crayon-h"> </span><span class="crayon-i">Document</span></div><div class="crayon-line crayon-striped-line" id="crayon-56d8e88f33269071443279-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-i">include</span><span class="crayon-h"> </span><span class="crayon-v">Presenter</span></div><div class="crayon-line" id="crayon-56d8e88f33269071443279-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c"># can call the method to_html</span></div><div class="crayon-line crayon-striped-line" id="crayon-56d8e88f33269071443279-4"><span class="crayon-st">end</span></div><div class="crayon-line" id="crayon-56d8e88f33269071443279-5">&nbsp;</div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0005 seconds] -->
+<p></p>
+<h2>Encapsulation</h2>
+<blockquote>
+<p>Encapsulation is the packing of data and functions into a single component.</p>
+</blockquote>
+<p>Encapsulation means that the internal representation of an object is 
+hidden from the outside. Only the object can interact with its internal 
+data. Public methods can be created to open a defined way to access the 
+logic inside an object.</p>
+<p>Encapsulation reduce system complexity and increase robustness by decoupling its components.</p>
+<p></p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-56d8e88f33274094667997" class="crayon-syntax crayon-theme-solarized-light crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px ! important; line-height: 15px ! important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" show" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="Toggle Line Numbers"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Toggle Plain Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon"></div></div><div style="display: none;" class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon"></div></div><span class="crayon-language">Ruby</span></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="readonly" style="-moz-tab-size: 4; font-size: 12px ! important; line-height: 15px ! important; z-index: 0; opacity: 0; overflow: hidden;">class Document
+  attr_accessor :name
+
+  def initialize(name)
+    @name = name
+  end
+
+  def set_name(name)
+    @name = name
+  end
+end
+</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table style="" class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-56d8e88f33274094667997-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-56d8e88f33274094667997-2">2</div><div class="crayon-num" data-line="crayon-56d8e88f33274094667997-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-56d8e88f33274094667997-4">4</div><div class="crayon-num" data-line="crayon-56d8e88f33274094667997-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-56d8e88f33274094667997-6">6</div><div class="crayon-num" data-line="crayon-56d8e88f33274094667997-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-56d8e88f33274094667997-8">8</div><div class="crayon-num" data-line="crayon-56d8e88f33274094667997-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-56d8e88f33274094667997-10">10</div><div class="crayon-num" data-line="crayon-56d8e88f33274094667997-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-56d8e88f33274094667997-12">12</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-56d8e88f33274094667997-1"><span class="crayon-r">class</span><span class="crayon-h"> </span><span class="crayon-i">Document</span></div><div class="crayon-line crayon-striped-line" id="crayon-56d8e88f33274094667997-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">attr_accessor</span><span class="crayon-h"> </span><span class="crayon-o">:</span><span class="crayon-i">name</span></div><div class="crayon-line" id="crayon-56d8e88f33274094667997-3">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-56d8e88f33274094667997-4"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-r">def</span><span class="crayon-h"> </span><span class="crayon-e">initialize</span><span class="crayon-sy">(</span><span class="crayon-v">name</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-56d8e88f33274094667997-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">@name</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-i">name</span></div><div class="crayon-line crayon-striped-line" id="crayon-56d8e88f33274094667997-6"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-st">end</span></div><div class="crayon-line" id="crayon-56d8e88f33274094667997-7">&nbsp;</div><div class="crayon-line crayon-striped-line" id="crayon-56d8e88f33274094667997-8"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-r">def</span><span class="crayon-h"> </span><span class="crayon-e">set_name</span><span class="crayon-sy">(</span><span class="crayon-v">name</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-56d8e88f33274094667997-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">@name</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-i">name</span></div><div class="crayon-line crayon-striped-line" id="crayon-56d8e88f33274094667997-10"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-st">end</span></div><div class="crayon-line" id="crayon-56d8e88f33274094667997-11"><span class="crayon-st">end</span></div><div class="crayon-line crayon-striped-line" id="crayon-56d8e88f33274094667997-12">&nbsp;</div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0011 seconds] -->
+<p></p>
+<p>—</p>
+<p></p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-56d8e88f3327d738589821" class="crayon-syntax crayon-theme-solarized-light crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px ! important; line-height: 15px ! important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" show" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="Toggle Line Numbers"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Toggle Plain Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon"></div></div><div style="display: none;" class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon"></div></div><span class="crayon-language">Ruby</span></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="readonly" style="-moz-tab-size: 4; font-size: 12px ! important; line-height: 15px ! important; z-index: 0; opacity: 0; overflow: hidden;">d = Document.new('name1')
+d.set_name('name1')
+</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table style="" class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-56d8e88f3327d738589821-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-56d8e88f3327d738589821-2">2</div><div class="crayon-num" data-line="crayon-56d8e88f3327d738589821-3">3</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-56d8e88f3327d738589821-1"><span class="crayon-v">d</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">Document</span><span class="crayon-sy">.</span><span class="crayon-e">new</span><span class="crayon-sy">(</span><span class="crayon-s">'name1'</span><span class="crayon-sy">)</span></div><div class="crayon-line crayon-striped-line" id="crayon-56d8e88f3327d738589821-2"><span class="crayon-v">d</span><span class="crayon-sy">.</span><span class="crayon-e">set_name</span><span class="crayon-sy">(</span><span class="crayon-s">'name1'</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-56d8e88f3327d738589821-3">&nbsp;</div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0005 seconds] -->
+<p></p>
+<p>I can easily change the value of my document name without having to 
+know how the Document class is implemented. At the end, the Document is 
+the one responsible for udpating its internal details.</p>
+<h2>Polymorphism</h2>
+<blockquote>
+<p>In programming languages and type theory, polymorphism (from Greek 
+πολύς, polys, “many, much” and μορφή, morphē, “form, shape”) is the 
+provision of a single interface to entities of different types.</p>
+</blockquote>
+<p>Here’s a simple example in Ruby with inheritance :</p>
+<p></p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-56d8e88f33288521864672" class="crayon-syntax crayon-theme-solarized-light crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px ! important; line-height: 15px ! important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" show" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="Toggle Line Numbers"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Toggle Plain Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon"></div></div><div style="display: none;" class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon"></div></div><span class="crayon-language">Ruby</span></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="readonly" style="-moz-tab-size: 4; font-size: 12px ! important; line-height: 15px ! important; z-index: 0; opacity: 0; overflow: hidden;">class Document
+  def initialize
+  end
+
+  def print
+    raise NotImplementedError, 'You must implement the print method'
+  end
+end
+</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table style="" class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-56d8e88f33288521864672-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-56d8e88f33288521864672-2">2</div><div class="crayon-num" data-line="crayon-56d8e88f33288521864672-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-56d8e88f33288521864672-4">4</div><div class="crayon-num" data-line="crayon-56d8e88f33288521864672-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-56d8e88f33288521864672-6">6</div><div class="crayon-num" data-line="crayon-56d8e88f33288521864672-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-56d8e88f33288521864672-8">8</div><div class="crayon-num" data-line="crayon-56d8e88f33288521864672-9">9</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-56d8e88f33288521864672-1"><span class="crayon-r">class</span><span class="crayon-h"> </span><span class="crayon-i">Document</span></div><div class="crayon-line crayon-striped-line" id="crayon-56d8e88f33288521864672-2"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-r">def</span><span class="crayon-h"> </span><span class="crayon-i">initialize</span></div><div class="crayon-line" id="crayon-56d8e88f33288521864672-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-st">end</span></div><div class="crayon-line crayon-striped-line" id="crayon-56d8e88f33288521864672-4">&nbsp;</div><div class="crayon-line" id="crayon-56d8e88f33288521864672-5"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-r">def</span><span class="crayon-h"> </span><span class="crayon-i">print</span></div><div class="crayon-line crayon-striped-line" id="crayon-56d8e88f33288521864672-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-st">raise</span><span class="crayon-h"> </span><span class="crayon-k ">NotImplementedError</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">'You must implement the print method'</span></div><div class="crayon-line" id="crayon-56d8e88f33288521864672-7"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-st">end</span></div><div class="crayon-line crayon-striped-line" id="crayon-56d8e88f33288521864672-8"><span class="crayon-st">end</span></div><div class="crayon-line" id="crayon-56d8e88f33288521864672-9">&nbsp;</div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0008 seconds] -->
+<p></p>
+<p>—</p>
+<p></p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-56d8e88f33292756409644" class="crayon-syntax crayon-theme-solarized-light crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px ! important; line-height: 15px ! important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" show" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="Toggle Line Numbers"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Toggle Plain Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon"></div></div><div style="display: none;" class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon"></div></div><span class="crayon-language">Ruby</span></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="readonly" style="-moz-tab-size: 4; font-size: 12px ! important; line-height: 15px ! important; z-index: 0; opacity: 0; overflow: hidden;">class XmlDocument &lt; Document
+
+  def print
+    p 'Print from XmlDocument'
+  end
+
+end
+</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table style="" class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-56d8e88f33292756409644-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-56d8e88f33292756409644-2">2</div><div class="crayon-num" data-line="crayon-56d8e88f33292756409644-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-56d8e88f33292756409644-4">4</div><div class="crayon-num" data-line="crayon-56d8e88f33292756409644-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-56d8e88f33292756409644-6">6</div><div class="crayon-num" data-line="crayon-56d8e88f33292756409644-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-56d8e88f33292756409644-8">8</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-56d8e88f33292756409644-1"><span class="crayon-r">class</span><span class="crayon-h"> </span><span class="crayon-v">XmlDocument</span><span class="crayon-h"> </span><span class="crayon-o">&lt;</span><span class="crayon-h"> </span><span class="crayon-i">Document</span></div><div class="crayon-line crayon-striped-line" id="crayon-56d8e88f33292756409644-2">&nbsp;</div><div class="crayon-line" id="crayon-56d8e88f33292756409644-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-r">def</span><span class="crayon-h"> </span><span class="crayon-i">print</span></div><div class="crayon-line crayon-striped-line" id="crayon-56d8e88f33292756409644-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-i">p</span><span class="crayon-h"> </span><span class="crayon-s">'Print from XmlDocument'</span></div><div class="crayon-line" id="crayon-56d8e88f33292756409644-5"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-st">end</span></div><div class="crayon-line crayon-striped-line" id="crayon-56d8e88f33292756409644-6">&nbsp;</div><div class="crayon-line" id="crayon-56d8e88f33292756409644-7"><span class="crayon-st">end</span></div><div class="crayon-line crayon-striped-line" id="crayon-56d8e88f33292756409644-8">&nbsp;</div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0006 seconds] -->
+<p></p>
+<p>—</p>
+<p></p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-56d8e88f3329c444610348" class="crayon-syntax crayon-theme-solarized-light crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px ! important; line-height: 15px ! important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" show" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="Toggle Line Numbers"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Toggle Plain Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon"></div></div><div style="display: none;" class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon"></div></div><span class="crayon-language">Ruby</span></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="readonly" style="-moz-tab-size: 4; font-size: 12px ! important; line-height: 15px ! important; z-index: 0; opacity: 0; overflow: hidden;">class HtmlDocument &lt; Document
+
+  def print
+    p 'Print from HtmlDocument'
+  end
+
+end
+</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table style="" class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-56d8e88f3329c444610348-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-56d8e88f3329c444610348-2">2</div><div class="crayon-num" data-line="crayon-56d8e88f3329c444610348-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-56d8e88f3329c444610348-4">4</div><div class="crayon-num" data-line="crayon-56d8e88f3329c444610348-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-56d8e88f3329c444610348-6">6</div><div class="crayon-num" data-line="crayon-56d8e88f3329c444610348-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-56d8e88f3329c444610348-8">8</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-56d8e88f3329c444610348-1"><span class="crayon-r">class</span><span class="crayon-h"> </span><span class="crayon-v">HtmlDocument</span><span class="crayon-h"> </span><span class="crayon-o">&lt;</span><span class="crayon-h"> </span><span class="crayon-i">Document</span></div><div class="crayon-line crayon-striped-line" id="crayon-56d8e88f3329c444610348-2">&nbsp;</div><div class="crayon-line" id="crayon-56d8e88f3329c444610348-3"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-r">def</span><span class="crayon-h"> </span><span class="crayon-i">print</span></div><div class="crayon-line crayon-striped-line" id="crayon-56d8e88f3329c444610348-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-i">p</span><span class="crayon-h"> </span><span class="crayon-s">'Print from HtmlDocument'</span></div><div class="crayon-line" id="crayon-56d8e88f3329c444610348-5"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-st">end</span></div><div class="crayon-line crayon-striped-line" id="crayon-56d8e88f3329c444610348-6">&nbsp;</div><div class="crayon-line" id="crayon-56d8e88f3329c444610348-7"><span class="crayon-st">end</span></div><div class="crayon-line crayon-striped-line" id="crayon-56d8e88f3329c444610348-8">&nbsp;</div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0006 seconds] -->
+<p></p>
+<p>—</p>
+<p></p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-56d8e88f332a5698433990" class="crayon-syntax crayon-theme-solarized-light crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px ! important; line-height: 15px ! important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" show" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="Toggle Line Numbers"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Toggle Plain Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon"></div></div><div style="display: none;" class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon"></div></div><span class="crayon-language">Ruby</span></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="readonly" style="-moz-tab-size: 4; font-size: 12px ! important; line-height: 15px ! important; z-index: 0; opacity: 0; overflow: hidden;">XmDocument.new.print # Print from XmlDocument
+HtmlDocument.new.print # Print from HtmlDocument
+</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table style="" class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-56d8e88f332a5698433990-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-56d8e88f332a5698433990-2">2</div><div class="crayon-num" data-line="crayon-56d8e88f332a5698433990-3">3</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-56d8e88f332a5698433990-1"><span class="crayon-v">XmDocument</span><span class="crayon-sy">.</span><span class="crayon-v">new</span><span class="crayon-sy">.</span><span class="crayon-v">print</span><span class="crayon-h"> </span><span class="crayon-c"># Print from XmlDocument</span></div><div class="crayon-line crayon-striped-line" id="crayon-56d8e88f332a5698433990-2"><span class="crayon-v">HtmlDocument</span><span class="crayon-sy">.</span><span class="crayon-v">new</span><span class="crayon-sy">.</span><span class="crayon-v">print</span><span class="crayon-h"> </span><span class="crayon-c"># Print from HtmlDocument</span></div><div class="crayon-line" id="crayon-56d8e88f332a5698433990-3">&nbsp;</div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0005 seconds] -->
+<p></p>
+<p>As you can see, we sent the same message to different object and got different result. The <code>print</code> method is a single interface to entities of different types : <code>XmlDocument</code> and <code>HtmlDocument</code>.</p>
+<p>Go to <a href="https://samurails.com/interview/duck-typing-ruby/">Duck Typing, the third article in Prepare for a Ruby job interview</a>.</p>
+<div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon sd-sharing"><h3 class="sd-title">Share this:</h3><div class="sd-content"><ul><li class="share-twitter"><a rel="nofollow" data-shared="sharing-twitter-550" class="share-twitter sd-button share-icon no-text" href="https://samurails.com/interview/ruby-inheritance-encapsulation-polymorphism/?share=twitter&amp;nb=1" target="_blank" title="Click to share on Twitter"><span></span><span class="sharing-screen-reader-text">Click to share on Twitter (Opens in new window)</span></a></li><li class="share-facebook"><a rel="nofollow" data-shared="sharing-facebook-550" class="share-facebook sd-button share-icon no-text" href="https://samurails.com/interview/ruby-inheritance-encapsulation-polymorphism/?share=facebook&amp;nb=1" target="_blank" title="Share on Facebook"><span></span><span class="sharing-screen-reader-text">Share on Facebook (Opens in new window)</span></a></li><li class="share-google-plus-1"><a rel="nofollow" data-shared="sharing-google-550" class="share-google-plus-1 sd-button share-icon no-text" href="https://samurails.com/interview/ruby-inheritance-encapsulation-polymorphism/?share=google-plus-1&amp;nb=1" target="_blank" title="Click to share on Google+"><span></span><span class="sharing-screen-reader-text">Click to share on Google+ (Opens in new window)</span></a></li><li class="share-end"></li></ul></div></div></div>
+<div style="display: block;" id="jp-relatedposts" class="jp-relatedposts">
+	<h3 class="jp-relatedposts-headline"><em>Related</em></h3>
+<div class="jp-relatedposts-items jp-relatedposts-items-minimal"><p class="jp-relatedposts-post jp-relatedposts-post0" data-post-id="541" data-post-format="false"><span class="jp-relatedposts-post-title"><a data-position="0" data-origin="550" rel="nofollow" title="Prepare for a Ruby job interview
+
+This guide is the first part of a series, Prepare for a Ruby job interview, that will teach you (or help you remember) some basic stuff that you should know as a Ruby developer. Prepare for a Ruby job interview The full list of articles is available below. Prepare for…" href="https://samurails.com/interview/prepare-for-a-ruby-job-interview/" class="jp-relatedposts-post-a">Prepare for a Ruby job interview</a></span><span class="jp-relatedposts-post-date">October 4, 2014</span><span class="jp-relatedposts-post-context">In "interview"</span></p><p class="jp-relatedposts-post jp-relatedposts-post1" data-post-id="561" data-post-format="false"><span class="jp-relatedposts-post-title"><a data-position="1" data-origin="550" rel="nofollow" title="Ruby &amp; Duck Typing
+
+Third article in the Prepare for a Ruby job interview series. In this article, we will see what is Duck Typing. Duck Typing is a funny notion you should know about. As James Whitcomb Riley said it : When I see a bird that walks like a duck and swims…" href="https://samurails.com/interview/duck-typing-ruby/" class="jp-relatedposts-post-a">Ruby &amp; Duck Typing</a></span><span class="jp-relatedposts-post-date">October 4, 2014</span><span class="jp-relatedposts-post-context">In "interview"</span></p><p class="jp-relatedposts-post jp-relatedposts-post2" data-post-id="144" data-post-format="false"><span class="jp-relatedposts-post-title"><a data-position="2" data-origin="550" rel="nofollow" title="Jutsu #2 - Single Table Inheritance with Rails 4 (Part 1)
+
+Today, we are going to do some model inheritance with Active Record ! This is not something that you should do everyday but in the right situation, it's just awesome. Some parts can be tricky to implement, especially the routing and the creation of a shared controller. This article will…" href="https://samurails.com/tutorial/single-table-inheritance-with-rails-4-part-1/" class="jp-relatedposts-post-a">Jutsu #2 - Single Table Inheritance with Rails 4 (Part 1)</a></span><span class="jp-relatedposts-post-date">September 11, 2013</span><span class="jp-relatedposts-post-context">In "Jutsu"</span></p></div></div><div class="et_bloom_below_post"><div class="et_bloom_inline_form et_bloom_optin et_bloom_optin_3">
+				
+				<div class="et_bloom_form_container et_bloom_popup_container with_edge carrot_edge et_bloom_border_solid et_bloom_rounded et_bloom_form_text_light et_bloom_form_right et_bloom_inline_2_fields">
+					
+			<div class="et_bloom_form_container_wrapper clearfix">
+				<div class="et_bloom_header_outer">
+					<div class="et_bloom_form_header split et_bloom_header_text_dark">
+						<img src="Ruby%20Inheritance,%20Encapsulation%20and%20Polymorphism_files/Bookcover3.png" class=" et_bloom_image_slideup et_bloom_image" alt="Bookcover3" height="585" width="414">
+						<div class="et_bloom_form_text">
+						<h2>Want to read more awesome articles?</h2><p><span style="color: #444444; font-family: 'Open Sans'; font-size: 14px; line-height: 23.7999992370605px;">Subscribe to my&nbsp;newsletter to receive them directly in your mailbox. You will also get a free chapter from my <a href="http://modularity.samurails.com/">book</a></span><span style="color: #444444; font-family: 'Open Sans'; font-size: 14px; line-height: 23.7999992370605px;">!</span></p>
+					</div>
+						
+					</div>
+				</div>
+				<div class="et_bloom_form_content et_bloom_2_fields">
+					
+					
+					<form method="post" class="clearfix">
+						<p class="et_bloom_popup_input et_bloom_subscribe_name">
+								<input placeholder="Name" maxlength="50">
+							</p>
+						<p class="et_bloom_popup_input et_bloom_subscribe_email">
+							<input placeholder="Email">
+						</p>
+						<button data-optin_id="optin_3" data-service="mailchimp" data-list_id="856f7d10bb" data-page_id="550" data-account="samurails" class="et_bloom_submit_subscription">
+							<span class="et_bloom_subscribe_loader"></span>
+							<span class="et_bloom_button_text et_bloom_button_text_color_dark">SUBSCRIBE!</span>
+						</button>
+					</form>
+					<div class="et_bloom_success_container">
+						<span class="et_bloom_success_checkmark"></span>
+					</div>
+					<h2 class="et_bloom_success_message">You have Successfully Subscribed!</h2>
+					
+				</div>
+			</div>
+			<span class="et_bloom_close_button"></span>
+				</div>
+			</div></div><span class="et_bloom_bottom_trigger"></span><span class="et_social_bottom_trigger"></span>					</div><!-- .entry-content -->
+
+		<footer class="entry-meta">
+
+	    	
+		</footer><!-- .entry-meta -->
+	</div>
+				<div class="post-inner-content secondary-content-box">
+	        <!-- author bio -->
+	        <div class="author-bio content-box-inner">
+
+	          <!-- avatar -->
+	          <div class="avatar">
+	              <img src="Ruby%20Inheritance,%20Encapsulation%20and%20Polymorphism_files/me-150x150.jpeg" alt="Thibault" class="avatar avatar-60 wp-user-avatar wp-user-avatar-60 alignnone photo" height="60" width="60">	          </div>
+	          <!-- end avatar -->
+
+	          <!-- user bio -->
+	          <div class="author-bio-content">
+
+	            <h4 class="author-name"><a href="https://samurails.com/author/thibault/">Thibault</a></h4>
+	            <p class="author-description">
+	                I'm Thibault, a Ruby on Rails developer based in 
+Bangkok! I love clean Ruby code and easy to follow Rails tutorials. I 
+hope you'll find what you're looking for on Samurails!	            </p>
+
+	          </div>
+	          <!-- end author bio -->
+
+	        </div>
+	        <!-- end author bio -->
+			</div>
+</article><!-- #post-## -->
+
+			
+<div id="comments" class="comments-area">
+
+	
+	
+	
+					<div id="respond" class="comment-respond">
+			<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://samurails.com/interview/ruby-inheritance-encapsulation-polymorphism/#respond" style="display:none;">Cancel reply</a></small></h3>				<form action="https://samurails.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate="">
+					<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" size="30" aria-required="true" required="required" type="text"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" size="30" aria-describedby="email-notes" aria-required="true" required="required" type="email"></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" size="30" type="url"></p>
+<p class="form-submit"><input style="display: inline-block;" name="submit" id="submit" class="submit btn btn-default" value="Post Comment" type="submit"> <input name="comment_post_ID" value="550" id="comment_post_ID" type="hidden">
+<input name="comment_parent" id="comment_parent" value="0" type="hidden">
+</p><p style="display: none;"><input id="akismet_comment_nonce" name="akismet_comment_nonce" value="ad661b3389" type="hidden"></p><p style="display: none;"></p>				<input id="ak_js" name="ak_js" value="1457075803214" type="hidden"></form>
+					</div><!-- #respond -->
+		
+</div><!-- #comments -->
+
+				<nav class="navigation post-navigation" role="navigation">
+		<h1 class="screen-reader-text">Post navigation</h1>
+		<div class="nav-links">
+			<div class="nav-previous"><a href="https://samurails.com/interview/prepare-for-a-ruby-job-interview/" rel="prev"><i class="fa fa-chevron-left"></i> Prepare for a Ruby job interview</a></div><div class="nav-next"><a href="https://samurails.com/interview/duck-typing-ruby/" rel="next">Ruby &amp; Duck Typing <i class="fa fa-chevron-right"></i></a></div>		</div><!-- .nav-links -->
+	</nav><!-- .navigation -->
+	
+		
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+</div>
+	<div id="secondary" class="widget-area col-sm-12 col-md-4" role="complementary">
+		<div class="well">
+						<aside id="search-3" class="widget widget_search"><form method="get" class="form-search" action="https://samurails.com/">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="input-group">
+        <input class="form-control search-query" name="s" id="s" placeholder="Search..." type="text">
+        <span class="input-group-btn">
+          <button style="" type="submit" class="btn btn-default" name="submit" id="searchsubmit" value="Go"><span class="glyphicon glyphicon-search"></span></button>
+        </span>
+      </div>
+    </div>
+  </div>
+</form></aside><aside id="text-16" class="widget widget_text">			<div class="textwidget"><a href="http://modular-rails.samurails.com/"><img style="display:block;margin-left:auto;margin-right:auto;width: 200px;" src="Ruby%20Inheritance,%20Encapsulation%20and%20Polymorphism_files/Bookcover3-mini.png"></a>
+<p class="entry-content">Checkout my book <a href="http://modularity.samurails.com/" style="color: #DA4453;">Modular Rails</a> to learn how to build modular applications with Ruby on Rails!</p>
+</div>
+		</aside><aside id="bloomwidget-2" class="widget widget_bloomwidget"><div class="et_bloom_widget_content et_bloom_optin et_bloom_optin_2">
+					<style type="text/css">.et_bloom .et_bloom_optin_2 .et_bloom_form_content { background-color: #3d566e !important; } .et_bloom .et_bloom_optin_2 .et_bloom_form_container .et_bloom_form_header { background-color: #f7f7f7 !important; } .et_bloom .et_bloom_optin_2 .carrot_edge .et_bloom_form_content:before { border-top-color: #f7f7f7 !important; } .et_bloom .et_bloom_optin_2 .carrot_edge.et_bloom_form_right .et_bloom_form_content:before, .et_bloom .et_bloom_optin_2 .carrot_edge.et_bloom_form_left .et_bloom_form_content:before { border-top-color: transparent !important; border-left-color: #f7f7f7 !important; }
+						@media only screen and ( max-width: 767px ) {.et_bloom .et_bloom_optin_2 .carrot_edge.et_bloom_form_right .et_bloom_form_content:before, .et_bloom .et_bloom_optin_2 .carrot_edge.et_bloom_form_left .et_bloom_form_content:before { border-top-color: #f7f7f7 !important; border-left-color: transparent !important; }
+						}.et_bloom .et_bloom_optin_2 .et_bloom_form_content button { background-color: #f89406 !important; } .et_bloom .et_bloom_optin_2 .et_bloom_border_solid { border-color: #f89406 !important } .et_bloom .et_bloom_optin_2 .et_bloom_form_content button { background-color: #f89406 !important; } .et_bloom .et_bloom_optin_2 h2, .et_bloom .et_bloom_optin_2 h2 span, .et_bloom .et_bloom_optin_2 h2 strong { font-family: "Open Sans", Helvetica, Arial, Lucida, sans-serif; }.et_bloom .et_bloom_optin_2 p, .et_bloom .et_bloom_optin_2 p span, .et_bloom .et_bloom_optin_2 p strong, .et_bloom .et_bloom_optin_2 form input, .et_bloom .et_bloom_optin_2 form button span { font-family: "Open Sans", Helvetica, Arial, Lucida, sans-serif; } </style>
+					<div class="et_bloom_form_container et_bloom_popup_container with_edge carrot_edge et_bloom_border_solid et_bloom_border_position_top et_bloom_rounded_corners et_bloom_rounded et_bloom_form_text_dark">
+						
+			<div class="et_bloom_form_container_wrapper clearfix">
+				<div class="et_bloom_header_outer">
+					<div class="et_bloom_form_header et_bloom_header_text_dark">
+						
+						<div class="et_bloom_form_text">
+						<h2>Samurails Newsletter</h2><p><span style="color: #000000;"><span style="font-family: 'Open Sans', sans-serif; font-size: 14px; line-height: 23.7999992370605px;">Get the latest tutorials and tips delivered to your mailbox. You will also get a free sample from my book <a style="color: #000000;" href="http://modularity.samurails.com/">Modular Rails</a></span><span style="font-family: 'Open Sans', sans-serif; font-size: 14px; line-height: 23.7999992370605px;">!</span></span></p>
+					</div>
+						
+					</div>
+				</div>
+				<div class="et_bloom_form_content et_bloom_2_fields et_bloom_bottom_stacked">
+					
+					
+					<form method="post" class="clearfix">
+						<p class="et_bloom_popup_input et_bloom_subscribe_name">
+								<input placeholder="Name" maxlength="50">
+							</p>
+						<p class="et_bloom_popup_input et_bloom_subscribe_email">
+							<input placeholder="Email">
+						</p>
+						<button data-optin_id="optin_2" data-service="mailchimp" data-list_id="856f7d10bb" data-page_id="550" data-account="samurails" class="et_bloom_submit_subscription">
+							<span class="et_bloom_subscribe_loader"></span>
+							<span class="et_bloom_button_text et_bloom_button_text_color_dark">SUBSCRIBE!</span>
+						</button>
+					</form>
+					<div class="et_bloom_success_container">
+						<span class="et_bloom_success_checkmark"></span>
+					</div>
+					<h2 class="et_bloom_success_message">You have Successfully Subscribed!</h2>
+					
+				</div>
+			</div>
+			<span class="et_bloom_close_button"></span>
+					</div>
+				</div></aside><aside id="text-17" class="widget widget_text">			<div class="textwidget"><div class=" fb_reset" id="fb-root"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe src="Ruby%20Inheritance,%20Encapsulation%20and%20Polymorphism_files/xd_arbiter.html" style="border: medium none;" tabindex="-1" title="Facebook Cross Domain Communication Frame" aria-hidden="true" id="fb_xdm_frame_https" scrolling="no" allowfullscreen="true" allowtransparency="true" name="fb_xdm_frame_https" frameborder="0"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=1441460056164944";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div fb-iframe-plugin-query="app_id=1441460056164944&amp;container_width=298&amp;hide_cover=false&amp;href=https%3A%2F%2Fwww.facebook.com%2Fsamurails&amp;locale=en_US&amp;sdk=joey&amp;show_facepile=true&amp;show_posts=false" fb-xfbml-state="parsed" class="fb-page fb_iframe_widget" data-href="https://www.facebook.com/samurails" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"><span style="vertical-align: top; width: 0px; height: 0px; overflow: hidden;"><iframe src="Ruby%20Inheritance,%20Encapsulation%20and%20Polymorphism_files/page.html" style="border: medium none; visibility: hidden;" title="fb:page Facebook Social Plugin" scrolling="no" allowfullscreen="true" allowtransparency="true" name="f38c87952c6d374" frameborder="0" height="1000px" width="1000px"></iframe></span></div></div>
+		</aside><aside id="featured_post_widget-2" class="widget widget_featured_post_widget">
+<h3><a href="https://samurails.com/modularity/introduction-modularity-ruby-rails/" title="Permalink to Modular Rails: Introduction">Modular Rails: Introduction</a></h3>
+<a href="https://samurails.com/modularity/introduction-modularity-ruby-rails/"><img title="Funding And Development" src="Ruby%20Inheritance,%20Encapsulation%20and%20Polymorphism_files/introduction-to-modularity.jpeg" alt="Introduction to modularity" style="float: none;" height="262" width="314"></a>
+<div style="clear: both;"></div>
+</aside><aside id="categories-3" class="widget widget_categories"><h3 class="widget-title">Categories</h3><label class="screen-reader-text" for="cat">Categories</label><select style="display: inline-block;" name="cat" id="cat" class="postform form-control">
+	<option selected="selected" value="-1">Select Category</option>
+	<option class="level-0" value="29">blup&nbsp;&nbsp;(4)</option>
+	<option class="level-0" value="71">books&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="48">gems&nbsp;&nbsp;(5)</option>
+	<option class="level-0" value="59">giveaway&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="61">hosting&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="60">interview&nbsp;&nbsp;(10)</option>
+	<option class="level-0" value="51">Jutsu&nbsp;&nbsp;(17)</option>
+	<option class="level-1" value="54">&nbsp;&nbsp;&nbsp;Background&nbsp;&nbsp;(1)</option>
+	<option class="level-1" value="53">&nbsp;&nbsp;&nbsp;JSON&nbsp;&nbsp;(3)</option>
+	<option class="level-1" value="55">&nbsp;&nbsp;&nbsp;Rails&nbsp;&nbsp;(6)</option>
+	<option class="level-0" value="2">Lifestyle&nbsp;&nbsp;(6)</option>
+	<option class="level-0" value="56">modularity&nbsp;&nbsp;(6)</option>
+	<option class="level-0" value="114">projects&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="57">review&nbsp;&nbsp;(3)</option>
+	<option class="level-0" value="36">ruby&nbsp;&nbsp;(4)</option>
+	<option class="level-0" value="64">screenjutsu&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="3">Tips&nbsp;&nbsp;(8)</option>
+	<option class="level-0" value="4">Tutorial&nbsp;&nbsp;(6)</option>
+	<option class="level-0" value="97">website-creation&nbsp;&nbsp;(2)</option>
+</select>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+(function() {
+	var dropdown = document.getElementById( "cat" );
+	function onCatChange() {
+		if ( dropdown.options[ dropdown.selectedIndex ].value > 0 ) {
+			location.href = "https://samurails.com/?cat=" + dropdown.options[ dropdown.selectedIndex ].value;
+		}
+	}
+	dropdown.onchange = onCatChange;
+})();
+/* ]]> */
+</script>
+
+</aside>		<aside id="recent-posts-2" class="widget widget_recent_entries">		<h3 class="widget-title">Recent Posts</h3>		<ul>
+					<li>
+				<a href="https://samurails.com/projects/7-lessons-i-learn-while-creating-my-new-saas-yoursetup-io/">7 lessons I learned while creating my new SAAS: YourSetup.io</a>
+						</li>
+					<li>
+				<a href="https://samurails.com/jutsu/jutsu-15-building-blogging-web-api-grape-mongodb-json-api-specification/">Jutsu #15 – Building a blogging web API with Grape, MongoDB and the JSON API specification</a>
+						</li>
+					<li>
+				<a href="https://samurails.com/jutsu/railsjutsu-14-protect-your-rails-forms-with-an-easy-captcha/">RailsJutsu #14: Protect your Rails forms with an easy CAPTCHA</a>
+						</li>
+					<li>
+				<a href="https://samurails.com/jutsu/railsjutsu-13-testing-your-emails-in-development-with-letter-opener/">Railsjutsu #13 – Testing your emails in development with Letter Opener</a>
+						</li>
+					<li>
+				<a href="https://samurails.com/website-creation/create-a-static-websiteblog-with-jekyll-and-github-pages/">Create a static website/blog with Jekyll and Github Pages</a>
+						</li>
+				</ul>
+		</aside>		<aside id="recent-comments-2" class="widget widget_recent_comments"><h3 class="widget-title">Recent Comments</h3><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link">Thibault</span> on <a href="https://samurails.com/jutsu/jutsu-15-building-blogging-web-api-grape-mongodb-json-api-specification/#comment-147454">Jutsu #15 – Building a blogging web API with Grape, MongoDB and the JSON API specification</a></li><li class="recentcomments"><span class="comment-author-link">Mac</span> on <a href="https://samurails.com/jutsu/jutsu-15-building-blogging-web-api-grape-mongodb-json-api-specification/#comment-147430">Jutsu #15 – Building a blogging web API with Grape, MongoDB and the JSON API specification</a></li><li class="recentcomments"><span class="comment-author-link">Thibault</span> on <a href="https://samurails.com/tutorial/single-table-inheritance-with-rails-4-part-3/#comment-147424">Jutsu #2 – Single Table Inheritance with Rails 4 (Part 3)</a></li><li class="recentcomments"><span class="comment-author-link">Shaun</span> on <a href="https://samurails.com/tutorial/single-table-inheritance-with-rails-4-part-3/#comment-147423">Jutsu #2 – Single Table Inheritance with Rails 4 (Part 3)</a></li><li class="recentcomments"><span class="comment-author-link">Thibault</span> on <a href="https://samurails.com/tutorial/single-table-inheritance-with-rails-4-part-1/#comment-147407">Jutsu #2 – Single Table Inheritance with Rails 4 (Part 1)</a></li></ul></aside><aside id="sparkling-social-2" class="widget sparkling-social"><h3 class="widget-title">Follow Me</h3>
+    <!-- social icons -->
+    <div class="social-icons sticky-sidebar-social">
+
+
+    <div class="social-icons"><a href="https://twitter.com/T_Dnzt" title="Follow us on Twitter" class="twitter" target="_blank"><i class="social_icon fa fa-twitter"></i></a><a href="https://plus.google.com/100939512332061042696/posts" title="Follow us on Google+" class="googleplus" target="_blank"><i class="social_icon fa fa-googleplus"></i></a></div>
+
+    </div><!-- end social icons -->
+
+
+		</aside>		</div>
+	</div><!-- #secondary -->
+			</div><!-- close .*-inner (main-content or sidebar, depending if sidebar is used) -->
+		</div><!-- close .row -->
+	</div><!-- close .container -->
+</div><!-- close .main-content -->
+
+	<div id="footer-area">
+		<div class="container footer-inner">
+			<div class="row">
+				
+				</div>
+		</div>
+
+		<footer id="colophon" class="site-footer" role="contentinfo">
+			<div class="site-info container">
+				<div class="row">
+					<div class="social-icons"><a href="https://twitter.com/T_Dnzt" title="Follow us on Twitter" class="twitter" target="_blank"><i class="social_icon fa fa-twitter"></i></a><a href="https://plus.google.com/100939512332061042696/posts" title="Follow us on Google+" class="googleplus" target="_blank"><i class="social_icon fa fa-googleplus"></i></a></div>					<nav role="navigation" class="col-md-6">
+						<ul id="menu-main" class="nav footer-nav clearfix"><li id="menu-item-39" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-39"><a href="https://samurails.com/">Home</a></li>
+<li id="menu-item-19" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19"><a href="https://samurails.com/about-me/">About me</a></li>
+<li id="menu-item-18" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-18"><a href="https://samurails.com/contact-me/">Contact me</a></li>
+<li id="menu-item-72" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-72"><a href="https://samurails.com/privacy-policy/">Privacy Policy</a></li>
+</ul>					</nav>
+					<div class="copyright col-md-6">
+						<a href="https://samurails.com/" title="Samurails">Samurails</a>  All rights reserved. Powered by <a href="https://www.digitalocean.com/?refcode=2df54168f4e4">Digital Ocean</a>.						Theme by <a href="http://colorlib.com/" target="_blank">Colorlib</a> Powered by <a href="http://wordpress.org/" target="_blank">WordPress</a>					</div>
+				</div>
+			</div><!-- .site-info -->
+			<div style="display: block;" class="scroll-to-top"><i class="fa fa-angle-up"></i></div><!-- .scroll-to-top -->
+		</footer><!-- #colophon -->
+	</div>
+<!-- #page -->
+
+<div class="et_bloom_flyin et_bloom_optin et_bloom_resize et_bloom_flyin_right et_bloom_optin_5 et_bloom_auto_popup et_bloom_trigger_bottom et_bloom_hide_mobile_optin et_bloom_visible et_bloom_animated" data-delay="20" data-cookie_duration="7">
+							<div style="max-height: 620px;" class="et_bloom_form_container et_bloom_form_bottom et_bloom_with_border et_bloom_border_solid et_bloom_border_position_full et_bloom_rounded et_bloom_form_text_dark et_bloom_animation_slideup et_flyin_2_fields et_bloom_flyin_bottom_inline">
+								
+			<div style="max-height: 600px;" class="et_bloom_form_container_wrapper clearfix">
+				<div class="et_bloom_header_outer">
+					<div class="et_bloom_form_header et_bloom_header_text_dark">
+						
+						<div class="et_bloom_form_text">
+						<h2>Eager to learn more?</h2><p>How about receiving more awesome content directly in your mailbox?&nbsp;</p>
+<p><strong>Then join my&nbsp;newsletter! I don't send spam I promise, just 1/2 emails per month max.</strong></p>
+<p>&nbsp;</p>
+<p>BONUS: You will also receive a free chapter from my book&nbsp;<a href="http://modularity.samurails.com/">Modular Rails</a>&nbsp;that will show you how to divide a Ruby on Rails application into small and reusable components!&nbsp;</p>
+					</div>
+						
+					</div>
+				</div>
+				<div class="et_bloom_form_content et_bloom_2_fields et_bloom_bottom_inline">
+					
+					
+					<form method="post" class="clearfix">
+						<p class="et_bloom_popup_input et_bloom_subscribe_name">
+								<input placeholder="Name" maxlength="50">
+							</p>
+						<p class="et_bloom_popup_input et_bloom_subscribe_email">
+							<input placeholder="Email">
+						</p>
+						<button data-optin_id="optin_5" data-service="mailchimp" data-list_id="856f7d10bb" data-page_id="550" data-account="samurails" class="et_bloom_submit_subscription">
+							<span class="et_bloom_subscribe_loader"></span>
+							<span class="et_bloom_button_text et_bloom_button_text_color_light">SUBSCRIBE!</span>
+						</button>
+					</form>
+					<div class="et_bloom_success_container">
+						<span class="et_bloom_success_checkmark"></span>
+					</div>
+					<h2 class="et_bloom_success_message">You have Successfully Subscribed!</h2>
+					
+				</div>
+			</div>
+			<span class="et_bloom_close_button"></span>
+							</div>
+						</div><div style="top: 0px;" class="et_social_sidebar_networks et_social_visible_sidebar et_social_slideright et_social_animated et_social_rectangle et_social_sidebar_flip et_social_sidebar_withcounts et_social_withtotalcount et_social_mobile_on">
+					<div class="et_social_totalcount et_social_dark">
+							<span class="et_social_totalcount_count et_social_total_share" data-post_id="550">1</span>
+							<span class="et_social_totalcount_label">Shares</span>
+						</div>
+					<ul class="et_social_icons_container"><li class="et_social_facebook">
+									<a href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fsamurails.com%2Finterview%2Fruby-inheritance-encapsulation-polymorphism%2F&amp;t=Ruby%20Inheritance%2C%20Encapsulation%20and%20Polymorphism" class="et_social_share et_social_display_count" rel="nofollow" data-social_name="facebook" data-post_id="550" data-social_type="share" data-min_count="0">
+										<i class="et_social_icon et_social_icon_facebook"></i>
+										
+										
+										<span class="et_social_overlay"></span>
+									<div class="et_social_count"><span>0</span></div></a>
+								</li><li class="et_social_twitter">
+									<a href="http://twitter.com/share?text=Ruby%20Inheritance%2C%20Encapsulation%20and%20Polymorphism&amp;url=https%3A%2F%2Fsamurails.com%2Finterview%2Fruby-inheritance-encapsulation-polymorphism%2F&amp;via=T_Dnzt" class="et_social_share et_social_display_count" rel="nofollow" data-social_name="twitter" data-post_id="550" data-social_type="share" data-min_count="0">
+										<i class="et_social_icon et_social_icon_twitter"></i>
+										
+										
+										<span class="et_social_overlay"></span>
+									<div class="et_social_count"><span>0</span></div></a>
+								</li><li class="et_social_googleplus">
+									<a href="https://plus.google.com/share?url=https%3A%2F%2Fsamurails.com%2Finterview%2Fruby-inheritance-encapsulation-polymorphism%2F&amp;t=Ruby%20Inheritance%2C%20Encapsulation%20and%20Polymorphism" class="et_social_share et_social_display_count" rel="nofollow" data-social_name="googleplus" data-post_id="550" data-social_type="share" data-min_count="0">
+										<i class="et_social_icon et_social_icon_googleplus"></i>
+										
+										
+										<span class="et_social_overlay"></span>
+									<div class="et_social_count"><span>0</span></div></a>
+								</li><li class="et_social_buffer">
+									<a href="https://bufferapp.com/add?url=https%3A%2F%2Fsamurails.com%2Finterview%2Fruby-inheritance-encapsulation-polymorphism%2F&amp;title=Ruby%20Inheritance%2C%20Encapsulation%20and%20Polymorphism" class="et_social_share et_social_display_count" rel="nofollow" data-social_name="buffer" data-post_id="550" data-social_type="share" data-min_count="0">
+										<i class="et_social_icon et_social_icon_buffer"></i>
+										
+										
+										<span class="et_social_overlay"></span>
+									<div class="et_social_count"><span>0</span></div></a>
+								</li><li class="et_social_evernote">
+									<a href="http://www.evernote.com/clip.action?url=https%3A%2F%2Fsamurails.com%2Finterview%2Fruby-inheritance-encapsulation-polymorphism%2F&amp;title=Ruby%20Inheritance%2C%20Encapsulation%20and%20Polymorphism" class="et_social_share et_social_display_count" rel="nofollow" data-social_name="evernote" data-post_id="550" data-social_type="share" data-min_count="0">
+										<i class="et_social_icon et_social_icon_evernote"></i>
+										
+										
+										<span class="et_social_overlay"></span>
+									<div class="et_social_count"><span>1</span></div></a>
+								</li><li class="et_social_hackernews">
+									<a href="https://news.ycombinator.com/submitlink?u=https%3A%2F%2Fsamurails.com%2Finterview%2Fruby-inheritance-encapsulation-polymorphism%2F&amp;t=Ruby%20Inheritance%2C%20Encapsulation%20and%20Polymorphism" class="et_social_share et_social_display_count" rel="nofollow" data-social_name="hackernews" data-post_id="550" data-social_type="share" data-min_count="0">
+										<i class="et_social_icon et_social_icon_hackernews"></i>
+										
+										
+										<span class="et_social_overlay"></span>
+									<div class="et_social_count"><span>0</span></div></a>
+								</li><li class="et_social_reddit">
+									<a href="http://www.reddit.com/submit?url=https%3A%2F%2Fsamurails.com%2Finterview%2Fruby-inheritance-encapsulation-polymorphism%2F&amp;title=Ruby%20Inheritance%2C%20Encapsulation%20and%20Polymorphism" class="et_social_share et_social_display_count" rel="nofollow" data-social_name="reddit" data-post_id="550" data-social_type="share" data-min_count="0">
+										<i class="et_social_icon et_social_icon_reddit"></i>
+										
+										
+										<span class="et_social_overlay"></span>
+									<div class="et_social_count"><span>0</span></div></a>
+								</li><li class="et_social_vkontakte">
+									<a href="http://vk.com/share.php?url=https%3A%2F%2Fsamurails.com%2Finterview%2Fruby-inheritance-encapsulation-polymorphism%2F" class="et_social_share et_social_display_count" rel="nofollow" data-social_name="vkontakte" data-post_id="550" data-social_type="share" data-min_count="0">
+										<i class="et_social_icon et_social_icon_vkontakte"></i>
+										
+										
+										<span class="et_social_overlay"></span>
+									<div class="et_social_count"><span>0</span></div></a>
+								</li><li class="et_social_linkedin">
+									<a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fsamurails.com%2Finterview%2Fruby-inheritance-encapsulation-polymorphism%2F&amp;title=Ruby%20Inheritance%2C%20Encapsulation%20and%20Polymorphism" class="et_social_share et_social_display_count" rel="nofollow" data-social_name="linkedin" data-post_id="550" data-social_type="share" data-min_count="0">
+										<i class="et_social_icon et_social_icon_linkedin"></i>
+										
+										
+										<span class="et_social_overlay"></span>
+									<div class="et_social_count"><span>0</span></div></a>
+								</li><li class="et_social_stumbleupon">
+									<a href="http://www.stumbleupon.com/badge?url=https%3A%2F%2Fsamurails.com%2Finterview%2Fruby-inheritance-encapsulation-polymorphism%2F&amp;title=Ruby%20Inheritance%2C%20Encapsulation%20and%20Polymorphism" class="et_social_share et_social_display_count" rel="nofollow" data-social_name="stumbleupon" data-post_id="550" data-social_type="share" data-min_count="0">
+										<i class="et_social_icon et_social_icon_stumbleupon"></i>
+										
+										
+										<span class="et_social_overlay"></span>
+									<div class="et_social_count"><span>0</span></div></a>
+								</li><li class="et_social_tumblr">
+									<a href="https://www.tumblr.com/share?v=3&amp;u=https%3A%2F%2Fsamurails.com%2Finterview%2Fruby-inheritance-encapsulation-polymorphism%2F&amp;t=Ruby%20Inheritance%2C%20Encapsulation%20and%20Polymorphism" class="et_social_share et_social_display_count" rel="nofollow" data-social_name="tumblr" data-post_id="550" data-social_type="share" data-min_count="0">
+										<i class="et_social_icon et_social_icon_tumblr"></i>
+										
+										
+										<span class="et_social_overlay"></span>
+									<div class="et_social_count"><span>0</span></div></a>
+								</li><li class="et_social_like">
+									<a href="" class="et_social_share" rel="nofollow" data-social_name="like" data-post_id="550" data-social_type="like">
+										<i class="et_social_icon et_social_icon_like"></i>
+										
+										<div class="et_social_count"><span>0</span></div>
+										<span class="et_social_overlay"></span>
+									</a>
+								</li></ul>
+					<span class="et_social_hide_sidebar et_social_icon"></span>
+				</div><div class="et_social_mobile_button"></div>
+					<div class="et_social_mobile et_social_fadein">
+						<div class="et_social_heading">Share This</div>
+						<span class="et_social_close"></span>
+						<div style="display: none; max-height: 45px; height: 45px;" class="et_social_networks et_social_simple et_social_rounded et_social_left et_social_withcounts">
+							<ul class="et_social_icons_container"><li class="et_social_facebook">
+									<a href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fsamurails.com%2Finterview%2Fruby-inheritance-encapsulation-polymorphism%2F&amp;t=Ruby%20Inheritance%2C%20Encapsulation%20and%20Polymorphism" class="et_social_share et_social_display_count" rel="nofollow" data-social_name="facebook" data-post_id="550" data-social_type="share" data-min_count="0">
+										<i class="et_social_icon et_social_icon_facebook"></i>
+										<div class="et_social_network_label"><div class="et_social_networkname">Facebook</div><div class="et_social_count"><span>0</span></div></div>
+										
+										<span class="et_social_overlay"></span>
+									</a>
+								</li><li class="et_social_twitter">
+									<a href="http://twitter.com/share?text=Ruby%20Inheritance%2C%20Encapsulation%20and%20Polymorphism&amp;url=https%3A%2F%2Fsamurails.com%2Finterview%2Fruby-inheritance-encapsulation-polymorphism%2F&amp;via=T_Dnzt" class="et_social_share et_social_display_count" rel="nofollow" data-social_name="twitter" data-post_id="550" data-social_type="share" data-min_count="0">
+										<i class="et_social_icon et_social_icon_twitter"></i>
+										<div class="et_social_network_label"><div class="et_social_networkname">Twitter</div><div class="et_social_count"><span>0</span></div></div>
+										
+										<span class="et_social_overlay"></span>
+									</a>
+								</li><li class="et_social_googleplus">
+									<a href="https://plus.google.com/share?url=https%3A%2F%2Fsamurails.com%2Finterview%2Fruby-inheritance-encapsulation-polymorphism%2F&amp;t=Ruby%20Inheritance%2C%20Encapsulation%20and%20Polymorphism" class="et_social_share et_social_display_count" rel="nofollow" data-social_name="googleplus" data-post_id="550" data-social_type="share" data-min_count="0">
+										<i class="et_social_icon et_social_icon_googleplus"></i>
+										<div class="et_social_network_label"><div class="et_social_networkname">Google+</div><div class="et_social_count"><span>0</span></div></div>
+										
+										<span class="et_social_overlay"></span>
+									</a>
+								</li><li class="et_social_buffer">
+									<a href="https://bufferapp.com/add?url=https%3A%2F%2Fsamurails.com%2Finterview%2Fruby-inheritance-encapsulation-polymorphism%2F&amp;title=Ruby%20Inheritance%2C%20Encapsulation%20and%20Polymorphism" class="et_social_share et_social_display_count" rel="nofollow" data-social_name="buffer" data-post_id="550" data-social_type="share" data-min_count="0">
+										<i class="et_social_icon et_social_icon_buffer"></i>
+										<div class="et_social_network_label"><div class="et_social_networkname">Buffer</div><div class="et_social_count"><span>0</span></div></div>
+										
+										<span class="et_social_overlay"></span>
+									</a>
+								</li><li class="et_social_evernote">
+									<a href="http://www.evernote.com/clip.action?url=https%3A%2F%2Fsamurails.com%2Finterview%2Fruby-inheritance-encapsulation-polymorphism%2F&amp;title=Ruby%20Inheritance%2C%20Encapsulation%20and%20Polymorphism" class="et_social_share et_social_display_count" rel="nofollow" data-social_name="evernote" data-post_id="550" data-social_type="share" data-min_count="0">
+										<i class="et_social_icon et_social_icon_evernote"></i>
+										<div class="et_social_network_label"><div class="et_social_networkname">Evernote</div><div class="et_social_count"><span>1</span></div></div>
+										
+										<span class="et_social_overlay"></span>
+									</a>
+								</li><li class="et_social_hackernews">
+									<a href="https://news.ycombinator.com/submitlink?u=https%3A%2F%2Fsamurails.com%2Finterview%2Fruby-inheritance-encapsulation-polymorphism%2F&amp;t=Ruby%20Inheritance%2C%20Encapsulation%20and%20Polymorphism" class="et_social_share et_social_display_count" rel="nofollow" data-social_name="hackernews" data-post_id="550" data-social_type="share" data-min_count="0">
+										<i class="et_social_icon et_social_icon_hackernews"></i>
+										<div class="et_social_network_label"><div class="et_social_networkname">Hacker News</div><div class="et_social_count"><span>0</span></div></div>
+										
+										<span class="et_social_overlay"></span>
+									</a>
+								</li><li class="et_social_reddit">
+									<a href="http://www.reddit.com/submit?url=https%3A%2F%2Fsamurails.com%2Finterview%2Fruby-inheritance-encapsulation-polymorphism%2F&amp;title=Ruby%20Inheritance%2C%20Encapsulation%20and%20Polymorphism" class="et_social_share et_social_display_count" rel="nofollow" data-social_name="reddit" data-post_id="550" data-social_type="share" data-min_count="0">
+										<i class="et_social_icon et_social_icon_reddit"></i>
+										<div class="et_social_network_label"><div class="et_social_networkname">reddit</div><div class="et_social_count"><span>0</span></div></div>
+										
+										<span class="et_social_overlay"></span>
+									</a>
+								</li><li class="et_social_vkontakte">
+									<a href="http://vk.com/share.php?url=https%3A%2F%2Fsamurails.com%2Finterview%2Fruby-inheritance-encapsulation-polymorphism%2F" class="et_social_share et_social_display_count" rel="nofollow" data-social_name="vkontakte" data-post_id="550" data-social_type="share" data-min_count="0">
+										<i class="et_social_icon et_social_icon_vkontakte"></i>
+										<div class="et_social_network_label"><div class="et_social_networkname">VKontakte</div><div class="et_social_count"><span>0</span></div></div>
+										
+										<span class="et_social_overlay"></span>
+									</a>
+								</li><li class="et_social_linkedin">
+									<a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fsamurails.com%2Finterview%2Fruby-inheritance-encapsulation-polymorphism%2F&amp;title=Ruby%20Inheritance%2C%20Encapsulation%20and%20Polymorphism" class="et_social_share et_social_display_count" rel="nofollow" data-social_name="linkedin" data-post_id="550" data-social_type="share" data-min_count="0">
+										<i class="et_social_icon et_social_icon_linkedin"></i>
+										<div class="et_social_network_label"><div class="et_social_networkname">LinkedIn</div><div class="et_social_count"><span>0</span></div></div>
+										
+										<span class="et_social_overlay"></span>
+									</a>
+								</li><li class="et_social_stumbleupon">
+									<a href="http://www.stumbleupon.com/badge?url=https%3A%2F%2Fsamurails.com%2Finterview%2Fruby-inheritance-encapsulation-polymorphism%2F&amp;title=Ruby%20Inheritance%2C%20Encapsulation%20and%20Polymorphism" class="et_social_share et_social_display_count" rel="nofollow" data-social_name="stumbleupon" data-post_id="550" data-social_type="share" data-min_count="0">
+										<i class="et_social_icon et_social_icon_stumbleupon"></i>
+										<div class="et_social_network_label"><div class="et_social_networkname">StumbleUpon</div><div class="et_social_count"><span>0</span></div></div>
+										
+										<span class="et_social_overlay"></span>
+									</a>
+								</li><li class="et_social_tumblr">
+									<a href="https://www.tumblr.com/share?v=3&amp;u=https%3A%2F%2Fsamurails.com%2Finterview%2Fruby-inheritance-encapsulation-polymorphism%2F&amp;t=Ruby%20Inheritance%2C%20Encapsulation%20and%20Polymorphism" class="et_social_share et_social_display_count" rel="nofollow" data-social_name="tumblr" data-post_id="550" data-social_type="share" data-min_count="0">
+										<i class="et_social_icon et_social_icon_tumblr"></i>
+										<div class="et_social_network_label"><div class="et_social_networkname">Tumblr</div><div class="et_social_count"><span>0</span></div></div>
+										
+										<span class="et_social_overlay"></span>
+									</a>
+								</li><li class="et_social_like">
+									<a href="" class="et_social_share" rel="nofollow" data-social_name="like" data-post_id="550" data-social_type="like">
+										<i class="et_social_icon et_social_icon_like"></i>
+										<div class="et_social_network_label"><div class="et_social_networkname">Like</div><div class="et_social_count"><span>0</span></div></div>
+										
+										<span class="et_social_overlay"></span>
+									</a>
+								</li></ul>
+						</div>
+					</div>
+					<div class="et_social_mobile_overlay"></div>	<div style="display:none">
+	<div class="grofile-hash-map-a4c7568c667805461cb1cabccc8ababa">
+	</div>
+	</div>
+<!-- Tracking code easily added by NK Google Analytics -->
+<script type="text/javascript"> 
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ 
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), 
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) 
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga'); 
+ga('create', 'UA-33082231-3', 'auto'); 
+ga('require', 'displayfeatures'); 
+ga('send', 'pageview'); 
+</script> 
+
+	<script type="text/javascript">
+		window.WPCOM_sharing_counts = {"https:\/\/samurails.com\/interview\/ruby-inheritance-encapsulation-polymorphism\/":550};
+	</script>
+		<script type="text/javascript">
+			var windowOpen;
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-twitter' ).on( 'click', function() {
+				if ( 'undefined' !== typeof windowOpen ){ // If there's another sharing window open, close it.
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery(this).attr( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+				return false;
+			});
+		});
+		</script>
+				<script type="text/javascript">
+			var windowOpen;
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-facebook' ).on( 'click', function() {
+				if ( 'undefined' !== typeof windowOpen ){ // If there's another sharing window open, close it.
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery(this).attr( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+				return false;
+			});
+		});
+		</script>
+				<script type="text/javascript">
+			var windowOpen;
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-google-plus-1' ).on( 'click', function() {
+				if ( 'undefined' !== typeof windowOpen ){ // If there's another sharing window open, close it.
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery(this).attr( 'href' ), 'wpcomgoogle-plus-1', 'menubar=1,resizable=1,width=480,height=550' );
+				return false;
+			});
+		});
+		</script>
+		<script type="text/javascript" src="Ruby%20Inheritance,%20Encapsulation%20and%20Polymorphism_files/form.js"></script>
+<link rel="stylesheet" id="et-gf-open-sans-css" href="Ruby%20Inheritance,%20Encapsulation%20and%20Polymorphism_files/css_003.css" type="text/css" media="all">
+<link rel="stylesheet" id="et-gf-lato-css" href="Ruby%20Inheritance,%20Encapsulation%20and%20Polymorphism_files/css_002.css" type="text/css" media="all">
+<script type="text/javascript" src="Ruby%20Inheritance,%20Encapsulation%20and%20Polymorphism_files/photon.js"></script>
+<script type="text/javascript" src="Ruby%20Inheritance,%20Encapsulation%20and%20Polymorphism_files/jquery_002.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var bloomSettings = {"ajaxurl":"https:\/\/samurails.com\/wp-admin\/admin-ajax.php","pageurl":"https:\/\/samurails.com\/interview\/ruby-inheritance-encapsulation-polymorphism\/","stats_nonce":"cf29243315","subscribe_nonce":"f54ae2fa10"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Ruby%20Inheritance,%20Encapsulation%20and%20Polymorphism_files/custom_002.js"></script>
+<script type="text/javascript" src="Ruby%20Inheritance,%20Encapsulation%20and%20Polymorphism_files/idle-timer.js"></script>
+<script type="text/javascript" src="Ruby%20Inheritance,%20Encapsulation%20and%20Polymorphism_files/idle-timer_002.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var monarchSettings = {"ajaxurl":"https:\/\/samurails.com\/wp-admin\/admin-ajax.php","pageurl":"https:\/\/samurails.com\/interview\/ruby-inheritance-encapsulation-polymorphism\/","stats_nonce":"35f54985d4","share_counts":"f6912f258c","follow_counts":"490debb430","total_counts":"b91c6b5e31","media_single":"7032deb791","media_total":"b8834f586c","generate_all_window_nonce":"375b7ffcfa","no_img_message":"No images available for sharing on this page"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Ruby%20Inheritance,%20Encapsulation%20and%20Polymorphism_files/custom.js"></script>
+<script type="text/javascript" src="Ruby%20Inheritance,%20Encapsulation%20and%20Polymorphism_files/devicepx-jetpack.js"></script>
+<script type="text/javascript" src="Ruby%20Inheritance,%20Encapsulation%20and%20Polymorphism_files/gprofiles.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Ruby%20Inheritance,%20Encapsulation%20and%20Polymorphism_files/wpgroho.js"></script>
+<script type="text/javascript" src="Ruby%20Inheritance,%20Encapsulation%20and%20Polymorphism_files/skip-link-focus-fix.js"></script>
+<script type="text/javascript" src="Ruby%20Inheritance,%20Encapsulation%20and%20Polymorphism_files/comment-reply.js"></script>
+<script type="text/javascript" src="Ruby%20Inheritance,%20Encapsulation%20and%20Polymorphism_files/wp-embed.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var sharing_js_options = {"lang":"en","counts":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Ruby%20Inheritance,%20Encapsulation%20and%20Polymorphism_files/sharing.js"></script>
+<script type="text/javascript" src="Ruby%20Inheritance,%20Encapsulation%20and%20Polymorphism_files/e-201609.js" async="" defer="defer"></script>
+<script type="text/javascript">
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:3.8.2',blog:'105616232',post:'550',tz:'0',srv:'samurails.com'} ]);
+	_stq.push([ 'clickTrackerInit', '105616232', '550' ]);
+</script>
+
+
+<img id="wpstats" src="Ruby%20Inheritance,%20Encapsulation%20and%20Polymorphism_files/g.gif"></body></html>

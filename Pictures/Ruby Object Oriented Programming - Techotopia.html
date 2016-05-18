@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html style="min-height: 100%; height: 100%; padding: 0px; margin: 0px;" dir="ltr" class="client-js" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script src="Ruby%20Object%20Oriented%20Programming%20-%20Techotopia_files/ads.js"></script><script src="Ruby%20Object%20Oriented%20Programming%20-%20Techotopia_files/measure.js"></script><script src="Ruby%20Object%20Oriented%20Programming%20-%20Techotopia_files/analytics.js" async=""></script>
+<meta charset="UTF-8">
+<title>Ruby Object Oriented Programming - Techotopia</title>
+<script src="Ruby%20Object%20Oriented%20Programming%20-%20Techotopia_files/ca-pub-7393409044112403.js"></script><script src="Ruby%20Object%20Oriented%20Programming%20-%20Techotopia_files/fbevents.js" async=""></script><script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":0,"wgPageName":"Ruby_Object_Oriented_Programming","wgTitle":"Ruby Object Oriented Programming","wgCurRevisionId":23364,"wgRevisionId":23364,"wgArticleId":473,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":!1,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Ruby_Object_Oriented_Programming","wgRelevantArticleId":473,"wgIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":!0,"dialogs":!0,
+"preview":!0,"publish":!0}});mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","skins.vector.js"]);
+} );</script>
+<link rel="stylesheet" href="Ruby%20Object%20Oriented%20Programming%20-%20Techotopia_files/load.css">
+<style>
+#bo-content{background:green}.mobileonly{display:none}
+.mw-collapsible-toggle{float:right;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}  .mw-content-ltr .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr .mw-collapsible-toggle{float:right} .mw-content-rtl .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl .mw-collapsible-toggle{float:left}.mw-customtoggle,.mw-collapsible-toggle{cursor:pointer} caption .mw-collapsible-toggle,.mw-content-ltr caption .mw-collapsible-toggle,.mw-content-rtl caption .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr caption .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl caption .mw-collapsible-toggle{float:none} li .mw-collapsible-toggle,.mw-content-ltr li .mw-collapsible-toggle,.mw-content-rtl li .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr li .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left; overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}.suggestions-result-current{background-color:#4C59A6;color:white}.suggestions-special .special-label{color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white}.highlight{font-weight:bold}
+.postedit-container{margin:0 auto;position:fixed;top:0;height:0;left:50%;z-index:1000;font-size:13px}.postedit-container:hover{cursor:pointer}.postedit{position:relative;top:0.6em;left:-50%;padding:.6em 3.6em .6em 1.1em;line-height:1.5625em;color:#626465;background-color:#f4f4f4;border:1px solid #dcd9d9;text-shadow:0 0.0625em 0 rgba(255,255,255,0.5);border-radius:5px;box-shadow:0 2px 5px 0 #ccc;-webkit-transition:all 0.25s ease-in-out;-moz-transition:all 0.25s ease-in-out;-ms-transition:all 0.25s ease-in-out;-o-transition:all 0.25s ease-in-out;transition:all 0.25s ease-in-out}.skin-monobook .postedit{top:6em !important}.postedit-faded{opacity:0}.postedit-icon{padding-left:41px;  line-height:25px;background-repeat:no-repeat;background-position:8px 50%}.postedit-icon-checkmark{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAABblBMVEUAAAD///////9PfTf///80aRdTgjn///9Feij///////////9Rfzf///////////9PfjZRgDh1o1xOfTb///////+bwYqLtnj///////9PfTa82K////9WhT6YxIL///9QgDdTgzr////////j7uDl7eLq8efi693k7OH///////9UhjuBr2rp9uRUhjr///9YljVKgir///9WiTlYjT3////9/v57vFlbkT5PjC9dlD/5/fhuq09stUTs9uhxuElctCpfnT1huDFloEZloUZmpENmvDZpvDxpvTxqvjxrvT5rvT9rwTxsqktswD5uwkBvuUdxw0NztFBztU9ztVBzwkp0tlJ1xkd2t1R3uVR4w1F4xk54x014yE15uVZ5v1R5xVB6v1R7yFJ8wVh9xVl9yFR9yVd9ylN+xVh+yFd/x1l/yFeAylmEx1+Ny2uY0Hqe04Wj1Ymv3Ze33qLD47TJ5L3O6cPU7Mrq9eb2+/Q4j37OAAAAQHRSTlMAAQIEBAUFBQwPFB4fJCUoKiosQEhJS01RUlZZXmdydXaChYuSlJSWmJmoq6uur8LExcvM19fg5ejt8fX2+Pr7SljgewAAAKpJREFUGBkFwQNCAwAAAMDLtl3LtrG4rWXbtvX77gAgZ6grFwC0bhwNVgKgdPZx8b0dgLi+s7Wn0VoAqpfOI9+BNADZI7fLrz2pSEwGHZuH+78lSK8ZLkLezF3ooyUG3VPXq2USei9WngeyoG195yBYWDF3E/2pAhl1e9Gr8bGT+bfOFCC2fnvh4X7rcqIAQNNu+HT6sxkAjceTL/2ZAIhv+PorBwBJxfkA//dFHSCBy/UTAAAAAElFTkSuQmCC);background-image:url(/resources/src/mediawiki.action/images/green-checkmark.png?9048a)!ie;background-position:left}.postedit-close{position:absolute;padding:0 .8em;right:0;top:0;font-size:1.25em;font-weight:bold;line-height:2.3em;color:black;text-shadow:0 0.0625em 0 white;text-decoration:none;opacity:0.2;filter:alpha(opacity=20)}.postedit-close:hover{color:black;text-decoration:none;opacity:0.4;filter:alpha(opacity=40)}</style><style>
+.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{color:black;text-decoration:none}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:white}.suggestions a.mw-searchSuggest-link .special-query{ overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}</style><meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="Ruby%20Object%20Oriented%20Programming%20-%20Techotopia_files/load_002.css">
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}</style>
+<script async="" src="Ruby%20Object%20Oriented%20Programming%20-%20Techotopia_files/load.php"></script>
+<meta name="generator" content="MediaWiki 1.26.2">
+<link rel="shortcut icon" href="http://www.techotopia.com/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="http://www.techotopia.com/opensearch_desc.php" title="Techotopia (en)">
+<link rel="EditURI" type="application/rsd+xml" href="http://www.techotopia.com/api.php?action=rsd">
+<link rel="alternate" type="application/atom+xml" title="Techotopia Atom feed" href="http://www.techotopia.com/index.php?title=Special:RecentChanges&amp;feed=atom">
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/Vector/csshover.min.htc")}</style><![endif]-->
+<script src="Ruby%20Object%20Oriented%20Programming%20-%20Techotopia_files/load_002.php"></script><script id="ejejcecomscript" type="text/javascript" src="Ruby%20Object%20Oriented%20Programming%20-%20Techotopia_files/boxec28_enc.js"></script></head>
+<body style="min-height: 100%; height: 100%; padding: 0px; margin: 0px;" class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Ruby_Object_Oriented_Programming skin-vector action-view">
+ 
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '492017207635887');
+fbq('track', "PageView");</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=492017207635887&ev=PageView&noscript=1"/></noscript>
+ 
+<style type="text/css">#bookcover{padding:5px 5px 5px 5px;margin:0px 3px 0px 0px;text-align:center;border:1px solid #808080;}a.booklink:link{font-size:12px;font-weight:bold;}a.booklink:active{font-size:12px;font-weight:bold;}#bookcaption{font-size:0.8em;}#booktitle{font-size:1.1em;}#bookprice{font-size:1.1em;color:red;}</style>
+<script>
+var trackOutboundLink = function(url) {
+   ga('send', 'event', 'outbound', 'click', url, {
+     'transport': 'beacon',
+     'hitCallback': function(){document.location = url;}
+   });
+}
+</script>
+<script language="Javascript" type="text/javascript">
+
+function googlebanner()
+{
+        document.write ("<script async src=\"\/\/pagead2.googlesyndication.com\/pagead\/js\/adsbygoogle.js\"><\/script>");
+        document.write ("<!-- Techotopia 728x90 Top -->");
+        document.write ("<ins class=\"adsbygoogle\"");
+        document.write ("     style=\"display:inline-block;width:728px;height:90px\"");
+        document.write ("     data-ad-client=\"ca-pub-7393409044112403\"");
+        document.write ("     data-ad-slot=\"1863066311\"><\/ins>");
+        document.write ("<script>");
+        document.write ("(adsbygoogle = window.adsbygoogle || []).push({});");
+        document.write ("<\/script>");
+}
+
+function googletocbanner()
+{
+        document.write ("<script async src=\"\/\/pagead2.googlesyndication.com\/pagead\/js\/adsbygoogle.js\"><\/script>");
+        document.write ("<!-- Techotopia Toc Banner -->");
+        document.write ("<ins class=\"adsbygoogle\"");
+        document.write ("     style=\"display:inline-block;width:728px;height:90px\"");
+        document.write ("     data-ad-client=\"ca-pub-7393409044112403\"");
+        document.write ("     data-ad-slot=\"9587822718\"><\/ins>");
+        document.write ("<script>");
+        document.write ("(adsbygoogle = window.adsbygoogle || []).push({});");
+        document.write ("<\/script>");
+}
+
+function googlebox_async()
+{
+        document.write ("<script async src=\"\/\/pagead2.googlesyndication.com\/pagead\/js\/adsbygoogle.js\"><\/script>");
+        document.write ("<!-- Techotopia TOC Large Rectangle -->");
+        document.write ("<ins class=\"adsbygoogle\"");
+        document.write ("     style=\"display:inline-block;width:336px;height:280px\"");
+        document.write ("     data-ad-client=\"ca-pub-7393409044112403\"");
+        document.write ("     data-ad-slot=\"6792793513\"><\/ins>");
+        document.write ("<script>");
+        document.write ("(adsbygoogle = window.adsbygoogle || []).push({});");
+        document.write ("<\/script>");
+}
+
+function googlelinkunit()
+{
+        document.write ("<script async src=\"\/\/pagead2.googlesyndication.com\/pagead\/js\/adsbygoogle.js\"><\/script>");
+        document.write ("<!-- New Techotopia Link Unit -->");
+        document.write ("<ins class=\"adsbygoogle\"");
+        document.write ("     style=\"display:inline-block;width:728px;height:15px\"");
+        document.write ("     data-ad-client=\"ca-pub-7393409044112403\"");
+        document.write ("     data-ad-slot=\"5273544315\"><\/ins>");
+        document.write ("<script>");
+        document.write ("(adsbygoogle = window.adsbygoogle || []).push({});");
+        document.write ("<\/script>");
+}
+</script>
+<a href="https://www.e-junkie.com/ecom/gb.php?c=cart&amp;cl=56328&amp;ejc=2" target="ej_ejc" class="ec_ejc_thkbx" onclick="javascript:return EJEJC_lc(this);"></a>
+<script language="javascript" type="text/javascript">
+<!--
+function EJEJC_lc(th) { return false; }
+// -->
+</script>
+<script async="" src="Ruby%20Object%20Oriented%20Programming%20-%20Techotopia_files/box.js" type="text/javascript"></script>
+<div id="mw-page-base" class="noprint"></div>
+<div id="mw-head-base" class="noprint"></div>
+<div id="content" class="mw-body" role="main">
+<a id="top"></a>
+<div class="mw-indicators">
+</div>
+<h1 id="firstHeading" class="firstHeading" lang="en">Ruby Object Oriented Programming</h1>
+<div style="padding-top:20px; width:728px; margin:0 auto;">
+<div id="825a346f53" class="pagefair-acceptable"></div>
+<script async="" src="Ruby%20Object%20Oriented%20Programming%20-%20Techotopia_files/adsbygoogle.js"></script>
+ 
+<ins data-adsbygoogle-status="done" class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-7393409044112403" data-ad-slot="1863066311"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;" frameborder="0" height="90" width="728"></iframe></ins></ins></ins>
+<script>
+					(adsbygoogle = window.adsbygoogle || []).push({});
+					</script>
+</div>
+<div id="bodyContent" class="mw-body-content">
+<div id="siteSub">From Techotopia</div>
+<div id="contentSub"></div>
+<div id="jump-to-nav" class="mw-jump">
+Jump to: <a href="#mw-head">navigation</a>, <a href="#p-search">search</a>
+</div>
+<div id="mw-content-text" dir="ltr" class="mw-content-ltr" lang="en"><table border="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td width="20%"><a href="http://www.techotopia.com/index.php/Understanding_Ruby_Logical_Operators" title="Understanding Ruby Logical Operators">Previous</a></td><td align="center"><a href="http://www.techotopia.com/index.php/Ruby_Essentials" title="Ruby Essentials">Table of Contents</a></td><td align="right" width="20%"><a href="http://www.techotopia.com/index.php/Ruby_Flow_Control" title="Ruby Flow Control">Next</a></td>
+</tr><tr>
+<td width="20%">Understanding Ruby Logical Operators</td><td align="center"></td><td align="right" width="20%">Ruby Flow Control</td>
+</tr></tbody></table>
+<hr>
+<p><br>
+</p><table align="center">
+<tbody><tr>
+<td style="vertical-align:top">
+<div style="background:white; opacity: 100; padding: 3px 3px 3px 3px; margin: 3px 3px 3px 5px; text-align:center; border:1px solid #808080;">
+<p><a class="booklink" href="http://www.ebookfrenzy.com/ebookpages/ruby_ebook.html"><img id="coverthumb" src="Ruby%20Object%20Oriented%20Programming%20-%20Techotopia_files/rubycover_small.png"></a><br>
+</p>
+<a style="font-size:0.6em;" href="http://www.ebookfrenzy.com/">eBookFrenzy.com</a></div>
+</td>
+<td><b>Purchase and download the full PDF and ePub editions of this Ruby eBook for only $8.99</b>
+<p><a href="https://www.e-junkie.com/ecom/gb.php?c=cart&amp;i=PLDM-1&amp;cl=56328&amp;ejc=2" target="ej_ejc" class="ec_ejc_thkbx" onclick="javascript:return EJEJC_lc(this);"><img src="Ruby%20Object%20Oriented%20Programming%20-%20Techotopia_files/NewBuyeBook.png" style="border:5px solid #ffffff;" alt="Buy eBook"></a>
+</p>
+</td>
+</tr>
+</tbody></table>
+<p></p><p><br>
+Ruby is an object oriented environment and, as such, provides extensive 
+support for developing object-oriented applications. The area of object 
+oriented programming is, however, large. Entire books can, and indeed 
+have, been dedicated to the subject. A detailed overview of object 
+oriented software development is beyond the scope of <a href="http://www.techotopia.com/index.php/Ruby_Essentials" title="Ruby Essentials">Ruby Essentials</a>.
+ Instead we will introduce the basic concepts involved in object 
+oriented programming and then move on to explaining the concept as it 
+relates to Ruby development.
+</p>
+<br><div align="center"><script type="text/javascript"></script><script language="Javascript"> googlelinkunit();</script><script async="" src="Ruby%20Object%20Oriented%20Programming%20-%20Techotopia_files/adsbygoogle.js"></script><!-- New Techotopia Link Unit --><ins data-adsbygoogle-status="done" class="adsbygoogle" style="display:inline-block;width:728px;height:15px" data-ad-client="ca-pub-7393409044112403" data-ad-slot="5273544315"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;" frameborder="0" height="15" width="728"></iframe></ins></ins></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div><br><table><tbody><tr><td valign="top"><div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2><span class="toctoggle">&nbsp;[<a href="#" id="togglelink">hide</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#What_is_an_Object.3F"><span class="tocnumber">1</span> <span class="toctext">What is an Object?</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#What_is_a_Class.3F"><span class="tocnumber">2</span> <span class="toctext">What is a Class?</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Defining_a_Ruby_Class"><span class="tocnumber">3</span> <span class="toctext">Defining a Ruby Class</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Creating_an_Object_from_a_Class"><span class="tocnumber">4</span> <span class="toctext">Creating an Object from a Class</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Instance_Variables_and_Accessor_Methods"><span class="tocnumber">5</span> <span class="toctext">Instance Variables and Accessor Methods</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Ruby_Class_Variables"><span class="tocnumber">6</span> <span class="toctext">Ruby Class Variables</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Instance_Methods"><span class="tocnumber">7</span> <span class="toctext">Instance Methods</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Ruby_Class_Inheritance"><span class="tocnumber">8</span> <span class="toctext">Ruby Class Inheritance</span></a></li>
+</ul>
+</div>
+</td><td><div id="tocbox"><script type="text/javascript"></script><script language="Javascript"> googlebox_async();</script><script async="" src="Ruby%20Object%20Oriented%20Programming%20-%20Techotopia_files/adsbygoogle.js"></script><!-- Techotopia TOC Large Rectangle --><ins data-adsbygoogle-status="done" class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-7393409044112403" data-ad-slot="6792793513"><ins id="aswift_2_expand" style="display:inline-table;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent"><ins id="aswift_2_anchor" style="display:block;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;" frameborder="0" height="280" width="336"></iframe></ins></ins></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script><div><br></div></div></td></tr><tr><td colspan="2"><script type="text/javascript"></script><script language="Javascript"> googletocbanner();</script><script async="" src="Ruby%20Object%20Oriented%20Programming%20-%20Techotopia_files/adsbygoogle.js"></script><!-- Techotopia Toc Banner --><ins data-adsbygoogle-status="done" class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-7393409044112403" data-ad-slot="9587822718"><ins id="aswift_3_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><ins id="aswift_3_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_3" name="aswift_3" style="left:0;position:absolute;top:0;" frameborder="0" height="90" width="728"></iframe></ins></ins></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></td></tr></tbody></table>
+<h2><span class="mw-headline" id="What_is_an_Object.3F">What is an Object?</span></h2>
+<p>An object is a self-contained piece of functionality that can be 
+easily used, and re-used as the building blocks for a software 
+application.
+</p><p>Objects consist of data variables and functions (called <i>methods</i>) that can be accessed and called on the object to perform tasks. These are collectively referred to as <i>members</i>.
+</p><p>Just about everything in Ruby, from numbers and strings to arrays is an object.
+</p>
+<br><div align="center"><iframe id="bodycontext" marginheight="0" marginwidth="0" src="Ruby%20Object%20Oriented%20Programming%20-%20Techotopia_files/contextbody.html" scrolling="no" frameborder="0" height="90" width="728"></iframe></div><h2><span class="mw-headline" id="What_is_a_Class.3F">What is a Class?</span></h2>
+<p></p><div style="margin-left:20px; float:right;"><script src="Ruby%20Object%20Oriented%20Programming%20-%20Techotopia_files/getjs.js"></script><script type="text/javascript" src="contextbody_data/getjs.js"></script><div class="pp_placeholder" id="pp_ad_container_0_ph"></div><div class="pp_ad_container" id="pp_ad_container_0"><script type="text/javascript" src="Ruby%20Object%20Oriented%20Programming%20-%20Techotopia_files/GetAd.js"></script></div>
+Much as a blueprint or architect's drawing defines what an item or a 
+building will look like once it has been constructed, a class defines 
+what an object will look like when it is created. It defines, for 
+example, what the <i>methods</i> will do and what the <i>member</i> variables will be.
+<p></p><p>New classes can be created based on existing classes, a concept known as <i>inheritance</i>. In such a scenario the new class (known as the <i>subclass</i>) inherits all the features of the parent class (known as the <i>superclass</i>) with added features that differentiate it from the <i>superclass</i>. Ruby supports <i>single inheritance</i> in that a subclass can only inherit from a single <i>superclass</i>.
+</p><p>Other languages such as C++ support <i>multiple inheritance</i> where the <i>subclass</i> can inherit the characteristics of multiple superclasses.
+</p>
+<h2><span class="mw-headline" id="Defining_a_Ruby_Class">Defining a Ruby Class</span></h2>
+<p>For the purposes of this tutorial we will create a new class intended
+ to be used as part of a banking application. Classes are defined using 
+the <i>class</i> keyword followed by the <i>end</i> keyword and must be given a name by which they can be referenced. This name is a constant so must begin with a capital letter.
+</p><p>With these rules in mind we can begin work on our class definition:
+</p>
+<pre>class BankAccount
+   def initialize ()
+   end
+
+   def test_method
+        puts "The class is working"
+   end
+end
+</pre>
+<p>The above example defines a class named <i>BankAccount</i> with a single method called <i>test_method</i> which simply outputs a string. The <i>initialize</i>
+ method is a standard Ruby class method and is the method which gets 
+called first after an object based on this class has completed 
+initialization. You can place any code in the initialize method and it 
+is particularly useful for passing in arguments when the class is 
+created.
+</p>
+<h2><span class="mw-headline" id="Creating_an_Object_from_a_Class">Creating an Object from a Class</span></h2>
+<p>An object is created from a class using the <i>new</i> method. For example, to create an instance of our BankAccount class we simply perform the following:
+</p>
+<pre>account = BankAccount.new()
+</pre>
+<p>This creates a BankAccount object named <i>account</i>. Having created the object we can call our test_method:
+</p>
+<pre>account.test_method
+The class is working
+</pre>
+<h2><span class="mw-headline" id="Instance_Variables_and_Accessor_Methods">Instance Variables and Accessor Methods</span></h2>
+<p>Instance variables are variables defined in a class that are 
+available only to each instance of the class. Instance variables may be 
+defined either inside or outside of class methods. To make the variables
+ available from outside the class, they must be defined within <i>accessor methods</i> (also known as a getter method).
+</p><p>For example, we might want to add instance variables to our <i>BankAccount</i> class:
+</p>
+<pre>class BankAccount
+
+   def accountNumber
+        @accountNumber = "12345"
+   end
+
+   def accountName
+        @accountName = "John Smith"
+   end
+
+   def initialize ()
+   end
+
+   def test_method
+        puts "The class is working"
+        puts accountNumber
+   end
+end
+</pre>
+<p>Now we have two instance variables called <i>@accountNumber</i> and <i>@accountName</i> with associated accessor methods. We can now access these variables from outside the
+</p>
+<pre>account = BankAccount.new()
+puts account.accountNumber
+puts account.accountName
+</pre>
+<p>The two <i>puts</i> statements above will print out the values of the
+ two variables returned by the accessor methods (in this case "12345" 
+and "John Smith" respectively).
+</p><p>Now that we can "get" the value of an instance variable, we now 
+need a way to "set" the value of an instance variable. One way to do 
+this is via a <i>setter</i> methods. Let's clean up our BankAccount class, so that it has two instance variables with getters and setters:
+</p>
+<pre>class BankAccount
+
+   def accountNumber
+        @accountNumber
+   end
+
+   def accountNumber=( value )
+        @accountNumber = value
+   end
+
+   def accountName
+        @accountName
+   end
+
+   def accountName=( value )
+        @accountName = value
+   end
+
+end
+</pre>
+<p>We can now create an instance of our class, set the name and account 
+number using the setters and then access them using the getters:
+</p>
+<pre>account = BankAccount.new()
+
+account.accountNumber = "54321"     
+account.accountName = "Fred Flintstone"
+
+puts account.accountNumber
+puts account.accountName
+</pre>
+<h2><span class="mw-headline" id="Ruby_Class_Variables">Ruby Class Variables</span></h2>
+<p>A <i>class variable</i> is a variable shared between all instances of
+ a class. In other words, there is one instance of the variable and it 
+is accessed by object instances. An instance variable must be 
+initialized within the class definition. Class variables are prefixed 
+with two @ characters (@@).
+</p><p>To demonstrate this we will add an <i>@@interest_rate</i> class variable (since the same interest rate applies to all back accounts):
+</p>
+<pre>class BankAccount
+
+   def interest_rate
+        @@interest_rate = 0.2
+   end
+
+   def accountNumber
+        @accountNumber
+   end
+
+   def accountNumber=( value )
+        @accountNumber = value
+   end
+
+   def accountName
+        @accountName
+   end
+
+   def accountName=( value )
+        @accountName = value
+   end
+
+end
+</pre>
+<h2><span class="mw-headline" id="Instance_Methods">Instance Methods</span></h2>
+<p>Although we looked briefly at instance methods earlier in this chapter we have so far focused on storage of data in a class.
+</p><p>Instance methods are methods that can be called on an instance of
+ the class. Instance methods can access class variables to perform 
+tasks, and can also accept values as arguments. For example, we can add a
+ method to our class that takes a new account balance as an argument and
+ use the @@interest_rate class variable to calculate the interest due:
+</p>
+<pre>   def calc_interest ( balance )
+       puts balance * interest_rate
+   end
+</pre>
+<p>Now, when we create an instance of our class, we can call the new method:
+</p>
+<pre>account = BankAccount.new()
+account.calc_interest( 1000 )
+700.0
+</pre>
+<h2><span class="mw-headline" id="Ruby_Class_Inheritance">Ruby Class Inheritance</span></h2>
+<p>As we mentioned earlier in this chapter, Ruby supports <i>single inheritance</i>.
+ This means that a subclass can be created that inherits all the 
+variables and methods of another class. The subclass is then extended to
+ add new methods or variables not available in the superclass.
+</p><p>One class inherits from another using the &lt; character. Say, 
+for example, that we want a new kind of BankAccount class. This class 
+needs all the same variables and methods as our original class, but also
+ needs the customer's phone number. To do this we simply inherit from <i>BankAccount</i> and add the new instance variable:
+</p>
+<pre>class NewBankAccount &lt; BankAccount
+
+   def customerPhone
+        @customerPhone
+   end
+
+   def customerPhone=( value )
+        @customerPhone = value
+   end
+
+end
+</pre>
+<p>We now have a new class, derived from BankAccount. This new subclass 
+has everything the superclass had, plus a new property - the customer's 
+phone number:
+</p>
+<pre>account.accountNumber = "54321"
+account.customerPhone = "555-123-5433"
+54321
+555-123-5433
+</pre>
+<p>Note that the above example assumes the declaration of the 
+BankAccount class is in the same Ruby source file as the NewBankAccount 
+declaration. If this is not the case, the <i>require</i> statement must 
+be used to tell Ruby which file to include to find the BankAccount 
+class. Assuming that BankAccount is defined in a file named 
+"BankAccount.rb" we would include the file as follows:
+</p>
+<pre>require 'BankAccount'
+
+class NewBankAccount &lt; BankAccount
+
+   def customerPhone
+        @customerPhone
+   end
+
+   def customerPhone=( value )
+        @customerPhone = value
+   end
+
+end
+</pre>
+<p><br>
+</p><table align="center">
+<tbody><tr>
+<td style="vertical-align:top">
+<div style="background:white; opacity: 100; padding: 3px 3px 3px 3px; margin: 3px 3px 3px 5px; text-align:center; border:1px solid #808080;">
+<p><a class="booklink" href="http://www.ebookfrenzy.com/ebookpages/ruby_ebook.html"><img id="coverthumb" src="Ruby%20Object%20Oriented%20Programming%20-%20Techotopia_files/rubycover_small.png"></a><br>
+</p>
+<a style="font-size:0.6em;" href="http://www.ebookfrenzy.com/">eBookFrenzy.com</a></div>
+</td>
+<td><b>Purchase and download the full PDF and ePub editions of this Ruby eBook for only $8.99</b>
+<p><a href="https://www.e-junkie.com/ecom/gb.php?c=cart&amp;i=PLDM-1&amp;cl=56328&amp;ejc=2" target="ej_ejc" class="ec_ejc_thkbx" onclick="javascript:return EJEJC_lc(this);"><img src="Ruby%20Object%20Oriented%20Programming%20-%20Techotopia_files/NewBuyeBook.png" style="border:5px solid #ffffff;" alt="Buy eBook"></a>
+</p>
+</td>
+</tr>
+</tbody></table>
+<p></p><p><br>
+</p>
+<hr>
+<table border="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td width="20%"><a href="http://www.techotopia.com/index.php/Understanding_Ruby_Logical_Operators" title="Understanding Ruby Logical Operators">Previous</a></td><td align="center"><a href="http://www.techotopia.com/index.php/Ruby_Essentials" title="Ruby Essentials">Table of Contents</a></td><td align="right" width="20%"><a href="http://www.techotopia.com/index.php/Ruby_Flow_Control" title="Ruby Flow Control">Next</a></td>
+</tr><tr>
+<td width="20%">Understanding Ruby Logical Operators</td><td align="center"></td><td align="right" width="20%">Ruby Flow Control</td>
+</tr></tbody></table>
+ 
+ 
+ 
+</div> <div class="printfooter">
+Retrieved from "<a dir="ltr" href="http://www.techotopia.com/index.php?title=Ruby_Object_Oriented_Programming&amp;oldid=23364">http://www.techotopia.com/index.php?title=Ruby_Object_Oriented_Programming&amp;oldid=23364</a>" </div>
+<div id="catlinks" class="catlinks catlinks-allhidden"></div> <div class="visualClear"></div>
+<div style="width:728px; margin:0 auto;">
+ 
+<iframe id="bottombanner" marginheight="0" marginwidth="0" src="Ruby%20Object%20Oriented%20Programming%20-%20Techotopia_files/contextbottom.html" scrolling="no" frameborder="0" height="90" width="728"></iframe>
+</div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div id="p-personal" role="navigation" class=" emptyPortlet" aria-labelledby="p-personal-label">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+</ul>
+</div>
+<div id="left-navigation">
+<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li id="ca-nstab-main" class="selected"><span><a href="http://www.techotopia.com/index.php/Ruby_Object_Oriented_Programming" title="View the content page [Alt+Shift+c]" accesskey="c">Page</a></span></li>
+<li id="ca-talk" class="new"><span><a href="http://www.techotopia.com/index.php?title=Talk:Ruby_Object_Oriented_Programming&amp;action=edit&amp;redlink=1" title="Discussion about the content page [Alt+Shift+t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+<h3 tabindex="0" id="p-variants-label">
+<span>Variants</span><a tabindex="-1" href="#"></a>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li id="ca-view" class="selected"><span><a href="http://www.techotopia.com/index.php/Ruby_Object_Oriented_Programming">Read</a></span></li>
+<li id="ca-viewsource"><span><a href="http://www.techotopia.com/index.php?title=Ruby_Object_Oriented_Programming&amp;action=edit" title="This page is protected.
+You can view its source [Alt+Shift+e]" accesskey="e">View source</a></span></li>
+<li id="ca-history" class="collapsible"><span><a href="http://www.techotopia.com/index.php?title=Ruby_Object_Oriented_Programming&amp;action=history" title="Past revisions of this page [Alt+Shift+h]" accesskey="h">View history</a></span></li>
+</ul>
+</div>
+<div style="" id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+<h3 tabindex="0" id="p-cactions-label"><span>More</span><a tabindex="-1" href="#"></a></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="http://www.techotopia.com/SearchResults.html" id="cse-search-box">
+<div>
+<input name="cx" value="partner-pub-7393409044112403:ik9yl7-82ri" type="hidden">
+<input name="cof" value="FORID:10" type="hidden">
+<input name="ie" value="ISO-8859-1" type="hidden">
+<input style="background: url(&quot;https://www.google.com/cse/static/en/google_custom_search_watermark.gif&quot;) no-repeat scroll left center rgb(255, 255, 255);" name="q" size="16" type="text">
+<input name="sa" value="Search" type="submit">
+</div>
+<input value="www.techotopia.com/index.php/Ruby_Object_Oriented_Programming" name="siteurl" type="hidden"><input name="ref" type="hidden"><input name="ss" type="hidden"></form>
+<script type="text/javascript" src="Ruby%20Object%20Oriented%20Programming%20-%20Techotopia_files/brand"></script>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="http://www.techotopia.com/index.php/Main_Page" title="Visit the main page"></a></div>
+<div class="portal" role="navigation" id="p-Navigation" aria-labelledby="p-Navigation-label">
+<h3 id="p-Navigation-label">Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-Home"><a href="http://www.techotopia.com/index.php/Main_Page">Home</a></li><li id="n-Android"><a href="http://www.techotopia.com/index.php/Free_Android_Development_eBooks">Android</a></li><li id="n-iOS-.2F-iPhone-.2F-iPad"><a href="http://www.techotopia.com/index.php/IOS_iPhone_iPad_eBooks">iOS / iPhone / iPad</a></li><li id="n-Objective-C"><a href="http://www.techotopia.com/index.php/Objective-C_2.0_Essentials">Objective-C</a></li><li id="n-PowerShell"><a href="http://www.techotopia.com/index.php/Windows_PowerShell_1.0_Essentials">PowerShell</a></li><li id="n-Hyper-V"><a href="http://www.virtuatopia.com/index.php/Hyper-V_Essentials">Hyper-V</a></li><li id="n-VMM-2008"><a href="http://www.virtuatopia.com/index.php/VMM_2008_Essentials">VMM 2008</a></li><li id="n-VMware-Server"><a href="http://www.virtuatopia.com/index.php/VMware_Server_2.0_Essentials">VMware Server</a></li><li id="n-Xen-Virtualization"><a href="http://www.virtuatopia.com/index.php/Xen_Virtualization_Essentials">Xen Virtualization</a></li><li id="n-Windows-Server-2008"><a href="http://www.techotopia.com/index.php/Windows_Server_2008_Essentials">Windows Server 2008</a></li><li id="n-Security.2B"><a href="http://www.techotopia.com/index.php/Security%2B_Essentials">Security+</a></li><li id="n-Red-Hat-Linux"><a href="http://www.techotopia.com/index.php/Red_Hat_Enterprise_Linux_eBooks">Red Hat Linux</a></li><li id="n-Linux-eBooks"><a href="http://www.techotopia.com/index.php/Linux_eBooks">Linux eBooks</a></li><li id="n-Ubuntu-Linux"><a href="http://www.techotopia.com/index.php/Ubuntu_Linux_eBooks">Ubuntu Linux</a></li><li id="n-Fedora-Linux"><a href="http://www.techotopia.com/index.php/Fedora_Linux_Essentials">Fedora Linux</a></li><li id="n-Fedora-Desktop"><a href="http://www.techotopia.com/index.php/Fedora_Desktop_Essentials">Fedora Desktop</a></li><li id="n-OpenSUSE-Desktop"><a href="http://www.techotopia.com/index.php/OpenSUSE_Desktop_Essentials">OpenSUSE Desktop</a></li><li id="n-C.23"><a href="http://www.techotopia.com/index.php/C_Sharp_Essentials">C#</a></li><li id="n-Visual-Basic"><a href="http://www.techotopia.com/index.php/Visual_Basic_Essentials">Visual Basic</a></li><li id="n-MySQL"><a href="http://www.techotopia.com/index.php/MySQL_Essentials">MySQL</a></li><li id="n-PHP"><a href="http://www.techotopia.com/index.php/PHP_Essentials">PHP</a></li><li id="n-JavaScript"><a href="http://www.techotopia.com/index.php/JavaScript_Essentials">JavaScript</a></li><li id="n-Ruby"><a href="http://www.techotopia.com/index.php/Ruby_Essentials">Ruby</a></li><li id="n-Windows"><a href="http://www.techotopia.com/index.php/Category:Windows">Windows</a></li><li id="n-Networking"><a href="http://www.techotopia.com/index.php/Category:Networking">Networking</a></li><li id="n-Web-Development"><a href="http://www.techotopia.com/index.php/Category:Web_Development">Web Development</a></li><li id="n-Feedback"><a href="http://www.techotopia.com/index.php/Techotopia_Feedback">Feedback</a></li><li id="n-Linuxtopia.org"><a href="http://www.linuxtopia.org/" rel="nofollow">Linuxtopia.org</a></li><li id="n-Virtuatopia.com"><a href="http://www.virtuatopia.com/" rel="nofollow">Virtuatopia.com</a></li><li id="n-eBook-Store"><a href="http://www.ebookfrenzy.com/index.html" rel="nofollow">eBook Store</a></li> </ul>
+</div>
+</div>
+ 
+<div id="bookcover" style="padding-top: 20px">
+<a class="booklink" href="http://bit.ly/1GdpOkz"><img id="coverthumb" src="Ruby%20Object%20Oriented%20Programming%20-%20Techotopia_files/ios_9_front_cover_150x190.png" width="130"></a><br>
+<a id="booktitle" href="http://bit.ly/1GdpOkz">iOS 9 app<br>Development Essentials<br>eBook</a><div id="bookprice">$12.99</div>
+<a href="https://www.e-junkie.com/ecom/gb.php?c=cart&amp;i=PLDM-41&amp;cl=56328&amp;ejc=2" target="ej_ejc" class="ec_ejc_thkbx" onclick="javascript:return EJEJC_lc(this);"><img src="Ruby%20Object%20Oriented%20Programming%20-%20Techotopia_files/NewBuyeBook.png" style="border:5px solid #ffffff;" alt="Buy eBook"></a></div>
+<div id="skyone" style="padding-top: 20px" width:160px;="" height:="" 600px;="">
+
+                               <div id="skyone" style="padding-top: 20px">
+<!-- Techotopia Sky 1 goes here -->
+<div id="15b194dbb3" class="pagefair-acceptable"></div><br>
+<div id="a2fcc88dbb" class="pagefair-acceptable"></div>
+<iframe id="skyone" marginheight="0" marginwidth="0" src="Ruby%20Object%20Oriented%20Programming%20-%20Techotopia_files/contextsky1.html" scrolling="no" frameborder="0" height="600" width="160"></iframe>
+                                </div>
+                               <div style="padding-top: 20px">
+<!-- Techotopia Sky 2 goes here -->
+<iframe id="skytwo" marginheight="0" marginwidth="0" src="Ruby%20Object%20Oriented%20Programming%20-%20Techotopia_files/contextsky2.html" scrolling="no" frameborder="0" height="600" width="160"></iframe>
+                                </div>
+			</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 9 February 2016, at 20:24.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://www.techotopia.com/index.php/Techotopia:Privacy_policy" title="Techotopia:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="http://www.techotopia.com/index.php/Techotopia:About" title="Techotopia:About">About Techotopia</a></li>
+											<li id="footer-places-disclaimer"><a href="http://www.techotopia.com/index.php/Techotopia:General_disclaimer" title="Techotopia:General disclaimer">Disclaimers</a></li>
+											<li id="footer-places-mobileview"><a href="http://www.techotopia.com/index.php?title=Ruby_Object_Oriented_Programming&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-poweredbyico">
+							<a href="http://www.mediawiki.org/"><img src="Ruby%20Object%20Oriented%20Programming%20-%20Techotopia_files/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" height="31" width="88"></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.MobileDetect"]);
+} );</script><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-350808-4', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+
+</script>
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgBackendResponseTime":345});
+} );</script>
+<div class="afs_ads">&nbsp;</div>
+<script>
+(function() {
+
+        // Define a function for showing the message.
+        // Set a timeout of 2 seconds to give adblocker
+        // a chance to do its thing
+        var tryMessage = function() {
+            setTimeout(function() {
+/*
+                if(typeof ga == 'undefined') {
+                 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]
+                        ||function(){
+                  (i[r].q=i[r].q||[]).push(arguments)},
+                        i[r].l=1*new Date();a=s.createElement(o),
+                   m=s.getElementsByTagName(o)[0];
+                   a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                  })(window,document,'script',
+                        '//www.google-analytics.com/analytics.js','ga');
+                  ga('create', 'UA-350808-4', 'auto');
+                  ga('send', 'pageview');
+                }
+
+		if(typeof ga == 'undefined') { // GA is not defined, re-include analytics.js
+      			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      			ga('create', 'UA-350808-4', 'auto');
+      			ga('send', 'pageview');
+    		}
+*/
+                if(!document.getElementsByClassName) return;
+                var ads = document.getElementsByClassName('afs_ads'),
+                    ad  = ads[ads.length - 1];
+
+                if(!ad
+                    || ad.innerHTML.length == 0
+                    || ad.clientHeight === 0) {
+                    // console.log('Ad Blocker Detected');
+		    ga('send', {
+	        	'hitType': 'event',
+        		'eventCategory': 'AdBlocker',
+        		'eventAction': 'Blocked',
+        		'nonInteraction': 1
+      		});
+//                    $("#skyone").html('<div id="bookcover" style="padding-top: 20px"> <a class="booklink" href="http://bit.ly/1TsRU02"><img id="coverthumb" width="130" src="/cover_images/android_studio_6_front_cover_150x190_track.png" /></a><br><br> <a id="booktitle" href="http://bit.ly/1TsRU02">Android Studio<br>Development<br>Essentials<br>Android 6 Edition<br>eBook</a><div id="bookprice">$9.99</div> <a href="https://www.e-junkie.com/ecom/gb.php?c=cart&i=PLDM-42&cl=56328&ejc=2" target="ej_ejc" class="ec_ejc_thkbx" onClick="javascript:return EJEJC_lc(this);"><img src="/cover_images/NewBuyeBook.png" style="border:5px solid #ffffff;" alt="Buy eBook"/></a></div>');
+                    $("#tocbox").html('<div id="bookcover" style="padding-top: 20px"> <a class="booklink" href="http://bit.ly/1TsRU02"><img id="coverthumb" width="130" src="/cover_images/android_studio_6_front_cover_150x190_track.png" /></a><br><br> <a id="booktitle" href="http://bit.ly/1TsRU02">Android Studio<br>Development<br>Essentials<br>Android 6 Edition<br>eBook</a><div id="bookprice">$9.99</div> <a href="https://www.e-junkie.com/ecom/gb.php?c=cart&i=PLDM-42&cl=56328&ejc=2" target="ej_ejc" class="ec_ejc_thkbx" onClick="javascript:return EJEJC_lc(this);"><img src="/cover_images/NewBuyeBook.png" style="border:5px solid #ffffff;" alt="Buy eBook"/></a></div>');
+
+                } else {
+                   ga('send', {
+                        'hitType': 'event',
+                        'eventCategory': 'AdBlocker',
+                        'eventAction': 'Not Blocked',
+                        'nonInteraction': 1
+                });
+
+                   // console.log('No Ad blocker');
+                }
+
+            }, 2000);
+        }
+
+        /* Attach a listener for page load ... then show the message */
+        if(window.addEventListener) {
+            window.addEventListener('load', tryMessage, false);
+        } else {
+            window.attachEvent('onload', tryMessage); //IE
+        }
+})();
+</script>
+<script type="text/javascript" src="Ruby%20Object%20Oriented%20Programming%20-%20Techotopia_files/jquery.js"></script>
+<script type="text/javascript">
+    (function() {
+        function async_load(script_url){
+            var protocol = ('https:' == document.location.protocol ? 'https://' : 'http://');
+            var s = document.createElement('script'); s.src = protocol + script_url;
+            var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+        }
+        bm_website_code = 'A28AA4B4718245F0';
+        jQuery(document).ready(function(){async_load('asset.pagefair.com/measure.min.js')});
+        jQuery(document).ready(function(){async_load('asset.pagefair.net/ads.min.js')});
+    })();
+</script>
+	
+
+</div></div><div id="dv_pp_nJHpJJTdjEMc">
+
+</div><div style="display:none;width:0;height:0"><iframe src="Ruby%20Object%20Oriented%20Programming%20-%20Techotopia_files/p-01-0VIaSjnOLg_002.gif" marginwidth="0" marginheight="0" allowtransparency="true" scrolling="NO" frameborder="0" height="0" width="0"></iframe></div><img src="contextbody_data/400066.gif" border="0" height="1" width="1"><div style="display:none"><iframe src="Ruby%20Object%20Oriented%20Programming%20-%20Techotopia_files/visitormatch.html"></iframe></div><img src="Ruby%20Object%20Oriented%20Programming%20-%20Techotopia_files/LjSdF.gif" border="0" height="1" width="1"></body></html>

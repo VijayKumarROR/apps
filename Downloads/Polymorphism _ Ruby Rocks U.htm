@@ -1,0 +1,537 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head profile="http://gmpg.org/xfn/11">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>Polymorphism | Ruby Rocks U</title>
+		<link  rel="pingback" href="https://rubyrocksu.wordpress.com/xmlrpc.php" />
+		<link rel="alternate" type="application/rss+xml" title="Ruby Rocks U &raquo; Feed" href="https://rubyrocksu.wordpress.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Ruby Rocks U &raquo; Comments Feed" href="https://rubyrocksu.wordpress.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Ruby Rocks U &raquo; Polymorphism Comments Feed" href="https://rubyrocksu.wordpress.com/polymorphism/feed/" />
+	<script type="text/javascript">
+		/* <![CDATA[ */
+		function addLoadEvent(func) {
+			var oldonload = window.onload;
+			if (typeof window.onload != 'function') {
+				window.onload = func;
+			} else {
+				window.onload = function () {
+					oldonload();
+					func();
+				}
+			}
+		}
+		/* ]]> */
+	</script>
+	<link rel='stylesheet' id='all-css-0' href='https://s1.wp.com/_static/??-eJx9j9FqwzAMRX9onkiXDvYw9i2Jo7pKLUvEMiF/X6eldCUlL8Yy5/jqwqzOSzJMBlycxhIoZchMERedZERvr9Onz/kD3muRLphhRNPOX9xt2uB9lPAUJAQcpJg7SYwyw0xDwN0MSidKZAvYGbmmaekhiaF2w57mZcL6ztrZSjAO1GGsP6TdNNbvh7Vez7XXttI/ftZKu77XCXN29WQq7O6rbrxtA8i2RFzBP/5t2vbrcGh+muN4Be7VnyQ=' type='text/css' media='all' />
+<link rel='stylesheet' id='print-css-1' href='https://s2.wp.com/wp-content/themes/pub/notepad/css/print.css?m=1271364477g' type='text/css' media='print' />
+<!--[if IE]>
+<link rel='stylesheet' id='notepad-ie-css'  href='https://s0.wp.com/wp-content/themes/pub/notepad/ie.css?m=1273001598g&#038;ver=4.4.1-alpha-36109' type='text/css' media='all' />
+<![endif]-->
+<!--[if lte IE 6]>
+<link rel='stylesheet' id='notepad-ie6-css'  href='https://s0.wp.com/wp-content/themes/pub/notepad/ie6.css?m=1273001598g&#038;ver=4.4.1-alpha-36109' type='text/css' media='all' />
+<![endif]-->
+<link rel='stylesheet' id='all-css-6' href='https://s2.wp.com/_static/??-eJx9i1EKwkAMRC/kGsSlxQ/xLNslpinZpHRTvH5XCqIo/gwzzHvwmEM2dVSHsoZZVmKtgMUm3vOYaz0Ag5pzI+ur7Mdvn9CCWE7Oph8j3CXx8k9dcBCjVgka9Ta/JB+xYIUxAokNSZ7ArVxPMV66c9/1cdoAbnJRyQ==' type='text/css' media='all' />
+<script type='text/javascript'>
+/* <![CDATA[ */
+var LoggedOutFollow = {"invalid_email":"Your subscription did not succeed, please try again with a valid email address."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://s0.wp.com/_static/??-eJyFzs0KwjAMAOAXsiub8+BBfJb9ZCW1bWqTrujTW0EP4lAIJCRfQnSJCsPk8gysbY1rhnR7pcbyTv8CyqNJg0DjMbzxREEgyNN6GtGBygxpMLVXDy204SKxeGCuaGP6+RKGFaH8ZRYkDtNFJWC8f10dHRkVXTYYWNfawExZ1ELOUdEFZwNSd87+1Pb9vuvaY3uwD0gZb60='></script>
+<link rel='stylesheet' id='all-css-0' href='https://s2.wp.com/wp-content/mu-plugins/highlander-comments/style.css?m=1377793621g' type='text/css' media='all' />
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='highlander-comments-ie7-css'  href='https://s2.wp.com/wp-content/mu-plugins/highlander-comments/style-ie7.css?m=1351637563g&#038;ver=20110606' type='text/css' media='all' />
+<![endif]-->
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://rubyrocksu.wordpress.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://s1.wp.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress.com" />
+<link rel="canonical" href="https://rubyrocksu.wordpress.com/polymorphism/" />
+<link rel='shortlink' href='http://wp.me/P2Hz9l-4L' />
+<link rel="alternate" type="application/json+oembed" href="https://public-api.wordpress.com/oembed/1.0/?format=json&amp;url=https%3A%2F%2Frubyrocksu.wordpress.com%2Fpolymorphism%2F&amp;for=wpcom-auto-discovery" /><link rel="alternate" type="application/xml+oembed" href="https://public-api.wordpress.com/oembed/1.0/?format=xml&amp;url=https%3A%2F%2Frubyrocksu.wordpress.com%2Fpolymorphism%2F&amp;for=wpcom-auto-discovery" />
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Polymorphism" />
+<meta property="og:url" content="https://rubyrocksu.wordpress.com/polymorphism/" />
+<meta property="og:description" content="In this tutorial we will explore the concept of polymorphism. We have a animal class to represent an animal. The animal class has a speak method. After we have defined the animal parent class, we&#039;l..." />
+<meta property="article:published_time" content="2012-09-30T21:06:40+00:00" />
+<meta property="article:modified_time" content="2012-10-16T02:51:47+00:00" />
+<meta property="og:site_name" content="Ruby Rocks U" />
+<meta property="og:image" content="https://s0.wp.com/i/blank.jpg" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:site" content="@wordpressdotcom" />
+<meta name="twitter:card" content="summary" />
+<meta property="fb:app_id" content="249643311490" />
+<meta property="article:publisher" content="https://www.facebook.com/WordPresscom" />
+<link rel="shortcut icon" type="image/x-icon" href="https://s2.wp.com/i/favicon.ico" sizes="16x16 24x24 32x32 48x48" />
+<link rel="icon" type="image/x-icon" href="https://s2.wp.com/i/favicon.ico" sizes="16x16 24x24 32x32 48x48" />
+<link rel="apple-touch-icon-precomposed" href="https://s0.wp.com/i/webclip.png" />
+<link rel='openid.server' href='https://rubyrocksu.wordpress.com/?openidserver=1' />
+<link rel='openid.delegate' href='https://rubyrocksu.wordpress.com/' />
+<link rel="search" type="application/opensearchdescription+xml" href="https://rubyrocksu.wordpress.com/osd.xml" title="Ruby Rocks U" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://s1.wp.com/opensearch.xml" title="WordPress.com" />
+<meta name="theme-color" content="#820500" />
+		<style id="wpcom-hotfix-masterbar-style">
+			@media screen and (min-width: 783px) {
+				#wpadminbar .quicklinks li#wp-admin-bar-my-account.with-avatar > a img {
+					margin-top: 5px;
+				}
+			}
+		</style>
+				<style type="text/css">
+			html { background-image: none; }
+		</style>
+	<meta name="application-name" content="Ruby Rocks U" /><meta name="msapplication-window" content="width=device-width;height=device-height" /><meta name="msapplication-tooltip" content="A simple breakdown of the Ruby programming language." /><meta name="msapplication-task" content="name=Subscribe;action-uri=https://rubyrocksu.wordpress.com/feed/;icon-uri=https://s2.wp.com/i/favicon.ico" /><meta name="msapplication-task" content="name=Sign up for a free blog;action-uri=http://wordpress.com/signup/;icon-uri=https://s2.wp.com/i/favicon.ico" /><meta name="msapplication-task" content="name=WordPress.com Support;action-uri=http://support.wordpress.com/;icon-uri=https://s2.wp.com/i/favicon.ico" /><meta name="msapplication-task" content="name=WordPress.com Forums;action-uri=http://forums.wordpress.com/;icon-uri=https://s2.wp.com/i/favicon.ico" /><meta name="title" content="Polymorphism | Ruby Rocks U on WordPress.com" />
+<meta name="description" content="In this tutorial we will explore the concept of polymorphism. We have a animal class to represent an animal. The animal class has a speak method. After we have defined the animal parent class, we&#039;ll define a few child classes using the &lt; operator. Cow, sheep, and pig are all child classes of the animal&hellip;" />
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #820500; background-image: url('https://rubyrocksu.files.wordpress.com/2012/09/wallpaper1920.jpg'); background-repeat: no-repeat; background-position: top center; background-attachment: fixed; }
+</style>
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+	</head>
+	<body class="page page-id-295 page-template page-template-fullwidth-page page-template-fullwidth-page-php custom-background mp6 customizer-styles-applied highlander-enabled highlander-light">
+		<div id="pagewrapper">
+				<div id="header">
+			<h1 id="logo">
+				<a href="https://rubyrocksu.wordpress.com/">Ruby Rocks U</a>
+			</h1>
+			<p class="description">A simple breakdown of the Ruby programming language.</p>
+
+			<p class="socialmedia">
+				
+				
+				
+				
+							</p><!-- socialmedia -->
+
+			<div class="menu-test-menu-container"><ul id="menu-test-menu" class="menu"><li id="menu-item-12" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12"><a href="/">Home</a></li>
+<li id="menu-item-11" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11"><a href="https://rubyrocksu.wordpress.com/about/">About</a></li>
+<li id="menu-item-57" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-57"><a href="https://rubyrocksu.wordpress.com/start/">Getting Started</a></li>
+<li id="menu-item-16" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16"><a href="https://rubyrocksu.wordpress.com/tutorials/">Tutorials</a></li>
+<li id="menu-item-58" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58"><a href="https://rubyrocksu.wordpress.com/keywordslink/">Resources</a></li>
+<li id="menu-item-493" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-493"><a href="https://rubyrocksu.wordpress.com/projects/">Projects</a></li>
+</ul></div>
+		</div>
+		<!--/header -->
+
+		
+		<div id="wrapper">
+
+
+	<div id="content" class="full-width">
+
+	
+		<div class="post">
+			<h2 class="post-title">
+				Polymorphism			</h2>
+			<p><strong>In this tutorial we will explore the concept of polymorphism.</strong><br />
+<strong>We have a animal class to represent an animal. The animal class has a speak method.</strong></p>
+<p><strong>After we have defined the animal parent class, we&#8217;ll define a few child classes using the &lt; operator.</strong><br />
+<strong>Cow, sheep, and pig are all child classes of the animal class.</strong></p>
+<p><strong>Now that we have defined these classes, we will make an array of animals called farm.</strong><br />
+<strong>Our newly created farm will have a cow, sheep and pig.</strong></p>
+<p><strong>Finally the last few lines loop through each element of the farm array.</strong><br />
+<strong>We ask each animal of the farm to speak.</strong></p>
+<p><strong>Although i in the loop is of the animal class, i will give a unique answer each time it is called to speak.</strong></p>
+<pre class="brush: ruby; title: ; notranslate" title="">
+=begin
+Name: Polymorhism.rb
+Description: An example of polymorphism in ruby.
+The parent class Animal has three child classes, Cow, Sheep, and Pig.
+At the end we will ask each element of an array of animals to speak, all will give unique responses.
+Author: Kai Boschma
+Date: September 30th 2012
+=end
+
+#This will be the parent class to the farm animals below
+class Animal
+ def speak
+ print &quot;&quot;
+ end
+end
+
+#A class for representing a cow
+#Note that the operator &lt; designates that Cow is a child class of Animal
+class Cow &lt; Animal
+ def speak
+ puts &quot;Moo&quot;
+ end
+end
+
+#A class for representing a sheep
+class Sheep &lt; Animal
+ def speak
+ puts &quot;Baa&quot;
+ end
+end
+
+#A class for representing a pig
+class Pig &lt; Animal
+ def speak
+ puts &quot;Oink&quot;
+ end
+end
+
+#The array farm, holds 3 animals
+#They are a cow, a sheep, and a pig
+farm = [Cow.new, Sheep.new, Pig.new]
+
+#Here we go through every animal in farm
+#For each animal we tell it to speak
+#Running the program will show that each animal will speak, but each will make their own sound
+for i in farm
+ i.speak()
+end
+</pre>
+					</div>
+		<!--/post -->
+
+	
+		
+		
+<!-- You can start editing here. -->
+
+
+			<!-- If comments are open, but there are no comments. -->
+
+	 
+
+
+				<div id="respond" class="comment-respond">
+			<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/polymorphism/#respond" style="display:none;">Cancel reply</a></small></h3>				<form action="https://rubyrocksu.wordpress.com/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+					<input type="hidden" id="highlander_comment_nonce" name="highlander_comment_nonce" value="eed43bae55" /><input type="hidden" name="_wp_http_referer" value="/polymorphism/" />
+<input type="hidden" name="hc_post_as" id="hc_post_as" value="guest" />
+
+<div class="comment-form-field comment-textarea">
+	<label for="comment">Enter your comment here...</label>
+	<div id="comment-form-comment"><textarea id="comment" name="comment" title="Enter your comment here..."></textarea></div>
+</div>
+
+<div id="comment-form-identity">
+
+	<div id="comment-form-nascar">
+		<p>Fill in your details below or click an icon to log in:</p>
+		<ul>
+			<li class="selected" style="display:none;">
+				<a href="#comment-form-guest" id="postas-guest" title="Guest">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a href="#comment-form-load-service:WordPress.com" id="postas-wordpress" title="WordPress.com">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a href="#comment-form-load-service:Twitter" id="postas-twitter" title="Twitter">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a href="#comment-form-load-service:Facebook" id="postas-facebook" title="Facebook">
+					<span></span>
+				</a>
+			</li>
+			<li>
+			<iframe id="googleplus-sign-in" name="googleplus-sign-in" src="https://public-api.wordpress.com/connect/?googleplus-sign-in=https%3A%2F%2Frubyrocksu.wordpress.com" width="24" height="24" scrolling="no" allowtransparency="true" seamless="seamless" frameborder="0"></iframe>
+			</li>
+		</ul>
+	</div>
+
+	<div id="comment-form-guest" class="comment-form-service selected">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+<a href="https://gravatar.com/site/signup/" target="_blank">				<img src="" alt="Gravatar" width="25" class="no-grav" />
+</a>			</div>
+
+				<div class="comment-form-fields">
+				<div class="comment-form-field comment-form-email">
+					<label for="email">Email <span class="required">(required)</span> <span class="nopublish">(Address never made public)</span></label>
+					<div class="comment-form-input"><input id="email" name="email" type="email" value="" /></div>
+				</div>
+				<div class="comment-form-field comment-form-author">
+					<label for="author">Name <span class="required">(required)</span></label>
+					<div class="comment-form-input"><input id="author" name="author" type="text" value="" /></div>
+				</div>
+				<div class="comment-form-field comment-form-url">
+					<label for="url">Website</label>
+					<div class="comment-form-input"><input id="url" name="url" type="text" value="" /></div>
+				</div>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-wordpress" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="" alt="WordPress.com Logo" width="25" class="no-grav" />
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="wp_avatar" id="wordpress-avatar" class="comment-meta-wordpress" value="" />
+				<input type="hidden" name="wp_user_id" id="wordpress-user_id" class="comment-meta-wordpress" value="" />
+				<input type="hidden" name="wp_access_token" id="wordpress-access_token" class="comment-meta-wordpress" value="" />
+				<p class="comment-form-posting-as pa-wordpress"><strong></strong> You are commenting using your WordPress.com account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'wordpress' );">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-twitter" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="" alt="Twitter picture" width="25" class="no-grav" />
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="twitter_avatar" id="twitter-avatar" class="comment-meta-twitter" value="" />
+				<input type="hidden" name="twitter_user_id" id="twitter-user_id" class="comment-meta-twitter" value="" />
+				<input type="hidden" name="twitter_access_token" id="twitter-access_token" class="comment-meta-twitter" value="" />
+				<p class="comment-form-posting-as pa-twitter"><strong></strong> You are commenting using your Twitter account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'twitter' );">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-facebook" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="" alt="Facebook photo" width="25" class="no-grav" />
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="fb_avatar" id="facebook-avatar" class="comment-meta-facebook" value="" />
+				<input type="hidden" name="fb_user_id" id="facebook-user_id" class="comment-meta-facebook" value="" />
+				<input type="hidden" name="fb_access_token" id="facebook-access_token" class="comment-meta-facebook" value="" />
+				<p class="comment-form-posting-as pa-facebook"><strong></strong> You are commenting using your Facebook account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'facebook' );">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-googleplus" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="" alt="Google+ photo" width="25" class="no-grav" />
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="googleplus_avatar" id="googleplus-avatar" class="comment-meta-googleplus" value="" />
+				<input type="hidden" name="googleplus_user_id" id="googleplus-user_id" class="comment-meta-googleplus" value="" />
+				<input type="hidden" name="googleplus_access_token" id="googleplus-access_token" class="comment-meta-googleplus" value="" />
+				<p class="comment-form-posting-as pa-googleplus"><strong></strong> You are commenting using your Google+ account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'googleplus' );">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+
+	<div id="comment-form-load-service" class="comment-form-service">
+		<div class="comment-form-posting-as-cancel"><a href="javascript:HighlanderComments.cancelExternalWindow();">Cancel</a></div>
+		<p>Connecting to %s</p>
+	</div>
+
+</div>
+
+<script type="text/javascript">
+var highlander_expando_javascript = function(){
+	var input = document.createElement( 'input' ),
+	    comment = jQuery( '#comment' );
+
+	if ( 'placeholder' in input ) {
+		comment.attr( 'placeholder', jQuery( '.comment-textarea label' ).remove().text() );
+	}
+
+	// Expando Mode: start small, then auto-resize on first click + text length
+	jQuery( '#comment-form-identity' ).hide();
+	jQuery( '#comment-form-subscribe' ).hide();
+	jQuery( '#commentform .form-submit' ).hide();
+
+	comment.css( { 'height':'10px' } ).one( 'focus', function() {
+		var timer = setInterval( HighlanderComments.resizeCallback, 10 )
+		jQuery( this ).animate( { 'height': HighlanderComments.initialHeight } ).delay( 100 ).queue( function(n) { clearInterval( timer ); HighlanderComments.resizeCallback(); n(); } );
+		jQuery( '#comment-form-identity' ).slideDown();
+		jQuery( '#comment-form-subscribe' ).slideDown();
+		jQuery( '#commentform .form-submit' ).slideDown();
+	});
+}
+jQuery(document).ready( highlander_expando_javascript );
+</script>
+
+<div id="comment-form-subscribe">
+	<p class="comment-subscription-form"><input type="checkbox" name="subscribe" id="subscribe" value="subscribe" style="width: auto;" tabindex="6"/> <label class="subscribe-label" id="subscribe-label" for="subscribe" style="display: inline;">Notify me of new comments via email.</label></p><p class="post-subscription-form"><input type="checkbox" name="subscribe_blog" id="subscribe_blog" value="subscribe" style="width: auto;" tabindex="7"/> <label class="subscribe-label" id="subscribe-blog-label" for="subscribe_blog"  style="display: inline;">Notify me of new posts via email.</label></p></div>
+
+<style type="text/css">
+#respond .comment-form-avatar { display: none !important; }
+#respond .comment-form-fields { margin-left: 0 !important; }
+</style>
+
+
+
+
+<p class="form-submit"><input name="submit" type="submit" id="comment-submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='295' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="332912087a" /></p>
+<input type="hidden" name="genseq" value="1456212509" />
+<p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="191"/></p>				</form>
+					</div><!-- #respond -->
+		<div style="clear: both"></div>
+
+	</div>
+	<!--/content -->
+
+</div>
+<!--/wrapper -->
+
+<div id="footer">
+	<p class="generator">
+		<a href="https://wordpress.com/?ref=footer_website">Create a free website or blog at WordPress.com.</a>
+	</p>
+	<p class="credits">
+		<a href="https://wordpress.com/themes/notepad/" title="Learn more about this theme">The Notepad Theme</a>.	</p>
+</div>
+<!--/footer -->
+
+</div>
+<!--/pagewrapper -->
+
+<script type="text/javascript">
+/* <![CDATA[ */
+if(document.getElementById("s")) {
+	document.getElementById("s").onfocus = function() {
+		if (this.value == "Search...")
+			this.value = "";
+	}
+	document.getElementById("s").onblur = function() {
+		if (this.value == '')
+			this.value = "Search...";
+	}
+}
+/* ]]> */
+</script>
+
+<!-- wpcom_wp_footer -->
+	<div style="display:none">
+	</div>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var HighlanderComments = {"loggingInText":"Logging In\u2026","submittingText":"Posting Comment\u2026","postCommentText":"Post Comment","connectingToText":"Connecting to %s","commentingAsText":"%1$s: You are commenting using your %2$s account.","logoutText":"Log Out","loginText":"Log In","connectURL":"https:\/\/rubyrocksu.wordpress.com\/public.api\/connect\/?action=request","logoutURL":"https:\/\/rubyrocksu.wordpress.com\/wp-login.php?action=logout&_wpnonce=8f13e89006","homeURL":"https:\/\/rubyrocksu.wordpress.com\/","postID":"295","gravDefault":"identicon","enterACommentError":"Please enter a comment","enterEmailError":"Please enter your email address here","invalidEmailError":"Invalid email address","enterAuthorError":"Please enter your name here","gravatarFromEmail":"This picture will show whenever you leave a comment. Click to customize it.","logInToExternalAccount":"Log in to use details from one of these accounts.","change":"Change","changeAccount":"Change Account","comment_registration":"","userIsLoggedIn":"","isJetpack":"0","text_direction":"ltr"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://s2.wp.com/_static/??/wp-content/js/jquery/jquery.autoresize.js,/wp-content/mu-plugins/highlander-comments/script.js?m=1424115551j'></script>
+
+	<div id="bit" class="loggedout-follow-normal">
+		<a class="bsub" href="javascript:void(0)"><span id='bsub-text'>Follow</span></a>
+		<div id="bitsubscribe">
+
+					<h3><label for="loggedout-follow-field">Follow &ldquo;Ruby Rocks U&rdquo;</label></h3>
+
+			<form action="https://subscribe.wordpress.com" method="post" accept-charset="utf-8" id="loggedout-follow">
+			<p>Get every new post delivered to your Inbox.</p>
+
+			<p id="loggedout-follow-error" style="display: none;"></p>
+
+			
+			<p><input type="email" name="email" placeholder="Enter your email address" id="loggedout-follow-field"/></p>
+
+			<input type="hidden" name="action" value="subscribe"/>
+			<input type="hidden" name="blog_id" value="39935895"/>
+			<input type="hidden" name="source" value="https://rubyrocksu.wordpress.com/polymorphism/"/>
+			<input type="hidden" name="sub-type" value="loggedout-follow"/>
+
+			<input type="hidden" id="_wpnonce" name="_wpnonce" value="9074abb72c" /><input type="hidden" name="_wp_http_referer" value="/polymorphism/" />
+			<p id='bsub-subscribe-button'><input type="submit" value="Sign me up" /></p>
+			</form>
+					<div id='bsub-credit'><a href="https://wordpress.com/?ref=lof">Build a website with WordPress.com</a></div>
+		</div><!-- #bitsubscribe -->
+	</div><!-- #bit -->
+<script type='text/javascript' src='https://s1.wp.com/wp-content/mu-plugins/akismet-3.0/_inc/form.js?m=1404442431g'></script>
+<script type='text/javascript' src='https://s1.wp.com/_static/??-eJzTLy/QTc7PK0nNK9EvyClNz8wr1i+uzCtJrMjITM/IAeKS1CJMEWP94uSizIISoOIM5/yiVL2sYh19yo1yKiotzggqTaoEmmefa2toYmRkbGJkaGySBQDTGkAZ'></script>
+<script type='text/javascript'>
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "https://s0.wp.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "https://s0.wp.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?m=1363304414g&amp;ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var JetpackEmojiSettings = {"base_url":"https:\/\/s0.wp.com\/wp-content\/mu-plugins\/emoji\/twemoji\/"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://s1.wp.com/_static/??-eJyNyzEOwjAMheELkVqgqMqCOAtyLWQTOxZJKL09ZcjABNMb/u/B6gGLNbIGUmGhJyP5a5J6gD2xYe4L1U/Dorqz8CDP26RsA42/9uC539gqkBZhaOvX/vRCza94D//poS56PsaY4jyndJI3LRxM5g=='></script>
+<script type="text/javascript">
+// <![CDATA[
+(function() {
+try{
+  if ( window.external &&'msIsSiteMode' in window.external) {
+    if (window.external.msIsSiteMode()) {
+      var jl = document.createElement('script');
+      jl.type='text/javascript';
+      jl.async=true;
+      jl.src='/wp-content/plugins/ie-sitemode/custom-jumplist.php';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jl, s);
+    }
+  }
+}catch(e){}
+})();
+// ]]>
+</script><script src="//stats.wp.com/w.js?51" type="text/javascript" async defer></script>
+<script type="text/javascript">
+_tkq = window._tkq || [];
+_stq = window._stq || [];
+_tkq.push(['storeContext', {'blog_id':'39935895','blog_tz':'0','user_lang':'en','blog_lang':'en','user_id':'0'}]);
+_stq.push(['view', {'blog':'39935895','v':'wpcom','tz':'0','user_id':'0','post':'295','subd':'rubyrocksu'}]);
+_stq.push(['extra', {'crypt':'UE40eW5QN0p8M2Y/RE1LVmwrVi5vQS5fVFtfdHBbPyw1VXIrU3hWLHhzVndTdktBX0ddJnpXRjVaOTd6fj1YMX4ydzR6MmRCYnxkNmcxY35LLF8mVzNtYUZrditDY2owX3hCOFN5TUpYXysuSHFGTWE0XXdkejhjQ1BbMU5CbiU/ZFclaVtYVS52QVVhUkNjfExlPzNIMDY1NkxNUEovZUhnUyZ4SGF6S2l6TGVUU3FQMFZzW3hUQXlPPTZBS0Q5Q0xWZmRYQktZZmV6JWdfLGs0TjU0NCxmfG0vMFZ3SC1FUnxUc2RMcl1vfnZBeit+QVkxY0xFTUVdRD9MdVJ4fm8sP3hsJQ=='}]);
+_stq.push([ 'clickTrackerInit', '39935895', '295' ]);
+	</script>
+<noscript><img src="https://pixel.wp.com/b.gif?v=noscript" style="height:0px;width:0px;overflow:hidden" alt="" /></noscript>
+<script>
+if ( 'object' === typeof wpcom_mobile_user_agent_info ) {
+
+	wpcom_mobile_user_agent_info.init();
+	var mobileStatsQueryString = "";
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedPlatformName )
+		mobileStatsQueryString += "&x_" + 'mobile_platforms' + '=' + wpcom_mobile_user_agent_info.matchedPlatformName;
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedUserAgentName )
+		mobileStatsQueryString += "&x_" + 'mobile_devices' + '=' + wpcom_mobile_user_agent_info.matchedUserAgentName;
+	
+	if( wpcom_mobile_user_agent_info.isIPad() )
+		mobileStatsQueryString += "&x_" + 'ipad_views' + '=' + 'views';
+
+	if( "" != mobileStatsQueryString ) {
+		new Image().src = document.location.protocol + '//pixel.wp.com/g.gif?v=wpcom-no-pv' + mobileStatsQueryString + '&baba=' + Math.random();
+	}
+	
+}
+</script></body>
+</html>

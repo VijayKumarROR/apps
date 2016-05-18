@@ -1,0 +1,289 @@
+status: 200
+content-length: 6714
+via: 1.1 sumac.canonical.com:3128 (squid/2.7.STABLE7)
+content-location: https://rec.ubuntu.com/api/1.0/recommend_app/network-manager-gnome/
+x-cache: MISS from sumac.canonical.com
+x-cache-lookup: HIT from sumac.canonical.com:3128
+expires: Sun, 07 Feb 2016 13:26:57 GMT
+server: Apache
+last-modified: Sun, 07 Feb 2016 13:21:57 GMT
+etag: "67aaab6f9e87baf9d35de424198696fb"
+strict-transport-security: max-age=2592000
+cache-control: max-age=300
+date: Sun, 07 Feb 2016 13:21:57 GMT
+content-type: application/json; charset=utf-8
+
+{
+    "rid": "be9a93216535b7d05415644f3e22edcc", 
+    "data": [
+        {
+            "package_name": "file-roller", 
+            "similarity": 203.2175
+        }, 
+        {
+            "package_name": "software-center", 
+            "similarity": 192.8884
+        }, 
+        {
+            "package_name": "software-properties-gtk", 
+            "similarity": 184.1298
+        }, 
+        {
+            "package_name": "system-config-printer-gnome", 
+            "similarity": 152.8441
+        }, 
+        {
+            "package_name": "gcalctool", 
+            "similarity": 152.6659
+        }, 
+        {
+            "package_name": "yelp", 
+            "similarity": 144.6889
+        }, 
+        {
+            "package_name": "update-manager", 
+            "similarity": 141.7871
+        }, 
+        {
+            "package_name": "gucharmap", 
+            "similarity": 127.0568
+        }, 
+        {
+            "package_name": "language-selector-gnome", 
+            "similarity": 125.3589
+        }, 
+        {
+            "package_name": "ibus", 
+            "similarity": 102.6649
+        }, 
+        {
+            "package_name": "xterm", 
+            "similarity": 99.9299
+        }, 
+        {
+            "package_name": "evince", 
+            "similarity": 79.2963
+        }, 
+        {
+            "package_name": "simple-scan", 
+            "similarity": 56.652
+        }, 
+        {
+            "package_name": "xul-ext-ubufox", 
+            "similarity": 38.3334
+        }, 
+        {
+            "package_name": "usb-creator-gtk", 
+            "similarity": 36.8022
+        }, 
+        {
+            "package_name": "gedit", 
+            "similarity": 33.8602
+        }, 
+        {
+            "package_name": "apturl", 
+            "similarity": 31.6002
+        }, 
+        {
+            "package_name": "gnome-disk-utility", 
+            "similarity": 28.8268
+        }, 
+        {
+            "package_name": "compiz-core", 
+            "similarity": 28.4906
+        }, 
+        {
+            "package_name": "libreoffice-writer", 
+            "similarity": 28.126
+        }, 
+        {
+            "package_name": "onboard", 
+            "similarity": 27.9683
+        }, 
+        {
+            "package_name": "gnome-power-manager", 
+            "similarity": 27.101
+        }, 
+        {
+            "package_name": "gnome-terminal", 
+            "similarity": 26.5371
+        }, 
+        {
+            "package_name": "brasero", 
+            "similarity": 26.4448
+        }, 
+        {
+            "package_name": "gnome-media", 
+            "similarity": 26.307
+        }, 
+        {
+            "package_name": "libreoffice-draw", 
+            "similarity": 26.1141
+        }, 
+        {
+            "package_name": "libreoffice-math", 
+            "similarity": 25.9195
+        }, 
+        {
+            "package_name": "seahorse", 
+            "similarity": 25.7795
+        }, 
+        {
+            "package_name": "gnome-font-viewer", 
+            "similarity": 25.5758
+        }, 
+        {
+            "package_name": "libreoffice-calc", 
+            "similarity": 25.5001
+        }, 
+        {
+            "package_name": "firefox", 
+            "similarity": 24.985
+        }, 
+        {
+            "package_name": "libreoffice-impress", 
+            "similarity": 24.6302
+        }, 
+        {
+            "package_name": "shotwell", 
+            "similarity": 23.7574
+        }, 
+        {
+            "package_name": "eog", 
+            "similarity": 23.6761
+        }, 
+        {
+            "package_name": "gnome-bluetooth", 
+            "similarity": 22.624
+        }, 
+        {
+            "package_name": "gnome-user-share", 
+            "similarity": 21.6847
+        }, 
+        {
+            "package_name": "transmission-gtk", 
+            "similarity": 21.0323
+        }, 
+        {
+            "package_name": "xdiagnose", 
+            "similarity": 20.6793
+        }, 
+        {
+            "package_name": "vino", 
+            "similarity": 19.3632
+        }, 
+        {
+            "package_name": "checkbox-qt", 
+            "similarity": 19.1121
+        }, 
+        {
+            "package_name": "deja-dup", 
+            "similarity": 18.4929
+        }, 
+        {
+            "package_name": "gnome-sudoku", 
+            "similarity": 17.5291
+        }, 
+        {
+            "package_name": "totem", 
+            "similarity": 16.7203
+        }, 
+        {
+            "package_name": "gnomine", 
+            "similarity": 16.5816
+        }, 
+        {
+            "package_name": "thunderbird", 
+            "similarity": 14.4805
+        }, 
+        {
+            "package_name": "gnome-orca", 
+            "similarity": 14.3378
+        }, 
+        {
+            "package_name": "aisleriot", 
+            "similarity": 14.2159
+        }, 
+        {
+            "package_name": "remmina-common", 
+            "similarity": 13.9847
+        }, 
+        {
+            "package_name": "landscape-client-ui-install", 
+            "similarity": 12.8824
+        }, 
+        {
+            "package_name": "rhythmbox", 
+            "similarity": 12.1352
+        }, 
+        {
+            "rating": 4.0, 
+            "package_name": "sauerbraten"
+        }, 
+        {
+            "rating": 4.0, 
+            "package_name": "fofix"
+        }, 
+        {
+            "rating": 4.0, 
+            "package_name": "opendict"
+        }, 
+        {
+            "rating": 4.0, 
+            "package_name": "gcrystal"
+        }, 
+        {
+            "rating": 4.0, 
+            "package_name": "kshutdown"
+        }, 
+        {
+            "rating": 4.0, 
+            "package_name": "achilles"
+        }, 
+        {
+            "rating": 4.0, 
+            "package_name": "docky"
+        }, 
+        {
+            "rating": 4.0, 
+            "package_name": "out-of-order"
+        }, 
+        {
+            "rating": 3.0, 
+            "package_name": "rekonq"
+        }, 
+        {
+            "rating": 3.0, 
+            "package_name": "burgerspace"
+        }, 
+        {
+            "rating": 3.0, 
+            "package_name": "ristretto"
+        }, 
+        {
+            "rating": 3.0, 
+            "package_name": "seamonkey-browser"
+        }, 
+        {
+            "rating": 3.0, 
+            "package_name": "gpointing-device-settings"
+        }, 
+        {
+            "rating": 3.0, 
+            "package_name": "nautilus-dropbox"
+        }, 
+        {
+            "rating": 3.0, 
+            "package_name": "zatacka"
+        }, 
+        {
+            "rating": 3.0, 
+            "package_name": "gnome-gmail"
+        }, 
+        {
+            "rating": 3.0, 
+            "package_name": "checkgmail"
+        }
+    ], 
+    "app": "network-manager-gnome"
+}

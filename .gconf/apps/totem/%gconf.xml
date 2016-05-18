@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="open_path" mtime="1456232378" type="string">
+		<stringvalue>file:///tmp</stringvalue>
+	</entry>
+	<entry name="subtitle_encoding" mtime="1457260863" type="string">
+		<stringvalue>UTF-8</stringvalue>
+	</entry>
+	<entry name="show_vfx" mtime="1457260863" type="bool" value="true"/>
+</gconf>

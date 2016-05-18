@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Ruby Procs: Ruby Study Notes - Best Ruby Guide, Ruby Tutorial</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="description" content="Ruby Study Notes - Best Ruby Guide, Ruby Tutorial" />
+<meta name="keywords" content="ruby procs,ruby study notes,ruby guide,free ruby programming course,best ruby guide,ruby tutorials,ruby tutorial,learn ruby,ruby,ruby on rails,ruby rails,ruby learning,ruby tutoring,learning ruby,ruby programming,ruby on rails development,ruby training" />
+<meta name="Distribution" content="Global" />
+<meta name="author" content="Satish Talim / Original design: Erwin Aligam - ealigam@gmail.com" />
+<meta name="copyright" content="Satish Talim 2007 and beyond..." />
+<meta name="verify-v1" content="rFu86se+IkbtF+bH8mgJBKwU5HnKaSd8Ghw9umXQOkM=" />
+<meta name="robots" content="index,follow" />
+<meta http-equiv="Expires" content="0" />
+<meta name="revisit-after" content="1 days" />
+<link rel="stylesheet" href="/images/NewOrange.css" type="text/css" />
+<link rel="stylesheet" href="/images/syntaxhighlighter.css" type="text/css" />
+<link rel="icon" type="image/ico" href="/images/favicon.ico" />
+<!-- Google +1 button code -->
+<link rel="canonical" href="/satishtalim/ruby_procs.html" />
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+
+<!-- Google Analytics code -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-59044-10']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- Google Analytics code ends -->
+</head>
+
+<body>
+<!-- wrap starts here -->
+<div id="wrap">
+
+    <div id="header">
+
+        <h1 id="logo">Ruby<span class="orange">Learning.com</span></h1>
+        <h2 id="slogan">Helping Ruby Programmers become Awesome!</h2>
+
+    </div>
+
+    <div id="menu">
+        <ul>
+            <li><a href="/" title="Home page for rubylearning.com">Home</a></li>
+            <li><a href="/satishtalim/tutorial.html" title="Get started Learning Ruby here...">Tutorial</a></li>
+            <li><a href="/download/downloads.html" title="Download this tutorial as an eBook">Downloads</a></li>
+            <li><a href="/other/testimonials.html" title="People around the world who benefited from this site">Testimonials</a></li>
+            <li><a href="/other/certification.html" title="Get certified in Ruby">Certification</a></li>
+            <li><a href="/satishtalim/ruby_guide.html" title="Ruby Guide, Mentor">Mentor</a></li>
+            <li><a href="https://blog.rubylearning.com/" title="Ruby blog of Learning Ruby site">Blog</a></li>
+            <li><a href="http://courses.rubylearning.org/" title="Online Ruby Course">Online Course</a></li>
+            <li><a href="http://ruby-challenge.rubylearning.com/" title="Ruby Programming Challenge for Newbies">Challenge</a></li>
+            <li><a href="/satishtalim/about.html" title="Information about Satish Talim">About</a></li>
+        </ul>
+    </div>
+
+
+    <!-- content-wrap starts here -->
+    <div id="content-wrap">
+
+            <div id="main">
+
+                <div id="main-inner"><a name="TemplateInfo"></a>
+                <h1>Ruby Procs</h1>
+
+                <p class="post-footer align-right">
+                  <strong>
+                    <a href="/satishtalim/ruby_method_missing.html">&lt;Method Missing | </a>
+                    <a href="/satishtalim/tutorial.html">TOC | </a>
+                    <a href="/satishtalim/including_other_files_in_ruby.html">Including other files &gt;</a>
+                  </strong>
+                </p>
+
+                <p><i>Blocks are not objects</i>, but they can be converted into objects of class <strong>Proc</strong>. This can be done by calling the <strong>lambda</strong> method of the class <strong>Object</strong>. A block created with <strong>lambda</strong> acts like a Ruby method. If you don't specify the right number of arguments, you can't call the block.</p>
+
+                <div class="column2">
+                <!-- InstanceBeginEditable name="Code" -->
+                <textarea name="code" class="ruby:nogutter:nocontrols" rows="15" cols="60">
+                prc = lambda {"hello"}
+                </textarea>
+                <!-- InstanceEndEditable -->
+                </div>
+
+                <p><strong>Proc</strong> objects are blocks of code that have been bound to a set of local variables. The class <strong>Proc</strong> has a method call that invokes the block. The program <strong>p024proccall.rb</strong> illustrates this.</p>
+
+                <div class="column2">
+                <!-- InstanceBeginEditable name="Code" -->
+                <textarea name="code" class="ruby:nogutter:nocontrols" rows="15" cols="60">
+                # Blocks are not objects
+                # they can be converted into objects of class Proc by calling lambda method
+                prc = lambda {puts 'Hello'}
+                # method call invokes the block
+                prc.call
+
+                # another example
+                toast = lambda do
+                  'Cheers'
+                end
+                puts toast.call
+                </textarea>
+                <!-- InstanceEndEditable -->
+                </div>
+
+                <p>The output is:</p>
+
+                <div class="column2">
+                <!-- InstanceBeginEditable name="Code" -->
+                <textarea name="code" class="ruby:nogutter:nocontrols" rows="15" cols="60">
+                >ruby p024proccall.rb
+                Hello
+                Cheers
+                >Exit code: 0
+                </textarea>
+                <!-- InstanceEndEditable -->
+                </div>
+
+                <p>Remember you cannot pass methods into other methods (but you can pass procs into methods), and methods cannot return other methods (but they can return procs).</p>
+
+                <p>The next example shows <i>how methods can take procs</i>. Example <strong>p025mtdproc.rb</strong></p>
+
+                <div class="column2">
+                <!-- InstanceBeginEditable name="Code" -->
+                <textarea name="code" class="ruby:nogutter:nocontrols" rows="15" cols="60">
+                =begin
+                  You cannot pass methods into other methods (but you can pass procs into methods),
+                  and methods cannot return other methods (but they can return procs)
+                =end
+
+                def some_mtd some_proc
+                  puts 'Start of mtd'
+                  some_proc.call
+                  puts 'End of mtd'
+                end
+
+                say = lambda do
+                  puts 'Hello'
+                end
+
+                some_mtd say
+                </textarea>
+                <!-- InstanceEndEditable -->
+                </div>
+
+                <p>The output is:</p>
+
+                <div class="column2">
+                <!-- InstanceBeginEditable name="Code" -->
+                <textarea name="code" class="ruby:nogutter:nocontrols" rows="15" cols="60">
+                >ruby p025mtdproc.rb
+                Start of mtd
+                Hello
+                End of mtd
+                >Exit code: 0
+                </textarea>
+                <!-- InstanceEndEditable -->
+                </div>
+
+                <p>Here's another example of passing arguments using <strong>lambda</strong>.</p>
+
+                <div class="column2">
+                <!-- InstanceBeginEditable name="Code" -->
+                <textarea name="code" class="ruby:nogutter:nocontrols" rows="15" cols="60">
+                a_Block = lambda { |x| "Hello #{x}!" }
+                puts a_Block.call 'World'
+                # output is: Hello World!
+                </textarea>
+                <!-- InstanceEndEditable -->
+                </div>
+
+                <p class="post-note"><strong>Fabio Akita</strong> a Brazilian Rails enthusiast, also known online as "AkitaOnRails", wrote this exclusive article on <strong><a href="/blog/2007/11/30/akitaonrails-on-anatomy-of-ruby-blocks/closures/">Ruby Blocks/Closures</a></strong> for the rubylearning.com members like you. Do read, after you have gone through this lesson.</p>
+
+                <p style="background-color: #FAFAFA; padding: 5px; margin-top: 20px; font-size: 65%;"><strong>Note</strong>: The Ruby Logo is Copyright (c) 2006, Yukihiro Matsumoto. I have made extensive references to information, related to Ruby, available in the public domain (wikis and the blogs, articles of various <span style="font-weight: bold;" title="Click Gurus on the menu above">Ruby Gurus</span>), my acknowledgment and thanks to all of them. Much of the material on <a href="/">rubylearning.com</a> and in the course at <a href="http://rubylearning.org/">rubylearning.org</a> is drawn <strong>primarily</strong> from the <strong>Programming Ruby book</strong>, available from <a href="http://pragprog.com/book/ruby3/programming-ruby-1-9-2-0">The Pragmatic Bookshelf</a>.</p>
+
+                <p class="post-footer align-right">
+                  <strong>
+                    <a href="/satishtalim/ruby_method_missing.html">&lt;Method Missing | </a>
+                    <a href="/satishtalim/tutorial.html">TOC | </a>
+                    <a href="/satishtalim/including_other_files_in_ruby.html">Including other files &gt;</a>
+                  </strong>
+                </p>
+
+            </div>
+            <!-- main inner ends here -->
+        </div>
+
+            <div id="rightbar">
+
+                <div>
+                </div>
+
+            </div>
+
+    <!-- content-wrap ends here -->
+    </div>
+
+<!-- wrap ends here -->
+</div>
+
+<!-- footer starts here -->
+<div id="footer">
+    <!-- CHANGE THE FOOTER -->
+    <p>&copy; 2006-2016&nbsp;<strong>RubyLearning.com - A Ruby Tutorial</strong>&nbsp;&nbsp;Page Updated: 1st Jan. 2016 | Design: <a href="mailto:ealigam@gmail.com">Erwin Aligam</a> | Valid: <a href="http://validator.w3.org/check/referer">XHTML</a> | <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/">Home</a> | <a href="/privacy.html">Privacy</a> | <a href="/sitemap.html">Sitemap</a></p>
+</div>
+
+<!-- footer ends here -->
+
+<!-- SyntaxHighlighter code -->
+<script src="/js/shCore.js" type="text/javascript"></script>
+<script src="/js/shBrushRuby.js" type="text/javascript"></script>
+<script type="text/javascript">
+dp.SyntaxHighlighter.HighlightAll('code');
+</script>
+<!-- SyntaxHighlighter code -->
+</body>
+</html>

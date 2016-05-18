@@ -1,0 +1,124 @@
+/*  Main CSS Document */
+
+/* Custom Font */
+
+@font-face
+{
+    font-family: 'opensans_regular';
+    src: url('../fonts/opensans-webfont.eot?#iefix') format('embedded-opentype'),
+    	 url('../fonts/opensans-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face
+{
+    font-family: 'sketchme_regular';
+    src: url('../fonts/sketch-me-webfont.eot?#iefix') format('embedded-opentype'),
+    	 url('../fonts/sketch-me-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Basic CSS starts here*/
+
+body
+{
+	background: #f1f1f1;
+}
+
+body, select, input, textarea
+{
+	font: 12px/1.231 opensans_regular, Arial, Helvetica, sans-serif;
+	font-smooth: always;
+}
+
+.full
+{
+	float: left;
+	width: 100%;
+	margin: 0 auto;
+}
+
+h1
+{
+	font-size: 24px;
+}
+
+h2
+{
+	font-size: 18px;
+}
+
+h3
+{
+	font-size: 16px;
+        
+}
+
+a, input, button
+{
+	outline: none;
+}
+
+.clear
+{
+	clear: both;
+}
+/* Basic CSS ends here*/
+
+/* Inner page common style begins */
+
+.content_left
+{
+	padding: 10px 0 0;
+}
+
+.main_page_title
+{
+	font-family: "sketchme_regular";
+	font-size: 300%;
+	font-weight: normal;
+}
+
+.sub_title
+{
+	padding: 0px 0px;
+        font-size: 14px;
+	background: #f3f1f1;
+        background-color: rgba(255, 255, 255, 0);
+}
+
+.inner_content_block
+{
+	clear: both;
+	overflow: hidden;
+	margin: 15px 25px 60px 0;
+	padding: 15px;
+	min-height: 618px;
+	
+	border: 1px solid #e8e6e6;
+	background-position: right bottom;
+	background-color:  rgba(255,255,255,0.9);
+	background-repeat: no-repeat;
+	border-radius: 5px;
+}
+
+.inner_content_block li
+{
+	line-height: 30px;
+}
+
+.inner_content_block p
+{
+	margin: 10px 20px;
+	line-height: 20px;
+}
+/*
+.inner_block_scroll
+{
+	overflow: auto;
+	height: 610px;
+}
+*/
+/* Inner page common style ends */
