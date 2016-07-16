@@ -1,0 +1,7 @@
+<h1>Edit page</h1>
+
+<%= form_for @welcome,:html => { :method => :put} do |f| %>
+	<%= render "form", f: f %>
+	<%= f.submit "Update" %>
+        
+<% end %>

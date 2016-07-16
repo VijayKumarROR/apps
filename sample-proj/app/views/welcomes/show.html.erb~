@@ -1,0 +1,9 @@
+<p>
+<strong>Name:</strong>
+<%= @welcome.name %>
+</p>
+<p>
+<strong>Pasword:</strong>
+<p>
+<%= @welcome.password%>
+</p>

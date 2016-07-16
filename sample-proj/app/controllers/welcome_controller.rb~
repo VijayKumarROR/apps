@@ -1,0 +1,15 @@
+class WelcomesController < ApplicationController
+  def index 
+   @welcomes = Welcome.all
+  end
+  def create
+   @welcome =Welcome.new(welcome_params)
+   if @welcome.save
+   flash[:notice] = "saved successfully"
+  end
+ end
+private
+ def welcome_params
+   params.require(:welcome).permit(:name, :password)
+end
+end

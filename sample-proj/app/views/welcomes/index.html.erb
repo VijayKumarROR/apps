@@ -1,0 +1,10 @@
+<%= flash[:notice]%>
+<% @welcomes.each do |f| %>
+<p><%= f.name %> ||
+<%= f.password %>
+<%= link_to "delete" , controller: "welcomes", action: "delete",id: f.id%>
+<%= link_to "edit",edit_welcome_path(f.id) %>
+</p>
+<% end %>
+<%= link_to "new",new_welcome_path%>
+

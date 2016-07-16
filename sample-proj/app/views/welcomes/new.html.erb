@@ -1,0 +1,7 @@
+<h1>Hai</h1>
+
+<%= flash[:error]%>
+<%= form_for :welcome, url: "/welcomes", method: :post do |f| %>
+	<%= render "form", f: f %>
+	<%= f.submit "create" %>
+<% end %>
