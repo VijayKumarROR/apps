@@ -1,0 +1,7 @@
+development:
+   adapter: mysql
+   encoding: utf8
+   pool: 5
+   database: temp-db;
+   username: root
+   password: 1234
